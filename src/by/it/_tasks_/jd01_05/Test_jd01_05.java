@@ -14,19 +14,19 @@ import static org.junit.Assert.*;
 //поставьте курсор на следующую строку и нажмите Ctrl+Shift+F10
 public class Test_jd01_05 {
 
-    @Test(timeout = 1500)
+    @Test(timeout = 5000)
     public void testTaskA1__TaskA() throws Exception {
         System.out.println("Ожидается -11392.************");
         run("").include("4516");
     }
 
-    @Test(timeout = 1500)
+    @Test(timeout = 5000)
     public void testTaskA2__TaskA() throws Exception {
         System.out.println("Ожидается -3.10***********78");
         run("").include("10653");
     }
 
-    @Test(timeout = 1500)
+    @Test(timeout = 5000)
     public void testTaskA3__TaskA() throws Exception {
         System.out.println("Ожидается:\n" +
                 "При a= -5,00 f=17,2**0\n" +
@@ -37,7 +37,7 @@ public class Test_jd01_05 {
         run("").include("3125");
     }
 
-    @Test(timeout = 1500)
+    @Test(timeout = 5000)
     public void testTaskB1__TaskB() throws Exception {
         System.out.println("Ожидается:\n" +
                 "При a=0,00 Сумма y = 6,****48e+00\n" +
@@ -54,7 +54,7 @@ public class Test_jd01_05 {
         run("").include("2756");
     }
 
-    @Test(timeout = 1500)
+    @Test(timeout = 5000)
     public void testTaskB2__TaskB() throws Exception {
         System.out.println("Ожидается:\n" +
                 "При x/2=-2,75 вычисления не определены\n" +
@@ -75,7 +75,7 @@ public class Test_jd01_05 {
         run("").include("8540");
     }
 
-    @Test(timeout = 1500)
+    @Test(timeout = 5000)
     public void testTaskC1__TaskC() throws Exception {
         System.out.println("Ожидается\n" +
                 "Массив A[]\n" +
