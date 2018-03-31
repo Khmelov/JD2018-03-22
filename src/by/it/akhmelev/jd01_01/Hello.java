@@ -4,7 +4,7 @@ class Hello {
 
     private String slogan="Hello world";
 
-    void setSlogan(String slogadfn) {
+    void setSlogan(String slogan) {
         this.slogan = slogan;
     }
 
