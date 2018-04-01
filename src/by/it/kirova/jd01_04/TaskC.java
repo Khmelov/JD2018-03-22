@@ -26,22 +26,6 @@ public class TaskC {
         int lastIndex = binarySearch(array, last);
         System.out.println("first element=" + firstIndex);
         System.out.println("last element=" + lastIndex);
-
-//        System.out.println("Sorted array:");
-//        System.out.println("Find new index:");
-//        // Arrays.binarySearch(array, first);
-//        for (int i = 0; i < array.length; i++) {
-//            if (array[i] == first) {
-//                System.out.println("first element=" + i);
-//                break;
-//            }
-//        }
-//        for (int i = 0; i < array.length; i++) {
-//            if (array[i] == last) {
-//                System.out.println("last element=" + i);
-//                break;
-//            }
-//        }
     }
 
     private static void mergeSort(double[] array) {

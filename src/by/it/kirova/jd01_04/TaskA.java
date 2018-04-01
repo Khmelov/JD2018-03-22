@@ -25,7 +25,8 @@ public class TaskA {
     private static void buildOneDimArray(String line) {
         double[] array = InOut.getArray(line);
         System.out.println("Unsorted array:");
-        InOut.printArray(array, "V", 5);
+        String nn = "V";
+        InOut.printArray(array, nn , 5);
         double first = array[0];
         double last = array[array.length - 1];
         Helper.sort(array);
