@@ -6,6 +6,12 @@ import java.util.Scanner;
 
 public class TaskC {
 
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+
+
+    }
+
     static int[][] step1(int n) {
         Random random = new Random();
         int test = random.nextInt(2 * n) - n;

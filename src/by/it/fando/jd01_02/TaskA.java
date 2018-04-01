@@ -34,6 +34,7 @@ public class TaskA {
                     if(element<avg)
                         System.out.print(element+" ");
                 }
+        System.out.print("\n");
     }
 
     private static void step3(int[] mas) {
