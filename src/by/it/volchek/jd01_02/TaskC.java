@@ -11,7 +11,7 @@ public class TaskC {
         int n = scanner.nextInt();
         int[][] mas = step1(n);
         System.out.println(step2(mas));
-        int[][] mas1 = step3(mas);
+        //int[][] mas1 = step3(mas);
 
 
     }
@@ -23,8 +23,7 @@ public class TaskC {
                 if (subElem > max) max = subElem;
             }
         }
-        //int [][] masHorizont = new int[][];
-        //определяем размер нового массива
+
         int flagH = 0;
         int flagV = 0;
         int rows = 0;
@@ -61,14 +60,6 @@ public class TaskC {
                 flagH = 0;
             }
         }
-
-      /*  for (int a[]:masH) {
-            for (int b:a) {
-                System.out.print(b+" ");
-
-            }
-            System.out.println();
-        }*/
 
 
         for (int i = 0; i < mas.length; i++) {
@@ -129,7 +120,7 @@ public class TaskC {
     private static int step2(int[][] mas) {
         int flag;
         int count = 0;
-        int subCount = 0;
+        int subCount;
         for (int[] element : mas) {
             flag = 0;
             subCount = 0;
@@ -146,9 +137,8 @@ public class TaskC {
 
     private static int[][] step1(int i) {
         int[][] mas = new int[i][i];
-        int flag1, flag2, count = 0;
+        int flag1, flag2;
         do {
-            count++;
             flag1 = 0;
             flag2 = 0;
             for (int j = 0; j < i; j++) {

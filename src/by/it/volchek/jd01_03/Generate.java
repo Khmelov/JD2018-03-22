@@ -25,7 +25,7 @@ public class Generate {
         return mas;
     }
 
-    public static double[] generateArray(int i) {
+    static double[] generateArray(int i) {
         double[] mas = new double[i];
 
         for (int m = 0; m < mas.length; m++) {

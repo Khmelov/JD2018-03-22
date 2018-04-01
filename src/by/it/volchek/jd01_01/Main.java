@@ -9,7 +9,7 @@ public class Main {
         }
 
 
-        public static void myPow (int a, int b){
+      private static void myPow (int a, int b){
 
         for (int j = 0; j <a ; j++) {
 

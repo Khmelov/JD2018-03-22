@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Created by volchek on 24.03.18.
  */
 public class TaskA {
-    static void step1 (int[] mas){
+    private static void step1 (int[] mas){
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
         for (int element : mas) {
@@ -16,7 +16,7 @@ public class TaskA {
         System.out.println(min+" "+max);
     }
 
-    static void step2 (int[] mas) {
+    private static void step2(int[] mas) {
         int a = 0;
         double mid;
         for (int element : mas) {
@@ -29,7 +29,7 @@ public class TaskA {
                 System.out.print(element + " ");
         }
     }
-    static void step3 (int[] mas){
+    private static void step3(int[] mas){
         int min = Integer.MAX_VALUE;
 
         for (int element : mas) {

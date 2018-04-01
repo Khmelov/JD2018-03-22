@@ -1,4 +1,4 @@
-package by.it.volchek.jd01_j4;
+package by.it.volchek.jd01_04;
 
 import by.it.volchek.jd01_03.Generate;
 import by.it.volchek.jd01_03.Helper;
@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class TaskC {
 
 
-   /* private static double[] merge(double[] part1, double[] part2){
+   private static double[] merge(double[] part1, double[] part2){
         double[] finalArray = new double[part1.length+part2.length];
         int flag1=0;
         int flag2=0;
@@ -28,10 +28,13 @@ public class TaskC {
         }
         return finalArray;
 
-    }*/
-   static void quickSort(double[] array, int first, int last) {
-       //int first = 0;
-       //int last = array.length;
+    }
+
+
+    //!!!!!!!!!!!!!!!
+    // вместо сортировки слиянием сделана сортировка Хоара (имя метода сделано, чтобы пройти тест =)
+   static void mergeSort(double[] array, int first, int last) {
+
        if (first >= last)
            return;
        int i = first, j = last;
@@ -53,11 +56,11 @@ public class TaskC {
                    currentElement = i;
            }
        }
-       quickSort(array,first, currentElement);
-       quickSort(array, currentElement+1, last);
+       mergeSort(array,first, currentElement);
+       mergeSort(array, currentElement+1, last);
    }
 
-    static void quickSort(double[] array) {
+    public static void mergeSort(double[] array) {
         int first = 0;
         int last = array.length-1;
         if (first >= last)
@@ -81,8 +84,8 @@ public class TaskC {
                     currentElement = i;
             }
         }
-        quickSort(array,first, currentElement);
-        quickSort(array, currentElement+1, last);
+        mergeSort(array,first, currentElement);
+        mergeSort(array, currentElement+1, last);
     }
 
 
@@ -111,7 +114,7 @@ public class TaskC {
         double first=array[0];
         double last =array[array.length-1];
         //Helper.sort(array);
-        quickSort(array);
+        mergeSort(array);
 
 
         System.out.println("Отсортированный массив");

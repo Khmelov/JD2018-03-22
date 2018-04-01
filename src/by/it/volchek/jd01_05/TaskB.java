@@ -24,10 +24,12 @@ public class TaskB {
         }
     }
     private static void step2() {
-        double alfa = 0;
-        double beta = 0;
+        double alfa;
+        double beta;
         for (double i = -5.5; i <2 ; i+=0.5) {
-            if ((-2<i/2)&&(i/2<=-1)) beta = sin(i*i);
+            if ((-2<i/2)&&(i/2<=-1)) {
+                beta = sin(i * i);
+            }
             else if ((-1<i/2)&&(i/2<0.2)) beta = cos(i*i);
             else if (i/2==0.2) beta = 1/tan(i*i);
             else
