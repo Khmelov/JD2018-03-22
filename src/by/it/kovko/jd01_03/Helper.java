@@ -34,7 +34,7 @@ public class Helper {
      * Bubbles sorting
      * @param arr Input array
      */
-    static void sort(double[ ] arr){
+    public static void sort(double[ ] arr){
         boolean swap=true;
         int size=arr.length-1;
         while (swap){

@@ -12,7 +12,14 @@ public class TaskC {
         int sum;
         sum=step2(matrix);
         System.out.println(sum);
-        step3(matrix);
+        int[][] newMatrix;
+        newMatrix=step3(matrix);
+        for (int[] l : newMatrix) {
+            for (int m : l) {
+                System.out.print(m+" ");
+            }
+            System.out.println();
+        }
     }
     private static int[][] step1(int n){
         Random r = new Random();
@@ -39,32 +46,31 @@ public class TaskC {
         return matrix;
     }
 
+
     private static int step2(int[][] mas){
         int sum=0;
-        for (int i = 0; i < mas.length; i++) {
-            int positiveCount=0;
-            for (int j = 0; j < mas[i].length; j++) {
-                if (mas[i][j]>=0){
+        for (int[] ma : mas) {
+            int positiveCount = 0;
+            for (int aMa : ma) {
+                if (aMa >= 0) {
                     ++positiveCount;
-                    if (positiveCount>1)
+                    if (positiveCount > 1)
                         break;
-                }
-                else{
-                    if (positiveCount==1)
-                        sum+=mas[i][j];
+                } else {
+                    if (positiveCount == 1)
+                        sum += aMa;
                 }
 
             }
         }
         return sum;
     }
-
     private static int[][] step3(int[][] mas){
         int max=Integer.MIN_VALUE, maxColumns=0;
-        for (int i = 0; i < mas.length; i++) {
-            for (int j = 0; j < mas[i].length; j++) {
-                maxColumns=(maxColumns<mas[i].length)?mas[i].length:maxColumns;
-                max=(max<mas[i][j])?mas[i][j]:max;
+        for (int[] ma : mas) {
+            for (int aMa : ma) {
+                maxColumns = (maxColumns < ma.length) ? ma.length : maxColumns;
+                max = (max < aMa) ? aMa : max;
             }
         }
         int[] rowsFlags = new int [mas.length];
@@ -109,9 +115,9 @@ public class TaskC {
                 ++newRowsIndex;
             }
         }
-        for (int i = 0; i < newMatrix.length; i++) {
-            for (int j = 0; j < newMatrix[i].length; j++) {
-                System.out.print(newMatrix[i][j] + " ");
+        for (int[] aNewMatrix : newMatrix) {
+            for (int anANewMatrix : aNewMatrix) {
+                System.out.print(anANewMatrix + " ");
             }
             System.out.println();
         }

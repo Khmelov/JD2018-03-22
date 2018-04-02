@@ -1,63 +1,39 @@
 package by.it.kovko.jd01_04;
 
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class TaskC {
     public static void main(String[] args) {
-//        TaskA.printMulTable();
-//        Scanner scanner = new Scanner(System.in);
-//        String line = scanner.nextLine();
-//        buildOneDimArray(line);
 
+        Scanner scanner = new Scanner(System.in);
+        String line = scanner.nextLine();
+        buildOneDimArray(line);
 
-        double p1[]={3,6,2,1,5,9,7,8};
-
-
-        //mergeSort(p1);
-        //Helper.sort(p1); Helper.sort(p2);
-//        System.out.println(Arrays.toString(p1));
-//        System.out.println(Arrays.toString(p2));
-        //System.out.println(Arrays.toString(merge(pp1,pp2)));
-        //double p12[] = merge(p1,p2);
-        //System.out.println(Arrays.toString(p1));
-        //System.out.println(binarySearch(p1,p1[3]));
-//        System.out.println("\n\n\n" + Arrays.toString(kkk));
-
-        //System.out.println(Arrays.toString(merge(p1,p2)));
     }
 
 
 
 
-    static void buildOneDimArray(String line){
+    private static void buildOneDimArray(String line){
         double arr[] = InOut.getArray(line);
         double first=arr[0], last=arr[arr.length-1];
         System.out.println("First=" + first + " Last=" + last);
         System.out.println("Unsorted array");
-        InOut.printArray(arr,"V", 5);
-        by.it.kovko.jd01_04.Helper.sort(arr);
+        String name="V"; int cols=5;
+        InOut.printArray(arr,name, cols);
+        mergeSort(arr);
         System.out.println("Sorted array");
-        InOut.printArray(arr,"V", 4);
-        for (int i = 0; i < arr.length; ++i) {
-            if (arr[i]==first){
-                System.out.println("Index of first element=" + i);
-                break;
-            }
-        }
-        for (int i = 0; i < arr.length; ++i) {
-            if (arr[i]==last){
-                System.out.println("Index of last element=" + i);
-                break;
-            }
+        cols=4;
+        InOut.printArray(arr,name, cols);
 
-
-        }
-
+        int newFirstIndex, newLastIndex;
+        newFirstIndex=binarySearch(arr,first);
+        newLastIndex=binarySearch(arr,last);
+        System.out.println("Index of first element=" + newFirstIndex);
+        System.out.println("Index of last element=" + newLastIndex);
     }
 
-    static int binarySearch(double arr[],double k){
+    private static int binarySearch(double arr[],double k){
         int start=0, end=arr.length-1;
         int midPoint;
         while (true) {
@@ -74,24 +50,21 @@ public class TaskC {
     }
 
 
-    static void mergeSort(double[ ] array){
-        double result[]= new double[array.length];
-        result=mergeSort(array,0,array.length-1);
-        for (int i = 0; i < array.length; i++)
-            array[i]=result[i];
+    private static void mergeSort(double[ ] array){
+        double result[];
+        result=mergeSorting(array);
+        System.arraycopy(result,0,array,0,array.length);
     }
 
-    private static double[ ] mergeSort(double[ ] array, int left, int right){
+    private static double[ ] mergeSorting(double[ ] array){
         int midPoint = array.length/2;
         if (array.length!=1){
             double part1[] = new double[midPoint];
-            for (int i = 0; i < midPoint; i++)
-                part1[i]=array[i];
+            System.arraycopy(array,0,part1,0,midPoint);
 
             double part2[] = new double[array.length-midPoint];
-            for (int i = midPoint; i < array.length; i++)
-                part2[i-midPoint]=array[i];
-            array=merge(mergeSort(part1,3,3),mergeSort(part2,3,3));
+            System.arraycopy(array,midPoint,part2,0,array.length-midPoint);
+            array=merge(mergeSorting(part1),mergeSorting(part2));
         }
         return array;
     }

@@ -5,10 +5,8 @@ import java.util.Scanner;
 public class TaskB {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        //System.out.println("Enter number of employees");
         int n = scanner.nextInt();
         String surnames[] = new String[n];
-        //System.out.println("Enter surnames of " + n + "employees ");
         for (int i = 0; i < surnames.length; i++) {
             surnames[i] = scanner.next();
         }

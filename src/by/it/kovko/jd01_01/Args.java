@@ -9,14 +9,6 @@ public class Args {
         this.Args=args;
     }
 
-    /**
-     * Return increment of i
-     * @param i int paremeter
-     * @return return ++i
-     */
-    static int sum(int i){
-        return ++i;
-    }
 
     /**
      * Method for printing command line arguments

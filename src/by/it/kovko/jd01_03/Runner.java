@@ -6,29 +6,41 @@ public class Runner {
     public static void main(String[] args) {
         String arr="12.9 324.3 13.1 2.543 12.32";
         double[] mas=InOut.getArray(arr);
+        String name="m";
+        double min=-10, max=10;
+        int rows=5, cols=2;
         InOut.printArray(mas);
-        InOut.printArray(mas,"m",2);
+        InOut.printArray(mas,name,cols);
         System.out.println("Минимальное значение" + Helper.findMin(mas));
         System.out.println("Максимальное значение" + Helper.findMax(mas));
-        double[] unsortedVector=Helper.randomVector(-10,10,5);
+        double[] unsortedVector=Helper.randomVector(min,max,rows);
         System.out.println(Arrays.toString(unsortedVector));
         Helper.sort(unsortedVector);
         System.out.println(Arrays.toString(unsortedVector));
         double[][] newRandomMatrix, newRandomMatrix2;
-        newRandomMatrix=Helper.randomMatrix(-10,10,5,5);
-        newRandomMatrix2=Helper.randomMatrix(-10,10,5,5);
+        newRandomMatrix=Helper.randomMatrix(min,max,rows,rows);
+        newRandomMatrix2=Helper.randomMatrix(min,max,rows,rows);
         double[] newRandomVector;
-        newRandomVector=Helper.randomVector(-10,10,5);
+        newRandomVector=Helper.randomVector(min,max,rows);
         System.out.println("Матрица со случайными числами");
         for (double[] randomLine : newRandomMatrix) {
             System.out.println(Arrays.toString(randomLine));
         }
         System.out.println("Вектор со случайными числами");
         System.out.println(Arrays.toString(newRandomVector));
-        double[] resultVxM= new double[5];
+
+        double[] resultVxM;
         resultVxM=Helper.mul(newRandomMatrix,newRandomVector);
-        double[][] resultMxM= new double[5][5];
+        System.out.println("Result vector"+ Arrays.toString(resultVxM));
+
+        double[][] resultMxM;
         resultMxM=Helper.mul(newRandomMatrix,newRandomMatrix2);
+        System.out.println("Result matrix");
+        for (double[] resLine : resultMxM) {
+            System.out.println(Arrays.toString(resLine));
+        }
+        System.out.println();
+
 
     }
 }

@@ -9,16 +9,11 @@ public class InOut {
             mas[i]=Double.parseDouble(strings[i]);
         return mas;
     }
-    static void printArray(double[ ] arr){
-        for (double x: arr)
-            System.out.print(x + " ");
-        System.out.println();
-    }
+
 
     static void printArray(double[ ] arr, String name, int columnCount){
         for (int i=0;i<arr.length;++i){
-            System.out.printf(" %s[%d]=%f.3",name, i, arr[i]);
-            //System.out.print(name + " "+ arr[i]);
+            System.out.printf(" %s[%d]=%f.2",name, i, arr[i]);
             if ((i+1)%columnCount==0 || i==arr.length-1)
                 System.out.println();
         }

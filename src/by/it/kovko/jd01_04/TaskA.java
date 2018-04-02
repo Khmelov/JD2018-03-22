@@ -1,8 +1,5 @@
 package by.it.kovko.jd01_04;
 
-import by.it.kovko.jd01_03.Helper;
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class TaskA {
@@ -13,7 +10,7 @@ public class TaskA {
         String line = scanner.nextLine();
         buildOneDimArray(line);
     }
-    static void printMulTable(){
+    private static void printMulTable(){
         for (int i = 2; i < 10; i++) {
             for (int j = 2; j < 10; j++) {
                 System.out.printf("%1d*%1d=%-3d",i,j,i*j);
@@ -22,15 +19,17 @@ public class TaskA {
         }
     }
 
-    static void buildOneDimArray(String line){
+    private static void buildOneDimArray(String line){
         double arr[] = InOut.getArray(line);
         double first=arr[0], last=arr[arr.length-1];
         System.out.println("First=" + first + " Last=" + last);
         System.out.println("Unsorted array");
-        InOut.printArray(arr,"V", 5);
-        by.it.kovko.jd01_04.Helper.sort(arr);
+        String name="V"; int cols=5;
+        InOut.printArray(arr,name, cols);
+        by.it.kovko.jd01_03.Helper.sort(arr);
         System.out.println("Sorted array");
-        InOut.printArray(arr,"V", 4);
+        cols=4;
+        InOut.printArray(arr,name, cols);
         for (int i = 0; i < arr.length; ++i) {
             if (arr[i]==first){
                 System.out.println("Index of first element=" + i);
@@ -46,10 +45,6 @@ public class TaskA {
 
         }
 
-    }
-
-    static void binarySearch(double arr[],double k){
-        Arrays.binarySearch(arr,k);
     }
 
 
