@@ -306,6 +306,8 @@ public class Test_jd01_03 {
 
             @Override
             public void write(int b) throws IOException {
+                if (pos==0 && b=='\r') //пропуск \r (чтобы win mac и linux одинаково работали
+                    return;
                 if (pos == 0) { //определим кодировку https://ru.wikipedia.org/wiki/UTF-8
                     if ((b & 0b11110000) == 0b11110000) bytes = new byte[4];
                     else if ((b & 0b11100000) == 0b11100000) bytes = new byte[3];
