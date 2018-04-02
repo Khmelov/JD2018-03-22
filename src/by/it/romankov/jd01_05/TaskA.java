@@ -12,10 +12,20 @@ public class TaskA {
         double x = 0.3;
         double z = cos(pow((x*x+PI/6),5));
         z=z-sqrt(x*a*a*a);
+        z=z-log(abs(a-1.12*x)/4);
+        System.out.println("z="+z);
 
     }
     private static void step2(){
-        double a;
+        double a=1.21;
+        double b=0.371;
+        double y=tan(pow((a+b),2));
+        y=y-pow((a+1.5),1/3.0);
+        y=y+a*pow(b,5 );
+        y=y-b/log(a*a);
+        System.out.println("y="+y);
+
+
 
 
     }
