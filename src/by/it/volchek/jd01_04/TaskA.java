@@ -1,4 +1,4 @@
-package by.it.volchek.jd01_j4;
+package by.it.volchek.jd01_04;
 
 import by.it.volchek.jd01_03.Helper;
 import by.it.volchek.jd01_03.InOut;
