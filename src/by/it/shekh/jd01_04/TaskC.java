@@ -6,8 +6,8 @@ public class TaskC {
 
     private static void buildOneDimArray(String line) {
         double[] mas = InOut.getArray(line);
-        double first=mas[0];
-        double last=mas[mas.length-1];
+        double first = mas[0];
+        double last = mas[mas.length - 1];
         InOut.printArray(mas);
         mergeSort(mas);
         InOut.printArray(mas);
