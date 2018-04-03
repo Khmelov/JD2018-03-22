@@ -24,7 +24,6 @@ public class TaskC {
     }
 
     private static void mergeSort(double[] array) {
-
         System.arraycopy(mergeSort(array, 0, array.length - 1), 0, array, 0, array.length);//копирует массивы
     }
 
