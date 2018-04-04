@@ -26,7 +26,7 @@ public class TaskB2 {
     public static void main(String[] args) {
 
         //StringBuilder sb = new StringBuilder();
-        String pattern = "[.?]+";
+        String pattern = "[.?!][\\n]";
         String[] strMas = Poem.text.split(pattern);
         int sentenceNumber = strMas.length;
         int flag =0;
