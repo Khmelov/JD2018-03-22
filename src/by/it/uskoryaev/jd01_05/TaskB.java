@@ -1,4 +1,6 @@
 package by.it.uskoryaev.jd01_05;
+import java.util.Date;
+
 import static java.lang.Math.*;
 
 public class TaskB {
