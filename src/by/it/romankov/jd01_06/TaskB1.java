@@ -2,7 +2,7 @@ package by.it.romankov.jd01_06;
 
 public class TaskB1 {
     public static void main(String[] args) {
-        char[] o = {'ё', 'у', 'е', 'ы', 'а', 'о', 'э', 'я', 'и', 'ю'};
+        char[] o = {'ё', 'у', 'е', 'ы', 'а', 'о', 'э', 'я', 'и', 'ю','И'};
         String s = Poem.text.replaceAll(",", "").replaceAll("\\.", "").replaceAll(":", "");
 
         String[] ss = s.split("\n");

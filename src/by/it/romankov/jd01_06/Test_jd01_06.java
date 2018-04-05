@@ -1,7 +1,6 @@
 package by.it.romankov.jd01_06;
 
 
-import by.it._tasks_.jd01_06.Poem;
 import org.junit.Test;
 
 import java.io.*;
