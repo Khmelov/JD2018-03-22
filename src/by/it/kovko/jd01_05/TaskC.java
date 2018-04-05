@@ -71,15 +71,14 @@ public class TaskC {
         }
         int newArrayLength=0;
         double tempArray[] = new double[n];
-        for (int i = (min/10); i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             if (array[i]>i*10){
                 tempArray[newArrayLength]=array[i];
                 ++newArrayLength;
             }
         }
-        double newArray[] = new double[newArrayLength+(min/10)];
-        System.arraycopy(array,0,newArray,0,(min/10));
-        System.arraycopy(tempArray,0,newArray,(min/10),tempArray.length);
+        double newArray[] = new double[newArrayLength];
+        System.arraycopy(tempArray,0,newArray,0,newArrayLength);
         System.out.println(Arrays.toString(newArray));
     }
 
