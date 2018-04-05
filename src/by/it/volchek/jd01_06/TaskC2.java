@@ -13,7 +13,7 @@ import static java.util.concurrent.TimeUnit.NANOSECONDS;
  * Created by volchek on 03.04.18.
  */
 public class TaskC2 {
-    final static int iteration = 1000;
+    final static int iteration = 10000;
 
    private static String slow (String s){
 
@@ -48,11 +48,13 @@ public class TaskC2 {
         String slowResult = slow(Poem.text);
         long estimatedTime = System.nanoTime() - startTime;
         System.out.println(slowResult);
-        System.out.println("Время работы slow: "+NANOSECONDS.toMillis(estimatedTime)+" миллисекунд");
+        long slowTime = NANOSECONDS.toMillis(estimatedTime);
+
         startTime = System.nanoTime();
         String fastResult = fast(Poem.text);
         estimatedTime = System.nanoTime() - startTime;
         System.out.println(fastResult);
+        System.out.println("Время работы slow: "+slowTime+" миллисекунд");
         System.out.println("Время работы fast: "+NANOSECONDS.toMillis(estimatedTime)+" миллисекунд");
         System.out.println(slowResult.equals(fastResult));
 
