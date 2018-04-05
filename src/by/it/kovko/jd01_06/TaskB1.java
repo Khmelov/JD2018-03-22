@@ -17,7 +17,7 @@ public class TaskB1 {
                 System.out.println(m1.group());
         }
     }
-    static boolean isVovel(char ch){
+    static private boolean isVovel(char ch){
         char vovels[]={'а','е','ё','и','о','у','ы','э','ю','я'};
         ch=Character.toLowerCase(ch);
         for (char vovel : vovels) {
