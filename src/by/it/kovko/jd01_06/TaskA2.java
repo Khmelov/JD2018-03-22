@@ -15,9 +15,29 @@ public class TaskA2 {
         }
         return -1;
     }
+//
+//    public static void newMethod(String poem){
+//        String regex = "[^А-Яа-яёЁ]+";
+//        String words[];
+//        words=poem.split(regex);
+//        Arrays.sort(words);
+//        String word=words[0];
+//        int count=0;
+//        for (int i = 0; i < words.length; i++) {
+//            if (word.equals(words[i])){
+//                ++count;
+//            } else {
+//                System.out.println(word + "=" + count);
+//                word=words[i];
+//                count=1;
+//            }
+//        }
+//        System.out.println(words[words.length-1]+"="+count);
+//    }
 
     public static void main(String[] args) {
         //StringBuilder sb= new StringBuilder(Poem.text);
+        //newMethod(Poem.text);
         String regex = "[А-Яа-яёЁ]+";
         Pattern p1 = Pattern.compile(regex);
         Matcher m1 = p1.matcher(Poem.text);
