@@ -9,19 +9,25 @@ public class TaskC2 {
 
     static String text1 = new String();
 
+
     public static void main(String[] args) {
+
         long start = System.nanoTime();
-        System.out.println(slow(Poem.text));
-        long slow1 = System.nanoTime()-start;
+        String str3 = slow(Poem.text);
+        System.out.println(str3);
+        long slow1 = System.nanoTime() - start;
         System.out.println(slow1);
-        System.out.println(fast(text1));
-        long fast1 = System.nanoTime() - start-slow1;
+        String str4 = fast(Poem.text);
+        System.out.println(str4);
+        long fast1 = System.nanoTime() - start - slow1;
         System.out.println(fast1);
         System.out.println(slow1 / fast1);
+
 
     }
 
     static String slow(String text) {
+
         String str1 = new String(text);
         String[] elemString1 = str1.split("[!.,\\s:-]+");
 
@@ -39,6 +45,7 @@ public class TaskC2 {
             text1 = text1 + text2[i] + " ";
         }
 
+
         String[] elemString = text1.split(" ");
 
         String str = new String();
@@ -53,7 +60,7 @@ public class TaskC2 {
     }
 
     static String fast(String text) {
-        String[] elemString = text.split(" ");
+        String[] elemString = text1.split(" ");
 
         StringBuilder sb = new StringBuilder();
         String ch = " ";
