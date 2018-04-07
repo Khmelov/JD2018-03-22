@@ -1,15 +1,24 @@
-package by.it.desykevich.jd01_07;
+package by.it.desykevich.jd01_08;
 
 
-
-
-class Scalar extends AbstractVar {
+class Scalar extends Var {
 
     private  double value;
 
     Scalar (double value){
         this.value=value;
     }
+
+    @Override
+    public  Var add (Var other){
+        if (other instanceof Scalar){
+            double res=this.value+((Scalar)other).value;
+            return  new Scalar(res);
+        }
+        return other.add(this);
+    }
+
+
 
     Scalar (String str){
         value=Double.parseDouble(str);
@@ -18,6 +27,8 @@ class Scalar extends AbstractVar {
     Scalar (Scalar otherScalar){
         this.value=otherScalar.value;
     }
+
+
 
 
     @Override
