@@ -15,6 +15,7 @@ class Vector extends AbstractVar {
     Vector(double[] value){
         this.value = value;
     }
+
     Vector(Vector vector){
         this.value = vector.value;
     }
@@ -24,11 +25,6 @@ class Vector extends AbstractVar {
         value = new double[str.length];
         for (int i = 0; i <str.length; i++) {
             value[i]= Double.parseDouble(str[i]);
-
         }
-
-
-
-
     }
 }
