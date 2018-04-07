@@ -30,7 +30,7 @@ public class TaskB2 {
         String[] strMas = Poem.text.split(pattern);
         int sentenceNumber = strMas.length;
         int flag =0;
-        for (int i = 0; ; i++) {
+        for (int i = 0; i<200; i++) {
             for (String s:strMas) {
                 if (stringConvert(s).length()==i) {
                     System.out.println(stringConvert(s));
