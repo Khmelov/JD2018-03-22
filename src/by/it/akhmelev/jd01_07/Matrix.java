@@ -1,8 +1,8 @@
-package by.it.akhmelev.jd01_08;
+package by.it.akhmelev.jd01_07;
 
 import java.util.Arrays;
 
-public class Matrix extends Var {
+public class Matrix extends AbstractVar {
 
     private double[][] value;
 
