@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class TaskC1 {
     public static void main(String[] args) {
-        StringBuilder poem = new StringBuilder(Poem.text);
+        StringBuilder poem = new StringBuilder(Poem.text+"\n");
         Pattern newLine = Pattern.compile("\n");
         Matcher m = newLine.matcher(poem);
         int numOfLines=(poem.length()-m.replaceAll("").length());
