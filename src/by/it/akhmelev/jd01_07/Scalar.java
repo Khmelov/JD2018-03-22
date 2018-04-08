@@ -16,10 +16,8 @@ class Scalar extends AbstractVar{
         this.value=otherScalar.value;
     }
 
-    void ssss(){}
-
-//    @Override
-//    public String toString() {
-//        return Double.toString(value);
-//    }
+    @Override
+    public String toString() {
+        return Double.toString(value);
+    }
 }
