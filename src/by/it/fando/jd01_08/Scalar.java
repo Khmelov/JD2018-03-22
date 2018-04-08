@@ -3,15 +3,14 @@ package by.it.fando.jd01_08;
 class Scalar extends Var {
 
     private double value;
+
     Scalar(double value) {
         this.value = value;
     }
     public Scalar (String str) {
         this.value=Double.parseDouble(str);
     }
-    Scalar(Scalar otherScalar) {
-        this.value=otherScalar.value;
-    }
+    Scalar(Scalar varScalar) { this.value=varScalar.value; }
 
     public double getValue() {
         return value;
@@ -20,8 +19,8 @@ class Scalar extends Var {
     @Override
     public Var add(Var other) {
         if (other instanceof Scalar) {
-            double res=this.value+((Scalar)other).value;
-            return new Scalar(res);
+            double add=this.value+((Scalar)other).value;
+            return new Scalar(add);
         }
         return other.add(this);
     }
@@ -29,8 +28,8 @@ class Scalar extends Var {
     @Override
     public Var sub(Var other) {
         if (other instanceof Scalar) {
-            double res=this.value-((Scalar)other).value;
-            return new Scalar(res);
+            double sub=this.value-((Scalar)other).value;
+            return new Scalar(sub);
         }
         return new Scalar(-1).mul(other.sub(this));
     }
@@ -38,8 +37,8 @@ class Scalar extends Var {
     @Override
     public Var mul(Var other) {
         if (other instanceof Scalar) {
-            double res=this.value*((Scalar)other).value;
-            return new Scalar(res);
+            double mul=this.value*((Scalar)other).value;
+            return new Scalar(mul);
         }
         return other.mul(this);
     }
@@ -47,8 +46,8 @@ class Scalar extends Var {
     @Override
     public Var div(Var other) {
         if (other instanceof Scalar) {
-            double res=this.value/((Scalar)other).value;
-            return new Scalar(res);
+            double div=this.value/((Scalar)other).value;
+            return new Scalar(div);
         }
         return super.div(other);
     }
