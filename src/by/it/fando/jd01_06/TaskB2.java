@@ -10,7 +10,7 @@ public class TaskB2 {
         String[] sent = Poem.text.split("[.?!]");
 
         for (int i = 0; i < sent.length; i++) {
-            sent[i] = sent[i].replaceAll("[^А-Яа-яЁё \\n]","").replaceAll("\\n"," ");
+            sent[i] = sent[i].replaceAll("[^А-Яа-яЁё]+"," ");
             sent[i] = sent[i].trim();
         }
 
