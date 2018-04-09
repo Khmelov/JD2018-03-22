@@ -164,7 +164,7 @@ public class Matrix extends Var {
         }
         else if (other instanceof Matrix){
             if ((this.value.length==((Matrix) other).value[0].length)&&(this.value[0].length==((Matrix) other).value.length))
-            return new Matrix(Helper.mul(this.value,((Matrix) other).value));
+            return new Matrix(mult(this.value,((Matrix) other).value));
             else return super.mul(other);
 
             }
@@ -187,5 +187,23 @@ public class Matrix extends Var {
         }
         else
             return super.div(other);
+    }
+    public static double[][] mult(double[][] matrixLeft, double[][] matrixRight) {
+        double[][] resultMatrix = new double[matrixLeft.length][matrixRight[0].length];
+        int size = matrixRight.length;
+        double sum = 0;
+        for (int i = 0; i < resultMatrix.length; i++) {
+            for (int j = 0; j < resultMatrix[0].length; j++) {
+                for (int k = 0; k < size; k++) {
+                    sum = sum + matrixLeft[i][k] * matrixRight[k][j];
+                }
+                resultMatrix[i][j] = sum;
+                sum = 0;
+
+            }
+
+        }
+        return resultMatrix;
+
     }
 }
