@@ -5,12 +5,12 @@ public class Runner {
         AbstractVar s = new Scalar(3.14);
         AbstractVar s1 = new Scalar("123");
         Scalar s2 = new Scalar((Scalar) s1);
-        AbstractVar v = new Vector(new double[]{1, 2, 3});
+        AbstractVar v = new Vector(new double[]{1.0, 2.0, 4.0});
         AbstractVar v1 = new Vector((Vector) v);
-        AbstractVar v2 = new Vector("{1,2,4}");
-//        AbstractVar m = new Matrix(new double[][]{{1, 2, 3}, {4, 5, 6}});
+        AbstractVar v2 = new Vector("{1.0, 2.0, 4.0}");
+//        AbstractVar m = new Matrix(new double[][]{{ 1.0, 2.0 }, { 3.0, 4.0 }});
 //        AbstractVar m1 = new Matrix((Matrix) m);
-//        AbstractVar m2 = new Matrix("{{1, 2, 3}, {4, 5, 6}}");
+//        AbstractVar m2 = new Matrix("{{ 1.0, 2.0 }, { 3.0, 4.0 }}");
         Object o = new Scalar(10);
 
         System.out.println(s);
