@@ -10,6 +10,8 @@ public class Runner {
         Object o=new Scalar(10);
 
         System.out.println(s);
+        System.out.println(s1);
+        System.out.println(s2);
         System.out.println(v);
         System.out.println(o);
     }
