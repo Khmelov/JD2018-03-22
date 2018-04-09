@@ -10,6 +10,5 @@ public class Runner {
         System.out.println(book2.toString());
         System.out.println(book.close());
 
-
     }
 }
