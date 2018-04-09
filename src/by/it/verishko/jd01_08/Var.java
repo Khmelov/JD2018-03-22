@@ -4,7 +4,7 @@ abstract class Var implements Operation {
 
     @Override
     public String toString() {
-        return "Это класс AbstractVar{}";
+        return "Это класс Var{}";
     }
 
     @Override
