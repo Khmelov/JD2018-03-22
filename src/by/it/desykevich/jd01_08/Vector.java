@@ -56,22 +56,7 @@ public class Vector extends Var {
         } else return super.sub(other);
     }
 
-    @Override
-    public Var mul(Var other) {
-        double[] result = new double[this.value.length];
-        if (other instanceof Scalar) {
-            for (int i = 0; i < result.length; i++) {
-                result[i] = this.value[i] * ((Scalar) other).getValue();
-            }
-            return new Vector(result);
-        } else if (other instanceof Vector && this.value.length == ((Vector) other).value.length) {
-
-            for (int i = 0; i < result.length; i++) {
-                result[i] = this.value[i] * ((Vector) other).value[i];
-            }
-            return new Vector(result);
-        } else return super.mul(other);
-    }
+  
 
     @Override
     public Var div(Var other) {
