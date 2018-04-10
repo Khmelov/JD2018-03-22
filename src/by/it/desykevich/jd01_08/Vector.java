@@ -56,7 +56,7 @@ public class Vector extends Var {
         } else return super.sub(other);
     }
 
-  
+
 
     @Override
     public Var div(Var other) {
