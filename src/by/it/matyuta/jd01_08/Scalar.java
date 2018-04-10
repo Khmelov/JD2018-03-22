@@ -1,9 +1,7 @@
 package by.it.matyuta.jd01_08;
 
 
-import by.it.matyuta.jd01_07.AbstractVar;
-
-class Scalar extends AbstractVar {
+class Scalar extends Var {
 
 private double value;
 
@@ -19,7 +17,44 @@ public Scalar (Scalar otherScalar){
     this.value = otherScalar.value;
 }
 
- @Override
+@Override
+public Var add(Var other){
+        if (other instanceof  Scalar){
+            double res=this.value+((Scalar) other).value;
+            return  new Scalar(res);
+        }
+        return other.add(this);
+}
+
+    @Override
+    public Var sub(Var other){
+        if (other instanceof  Scalar){
+            double res=this.value+((Scalar) other).value;
+            return  new Scalar(res);
+        }
+        return new Scalar(-1).mul(other).add(this);
+    }
+
+    @Override
+    public Var mul(Var other){
+        if (other instanceof  Scalar){
+            double res=this.value*((Scalar) other).value;
+            return  new Scalar(res);
+        }
+        return other.mul(this);
+    }
+
+    @Override
+    public Var div(Var other){
+        if (other instanceof  Scalar){
+            double res=this.value/((Scalar) other).value;
+            return  new Scalar(res);
+        }
+        return super.div(other);
+    }
+
+
+@Override
  public String toString(){
      return Double.toString(value);
 
