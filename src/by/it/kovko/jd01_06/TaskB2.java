@@ -8,9 +8,10 @@ import java.util.regex.Pattern;
 public class TaskB2 {
     public static void main(String[] args) {
         String sentences[];
-        String regex="[.!?]", regexForSentences="[^А-Яа-яёЁ]+", replacement=" ";
+        String regex="[.]", regexForSentences="[^А-Яа-яёЁ]+", replacement=" ";
         Pattern p = Pattern.compile(regexForSentences);
         sentences=Poem.text.replaceAll("\\.{3}"," ").split(regex);
+        //sentences=Poem.text.split(regex);
         StringBuilder sb[] = new StringBuilder[sentences.length];
 
         for (int i = 0; i < sentences.length; i++) {

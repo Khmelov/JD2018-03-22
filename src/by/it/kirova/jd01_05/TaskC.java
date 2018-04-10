@@ -71,7 +71,7 @@ public class TaskC {
                 count++;
             }
         }
-        // printArrayInt(b);
+       // Printer.printArrayIntB(b);
         Helper.mergeSort(b);
         System.out.println("Отсортированный массив B[]");
         Printer.printArrayIntB(b);

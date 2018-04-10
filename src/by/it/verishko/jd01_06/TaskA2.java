@@ -14,7 +14,7 @@ public class TaskA2 {
             if (word.equals(w[i]))
                 return i;
         }
-        return -1 ;
+        return -1;
     }
 
     public static void main(String[] args) {
