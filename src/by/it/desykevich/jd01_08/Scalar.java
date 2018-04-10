@@ -5,10 +5,18 @@ class Scalar extends Var {
 
     private  double value;
 
+    public double getValue() {
+        return value;
+    }
+
+
+
     Scalar (double value){
 
         this.value=value;
     }
+
+
 
     @Override
     public  Var add (Var other){
@@ -60,4 +68,6 @@ class Scalar extends Var {
     public String toString() {
         return  Double.toString(value);
     }
+
+
 }
