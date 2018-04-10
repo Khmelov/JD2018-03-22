@@ -9,6 +9,7 @@ public class AircraftCarrier extends Warship {
 //        return usePlainsForSearch;
 //    }
 
+
     public void setUsePlainsForSearch(boolean usePlainsForSearch) {
         this.usePlainsForSearch = usePlainsForSearch;
     }

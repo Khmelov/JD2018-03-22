@@ -49,5 +49,19 @@ public abstract class Warship implements IShip {
         return 7;
     }
 
+    /** Атака противника в текущих координтах
+     */
     protected abstract void attack();
+
+    /**
+     * Атака заданного противника
+     * @param enemy противник
+     */
+    public void attack(Warship enemy) {
+        double x1 = enemy.x - this.x;
+        double y1 = enemy.y - this.y;
+        moveOnVector(x1, y1);
+        attack();
+        System.out.println("Враг уничтожен!");
+    }
 }
