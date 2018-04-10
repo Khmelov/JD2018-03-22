@@ -8,6 +8,11 @@ public class Encyclopedia extends Book {
     }
 
     @Override
+    public void open(int page) {
+        System.out.println(this);
+    }
+
+    @Override
     public boolean close() {
         return super.read();
     }
