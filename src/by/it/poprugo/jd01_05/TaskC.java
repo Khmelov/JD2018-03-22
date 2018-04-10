@@ -42,52 +42,52 @@ public class TaskC {
             }
         }
         /*nothing*/
-//        char[] pGr = {'\u2554', /*uvl */ '\u2550', /*lin*/
-//                '\u2566', /*tv*/ '\u2557', /* upv*/
-//                '\u256C', /* kryj */ '\u255A', // uln
-//                '\u2569', /*tn*/'\u255D', // upn
-//                '\u2551' /*'\u2551'*/, '\u2502'}; /*'\u2502'*/
-//        for (int ii = 0; ii < pGr.length; ii++) {
-//            System.out.print(pGr[ii]);
-//            if (ii == 3 || ii == 4 || ii == 7)
-//                System.out.println();
-//        }
-//
-//
-//
-//                System.out.print('\u250C');
-//                for (int j = 0; j < 72; j++) {
-//                    System.out.print('\u2500');
-//                    if (j == 71) System.out.println();
-//                }
-//                System.out.println('\u2502' + "Massiv A");
-//                System.out.print('\u2502');
-//                for (int j = 1; j < 80; j++) {
-//                    if (j == 1) System.out.print(pGr[0]);
-//                    else if (j == 17 || j == 33 || j == 48 || j == 64)
-//                        System.out.print(pGr[2]);
-//                    System.out.print(pGr[1]);
-//                }
-//                System.out.println(pGr[3]);
-//                System.out.printf("%s", pGr[9]);
-//                for (int k = 1; k < dim + 1; k++) {
-//                    System.out.print(pGr[8]);
-//                    if (floorMod(k, 5) != 0) {
-//                        System.out.printf(" A[%2d] = %3.2f ", k, z[k - 1]);
-//                    } else {
-//                        System.out.printf(" A[%2d] = %3.2f ", k, z[k - 1]);
-//                        System.out.println(pGr[8]);
-//                        System.out.print(pGr[9]);
-//                        for (int j = 1; j < 80; j++) {
-//                            if (j == 1) System.out.print('\u2560');
-//                            else if (j == 17 || j == 33 || j == 48 || j == 64)
-//                                System.out.print(pGr[4]);
-//                            System.out.print(pGr[1]);
-//                        }
-//                        System.out.println();
-//                        System.out.print(pGr[9]);
-//                    }
-//    }
+        char[] pGr = {'\u2554', /*uvl */ '\u2550', /*lin*/
+                '\u2566', /*tv*/ '\u2557', /* upv*/
+                '\u256C', /* kryj */ '\u255A', // uln
+                '\u2569', /*tn*/'\u255D', // upn
+                '\u2551' /*'\u2551'*/, '\u2502'}; /*'\u2502'*/
+        for (int ii = 0; ii < pGr.length; ii++) {
+            System.out.print(pGr[ii]);
+            if (ii == 3 || ii == 4 || ii == 7)
+                System.out.println();
+        }
+
+
+
+                System.out.print('\u250C');
+                for (int j = 0; j < 72; j++) {
+                    System.out.print('\u2500');
+                    if (j == 71) System.out.println();
+                }
+                System.out.println('\u2502' + "Massiv A");
+                System.out.print('\u2502');
+                for (int j = 1; j < 80; j++) {
+                    if (j == 1) System.out.print(pGr[0]);
+                    else if (j == 17 || j == 33 || j == 48 || j == 64)
+                        System.out.print(pGr[2]);
+                    System.out.print(pGr[1]);
+                }
+                System.out.println(pGr[3]);
+                System.out.printf("%s", pGr[9]);
+                for (int k = 1; k < dim + 1; k++) {
+                    System.out.print(pGr[8]);
+                    if (floorMod(k, 5) != 0) {
+                        System.out.printf(" A[%2d] = %3.2f ", k, z[k - 1]);
+                    } else {
+                        System.out.printf(" A[%2d] = %3.2f ", k, z[k - 1]);
+                        System.out.println(pGr[8]);
+                        System.out.print(pGr[9]);
+                        for (int j = 1; j < 80; j++) {
+                            if (j == 1) System.out.print('\u2560');
+                            else if (j == 17 || j == 33 || j == 48 || j == 64)
+                                System.out.print(pGr[4]);
+                            System.out.print(pGr[1]);
+                        }
+                        System.out.println();
+                        System.out.print(pGr[9]);
+                    }
+    }
 
 
     }
