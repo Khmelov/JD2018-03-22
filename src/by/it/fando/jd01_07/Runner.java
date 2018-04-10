@@ -1,4 +1,4 @@
-package by.it.akhmelev.jd01_07;
+package by.it.fando.jd01_07;
 
 public class Runner {
 
@@ -6,7 +6,7 @@ public class Runner {
         AbstractVar s=new Scalar(3.14);
         AbstractVar s1=new Scalar("123");
         Scalar s2=new Scalar((Scalar) s1);
-        AbstractVar v=new Vector("{1,2,3}");
+        AbstractVar v=new Vector(new double []{1,2,3});
         Object o=new Scalar(10);
 
         System.out.println(s);
@@ -15,5 +15,4 @@ public class Runner {
         System.out.println(v);
         System.out.println(o);
     }
-
 }

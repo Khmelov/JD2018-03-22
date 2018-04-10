@@ -1,6 +1,6 @@
-package by.it.akhmelev.jd01_07;
+package by.it.fando.jd01_07;
 
-class Scalar extends AbstractVar{
+class Scalar extends AbstractVar {
 
     private double value;
 
@@ -8,7 +8,7 @@ class Scalar extends AbstractVar{
         this.value = value;
     }
 
-    Scalar(String str) {
+    public Scalar (String str) {
         this.value=Double.parseDouble(str);
     }
 
@@ -17,7 +17,7 @@ class Scalar extends AbstractVar{
     }
 
     @Override
-    public String toString() {
+    public String toString () {
         return Double.toString(value);
     }
 }
