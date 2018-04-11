@@ -2,7 +2,7 @@ package by.it.poprugo.jd01_09;
 
 import java.util.Scanner;
 
-public class ConcolRunner {
+public class ConsoleRunner {
     public static void main(String[] args) {
         Printer printer=new Printer();
         Parser parser=new Parser();

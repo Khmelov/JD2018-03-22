@@ -5,6 +5,7 @@ import by.it.volchek.jd01_08.Matrix;
 abstract class Var implements Operation {
 
     static Var createVar(String strVar) {
+        strVar=strVar.replaceAll("\\s+","").trim();
         if (strVar.matches(Patterns.SCALAR))
             return new Scalar(strVar);
         if (strVar.matches(Patterns.VECTOR))
