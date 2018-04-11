@@ -110,4 +110,8 @@ class Vector extends Var {
         sb.append("}");
         return sb.toString();
     }
+
+    public double[] getValue() {
+        return value;
+    }
 }
