@@ -217,7 +217,7 @@ public class Test_jd01_08 {
     }
 
     @Test(timeout = 5000, expected = Exception.class)
-    public void testTaskB1_div__Vector() throws Exception {
+    public void testTaskB4_div__Vector() throws Exception {
         Test_jd01_08 ok = run("", false);
         Constructor c = ok.aClass.getDeclaredConstructor(double[].class);
         Object v1 = c.newInstance(new double[]{1, 2, 3});
