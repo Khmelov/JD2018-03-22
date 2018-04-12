@@ -8,11 +8,14 @@ package by.it.matyuta.jd01_07;
         Scalar s2 = new Scalar((Scalar) s1);
 
 
+        AbstractVar v=new Vector("{1,2,3}");
+        Object o=new Scalar(10);
+
         System.out.println(s);
         System.out.println(s1);
         System.out.println(s2);
-
-
+        System.out.println(v);
+        System.out.println(o);
     }
 
-}
+ }

@@ -1,5 +1,4 @@
-package by.it.matyuta.jd01_08;
-
+package by.it.matyuta.jd01_09;
 
 public class Scalar extends Var {
 
