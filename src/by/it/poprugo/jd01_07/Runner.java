@@ -1,7 +1,5 @@
 package by.it.poprugo.jd01_07;
 
-import java.util.concurrent.ArrayBlockingQueue;
-
 public class Runner {
     public static void main(String[] args) {
         AbstractVar s1=new Scalar(3.1415);
@@ -20,6 +18,17 @@ public class Runner {
         String vect3="1.0, 2.0, 5.0";
         AbstractVar v3= new Vector(vect3);
         System.out.println("из строки : "+v3);
+        double[][] matr1 = {{1.0, 2.0}, {3.0, 4.0}};
+        AbstractVar m1 = new Matrix(matr1);
+        System.out.println("из массива double : " + m1);
+        double[][] matr2 = {{1.0, 2.0}, {4.0, 8.0}};
+        m1 = new Matrix(matr2);
+        AbstractVar m2 = m1;
+        System.out.println("из другой матрицы : " + m2);
+
+        String matr3 = "{{1.0, 2.0}, {3.0, 4.0}}";
+        AbstractVar m3= new Matrix(matr3);
+        System.out.println("из строки : "+m3);
 
         /*AbstractVar s = new Scalar(3.14);
 
