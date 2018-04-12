@@ -1,4 +1,8 @@
 package by.it.uskoryaev.jd01_08.oop;
 
-class Model extends SimensMobile{
+abstract class Model implements Mobile{
+    void playMusic(){}
+    void showPichers(){}
+    void onFonar(){}
+
 }

@@ -1,6 +1,16 @@
-package by.it.uskoryaev.jd01_08;
+package by.it.uskoryaev.jd01_09;
 
-public abstract  class Var implements Operation{
+
+abstract  class Var implements Operation{
+    static Var createVar(String strVAr){
+        strVAr = strVAr.replace("\\s+","").trim();
+        if (strVAr.matches(Patterns.SCALAR))return new Scalar(strVAr);
+        if (strVAr.matches(Patterns.VECTOR))return new Vector(strVAr);
+
+        /*if (strVAr.matches(Patterns.MATRIX))return new Matrix(strVAr);
+        return new Matrix(strVAr);*/
+     return null;
+    }
 
     @Override
     public String toString() {
