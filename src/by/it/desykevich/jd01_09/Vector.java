@@ -1,4 +1,4 @@
-package by.it.desykevich.jd01_08;
+package by.it.desykevich.jd01_09;
 
 import java.util.Arrays;
 
@@ -41,9 +41,8 @@ public class Vector extends Var {
         } else return other.add(this);
     }
 
-
     @Override
-    public Var sub (Var other) {
+    public Var sub(Var other) {
         double[] result = new double[this.value.length];
         if (other instanceof Scalar) {
             for (int i = 0; i < result.length; i++) {
@@ -57,6 +56,7 @@ public class Vector extends Var {
             return new Vector(result);
         } else return super.sub(other);
     }
+
 
     @Override
     public Var mul(Var other) {
@@ -73,11 +73,12 @@ public class Vector extends Var {
             Vector vector = (Vector) other;
             double[] res = Arrays.copyOf(this.value, this.value.length);
             for (int i = 0; i < res.length; i++) {
-                sum += res[i] * ((Vector) other).value[i];
+                sum += res[i] * vector.value[i];
             }
             return new Scalar(sum);
         } else return super.mul(other);
     }
+
 
     @Override
     public Var div(Var other) {
