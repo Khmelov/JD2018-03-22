@@ -14,7 +14,9 @@ public class Parser {
             String operation = m.group();
             switch (operation){
                 case "+": return one.add(two);
-
+                case "-": return one.sub(two);
+                case "*": return one.mul(two);
+                case "/": return one.div(two);
             }
 
         }

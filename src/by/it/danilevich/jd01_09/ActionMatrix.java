@@ -1,22 +1,22 @@
 package by.it.danilevich.jd01_09;
 
 public class ActionMatrix {
-     static double findMin(double[ ] arr){
-       double min = Double.MAX_VALUE;
-        for (double elem: arr) {
-            if (elem < min) min = elem;
-        }
-        return min;
-    }
-    static double findMax(double[ ] arr){
+    /* static double findMin(double[ ] arr){
+      double min = Double.MAX_VALUE;
+       for (double elem: arr) {
+           if (elem < min) min = elem;
+       }
+       return min;
+   }
+   /* statdouble findMax(double[ ] arr){
            double max = Double.MIN_VALUE;
         for (double elem: arr) {
             if (elem > max) max = elem;
 
         }
         return max;
-    }
-    static double[] sort(double[ ] arr){
+
+    /*static double[] sort(double[ ] arr){
     //по возрастанию
         int dlina = arr.length;
         while (dlina > 0) {
@@ -32,6 +32,7 @@ public class ActionMatrix {
         //InOut.printArray(arr);
         return arr;
     }
+    */
     static double mulToSum(double[] matr1, double[] matr2){
         double sum =0;
         for (int i = 0; i < matr1.length; i++) {
@@ -106,6 +107,7 @@ public class ActionMatrix {
     }
     static double[ ][ ] mul(double[ ][ ] matrixLeft, double[ ][ ] matrixRight){
         //умножаем строку на столбец
+        if (checkMatrixForMult(matrixLeft,matrixRight)==false) return null;
         double[][] newMas = new double[matrixLeft.length][matrixRight[0].length];
         for (int i= 0; i < matrixLeft.length; i++) {
             double[] matr1 = matrixLeft[i];
@@ -121,7 +123,7 @@ public class ActionMatrix {
         }
         return newMas;
     }
-    static int findIndexElementa(double[] mas, double elem){
+    /*static int findIndexElementa(double[] mas, double elem){
         int ind=-1;
         for (int i = 0; i < mas.length; i++) {
             if (elem==mas[i]) {
@@ -130,9 +132,9 @@ public class ActionMatrix {
             }
         }
         return ind;
-    }
+    }*/
 
-    static boolean checkMatrixForMult(double[][] matrixLeft, double[][] matrixRight){
+    static private boolean checkMatrixForMult(double[][] matrixLeft, double[][] matrixRight){
          //count column in Matrix1== count line in Matrix2
         if (matrixLeft.length!=0 &&matrixRight.length!=0){
             if (matrixLeft[0].length==matrixRight.length) {
