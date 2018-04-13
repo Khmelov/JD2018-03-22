@@ -1,7 +1,7 @@
 package by.it.desykevich.jd01_07;
 
 
-import java.util.Scanner;
+
 
 class Scalar extends AbstractVar {
 
