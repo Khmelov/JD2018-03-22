@@ -6,13 +6,13 @@ import java.lang.reflect.Modifier;
 
 public class PrintMath {
     public static void main(String[] args) {
-        Class<?> mathClass = Math.class;
-        Method[] methods = mathClass.getMethods();
+        Class<Math> mathClass = Math.class;
+        Method[] methods = mathClass.getDeclaredMethods();
         for (Method method : methods) {
-//            Modifier.isPublic(method.getModifiers())
             if ((method.getModifiers() & Modifier.PUBLIC) == Modifier.PUBLIC) {
-                String res = method.toString().replaceAll("java.lang.Math.", "");
-                System.out.println(method);
+                String str = method.toString();
+                String result = str.replace("java.lang.Math.","");
+                System.out.println(result);
             }
         }
         Field[] fields = mathClass.getFields();
