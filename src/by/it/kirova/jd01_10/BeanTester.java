@@ -4,12 +4,10 @@ import java.lang.reflect.Method;
 
 public class BeanTester {
     public static void main(String[] args) {
-
-        Class<Bean> beanClass = Bean.class;
-        Bean b = new Bean();
-        Method[] methods = beanClass.getDeclaredMethods();
-
         try{
+            Class<Bean> beanClass = Bean.class;
+            Method[] methods = beanClass.getDeclaredMethods();
+            Object b = beanClass.getConstructor().newInstance();
             for (Method method : methods) {
                 Param aa = method.getAnnotation(Param.class);
                 if (aa != null) {
