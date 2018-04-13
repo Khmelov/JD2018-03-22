@@ -1,0 +1,26 @@
+package by.it.kirova.jd01_10;
+
+import java.lang.reflect.Method;
+
+public class BeanTester {
+    public static void main(String[] args) {
+
+        Class<Bean> beanClass = Bean.class;
+        Bean b = new Bean();
+        Method[] methods = beanClass.getDeclaredMethods();
+
+        try{
+            for (Method method : methods) {
+                Param aa = method.getAnnotation(Param.class);
+                if (aa != null) {
+                    double res = (double) method.invoke(b, aa.a(), aa.b());
+                    System.out.println(method.getName() + " " + res);
+                }
+            }
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+}
+
