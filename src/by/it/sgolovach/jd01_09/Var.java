@@ -2,12 +2,13 @@ package by.it.sgolovach.jd01_09;
 
 abstract class Var implements Operation {
 
-    static Var createVar(String strVar){
-        if(strVar.matches(Patterns.SCALAR))
+    static Var createVar(String strVar) {
+        strVar = strVar.replace("\\s+", "").trim();
+        if (strVar.matches(Patterns.SCALAR))
             return new Scalar(strVar);
-        if(strVar.matches(Patterns.VECTOR))
+        if (strVar.matches(Patterns.VECTOR))
             return new Vector(strVar);
-        if(strVar.matches(Patterns.MATRIX))
+        if (strVar.matches(Patterns.MATRIX))
             return new Matrix(strVar);
         return null;
 

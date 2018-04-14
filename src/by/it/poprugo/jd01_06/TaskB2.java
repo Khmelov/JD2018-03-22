@@ -6,8 +6,7 @@ import java.util.regex.Pattern;
 public class TaskB2 {
 
     public static void main(String[] args) {
-        //Poem.text.replaceAll("[\\.]{3}", " ");
-        String[] sent = Poem.text.split("[.!?]+");
+        String[] sent = Poem.text.split("[.!?]\n");
         for (int i = 0; i < sent.length; i++) {
             sent[i] = sent[i].replaceAll("[^а-яА-ЯёЁ]+", " ").trim();
         }
