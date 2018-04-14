@@ -15,11 +15,10 @@ public class BeanTester {
         for (Method method : methods) {
             if (method.isAnnotationPresent(Param.class)) {
                 try {
-                    Object o;
-                    o = b.getDeclaredConstructor().newInstance();
+
 
                     Object[] paramV = {method.getAnnotation(Param.class).a(), method.getAnnotation(Param.class).b()};
-                    System.out.println(method.getName() + " " + method.invoke(o, paramV));
+                    System.out.println(method.getName() + " " + method.invoke(b.getDeclaredConstructor().newInstance(), paramV));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
