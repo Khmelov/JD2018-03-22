@@ -12,7 +12,7 @@ public class PrintMath {
             //   if (Modifier.isPublic(method.getModifiers()));
             if ((method.getModifiers()& Modifier.PUBLIC)== Modifier.PUBLIC){
                 String res = method.toString().replaceAll("java.lang.Math.","");
-                System.out.println(method);
+                System.out.println(res);
             }
         }
         Field[] fields = mathClass.getFields();
