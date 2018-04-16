@@ -1,4 +1,4 @@
-package by.it.poprugo.jd01_09;
+package by.it.kovko.calc;
 
 
 import org.junit.Test;
