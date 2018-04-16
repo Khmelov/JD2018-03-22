@@ -28,7 +28,7 @@ public class InOut {
     }
 
 
-    static void printArray(double[ ] arr){
+    private static void printArray(double[ ] arr){
         for (double elem : arr ) {
             System.out.print(elem + " ");
           }
