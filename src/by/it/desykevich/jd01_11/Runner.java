@@ -6,7 +6,7 @@ import java.util.List;
 public class Runner {
     public static void main(String[] args) {
 
-        List<String> mylist=new ListA<>();
+        List<String> mylist=new ListB<>();
         List<String> arlist=new ArrayList<>();
 
         mylist.add("First"); arlist.add("First");

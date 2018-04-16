@@ -26,6 +26,13 @@ public  class  ListA <T> implements List<T>{
     }
 
     @Override
+    public boolean remove(Object o) {
+        int index=indexOf(0);
+        if (index>-1) remove(index);
+        return (index>-1);
+    }
+
+    @Override
     public T remove(int index) {
         T del=elements[index];
         System.arraycopy(elements,index+1,elements,index,size-1-index);
@@ -34,10 +41,9 @@ public  class  ListA <T> implements List<T>{
     }
 
     @Override
-    public boolean remove(Object o) {
-        int index=indexOf(0);
-        if (index>-1) remove(index);
-        return (index>-1);
+    public T get(int index) {
+
+        return elements[index];
     }
 
     @Override
@@ -58,12 +64,6 @@ public  class  ListA <T> implements List<T>{
     }
 
     @Override
-    public T get(int index) {
-
-        return elements[index];
-    }
-
-    @Override
     public String toString() {
         StringBuilder sb=new StringBuilder();
         String delimiter="[";
@@ -78,6 +78,7 @@ public  class  ListA <T> implements List<T>{
     }
 
 
+//fictive
 
     @Override
     public int size() {
@@ -109,10 +110,6 @@ public  class  ListA <T> implements List<T>{
         return null;
     }
 
-
-
-
-
     @Override
     public boolean containsAll(Collection<?> c) {
         return false;
@@ -143,18 +140,10 @@ public  class  ListA <T> implements List<T>{
 
     }
 
-
-
     @Override
     public T set(int index, T element) {
         return null;
     }
-
-
-
-
-
-
 
     @Override
     public int lastIndexOf(Object o) {
@@ -175,30 +164,6 @@ public  class  ListA <T> implements List<T>{
     public List<T> subList(int fromIndex, int toIndex) {
         return null;
     }
-
-
-    //
-//    @SuppressWarnings("all")
-//    private T [] elements=(T[]) new Object[]{};
-//    private int size=0;
-//
-//    @Override
-//    public boolean add (T element) {
-//        if (size==elements.length)
-//            elements=Arrays.copyOf (elements,(size*3)/2+1);
-//        elements[size]=element;
-//        return false;
-//    }
-//
-//    @Override
-//    public int indexOf(Object o) {
-//        return 0;
-//    }
-//
-//    @Override
-//    public T set(int index, T element) {
-//        return null;
-//    }
 
 
 }
