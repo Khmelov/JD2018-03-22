@@ -1,6 +1,6 @@
 package by.it.verishko.jd01_08.oop;
 
-public class Encyclopedia extends Book {
+class Encyclopedia extends Book {
 
 
     Encyclopedia(String name) {
