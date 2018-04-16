@@ -1,4 +1,4 @@
-package by.it.poprugo.jd01_09;
+package by.it.volchek.Calc;
 
 
 import org.junit.Test;

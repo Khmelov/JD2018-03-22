@@ -14,38 +14,35 @@ public class TaskC {
 
 
     }
-    static int[ ][ ] step1(int n) {
-        boolean inspection=false;
-        int[][] mas = new int[n][n];
+    private static int[ ][ ] step1(int n) {
+        boolean max = false;
+        boolean min = false;
+        int [][] mas = new int[n][n];
         do {
             for (int i = 0; i < mas.length; i++) {
-                for (int j = 0; j < mas[i].length; j++) {
-                    int numberRandom = (int) Math.random() * (n*2+1) - n;
-                    if (mas[i][j] == numberRandom){
-                        inspection = true;
-                    }else {
-                        inspection = false;
-                    }
+                for (int j = 0; j < mas.length; j++) {
+                    mas[i][j] = (int) (Math.random() * (2 * n + 1)) - n;
+                    if (mas[i][j] == -n) min = true;
+                    if (mas[i][j] == n) max = true;
                 }
             }
-        }while (inspection){
-            for (int i = 0; i <mas.length ; i++) {
-                for (int j = 0; j <mas.length ; j++) {
-                    System.out.print(mas[i][j]+" ");
+        } while (!max && !min);
+            for (int i = 0; i < mas.length; i++) {
+                for (int j = 0; j < mas.length; j++) {
+                    System.out.print(mas[i][j] + " ");
                 }
                 System.out.println();
             }
-            return mas;
-        }
+        return mas;
     }
 
-
     static int step2(int[ ][ ] mas){
+        return 0;
 
     }
 
     static int[ ][ ] step3(int[ ][ ] mas){
-
+return null;
     }
 
 }
