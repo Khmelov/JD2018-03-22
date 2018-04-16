@@ -1,7 +1,6 @@
 package by.it.volchek.Calc;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by volchek on 07.04.18.
@@ -14,6 +13,22 @@ abstract class Var implements Operation {
         Variables.put(nameVar, valueVar);
         return valueVar;
 
+    }
+    public static void printVariables (){
+        for (Map.Entry<String, Var> stringVarEntry : Variables.entrySet()) {
+            System.out.println(stringVarEntry.getKey()+"="+stringVarEntry.getValue());
+        }
+    }
+    public static void sortVariables (){
+
+        TreeMap<String, Var> sortedVariables = new TreeMap<>();
+        for (Map.Entry entry: Variables.entrySet()){
+            sortedVariables.put((String )entry.getKey(),(Var) entry.getValue());
+
+        }
+        for (Map.Entry<String, Var> stringVarEntry : sortedVariables.entrySet()) {
+            System.out.println(stringVarEntry.getKey()+"="+stringVarEntry.getValue());
+        }
     }
 
 
