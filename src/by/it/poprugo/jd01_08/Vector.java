@@ -42,7 +42,8 @@ class Vector extends Var {
             // Vector res= new Vector(this); //res - это потомок Var, возвращаем Var, а значит имеем право вернуть res
             double[] res = Arrays.copyOf(this.value, this.value.length);
             for (int i = 0; i < res.length; i++) {
-                res[i] += ((Vector) other).value[i];
+                //res[i] += ((Vector) other).value[i];
+                res[i] += vector.value[i];
             }
             return new Vector(res);
             //return res; res - это потомок Var...
@@ -62,7 +63,7 @@ class Vector extends Var {
             return new Vector(res);
         } else if (other instanceof Vector) {
             return new Scalar(-1).mul(other).add(this);
-        } else return super.add(other);
+        } else return super.sub(other);
     }
 
     @Override
@@ -81,7 +82,7 @@ class Vector extends Var {
                 // Vector res= new Vector(this);
                 double res = 0;
                 for (int i = 0; i < this.value.length; i++) {
-                    res += this.value[i] * ((Vector) other).value[i];
+                    res += this.value[i] * vector.value[i];
                 }
                 return new Scalar(res);
             } else {
@@ -101,7 +102,7 @@ class Vector extends Var {
                 res[i] = res[i] / v;
             }
             return new Vector(res);
-        } else return super.mul(other);
+        } else return super.div(other);
     }
 
     @Override
