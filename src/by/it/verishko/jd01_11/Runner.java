@@ -7,11 +7,11 @@ public class Runner {
         List<String> myList = new ListA<>();
         List<String> arList = new ListA<>();
         myList.add("one");
-        myList.add("one");
+        myList.add("two");
         System.out.println(myList);
 
         arList.add("one");
-        arList.add("one");
+        arList.add("two");
         System.out.println(arList);
 
 
