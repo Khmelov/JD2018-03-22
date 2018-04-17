@@ -3,9 +3,10 @@ package by.it.uskoryaev.jd01_02;
 import java.util.Scanner;
 
 public class TaskB {
-    private static Scanner scanner = new Scanner(System.in);
+
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); //исправленно!
         step1();
         step2(scanner.nextInt());
         step3(scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble());
