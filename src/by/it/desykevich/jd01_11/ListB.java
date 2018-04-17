@@ -3,12 +3,20 @@ package by.it.desykevich.jd01_11;
 
 
 import java.util.*;
+import java.util.function.UnaryOperator;
 
 
 public class  ListB <T> implements List<T>{
 
         private T[] elements =(T[])new Object[]{};
         private  int size=0;
+
+
+    @Override
+    public int size() {
+        return size;
+    }
+
 
     @Override
     public String toString() {
@@ -29,7 +37,7 @@ public class  ListB <T> implements List<T>{
         if (size==elements.length)
             elements= Arrays.copyOf(elements,(size*3)/2+1);
         elements[size++]=t;
-        return false;
+        return true;
     }
 
     @Override
@@ -63,13 +71,6 @@ public class  ListB <T> implements List<T>{
     }
 
     @Override
-    public boolean remove(java.lang.Object o) {
-        int index=indexOf(0);
-        if (index>-1) remove(index);
-        return (index>-1);
-    }
-
-    @Override
     public boolean addAll(Collection<? extends T> c) {
 
         if (!c.isEmpty()) {
@@ -82,6 +83,15 @@ public class  ListB <T> implements List<T>{
         }
         return false;
     }
+
+    @Override
+    public boolean remove(Object o) {
+        int index=indexOf(0);
+        if (index>-1) remove(index);
+        return (index>-1);
+    }
+
+
 
 
 
@@ -111,14 +121,26 @@ public class  ListB <T> implements List<T>{
 
 
 
+
+
     @Override
-    public int size() {
-        return 0;
+    public void replaceAll(UnaryOperator<T> operator) {
+
+    }
+
+    @Override
+    public void sort(Comparator<? super T> c) {
+
+    }
+
+    @Override
+    public Spliterator<T> spliterator() {
+        return null;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size==0;
     }
 
     @Override
@@ -132,7 +154,7 @@ public class  ListB <T> implements List<T>{
     }
 
     @Override
-    public java.lang.Object[] toArray() {
+    public Object[] toArray() {
         Object[] array=new Object[this.size];
         for (int i = 0; i < array.length; i++) {
             array[i]=this.get(i);
@@ -192,6 +214,8 @@ public class  ListB <T> implements List<T>{
     public List<T> subList(int fromIndex, int toIndex) {
         return null;
     }
+
+
 
 }
 
