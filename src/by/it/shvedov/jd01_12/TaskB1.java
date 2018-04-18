@@ -1,17 +1,25 @@
 package by.it.shvedov.jd01_12;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class TaskB1 {
+    private List<String> list=new ArrayList<>();
+ private  void numberOfRepetitions(List <String> repeats){
+ final Iterator<String> iterator= repeats.iterator();
+ while(iterator.hasNext()){
+     String repeat=iterator.next();
+       //  if(repeat.equals(repeat.)){
+
+         //}
+ }
+ }
     public static void main(String[] args) {
-        List<String> list=new ArrayList<>();
+        TaskB1 task= new TaskB1();
         Scanner scan=new Scanner(System.in);
-        String str;
-        if(!(str=scan.next()).equals("end")) {
-            list.add(str);
+      String str;
+        while(!(str=scan.next()).equals("end")) {
+            task.list.add(str);
         }
-        System.out.println(list);
+        System.out.println(task.list);
     }
 }

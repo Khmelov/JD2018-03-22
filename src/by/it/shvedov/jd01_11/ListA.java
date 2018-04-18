@@ -3,8 +3,46 @@ package by.it.shvedov.jd01_11;
 import java.util.*;
 
 public class ListA<T> implements List<T> {
-    private T[] elements=(T[])new Object[]{};
-    private int size=0;
+    @SuppressWarnings("all")
+    private T[] elements = (T[]) new Object[]{};
+    private int size = 0;
+
+    @Override
+    public boolean add(T element) {
+        if (size == elements.length)
+            elements = Arrays.copyOf(elements, (size * 3) / 2 + 1);
+        elements[size++] = element;
+        return false;
+    }
+
+    @Override
+    public T remove(int index) {
+        T deleted = elements[index];
+        if (index + 1 != size)
+            System.arraycopy(elements, index + 1, elements, index, size - index - 1);
+        size--;
+        return deleted;
+    }
+
+    @Override
+    public T get(int index) {
+        return elements[index];
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("[");
+        String delimetr = "";
+        for (int i = 0; i < size; i++) {
+            sb.append(delimetr).append(elements[i]);
+            delimetr = ", ";
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
+
+//    =======================================================================================
 
 
     @Override
@@ -37,32 +75,10 @@ public class ListA<T> implements List<T> {
         return null;
     }
 
-    @Override
-    public boolean add(T t) {
-        if(size==elements.length){
-            elements= Arrays.copyOf(elements,(size*3)/2+1);
-        }
-        elements[size++]=t;
-        return false;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb= new StringBuilder("[");
-        String delimetr="";
-        for (int i = 0; i < elements.length; i++) {
-            sb.append(delimetr).append(elements);
-            delimetr=", ";
-        }
-        sb.append("]");
-        return sb.toString();
-    }
 
     @Override
     public boolean remove(Object o) {
-        int index=indexOf(o);
-        if (index>-1) remove(index);
-        return (index>-1);
+        return false;
     }
 
     @Override
@@ -97,50 +113,19 @@ public class ListA<T> implements List<T> {
 
 
     @Override
-    public T get(int index) {
-        return elements[index];
-    }
-
-    @Override
     public T set(int index, T element) {
         return null;
     }
 
-
     @Override
     public void add(int index, T element) {
-        if(size==elements.length){
-            elements= Arrays.copyOf(elements,(size*3)/2+1);
-        }
-        System.arraycopy(elements,index,elements,index+1,size-index);
-        elements[index]=element;
-        size++;
+
     }
 
-    @Override
-    public T remove(int index) {
-       T del=elements[index];
-        System.arraycopy(elements,index+1,elements,index+1,size-1-index);
-        size--;
-        return del;
-    }
 
     @Override
     public int indexOf(Object o) {
-        if(o==null){
-            for (int i = 0; i <size ; i++) {
-              elements[i]=null;
-              return  i;
-            }
-        }
-        else{
-            for (int i = 0; i <size ; i++) {
-                if(o.equals(elements[i]))
-                    return i;
-
-            }
-        }
-        return -1;
+        return 0;
     }
 
     @Override
@@ -162,6 +147,5 @@ public class ListA<T> implements List<T> {
     public List<T> subList(int fromIndex, int toIndex) {
         return null;
     }
-
 
 }
