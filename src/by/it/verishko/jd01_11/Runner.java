@@ -1,6 +1,7 @@
 package by.it.verishko.jd01_11;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -33,5 +34,14 @@ public class Runner {
         myArrList.add("one");
         myArrList.add("two");
         System.out.println(myArrList.size());
+
+        Set<Short> a = new SetC<>();
+        Set<Short> b = new HashSet<>();
+        for (int i = 0; i < 10; i++) {
+            b.add((short) (i * 2));
+            a.add((short) (i * 2));
+        }
+        System.out.println("b " + b.toString());
+        System.out.println("a " + a.toString());
     }
 }
