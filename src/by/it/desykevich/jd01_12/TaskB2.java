@@ -46,10 +46,5 @@ public class TaskB2 {
             linkedPeople.add("n" + i);
 
         }
-        //хотел добавить время выполнения методов, но что-то пошло не так.
-        System.out.println(process(arrayPeople));
-        System.out.println(process(linkedPeople));
-
-
     }
 }
