@@ -9,12 +9,6 @@ public class ListB<T> implements List<T> {
     private int size = 0;
     private int modCount = 0;
 
-    @SuppressWarnings("unchecked")
-    T elementData(int index) {
-        return (T) elements[index];
-    }
-
-
     @Override
     public boolean add(T element) {
         if (size == elements.length)
@@ -40,9 +34,9 @@ public class ListB<T> implements List<T> {
 
     @Override
     public T set(int index, T element) {
-        T oldValue = elementData(index);
+        T delet = elements[index];
         elements[index] = element;
-        return oldValue;
+        return delet;
     }
 
 
@@ -58,26 +52,11 @@ public class ListB<T> implements List<T> {
 
     @Override
     public boolean addAll(Collection<? extends T> c) {
-
-        Object[] a = c.toArray();
-        int numNew = a.length;
-        ensureCapacity(size + numNew);
-        System.arraycopy(a, 0, elements, size, numNew);
-        size += numNew;
-        return numNew != 0;
-    }
-
-    public void ensureCapacity(int minCapacity) {
-        modCount++;
-        int oldCapacity = elements.length;
-        if (minCapacity > oldCapacity) {
-            Object oldData[] = elements;
-            int newCapacity = (oldCapacity * 3) / 2 + 1;
-            if (newCapacity < minCapacity)
-                newCapacity = minCapacity;
-            elements = Arrays.copyOf(elements, newCapacity);
+        T[] eleme = (T[]) c.toArray();
+        for (T t : eleme) {
+            add(t);
         }
-
+        return false;
     }
 
     @Override
@@ -120,7 +99,6 @@ public class ListB<T> implements List<T> {
 
     @Override
     public Object[] toArray() {
-
         return Arrays.copyOf(elements, size);
     }
 
@@ -173,7 +151,6 @@ public class ListB<T> implements List<T> {
     public void clear() {
 
     }
-
 
     @Override
     public int lastIndexOf(Object o) {
