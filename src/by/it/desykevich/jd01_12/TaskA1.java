@@ -1,13 +1,13 @@
 package by.it.desykevich.jd01_12;
 
-import by.it.desykevich.jd01_03.InOut;
-import by.it.desykevich.jd01_04.TaskA;
+
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class TaskA1 {
+
     private List <Integer> grades=new ArrayList<>();
     void clearBad(List<Integer> grades){
 //        grades.removeIf(i->(i<4));
