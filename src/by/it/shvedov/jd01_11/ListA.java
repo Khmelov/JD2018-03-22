@@ -1,11 +1,11 @@
 package by.it.shvedov.jd01_11;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class ListA<T> implements List<T> {
+    private T[] elements=(T[])new Object[]{};
+    private int size=0;
+
 
     @Override
     public int size() {
@@ -39,12 +39,30 @@ public class ListA<T> implements List<T> {
 
     @Override
     public boolean add(T t) {
+        if(size==elements.length){
+            elements= Arrays.copyOf(elements,(size*3)/2+1);
+        }
+        elements[size++]=t;
         return false;
     }
 
     @Override
+    public String toString() {
+        StringBuilder sb= new StringBuilder("[");
+        String delimetr="";
+        for (int i = 0; i < elements.length; i++) {
+            sb.append(delimetr).append(elements);
+            delimetr=", ";
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
+    @Override
     public boolean remove(Object o) {
-        return false;
+        int index=indexOf(o);
+        if (index>-1) remove(index);
+        return (index>-1);
     }
 
     @Override
@@ -77,9 +95,10 @@ public class ListA<T> implements List<T> {
 
     }
 
+
     @Override
     public T get(int index) {
-        return null;
+        return elements[index];
     }
 
     @Override
@@ -87,19 +106,41 @@ public class ListA<T> implements List<T> {
         return null;
     }
 
+
     @Override
     public void add(int index, T element) {
-
+        if(size==elements.length){
+            elements= Arrays.copyOf(elements,(size*3)/2+1);
+        }
+        System.arraycopy(elements,index,elements,index+1,size-index);
+        elements[index]=element;
+        size++;
     }
 
     @Override
     public T remove(int index) {
-        return null;
+       T del=elements[index];
+        System.arraycopy(elements,index+1,elements,index+1,size-1-index);
+        size--;
+        return del;
     }
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        if(o==null){
+            for (int i = 0; i <size ; i++) {
+              elements[i]=null;
+              return  i;
+            }
+        }
+        else{
+            for (int i = 0; i <size ; i++) {
+                if(o.equals(elements[i]))
+                    return i;
+
+            }
+        }
+        return -1;
     }
 
     @Override
@@ -121,4 +162,6 @@ public class ListA<T> implements List<T> {
     public List<T> subList(int fromIndex, int toIndex) {
         return null;
     }
+
+
 }
