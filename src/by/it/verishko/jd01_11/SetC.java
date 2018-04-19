@@ -21,12 +21,13 @@ public class SetC<T> implements Set<T> {
 
     @Override
     public boolean contains(Object o) {
-        for (T element : elements) {
+        for (int i = 0; i < size; i++) {
             if (o == null) {
-                if (element == null)
+                if (elements[i] == null) {
                     return true;
+                }
             } else {
-                if (element != null && element.equals((T) o))
+                if (elements[i] != null && elements[i].equals((T) o))
                     return true;
             }
         }
@@ -50,10 +51,12 @@ public class SetC<T> implements Set<T> {
 
     @Override
     public boolean add(T element) {
-        if (size == elements.length)
-            elements = Arrays.copyOf(elements, (size * 3) / 2 + 1);
-        elements[size] = element;
-        size++;
+        if (!contains(element)) {
+            if (size == elements.length)
+                elements = Arrays.copyOf(elements, (size * 3) / 2 + 1);
+            elements[size] = element;
+            size++;
+        }
         return false;
     }
 
