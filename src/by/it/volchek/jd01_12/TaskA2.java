@@ -1,11 +1,8 @@
 package by.it.volchek.jd01_12;
 
-import com.sun.org.apache.bcel.internal.generic.GETFIELD;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
