@@ -14,7 +14,7 @@ abstract class Var implements Operation {
 
 
     @Override
-    public Var add(Var other) {
+    public Var add(Var other){
         System.out.println("Операция сложения"+this+"+"+other+"невозможна");
         return null;
     }
