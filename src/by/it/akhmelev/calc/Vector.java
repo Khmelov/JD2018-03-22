@@ -90,7 +90,7 @@ class Vector extends Var {
                 result.value[i] /= ((Scalar) otherVar).getValue();
             return result;
         } else
-            return super.sub(otherVar);
+            return super.div(otherVar);
     }
     @Override
     public String toString() {

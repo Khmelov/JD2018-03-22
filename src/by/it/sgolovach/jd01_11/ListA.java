@@ -1,4 +1,4 @@
-package by.it.verishko.jd01_11;
+package by.it.sgolovach.jd01_11;
 
 import java.util.*;
 
@@ -8,6 +8,7 @@ public class ListA<T> implements List<T> {
     private T[] elements = (T[]) new Object[]{};
     private int size = 0;
 
+
     @Override
     public boolean add(T element) {
         if (size == elements.length)
@@ -16,19 +17,22 @@ public class ListA<T> implements List<T> {
         return false;
     }
 
+
     @Override
     public T remove(int index) {
         T deleted = elements[index];
-        if (index + 1 != size)
-            System.arraycopy(elements, index + 1, elements, index, size - index - 1);
+        if (index + 1 < size)
+            System.arraycopy(elements, index + 1, elements, index, size - index-1);
         size--;
         return deleted;
     }
+
 
     @Override
     public T get(int index) {
         return elements[index];
     }
+
 
     @Override
     public String toString() {
@@ -37,13 +41,16 @@ public class ListA<T> implements List<T> {
         for (int i = 0; i < size; i++) {
             sb.append(delimetr).append(elements[i]);
             delimetr = ", ";
+
         }
         sb.append("]");
         return sb.toString();
     }
 
-
-//    =======================================================================================
+    @Override
+    public boolean remove(Object o) {
+        return false;
+    }
 
 
     @Override
@@ -76,11 +83,6 @@ public class ListA<T> implements List<T> {
         return null;
     }
 
-
-    @Override
-    public boolean remove(Object o) {
-        return false;
-    }
 
     @Override
     public boolean containsAll(Collection<?> c) {

@@ -1,28 +1,22 @@
-package by.it.verishko.jd01_11;
+package by.it.romankov.jd01_11;
 
 import java.util.*;
+import java.util.function.UnaryOperator;
 
-public class ListA<T> implements List<T> {
-
-    @SuppressWarnings("all")
+public class ListB<T> implements List<T> {
     private T[] elements = (T[]) new Object[]{};
     private int size = 0;
+
+
+
 
     @Override
     public boolean add(T element) {
         if (size == elements.length)
             elements = Arrays.copyOf(elements, (size * 3) / 2 + 1);
-        elements[size++] = element;
+        elements[size] = element;
+        size++;
         return false;
-    }
-
-    @Override
-    public T remove(int index) {
-        T deleted = elements[index];
-        if (index + 1 != size)
-            System.arraycopy(elements, index + 1, elements, index, size - index - 1);
-        size--;
-        return deleted;
     }
 
     @Override
@@ -31,35 +25,50 @@ public class ListA<T> implements List<T> {
     }
 
     @Override
+    public T set(int index, T element) {
+        T deleted = elements[index];
+        elements[index] = element;
+        return deleted;
+    }
+
+    @Override
+    public void add(int index, T element) {
+        if (size == elements.length)
+            elements = Arrays.copyOf(elements, (size * 3) / 2 + 1);
+        System.arraycopy(elements, index, elements, index + 1, size - index);
+        set(index, element);
+        size++;
+    }
+
+    @Override
+    public T remove(int index) {
+        T deleted = elements[index];
+        if (index + 1 < size)
+            System.arraycopy(elements, index + 1, elements, index, size - index - 1);
+        size--;
+        return deleted;
+    }
+
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("[");
-        String delimetr = "";
+        StringBuilder delimiter = new StringBuilder();
         for (int i = 0; i < size; i++) {
-            sb.append(delimetr).append(elements[i]);
-            delimetr = ", ";
+            sb.append(delimiter).append(elements[i]);
+            delimiter = new StringBuilder(", ");
         }
         sb.append("]");
         return sb.toString();
     }
 
-
-//    =======================================================================================
-
-
     @Override
-    public int size() {
-        return 0;
-    }
-
-    @Override
-    public boolean isEmpty() {
+    public boolean addAll(Collection<? extends T> c) {
+        for (T t : c) {
+            add(t);
+        }
         return false;
     }
 
-    @Override
-    public boolean contains(Object o) {
-        return false;
-    }
 
     @Override
     public Iterator<T> iterator() {
@@ -76,7 +85,6 @@ public class ListA<T> implements List<T> {
         return null;
     }
 
-
     @Override
     public boolean remove(Object o) {
         return false;
@@ -88,7 +96,8 @@ public class ListA<T> implements List<T> {
     }
 
     @Override
-    public boolean addAll(Collection<? extends T> c) {
+    public boolean contains(Object o) {
+
         return false;
     }
 
@@ -108,24 +117,33 @@ public class ListA<T> implements List<T> {
     }
 
     @Override
+    public void replaceAll(UnaryOperator<T> operator) {
+
+    }
+    @Override
+    public int size() {
+        return size;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+
+    @Override
+    public void sort(Comparator<? super T> c) {
+
+    }
+
+    @Override
     public void clear() {
 
     }
 
-
-    @Override
-    public T set(int index, T element) {
-        return null;
-    }
-
-    @Override
-    public void add(int index, T element) {
-
-    }
-
-
     @Override
     public int indexOf(Object o) {
+
         return 0;
     }
 

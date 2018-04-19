@@ -1,26 +1,27 @@
-package by.it.verishko.jd01_11;
+package by.it.matyuta.jd01_11;
 
 import java.util.*;
 
 public class ListA<T> implements List<T> {
 
-    @SuppressWarnings("all")
-    private T[] elements = (T[]) new Object[]{};
-    private int size = 0;
+
+    private T[] elements= (T[]) new Object[]{};
+    private int size=0;
 
     @Override
     public boolean add(T element) {
-        if (size == elements.length)
-            elements = Arrays.copyOf(elements, (size * 3) / 2 + 1);
-        elements[size++] = element;
+        if (size==elements.length)
+            elements=Arrays.copyOf(elements,(size*3)/2+1);
+        elements[size++]=element;
         return false;
     }
 
+
     @Override
     public T remove(int index) {
-        T deleted = elements[index];
-        if (index + 1 != size)
-            System.arraycopy(elements, index + 1, elements, index, size - index - 1);
+        T deleted=elements[index];
+        if ((index+1)<size)
+            System.arraycopy(elements,index+1,elements,index,size-index-1);
         size--;
         return deleted;
     }
@@ -32,18 +33,16 @@ public class ListA<T> implements List<T> {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("[");
-        String delimetr = "";
+        StringBuilder sb=new StringBuilder("[");
+        String delimiter="";
         for (int i = 0; i < size; i++) {
-            sb.append(delimetr).append(elements[i]);
-            delimetr = ", ";
+            sb.append(delimiter).append(elements[i]);
+            delimiter=", ";
         }
         sb.append("]");
         return sb.toString();
     }
 
-
-//    =======================================================================================
 
 
     @Override
