@@ -2,8 +2,6 @@ package by.it.volchek.jd01_12;
 
 import java.util.*;
 
-import static javafx.scene.input.KeyCode.K;
-import static javafx.scene.input.KeyCode.V;
 
 /**
  * Created by volchek on 18.04.18.
