@@ -39,7 +39,7 @@ public class ListA<T> implements List<T> {
             delimetr = ", ";
         }
         sb.append("]");
-        return "ListA{}";
+        return sb.toString();
     }
 
 
