@@ -1,25 +1,23 @@
 package by.it.shvedov.jd01_12;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TaskB1 {
-    private List<String> list=new ArrayList<>();
- private  void numberOfRepetitions(List <String> repeats){
- final Iterator<String> iterator= repeats.iterator();
- while(iterator.hasNext()){
-     String repeat=iterator.next();
-       //  if(repeat.equals(repeat.)){
-
-         //}
- }
- }
     public static void main(String[] args) {
-        TaskB1 task= new TaskB1();
-        Scanner scan=new Scanner(System.in);
-      String str;
-        while(!(str=scan.next()).equals("end")) {
-            task.list.add(str);
-        }
-        System.out.println(task.list);
+        Scanner scanner = new Scanner(System.in);
+        String line;
+        StringBuilder words = new StringBuilder();
+        while(!(line = scanner.next()).equals("end")) words.append(line).append(" ");
+        Matcher m = Pattern.compile("[A-Za-z']+").matcher(words);
+        List<String> allWords = new ArrayList<>();
+        while (m.find()) allWords.add(m.group());
+        Collections.replaceAll(allWords,"isn't", "don't");
+        Set<String> wordsSet = new HashSet<>(allWords);
+        Map<String, Integer> wordsMap = new HashMap<>();
+        for (String word : wordsSet)
+            wordsMap.put(word, Collections.frequency(allWords, word));
+        System.out.println(wordsMap.toString());
     }
 }
