@@ -4,7 +4,7 @@ package by.it.kovko.calc;
 import java.util.Scanner;
 
 public class ConsoleRunner {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CalcException {
         Printer printer = new Printer();
         Parser parser = new Parser();
         Scanner scanner = new Scanner(System.in);
@@ -14,8 +14,12 @@ public class ConsoleRunner {
                 Var.printVar();
             if (line.equals("sortvar"))
                 Var.sortVar();
-            Var result = parser.calc(line);
-            printer.print(result);
+            try {
+                Var result = parser.calc(line);
+                printer.print(result);
+            } catch (CalcException e){
+                System.out.println(e.getMessage());
+            }
         }
     }
 }
