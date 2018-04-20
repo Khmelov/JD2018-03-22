@@ -14,8 +14,15 @@ public class ConsoleRunner {
        while (!(line = scanner.nextLine()).equals("end")){
            if (line.equals("printvar")) {Var.printVariables(); continue;}
            if (line.equals("sortvar")) {Var.sortVariables(); continue;}
-           Var result =parser.calc(line);
-           printer.print(result);
+           try {
+
+
+               Var result = parser.calc(line);
+               printer.print(result);
+           }
+           catch (CalcException e){
+               System.out.println(e.getMessage());
+           }
 
        }
     }
