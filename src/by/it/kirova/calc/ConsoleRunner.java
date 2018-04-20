@@ -21,9 +21,14 @@ public class ConsoleRunner {
                     Var.sortvar();
                     break;
                 default:
-                    Var result = parser.calc(line);
-                    printer.print(result);
-                    break;
+                    try {
+                        Var result = parser.calc(line);
+                        Printer.print(result);
+                    }
+                    catch (CalcExeption e) {
+                        System.out.println(e.getMessage());
+                    }
+
             }
 
         }

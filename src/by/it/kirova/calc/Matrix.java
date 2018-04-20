@@ -28,7 +28,7 @@ public class Matrix extends Var {
     }
 
     @Override
-    public Var add(Var other) {
+    public Var add(Var other)throws CalcExeption {
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();
@@ -44,6 +44,8 @@ public class Matrix extends Var {
             return new Matrix(sum);
         } else if (other instanceof Matrix) {
             double[][] sum = new double[this.value.length][this.value[0].length];
+            if ((this.value.length != ((Matrix) other).value.length) || (this.value[0].length != ((Matrix) other).value[0].length))
+                throw new CalcExeption("Матрицы имеют разную размерность. Операция сложения невозможна");
             for (int i = 0; i < this.value.length; i++) {
                 System.arraycopy(this.value[i], 0, sum[i], 0, this.value[i].length);
             }
@@ -59,7 +61,7 @@ public class Matrix extends Var {
     }
 
     @Override
-    public Var sub(Var other) {
+    public Var sub(Var other) throws CalcExeption{
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();
@@ -75,6 +77,8 @@ public class Matrix extends Var {
             return new Matrix(sub);
         } else if (other instanceof Matrix) {
             double[][] sub = new double[this.value.length][this.value[0].length];
+            if ((this.value.length != ((Matrix) other).value.length) || (this.value[0].length != ((Matrix) other).value[0].length))
+                throw new CalcExeption("Матрицы имеют разную размерность. Операция вычитания невозможна");
             for (int i = 0; i < this.value.length; i++) {
                 System.arraycopy(this.value[i], 0, sub[i], 0, this.value[i].length);
             }
@@ -90,7 +94,7 @@ public class Matrix extends Var {
     }
 
     @Override
-    public Var mul(Var other) {
+    public Var mul(Var other)throws CalcExeption {
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();
@@ -119,6 +123,8 @@ public class Matrix extends Var {
             }
             return new Vector(mulVector);
         } else {
+            if ((this.value.length != ((Matrix) other).value.length) || (this.value[0].length != ((Matrix) other).value[0].length))
+                throw new CalcExeption("Матрицы имеют разную размерность. Операция умножения невозможна");
             double[][] mul = new double[this.value.length][this.value[0].length];
             double[][] mulMatrix = new double[this.value.length][this.value[0].length];
             for (int i = 0; i < this.value.length; i++) {
@@ -138,7 +144,7 @@ public class Matrix extends Var {
 
 
     @Override
-    public Var div(Var other) {
+    public Var div(Var other)throws CalcExeption{
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();
@@ -146,6 +152,8 @@ public class Matrix extends Var {
             for (int i = 0; i < this.value.length; i++) {
                 System.arraycopy(this.value[i], 0, div[i], 0, this.value[i].length);
             }
+            if (v == 0)
+                throw new CalcExeption("Деление на ноль");
             for (int i = 0; i < div.length; i++) {
                 for (int j = 0; j < div[i].length; j++) {
                     div[i][j] /= v;
