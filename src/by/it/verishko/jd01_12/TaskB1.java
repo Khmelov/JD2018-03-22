@@ -1,21 +1,25 @@
 package by.it.verishko.jd01_12;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TaskB1 {
+    private static HashMap<String, Integer> wordsMap = new HashMap<>();
+
     public static void main(String[] args) {
-        List<Integer> arr = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
-        String s = sc.next();
         String str;
-        int pos = 0;
-        while (!(str = sc.next()).equals("end")) {
-            Integer value = Integer.valueOf(str);
-            if (value > 0)
-                arr.add(pos++, value);
-            else if (value > 100) break;
-        }
+        StringBuilder word = new StringBuilder();
+        while (!(str = sc.next()).equals("end")) word.append(str).append(" ");
+        Matcher m = Pattern.compile("[A-Za-z']+").matcher(word);
+        List<String> allWords = new ArrayList<>();
+        while (m.find()) allWords.add(m.group());
+        Collections.replaceAll(allWords, "isn't", "don't");
+        Set<String> wordsSet = new HashSet<>(allWords);
+        for (String w : wordsSet)
+            wordsMap.put(w, Collections.frequency(allWords, w));
+        System.out.println(wordsMap.toString());
     }
 }
+
