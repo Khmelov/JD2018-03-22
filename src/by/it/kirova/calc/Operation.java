@@ -1,11 +1,11 @@
 package by.it.kirova.calc;
 
 interface Operation {
-    Var add(Var other);
+    Var add(Var other) throws CalcExeption;
 
-    Var sub(Var other);
+    Var sub(Var other) throws CalcExeption;
 
-    Var mul(Var other);
+    Var mul(Var other) throws CalcExeption;
 
-    Var div(Var other);
+    Var div(Var other) throws CalcExeption;
 }
