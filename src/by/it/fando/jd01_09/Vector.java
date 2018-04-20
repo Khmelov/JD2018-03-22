@@ -1,8 +1,8 @@
-package by.it.fando.jd01_08;
+package by.it.fando.jd01_09;
 
 import java.util.Arrays;
 
-class Vector extends Var{
+class Vector extends Var {
 
     private double [] value;
     Vector(double[ ] value) {this.value = value;}
