@@ -60,22 +60,25 @@ public class Matrix extends Var {
     }
 
     @Override
-    public Var add(Var other) {
-        if (other instanceof Scalar) {
-            double[][] res= this.value.clone();
-            for (int i = 0; i < this.value.length; i++) {
-                res[i]=this.value[i].clone();
-            }
-            for (int i = 0; i < res.length; i++) {
-                for (int j = 0; j < res[0].length; j++) {
-                    res[i][j]=res[i][j]+((Scalar)other).getValue();
+    public Var add(Var other) throws CalcException {
+
+            if (other instanceof Scalar) {
+                double[][] res = this.value.clone();
+                for (int i = 0; i < this.value.length; i++) {
+                    res[i] = this.value[i].clone();
                 }
+                for (int i = 0; i < res.length; i++) {
+                    for (int j = 0; j < res[0].length; j++) {
+                        res[i][j] = res[i][j] + ((Scalar) other).getValue();
+                    }
+                }
+                return new Matrix(res);
+
             }
-            return new Matrix(res);
 
 
 
-        }
+
         else if (other instanceof Matrix){
             if ((this.value.length==((Matrix) other).value.length)&&(this.value[0].length==((Matrix) other).value[0].length))
             {
@@ -97,7 +100,7 @@ public class Matrix extends Var {
     }
 
     @Override
-    public Var sub(Var other) {
+    public Var sub(Var other) throws CalcException {
         if (other instanceof Scalar) {
             double[][] res= this.value.clone();
             for (int i = 0; i < this.value.length; i++) {
@@ -129,7 +132,7 @@ public class Matrix extends Var {
     }
 
     @Override
-    public Var mul(Var other) {
+    public Var mul(Var other) throws CalcException {
         if (other instanceof Scalar) {
             double[][] res= this.value.clone();
             for (int i = 0; i < this.value.length; i++) {
@@ -169,14 +172,21 @@ public class Matrix extends Var {
 
 
     @Override
-    public Var div(Var other) {
+    public Var div(Var other) throws CalcException {
         if (other instanceof Scalar) {
             double[][] res= this.value.clone();
             for (int i = 0; i < this.value.length; i++) {
                 res[i]=this.value[i].clone();
             }            for (int i = 0; i < res.length; i++) {
+                try{
+                    if (((Scalar)other).getValue()==0) throw new ArithmeticException();
                 for (int j = 0; j < res[0].length; j++) {
                     res[i][j]=res[i][j]/((Scalar)other).getValue();
+                }
+                }
+                catch (ArithmeticException e){
+                    System.out.println("Попытка разделить матрицу на ноль!");
+                    System.out.println(e.getClass()+e.getMessage()+e.getStackTrace());
                 }
             }
             return new Matrix(res);
@@ -184,22 +194,36 @@ public class Matrix extends Var {
         else
             return super.div(other);
     }
-    public static double[][] mult(double[][] matrixLeft, double[][] matrixRight) {
-        double[][] resultMatrix = new double[matrixLeft.length][matrixRight[0].length];
-        int size = matrixRight.length;
-        double sum = 0;
-        for (int i = 0; i < resultMatrix.length; i++) {
-            for (int j = 0; j < resultMatrix[0].length; j++) {
-                for (int k = 0; k < size; k++) {
-                    sum = sum + matrixLeft[i][k] * matrixRight[k][j];
+    public static double[][] mult(double[][] matrixLeft, double[][] matrixRight) throws CalcException {
+
+
+            double[][] resultMatrix = new double[matrixLeft.length][matrixRight[0].length];
+            int size = matrixRight.length;
+            double sum = 0;
+        try {
+            if (!(matrixLeft.length == matrixRight[0].length) && (matrixLeft[0].length == matrixRight.length))
+                throw new CalcException();
+        }
+        catch (CalcException e){
+            System.out.println("Матрицы с такими размерами нельзя перемножить"+e.getMessage());
+        }
+
+
+            for (int i = 0; i < resultMatrix.length; i++) {
+                for (int j = 0; j < resultMatrix[0].length; j++) {
+                    for (int k = 0; k < size; k++) {
+                        sum = sum + matrixLeft[i][k] * matrixRight[k][j];
+                    }
+                    resultMatrix[i][j] = sum;
+                    sum = 0;
+
+
                 }
-                resultMatrix[i][j] = sum;
-                sum = 0;
 
             }
+            return resultMatrix;
 
-        }
-        return resultMatrix;
+
 
     }
 }
