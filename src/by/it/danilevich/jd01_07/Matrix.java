@@ -40,12 +40,12 @@ public class Matrix extends AbstractVar{
     public String toString(){
         String rez ="", symbBegin = "{", symbEnd="}";
         int lastString = value.length;
-        int lastColumn = value[lastString-1].length;
+      //  int lastColumn = value[lastString-1].length;
         rez = rez + symbBegin;
         for (int i = 0; i < lastString; i++) {
-            rez = rez + symbBegin;
+            rez = rez.concat(symbBegin);
             for (int j = 0; j < (value[i].length -1); j++) {
-                rez = rez + Double.toString(value[i][j]) +", ";
+                rez = rez.concat(Double.toString(value[i][j])) +", ";
             }
             if (i==(lastString-1) ) rez = rez + Double.toString(value[i][value[i].length-1])+ symbEnd;
             else rez = rez + Double.toString(value[i][value[i].length-1])+ symbEnd+", ";
