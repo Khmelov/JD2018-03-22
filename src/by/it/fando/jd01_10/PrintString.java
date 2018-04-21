@@ -1,4 +1,4 @@
-package by.it.fando.jd_01_10;
+package by.it.fando.jd01_10;
 
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;

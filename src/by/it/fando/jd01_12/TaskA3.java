@@ -1,4 +1,4 @@
-package by.it.fando.jd_01_12;
+package by.it.fando.jd01_12;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ public class TaskA3 {
         String str;
         List<Integer> list = new ArrayList<>();
         int endPositive = 0;
-        while ((str = scanner.next()).equals("end")) {
+        while (!(str = scanner.next()).equals("end")) {
             Integer element = Integer.valueOf(str);
             if (element > 0)
                 list.add(endPositive++,element);

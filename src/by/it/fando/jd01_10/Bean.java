@@ -1,4 +1,4 @@
-package by.it.fando.jd_01_10;
+package by.it.fando.jd01_10;
 
 public class Bean {
     @Param(a=8, b=10)

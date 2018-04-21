@@ -1,4 +1,4 @@
-package by.it.fando.jd_01_11;
+package by.it.fando.jd01_11;
 
 
 import org.junit.Test;

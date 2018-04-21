@@ -1,4 +1,4 @@
-package by.it.fando.jd_01_10;
+package by.it.fando.jd01_10;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
