@@ -27,7 +27,7 @@ public class Vector extends Var {
         double[] arr = new double[num.length];
         for (int i = 0; i < num.length; i++) {
             String symbol = String.valueOf(num[i]);
-            arr[i] = Double.parseDouble((String) symbol);
+            arr[i] = Double.parseDouble( symbol);
         }
         this.value = arr;
 
@@ -38,7 +38,7 @@ public class Vector extends Var {
         if (value.length>0){
             rez ="{";
             for (int i = 0; i < (value.length-1); i++) {
-                rez = rez + String.valueOf(value[i])+", ";
+                rez = rez.concat(String.valueOf(value[i]))+", ";
               }
               rez = rez + String.valueOf(value[value.length-1]);
             rez =rez+"}";

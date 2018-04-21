@@ -29,7 +29,7 @@ public class TaskC {
         }
         System.out.println();
         double sum =0;
-        double sredn =0;
+        double sredn;
         System.out.println("Новый массив с элементами > 3.5");
         for (int j = 0; j< mas35.length; j++ ) {
             System.out.printf("%s[% -3d]=%-10.4f","B",j,mas35[j]);
@@ -37,7 +37,7 @@ public class TaskC {
             sum = sum + mas35[j];
           }
         System.out.println();
-          sredn = sum/mas35.length;
+        sredn = sum/mas35.length;
         System.out.println(" Среднее арифметическое = " + sredn);
         System.out.println();
 

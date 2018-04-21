@@ -12,7 +12,7 @@ abstract class Var implements Operation {
         return valueVar;
     }
 
-    static Var createVar(String strVar) {
+    static Var createVar(String strVar) throws CalcException {
         strVar = strVar.replaceAll("\\s+", "").trim();
         if (strVar.matches(Patterns.SCALAR))
             return new Scalar(strVar);
@@ -22,7 +22,7 @@ abstract class Var implements Operation {
             return new Matrix(strVar);
         if (strVar.matches(Patterns.VARNAME))
             return variables.get(strVar);
-        return null;
+        throw new CalcException("Ошибка обработки:" + strVar);
     }
 
     @Override
@@ -31,25 +31,25 @@ abstract class Var implements Operation {
     }
 
     @Override
-    public Var add(Var other) {
+    public Var add(Var other) throws CalcException {
         System.out.printf("Операция сложения %s+%s невозможна\n", this, other);
         return null;
     }
 
     @Override
-    public Var sub(Var other) {
+    public Var sub(Var other) throws CalcException {
         System.out.printf("Операция вычитания %s-%s невозможна\n", this, other);
         return null;
     }
 
     @Override
-    public Var mul(Var other) {
+    public Var mul(Var other) throws CalcException {
         System.out.printf("Операция умножения %s*%s невозможна\n", this, other);
         return null;
     }
 
     @Override
-    public Var div(Var other) {
+    public Var div(Var other) throws CalcException {
         System.out.printf("Операция деления %s/%s невозможна\n", this, other);
         return null;
     }
