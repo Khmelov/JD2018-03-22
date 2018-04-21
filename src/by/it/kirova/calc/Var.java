@@ -11,7 +11,7 @@ public abstract class Var implements Operation {
         return valueVar;
     }
 
-    static Var createVar(String strVar) {
+    static Var createVar(String strVar) throws CalcExeption {
         strVar = strVar.replaceAll("\\s+", "").trim();
         if (strVar.matches(Patterns.SCALAR))
             return new Scalar(strVar);
@@ -21,7 +21,7 @@ public abstract class Var implements Operation {
             return new Matrix(strVar);
         if (strVar.matches(Patterns.VARNAME))
             return variables.get(strVar);
-        return null;
+        throw new CalcExeption("Ошибка обработки:" + strVar);
     }
 
     public static void printvar() {
@@ -36,7 +36,7 @@ public abstract class Var implements Operation {
     public static void sortvar() {
         SortedSet<String> sortedKeys = new TreeSet<>(ALPHABETICAL_ORDER);
         sortedKeys.addAll(variables.keySet());
-        for (String key: sortedKeys) {
+        for (String key : sortedKeys) {
             Var value = variables.get(key);
             System.out.print(key + "=");
             Printer.print(value);
@@ -44,13 +44,13 @@ public abstract class Var implements Operation {
     }
 
     private static Comparator<String> ALPHABETICAL_ORDER =
-        (String str1, String str2) -> {
-            int res = String.CASE_INSENSITIVE_ORDER.compare(str1, str2);
-            if (res == 0) {
-                res = str1.compareTo(str2);
-            }
-            return res;
-        };
+            (String str1, String str2) -> {
+                int res = String.CASE_INSENSITIVE_ORDER.compare(str1, str2);
+                if (res == 0) {
+                    res = str1.compareTo(str2);
+                }
+                return res;
+            };
 
     @Override
     public String toString() {
@@ -58,26 +58,22 @@ public abstract class Var implements Operation {
     }
 
     @Override
-    public Var add(Var other) {
-        System.out.printf("Операция сложения %s+%s невозможна\n", this, other);
-        return null;
+    public Var add(Var other) throws CalcExeption {
+        throw new CalcExeption("Операция сложения " + this + "+" + other + " невозможна");
     }
 
     @Override
-    public Var sub(Var other) {
-        System.out.printf("Операция вычитания %s-%s невозможна\n", this, other);
-        return null;
+    public Var sub(Var other) throws CalcExeption {
+        throw new CalcExeption("Операция вычитания " + this + "-" + other + " невозможна");
     }
 
     @Override
-    public Var mul(Var other) {
-        System.out.printf("Операция умножения %s*%s невозможна\n", this, other);
-        return null;
+    public Var mul(Var other) throws CalcExeption {
+        throw new CalcExeption("Операция умножения " + this + "*" + other + " невозможна");
     }
 
     @Override
-    public Var div(Var other) {
-        System.out.printf("Операция деления %s/%s невозможна\n", this, other);
-        return null;
+    public Var div(Var other) throws CalcExeption {
+        throw new CalcExeption("Операция деления " + this + "/" + other + " невозможна");
     }
 }

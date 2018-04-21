@@ -1,7 +1,5 @@
 package by.it.fando.jd01_08;
 
-import by.it.fando.jd01_07.AbstractVar;
-
 import java.util.Arrays;
 
 class Vector extends Var{

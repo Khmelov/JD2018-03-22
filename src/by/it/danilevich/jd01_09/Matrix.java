@@ -1,12 +1,13 @@
 package by.it.danilevich.jd01_09;
 
+
 public class Matrix extends Var {
     private double[][] value;
     Matrix(double[ ][ ]  value){
         this.value = value;
-      }
+    }
 
-     Matrix(Matrix matrix){
+    Matrix(Matrix matrix){
         this.value = matrix.value;
     }
 
@@ -19,20 +20,20 @@ public class Matrix extends Var {
         int countColumn = 0;
         //
         if (tempArr.length !=0) {
-            String tempS = tempArr[0].replaceAll("\\{", "");
-            tempS = tempS.replaceAll("\\}", "");
+            String tempS = tempArr[0].replaceAll("\\{}", "");
+            //tempS = tempS.replaceAll("\\}", "");
             String[] temp = tempS.split(",");
             countColumn = temp.length;
-            tempS = "{" + tempS + "}";
+            //tempS = "{" + tempS + "}";
         }
 
         double[][] arr = new double[tempArr.length][countColumn];
         for (int i = 0; i < tempArr.length; i++) {
-            String tempS = tempArr[i].replaceAll("\\{", "");
-            tempS = tempS.replaceAll("\\}", "");
+            String tempS = tempArr[i].replaceAll("\\{}", "");
+            //  tempS = tempS.replaceAll("\\}", "");
             tempS = "{" + tempS + "}";
-             Vector v = new Vector(tempS);
-             arr[i] = v.getValue();
+            Vector v = new Vector(tempS);
+            arr[i] = v.getValue();
         }
         this.value = arr;
 
@@ -42,12 +43,12 @@ public class Matrix extends Var {
     public String toString(){
         String rez ="", symbBegin = "{", symbEnd="}";
         int lastString = value.length;
-        int lastColumn = value[lastString-1].length;
+        //int lastColumn = value[lastString-1].length;
         rez = rez + symbBegin;
         for (int i = 0; i < lastString; i++) {
-            rez = rez + symbBegin;
+            rez = rez .concat(symbBegin);
             for (int j = 0; j < (value[i].length -1); j++) {
-                rez = rez + Double.toString(value[i][j]) +", ";
+                rez = rez.concat(Double.toString(value[i][j])) +", ";
             }
             if (i==(lastString-1) ) rez = rez + Double.toString(value[i][value[i].length-1])+ symbEnd;
             else rez = rez + Double.toString(value[i][value[i].length-1])+ symbEnd+", ";
@@ -60,12 +61,12 @@ public class Matrix extends Var {
     @Override
     public Var mul(Var other) {
         if (other instanceof Matrix){
-           double[][] rez = ActionMatrix.mul( this.value, ((Matrix) other).value);
-           return  (new Matrix(rez));
+            double[][] rez = ActionMatrix.mul( this.value, ((Matrix) other).value);
+            return  (new Matrix(rez));
         }
         else if (other instanceof Vector){
-                 double[] rez = ActionMatrix.mul( this.value, ((Vector) other).getValue());
-                return  (new Vector(rez));
+            double[] rez = ActionMatrix.mul( this.value, ((Vector) other).getValue());
+            return  (new Vector(rez));
         }
         else if (other instanceof Scalar){
             double[][] rez = ActionMatrix.mul( ((Scalar) other).getValue(),this.value);
@@ -90,8 +91,8 @@ public class Matrix extends Var {
     @Override
     public Var sub(Var other) {
         if (other instanceof Matrix){
-         double[][] rez = ActionMatrix.sub(this.value, ((Matrix) other).value);
-         return (new Matrix(rez));
+            double[][] rez = ActionMatrix.sub(this.value, ((Matrix) other).value);
+            return (new Matrix(rez));
         }
         else if (other instanceof Scalar){
             double[][] rez = ActionMatrix.sub(this.value, ((Scalar) other).getValue());
