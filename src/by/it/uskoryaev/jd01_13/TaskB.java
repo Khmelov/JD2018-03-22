@@ -9,15 +9,18 @@ public class TaskB {
         Scanner scanner = new Scanner(System.in);
         String str;
         List<Double> listNumb = new ArrayList<>();
-        double numCor=0;
-        try {
-            while (!(str = scanner.next()).equals("end")) {
-                double numb = Double.parseDouble(str);
-                System.out.println(numb);
+        double numCor=0, numb =0 ,result;
+
+            while (!(str = scanner.nextLine()).equals("end"))
+            try {
+                numb = Double.parseDouble(str);
                 listNumb.add(numb);
                 numCor+=numb;
-                System.out.println(Math.sqrt(numCor));
-            }
+                result = Math.sqrt(numCor);
+                if (Double.isNaN(result)) {
+                    throw new ArithmeticException();
+                }
+                System.out.println(numb+"\n"+result);
 
         }catch (ArithmeticException | NumberFormatException e){
             StackTraceElement[] stackTraceElements = e.getStackTrace();
