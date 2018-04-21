@@ -16,24 +16,34 @@ public class TaskB {
 
       try (BufferedReader sr = new BufferedReader(new FileReader(fn))){
           StringBuffer sb =new StringBuffer();
+          String line=null;
+          for(;;){
 
-          while (sr.readLine()!=null)
-          {
-              sb.append(sr.readLine());
+                line=sr.readLine();
+              if (line == null) break;
+              sb.append(line+"\n");
+
           }
           str = sb.toString();
 
       } catch (IOException e) {
           e.printStackTrace();
       }
-        String[] arrStr = str.split("[\\s?!.,:;-]+");
+       String[] arrStr = str.split("[\\s?!\\n.,:;-]+");
+        //String[] arrStr=str.split(System.lineSeparator());
         String newStr = str.replaceAll("[\\s]+","");
         String[] arr = newStr.split("[А-Яа-яЁё]+");
-        System.out.println("words="+arrStr.length+" punctuation marks="+arr.length);
+        System.out.println("------");
+        for (String s : arr) {
+            System.out.println(s);
+        }
+
+       System.out.println("words="+arrStr.length+" punctuation marks="+(arr.length-1));
+
 
         try (PrintWriter pr = new PrintWriter(new FileWriter(fout)))
         {
-                pr.print("words="+arrStr.length+" punctuation marks="+arr.length);
+                pr.print("words="+arrStr.length+" punctuation marks="+(arr.length-1));
         } catch (IOException e) {
             e.printStackTrace();
         }
