@@ -1,11 +1,11 @@
 package by.it.danilevich.jd01_08;
 
-import by.it.danilevich.jd01_04.InOut;
+//import by.it.danilevich.jd01_04.InOut;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class ActionMatrix {
-     static double findMin(double[ ] arr){
+     /*static double findMin(double[ ] arr){
        double min = Double.MAX_VALUE;
         for (double elem: arr) {
             if (elem < min) min = elem;
@@ -36,7 +36,8 @@ public class ActionMatrix {
         //InOut.printArray(arr);
         return arr;
     }
-    static double mulToSum(double[] matr1, double[] matr2){
+*/
+     static double mulToSum(double[] matr1, double[] matr2){
         double sum =0;
         for (int i = 0; i < matr1.length; i++) {
             sum = sum + matr1[i]*matr2[i];
@@ -110,6 +111,7 @@ public class ActionMatrix {
     }
     static double[ ][ ] mul(double[ ][ ] matrixLeft, double[ ][ ] matrixRight){
         //умножаем строку на столбец
+        if (!checkMatrixForMult(matrixLeft,matrixRight)) return null;
         double[][] newMas = new double[matrixLeft.length][matrixRight[0].length];
         for (int i= 0; i < matrixLeft.length; i++) {
             double[] matr1 = matrixLeft[i];
@@ -125,7 +127,7 @@ public class ActionMatrix {
         }
         return newMas;
     }
-    static int findIndexElementa(double[] mas, double elem){
+    /*static int findIndexElementa(double[] mas, double elem){
         int ind=-1;
         for (int i = 0; i < mas.length; i++) {
             if (elem==mas[i]) {
@@ -134,5 +136,17 @@ public class ActionMatrix {
             }
         }
         return ind;
+    }
+*/
+    private static boolean checkMatrixForMult(double[][] matrixLeft, double[][] matrixRight){
+         //count column in Matrix1== count line in Matrix2
+        if (matrixLeft.length!=0 &&matrixRight.length!=0){
+            if (matrixLeft[0].length==matrixRight.length) {
+                return true;
+            }
+            else System.out.println("Count of column matrix left not equal count of line matrix right");
+        }
+        else  System.out.println("Empty matrix!");
+        return false;
     }
 }

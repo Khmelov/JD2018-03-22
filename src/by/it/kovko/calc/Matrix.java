@@ -47,7 +47,7 @@ public class Matrix extends Var {
     }
 
     @Override
-    public Var add(Var other) {
+    public Var add(Var other) throws CalcException {
         if (other instanceof Scalar){
             double result[][]= new double [this.value.length][];
             for (int i = 0; i < this.value.length; i++)
@@ -58,24 +58,22 @@ public class Matrix extends Var {
                     line[i]+=s;
             return new Matrix(result);
         } else if (other instanceof Matrix){
+            if (this.value.length!=(((Matrix) other).value.length) || this.value[0].length!=(((Matrix) other).value[0].length))
+                throw new CalcException("Матрицы разной длины");
             double result[][]= new double [this.value.length][];
-            for (int i = 0; i < this.value.length; i++)
+            for (int i = 0; i < this.value.length; i++){
                 result[i] = Arrays.copyOf(this.value[i], this.value[i].length);
-            try{
+            }
                 for (int i = 0; i < result.length; i++)
                     for (int j = 0; j < result[i].length; j++)
                         result [i][j]+=(((Matrix) other).value[i][j]);
-            } catch (IndexOutOfBoundsException e){
-                System.out.println("Матрицы разного размера");
-                return null;
-            }
             return new Matrix(result);
         } else
             return super.add(other);
     }
 
     @Override
-    public Var sub(Var other) {
+    public Var sub(Var other) throws CalcException {
         if (other instanceof Scalar){
             return this.add(other.mul(new Scalar(-1)));
         } else if (other instanceof Matrix){
@@ -85,12 +83,13 @@ public class Matrix extends Var {
     }
 
     @Override
-    public Var mul(Var other) {
+    public Var mul(Var other) throws CalcException {
         if (other instanceof Scalar){
             double s=((Scalar) other).getValue();
             double result[][]= new double [this.value.length][];
-            for (int i = 0; i < this.value.length; i++)
+            for (int i = 0; i < this.value.length; i++) {
                 result[i] = Arrays.copyOf(this.value[i], this.value[i].length);
+            }
             for (int i = 0; i < result.length; i++)
                 for (int j = 0; j < result[i].length; j++)
                     result [i][j]*=s;
@@ -106,23 +105,20 @@ public class Matrix extends Var {
             }
             return new Vector(result);
         } else if (other instanceof Matrix){
+            if (this.value[0].length!=(((Matrix) other).value.length))
+                throw new CalcException("Матрицы разной длины");
             double result[][] = new double[this.value.length][((Matrix) other).value[0].length];
             for (int i = 0; i < result.length; i++)
                 for (int j = 0; j < result[i].length; j++)
-                    try {
                         for (int k = 0; k < result[i].length; k++)
                             result[i][j] += (this.value[i][k] * ((Matrix) other).value[k][j]);
-                    } catch (IndexOutOfBoundsException e){
-                        super.mul(other);
-                        return null;
-                    }
             return new Matrix(result);
         } else
             return super.mul(other);
     }
 
     @Override
-    public Var div(Var other) {
+    public Var div(Var other) throws CalcException {
         return super.div(other);
     }
 }
