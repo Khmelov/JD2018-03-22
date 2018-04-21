@@ -9,9 +9,9 @@ import java.util.regex.Pattern;
 
 
 public class TaskB2 {
-    private static String stringConvert (String sentence){
+    private static String stringConvert(String sentence) {
         StringBuffer sb = new StringBuffer();
-        Pattern pattern  = Pattern.compile("[-,;:.!?\\s]+");
+        Pattern pattern = Pattern.compile("[-,;:.!?\\s]+");
         Matcher matcher = pattern.matcher(sentence);
         while (matcher.find()) {
             matcher.appendReplacement(sb, " ");
@@ -22,27 +22,26 @@ public class TaskB2 {
     }
 
 
-
     public static void main(String[] args) {
 
         //StringBuilder sb = new StringBuilder();
         String pattern = "[.?!][\\n]";
         String[] strMas = Poem.text.split(pattern);
         int sentenceNumber = strMas.length;
-        int flag =0;
-        for (int i = 0; i<200; i++) {
-            for (String s:strMas) {
-                if (stringConvert(s).length()==i) {
+        int flag = 0;
+        for (int i = 0; i < 200; i++) {
+            for (String s : strMas) {
+                if (stringConvert(s).length() == i) {
                     System.out.println(stringConvert(s));
                     flag++;
                 }
                 if (flag == sentenceNumber) break;
-                }
             }
         }
+    }
 
 
-        }
+}
 
 
 
