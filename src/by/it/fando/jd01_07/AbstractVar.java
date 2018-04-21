@@ -1,6 +1,6 @@
 package by.it.fando.jd01_07;
 
-public class AbstractVar {
+abstract class AbstractVar {
 
     @Override
     public String toString() {

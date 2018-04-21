@@ -29,19 +29,19 @@ public class TaskB2 {
         }
         //отсортируем по размерности
         int[][] newMas = sort(razmernostPredl);
-        for (int i=0; i< newMas.length; i++) {
-            int TekInd = newMas[i][0];
+        for (int[]elem: newMas) {
+            int TekInd = elem[0];
             System.out.println(predlozenie[TekInd]);
         }
     }
 
-    static int[][] sort(int[ ][ ] arr){
+    private static int[][] sort(int[ ][ ] arr){
         //по возрастанию
         int dlina = arr.length;
         while (dlina > 0) {
             for (int i = 0; i < (dlina-1); i++) {
-                int perv = arr[i][1];
-                int vtor = arr[i+1][1];
+                //int perv = arr[i][1];
+                //int vtor = arr[i+1][1];
                 if (arr[i][1] > arr[i+1][1]) {
                     int vrem1 = arr[i][0];
                     int vrem2 = arr[i][1];
