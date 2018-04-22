@@ -10,7 +10,7 @@ import java.lang.*;
  */
 public class BeanTester {
     public static void main(String[] args) {
-        Class<?> b = Bean.class;
+        Class<Bean> b = Bean.class;
         Method[] methods = b.getDeclaredMethods();
         for (Method method : methods) {
             if (method.isAnnotationPresent(Param.class)) {
