@@ -22,7 +22,6 @@ public class TaskA {
         String fn = getPath(TaskA.class, "dataTaskA.bin");
         String fout = getPath(TaskA.class, "resultTaskA.txt");
         System.out.println(fn);
-
         try (DataOutputStream ds = new DataOutputStream(
                 new BufferedOutputStream(
                         new FileOutputStream(fn)))) {
@@ -32,30 +31,26 @@ public class TaskA {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         try (DataInputStream dis = new DataInputStream(
                 new BufferedInputStream(
                         new FileInputStream(fn)));
              PrintWriter pr = new PrintWriter(
-                     new FileWriter(fout)
-             )
-        ) {
+                     new FileWriter(fout))) {
             List<Integer> list = new ArrayList<>();
             double sum = 0;
             while (dis.available() > 0) {
                 int i = dis.readInt();
                 list.add(i);
-                sum += dis.readInt();
+                sum += i;
             }
-            System.out.println("avg=" + sum / list.size());
-            pr.println("avg=" + sum / list.size());
-
             for (Integer i : list) {
                 System.out.print(i + " ");
                 pr.print(i + " ");
             }
             System.out.println();
             pr.println();
+            System.out.println("avg=" + sum / list.size());
+            pr.print("avg=" + sum / list.size());
         } catch (IOException e) {
             e.printStackTrace();
         }
