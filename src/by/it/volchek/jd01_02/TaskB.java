@@ -8,26 +8,26 @@ import java.util.Scanner;
 public class TaskB {
     public static void main(String[] args) {
         step1();
-        Scanner scanner=new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int i = scanner.nextInt();
         step2(i);
         double a = scanner.nextDouble();
         double b = scanner.nextDouble();
         double c = scanner.nextDouble();
-        step3(a,b,c);
+        step3(a, b, c);
 
     }
 
     private static void step3(double a, double b, double c) {
-        if((b*b-4*a*c)<0) System.out.println("корней нет");
+        if ((b * b - 4 * a * c) < 0) System.out.println("корней нет");
+        else if ((b * b - 4 * a * c) == 0) System.out.println(-b / a / 2);
         else
-            if((b*b-4*a*c)==0) System.out.println(-b/a/2);
-                else System.out.println((-b+Math.sqrt(b*b-4*a*c))/a/2+" "+(-b-Math.sqrt(b*b-4*a*c))/a/2);
+            System.out.println((-b + Math.sqrt(b * b - 4 * a * c)) / a / 2 + " " + (-b - Math.sqrt(b * b - 4 * a * c)) / a / 2);
 
     }
 
     private static void step2(int month) {
-        switch (month){
+        switch (month) {
             case 1:
                 System.out.println("январь");
                 break;
@@ -73,11 +73,11 @@ public class TaskB {
     }
 
     private static void step1() {
-        int a=1;
-        for (int i = 0; i <5 ; i++) {
-            for (int j = 0; j <5 ; j++) {
-                if(a<10) System.out.print(" "+a+++" ");
-                else System.out.print(a+++" ");
+        int a = 1;
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (a < 10) System.out.print(" " + a++ + " ");
+                else System.out.print(a++ + " ");
 
             }
             System.out.println();
