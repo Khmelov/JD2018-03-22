@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * Created by volchek on 10.04.18.
  */
 public class Parser {
-    Var calc (String expression){
+    Var calc (String expression) throws CalcException{
         Pattern p = Pattern.compile(Patterns.OPERATION);
         Matcher m = p.matcher(expression);
         if (m.find()){
@@ -20,10 +20,16 @@ public class Parser {
 
 
             switch (operation){
-                case "+": return one.add(two);
-                case "-": return one.sub(two);
-                case "*": return one.mul(two);
-                case "/": return one.div(two);
+
+                    case "+":
+                        return one.add(two);
+                    case "-":
+                        return one.sub(two);
+                    case "*":
+                        return one.mul(two);
+                    case "/":
+                        return one.div(two);
+
             }
         }
      return Var.createVar(expression);

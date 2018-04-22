@@ -15,16 +15,16 @@ import static java.util.concurrent.TimeUnit.NANOSECONDS;
 public class TaskC2 {
     final static int iteration = 10000;
 
-   private static String slow (String s){
+    private static String slow(String s) {
 
-       String pattern = "[.,!-:;\\s]+";
-       String[] strMas = s.split(pattern);
-       Random rnd1 = new Random(1000);
+        String pattern = "[.,!-:;\\s]+";
+        String[] strMas = s.split(pattern);
+        Random rnd1 = new Random(1000);
         String slowString = strMas[rnd1.nextInt(strMas.length)];
-        for (int i = 0; i < iteration-1; i++) {
-            slowString=slowString+" "+strMas[rnd1.nextInt(strMas.length)];
+        for (int i = 0; i < iteration - 1; i++) {
+            slowString = slowString + " " + strMas[rnd1.nextInt(strMas.length)];
         }
-       return slowString;
+        return slowString;
     }
 
     private static String fast(String s) {
@@ -32,10 +32,10 @@ public class TaskC2 {
         String[] strMas = s.split(pattern);
         Random rnd2 = new Random(1000);
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i <iteration; i++) {
+        for (int i = 0; i < iteration; i++) {
 
             sb.append(strMas[rnd2.nextInt(strMas.length)]);
-            if (i<iteration-1)
+            if (i < iteration - 1)
                 sb.append(" ");
         }
         return sb.toString();
@@ -54,8 +54,8 @@ public class TaskC2 {
         String fastResult = fast(Poem.text);
         estimatedTime = System.nanoTime() - startTime;
         System.out.println(fastResult);
-        System.out.println("Время работы slow: "+slowTime+" миллисекунд");
-        System.out.println("Время работы fast: "+NANOSECONDS.toMillis(estimatedTime)+" миллисекунд");
+        System.out.println("Время работы slow: " + slowTime + " миллисекунд");
+        System.out.println("Время работы fast: " + NANOSECONDS.toMillis(estimatedTime) + " миллисекунд");
         System.out.println(slowResult.equals(fastResult));
 
     }

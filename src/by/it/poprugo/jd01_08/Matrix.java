@@ -136,16 +136,18 @@ class Matrix extends Var {
             return new Matrix(res);
         } else if (other instanceof Vector) {
             Vector vector = ((Vector) other);
-            String[] str = (vector.toString()).split("[,]+");
-            double[] vecParsed = new double[str.length];
-            for (int i = 0; i < str.length; i++) {
-                str[i] = str[i].replaceAll("[^(\\d+.?\\d+)]", " ").trim();
-                vecParsed[i] = Double.parseDouble(str[i]);
-            }
+//            String[] str = (vector.toString()).split("[,]+");
+//            double[] vecParsed = new double[str.length];
+//            for (int i = 0; i < str.length; i++) {
+//                str[i] = str[i].replaceAll("[^(\\d+.?\\d+)]", " ").trim();
+//                vecParsed[i] = Double.parseDouble(str[i]);
+//            }
+
             double[] res = new double[value.length];
             for (int i = 0; i < res.length; i++) {
                 for (int j = 0; j < res.length; j++) {
-                    res[i] += this.value[i][j] * vecParsed[j];
+                    //res[i] += this.value[i][j] * vecParsed[j];
+                    res[i] += this.value[i][j] * vector.getValue()[j];
                     System.out.print(this.value[i][j] + " ");
                 }
                 System.out.println();

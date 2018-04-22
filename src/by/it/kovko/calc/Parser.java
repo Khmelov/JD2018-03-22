@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 class Parser {
-    Var calc (String expression){
+    Var calc (String expression) throws CalcException {
         Pattern p = Pattern.compile(Patterns.OPERATION);
         Matcher m=p.matcher(expression);
         if (m.find()){
