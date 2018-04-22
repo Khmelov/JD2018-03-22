@@ -4,14 +4,14 @@ package by.it.volchek.jd01_03;
  * Created by volchek on 27.03.18.
  */
 public class Generate {
-     static double[][] generateArray(int i,int j) {
+    static double[][] generateArray(int i, int j) {
         double[][] mas = new double[i][j];
 
-            for (int m = 0; m < mas.length; m++) {
-                for (int k = 0; k < mas[0].length; k++) {
-                    mas[m][k] =  (-i - 1 + Math.random() * (i + 1) * 2);
-                }
+        for (int m = 0; m < mas.length; m++) {
+            for (int k = 0; k < mas[0].length; k++) {
+                mas[m][k] = (-i - 1 + Math.random() * (i + 1) * 2);
             }
+        }
 
 
         for (double element[] : mas) {
@@ -30,17 +30,16 @@ public class Generate {
 
         for (int m = 0; m < mas.length; m++) {
 
-                mas[m] = (-i - 1 + Math.random() * (i + 1) * 2);
+            mas[m] = (-i - 1 + Math.random() * (i + 1) * 2);
 
         }
 
 
         for (double element : mas) {
 
-                System.out.print(element + " ");
-            }
-            System.out.println();
-
+            System.out.print(element + " ");
+        }
+        System.out.println();
 
 
         return mas;
