@@ -17,19 +17,6 @@ class Matrix extends Var {
     }
 
     public Matrix(String matrix) {
-//        String[] rows = matrix.split("},");
-//        String[][] cells = new String[rows.length][0];
-//        for (int i = 0; i < rows.length; i++) {
-//            cells[i] = rows[i]
-//                    .replace('{', ' ').replace('}', ' ')
-//                    .trim().split(",\\s*");
-//        }
-//        value = new double[cells.length][cells[0].length];
-//        for (int i = 0; i < value.length; i++) {
-//            for (int j = 0; j < value[i].length; j++) {
-//                value[i][j] = Double.parseDouble(cells[i][j]);
-//            }
-//        }
         String[] str = matrix.split("[^0-9]+");
         char[] ch = matrix.toCharArray();
         int a = 0;
@@ -41,7 +28,7 @@ class Matrix extends Var {
         int col = (str.length - 1) / (a - 1), strn = 1;
 
         for (int i = 0; i < value.length; i++) {
-            for (int j = 0; j <col; j++) {
+            for (int j = 0; j < col; j++) {
                 value[i][j] = Double.parseDouble(str[strn]);
                 strn++;
             }
