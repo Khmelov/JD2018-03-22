@@ -5,7 +5,7 @@ public class TaskB {
         step4();
         step5();
     }
-    static void step4(){
+    private static void step4(){
         for (double a = 0; a <=2 ; a = a + 0.2) {
             double sum =0;
             for (int x = 1; x <=6 ; x++) {
@@ -15,10 +15,10 @@ public class TaskB {
 
         }
     }
-    static void step5(){
+    private static void step5(){
        for (double x = (-6+0.5); x <2 ; x = x +0.5) {
            double polX =x/2;
-           double b=0;
+           double b;
            double a;
            if (polX>(-2)&&polX<=(-1)){
                b = Math.sin(x*x);

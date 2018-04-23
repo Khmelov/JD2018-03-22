@@ -1,7 +1,7 @@
 package by.it.danilevich.jd01_06;
 
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+//import java.util.regex.Pattern;
+//import java.util.regex.Matcher;
 public class TaskB1 {
     public static void main(String[] args) {
         FindWord();
