@@ -1,11 +1,12 @@
-package by.it.fando.jd_01_11;
+package by.it.fando.jd01_11;
 
 import java.util.*;
 
-public class ListA<T> implements List<T> {
+public class ListB<T> implements List<T> {
 
     private T[] elements = (T[]) new Object[]{};
     private int size = 0;
+
 
     @Override
     public boolean add(T t) {
@@ -33,32 +34,23 @@ public class ListA<T> implements List<T> {
     }
 
     @Override
-    public boolean remove(Object o) {
-        int index = indexOf(o);
-        if (index >-1)
-            remove(index);
-        return (index >-1);
-    }
-
-    @Override
-    public int indexOf(Object o) {
-        if (o == null) {
-            for (int i = 0; i < size; i++)
-                if (elements[i] == null)
-                    return i;
-        }
-        else {
-            for (int i = 0; i < size; i++)
-                if (o.equals(elements[i]))
-                    return i;
-
-        }
-        return -1;
-    }
-
-    @Override
     public T get(int index) {
         return elements[index];
+    }
+
+    @Override
+    public T set(int index, T element) {
+        T ind = elements[index];
+        elements[index] = element;
+        return ind;
+    }
+
+    @Override
+    public boolean addAll(Collection<? extends T> c) {
+        for (T a : c) {
+            add(a);
+        }
+        return false;
     }
 
     @Override
@@ -71,6 +63,18 @@ public class ListA<T> implements List<T> {
         }
         sb.append("]");
         return sb.toString();
+    }
+
+
+
+
+
+
+
+
+    @Override
+    public boolean addAll(int index, Collection<? extends T> c) {
+        return false;
     }
 
     @Override
@@ -104,17 +108,12 @@ public class ListA<T> implements List<T> {
     }
 
     @Override
+    public boolean remove(Object o) {
+        return false;
+    }
+
+    @Override
     public boolean containsAll(Collection<?> c) {
-        return false;
-    }
-
-    @Override
-    public boolean addAll(Collection<? extends T> c) {
-        return false;
-    }
-
-    @Override
-    public boolean addAll(int index, Collection<? extends T> c) {
         return false;
     }
 
@@ -134,8 +133,8 @@ public class ListA<T> implements List<T> {
     }
 
     @Override
-    public T set(int index, T element) {
-        return null;
+    public int indexOf(Object o) {
+        return 0;
     }
 
     @Override

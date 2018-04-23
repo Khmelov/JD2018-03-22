@@ -1,4 +1,4 @@
-package by.it.fando.jd_01_12;
+package by.it.fando.jd01_12;
 
 import java.util.ArrayList;
 import java.util.Iterator;
