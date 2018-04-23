@@ -14,7 +14,7 @@ public class TaskB {
     }
     public static void main(String[] args) {
         int words = 0, marks = 0;
-        Pattern pattern = Pattern.compile("[.,:]");
+        Pattern pattern = Pattern.compile("[.,:!]");
         Matcher matcher;
         String string, text[];
         String path = System.getProperty("user.dir") + "/src/by/it/desykevich/jd01_14/";
