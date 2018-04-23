@@ -26,6 +26,10 @@ class Vector extends Var {
         this.value = valParsed;
     }
 
+    public double[] getValue() {
+        return value;
+    }
+
     @Override
     public Var add(Var other) {
         if (other instanceof Scalar) {
