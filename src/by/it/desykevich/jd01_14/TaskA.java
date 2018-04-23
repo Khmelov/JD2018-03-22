@@ -1,6 +1,6 @@
 package by.it.desykevich.jd01_14;
 
-import java.io.File;
+import java.io.*;
 import java.lang.reflect.Field;
 
 public class TaskA {
@@ -17,7 +17,26 @@ public class TaskA {
     }
 
     public static void main(String[] args) {
-        String path=getPath(TaskA.class);
-        System.out.println(path);
+        String fn=getPath(TaskA.class,"dataTaskA:");
+        System.out.println(fn);
+
+        try (DataOutputStream ds=
+             new DataOutputStream((
+                 new BufferedOutputStream(
+                 new FileOutputStream(fn))));
+            )
+
+        {
+            for (int i = 0; i <20; i++) {
+                ds.writeInt((int)(Math.random()*100));
+            }
+
+        }catch (FileNotFoundException e){
+            e.printStackTrace();
+         }
+         catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
