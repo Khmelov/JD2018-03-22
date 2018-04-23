@@ -14,7 +14,7 @@ abstract class Var implements Operation {
     }
 
     static Var createVar(String strVar) throws CalcException {
-        strVar = strVar.replace("\\s+", "").trim();
+//        strVar = strVar.replace("\\s+", "").trim();
         if (strVar.matches(Patterns.SCALAR))
             return new Scalar(strVar);
         if (strVar.matches(Patterns.VECTOR))
@@ -41,16 +41,16 @@ abstract class Var implements Operation {
 
     @Override
     public Var sub(Var other) throws CalcException {
-        throw new CalcException("Операция сложения " + this + "-" + other + " невозможна ");
+        throw new CalcException("Операция вычитания " + this + "-" + other + " невозможна ");
     }
 
     @Override
     public Var mul(Var other) throws CalcException {
-        throw new CalcException("Операция сложения " + this + "*" + other + " невозможна ");
+        throw new CalcException("Операция умнжения " + this + "*" + other + " невозможна ");
     }
 
     @Override
     public Var div(Var other) throws CalcException {
-        throw new CalcException("Операция сложения " + this + "/" + other + " невозможна ");
+        throw new CalcException("Операция деления " + this + "/" + other + " невозможна ");
     }
 }
