@@ -34,6 +34,8 @@ public class TaskB {
             }
             System.out.println("words=" + wordsCount);
             System.out.println("punctuation marks=" + punctMarksCount);
+            pr.println("words=" + wordsCount);
+            pr.println("punctuation marks=" + punctMarksCount);
 
         } catch (IOException e) {
             e.printStackTrace();
