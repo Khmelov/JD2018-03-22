@@ -7,8 +7,8 @@ import java.util.regex.Pattern;
 
 public class TaskB {
     public static void main(String[] args) throws IOException {
-        String fn = getPath(TaskB1.class, "TaskB.txt");
-        String fout = getPath(TaskB1.class, "resultTaskB.txt");
+        String fn = getPath(TaskB.class, "TaskB.txt");
+        String fout = getPath(TaskB.class, "resultTaskB.txt");
         BufferedReader br = null;
         try (PrintWriter pr = new PrintWriter(new FileWriter(fout))) {
 
