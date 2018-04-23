@@ -1,15 +1,16 @@
-package by.it.verishko.calc;
+package by.it.matyuta.calc;
 
 public class CalcException extends Exception {
+
     public CalcException() {
     }
 
     public CalcException(String message) {
-        super("ERROR: " + message);
+        super("ERROR: "+message);
     }
 
     public CalcException(String message, Throwable cause) {
-        super("ERROR: " + message, cause);
+        super("ERROR: "+message, cause);
     }
 
     public CalcException(Throwable cause) {
@@ -17,6 +18,6 @@ public class CalcException extends Exception {
     }
 
     public CalcException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super("ERROR: " + message, cause, enableSuppression, writableStackTrace);
+        super("ERROR: "+message, cause, enableSuppression, writableStackTrace);
     }
 }

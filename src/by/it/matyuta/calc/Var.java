@@ -1,4 +1,4 @@
-package by.it.verishko.calc;
+package by.it.matyuta.calc;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,8 +12,8 @@ abstract class Var implements Operation {
         return valueVar;
     }
 
+
     static Var createVar(String strVar) throws CalcException {
-        strVar = strVar.replaceAll("\\s+", "").trim();
         if (strVar.matches(Patterns.SCALAR))
             return new Scalar(strVar);
         if (strVar.matches(Patterns.VECTOR))
@@ -22,32 +22,30 @@ abstract class Var implements Operation {
             return new Matrix(strVar);
         if (strVar.matches(Patterns.VARNAME))
             return variables.get(strVar);
-        throw new CalcException("Ошибка обработки:" + strVar);
+        throw new CalcException("Ошибка обработки: " + strVar);
     }
 
-    @Override
-    public String toString() {
-        return "Это класс Var{}";
-    }
 
     @Override
     public Var add(Var other) throws CalcException {
-        throw new CalcException("Операция сложения " + this + " " + other + " невозможна\n");
+        throw new CalcException(
+                "Операция сложения " + this + "+" + other + " невозможна"
+        );
     }
 
     @Override
     public Var sub(Var other) throws CalcException {
-        throw new CalcException("Операция вычитания " + this + " " + other + " невозможна\n");
+        throw new CalcException("Операция вычитания " + this + "-" + other + " невозможна");
     }
 
     @Override
     public Var mul(Var other) throws CalcException {
-        throw new CalcException("Операция умножения " + this + " " + other + " невозможна\n");
+        throw new CalcException("Операция умножения " + this + "*" + other + " невозможна");
     }
 
     @Override
     public Var div(Var other) throws CalcException {
-        throw new CalcException("Операция деления " + this + " " + other + " невозможна\n");
+        throw new CalcException("Операция деления " + this + "/" + other + " невозможна");
     }
 
 }
