@@ -14,7 +14,8 @@ public class BeanTester {
                     Param params = m.getAnnotation(Param.class);
                     Object obj = beanClass.getDeclaredConstructor().newInstance();
                     System.out.println(m.getName() + " res = " + m.invoke(obj, params.a(), params.b()));
-                    } } } catch (Exception exc) {exc.printStackTrace();
+                    } }
+        } catch (Exception exc) {exc.printStackTrace();
         }
     }
 }
