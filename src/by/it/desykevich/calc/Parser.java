@@ -19,7 +19,7 @@ public class Parser {
             Var one= Var.createVar(strOp[0]);
 
 
-            switch (operation){
+            switch (operation) {
                 case "+":return one.add(two);
                 case "-":return one.sub(two);
                 case "*":return one.mul(two);
