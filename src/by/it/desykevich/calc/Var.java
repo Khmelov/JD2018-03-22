@@ -18,16 +18,19 @@ abstract class Var implements Operation {
       return new Scalar(strVar);
     if (strVar.matches(Patterns.VECTOR))
       return new Vector(strVar);
+
 //    if (strVar.matches(Pattern.MATRIX))
 //      return new Matrix(strVar);
 //    if (strVar.matches(Patterns.VARNAME))
     return null;
+
+
   }
 
      @Override
-  public Var add(Var other) {
-    System.out.println("Операция сложения "+this+"+"+other+"невозможна");
-    return null;
+  public Var add(Var other) throws CalcException {
+    throw  new CalcException("Операция сложения "+this+"+"+other+"невозможна");
+
   }
 
   @Override

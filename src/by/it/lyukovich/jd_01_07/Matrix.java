@@ -16,7 +16,8 @@ public class Matrix extends AbstractVar {
             if (value==null)
                 value = new double[match.length][values.length];
                 for (int j = 0; j < values.length; j++) {
-                    value[i][j] = Double.parseDouble(values[j]);
+                    if(values[j]!=null){
+                    value[i][j] = Double.parseDouble(values[j]);}
             }
         }
     }
@@ -35,6 +36,7 @@ public class Matrix extends AbstractVar {
             }
             if (i==value.length-1){sb.append("}");}
         }
+
         String string=new String(sb);
         return string;
     }
