@@ -32,10 +32,14 @@ class Vector extends Var {
         this.value = otherVector.value;
     }
 
+    private void chekSize(Var otherVar) throws CalcException {
+        if (this.value.length != ((Vector) otherVar).value.length)
+            throw new CalcException("Различный размер векторов");
+    }
+
 
     @Override
-    public Var add(Var other) {
-
+    public Var add(Var other) throws CalcException {
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();
@@ -46,6 +50,7 @@ class Vector extends Var {
             return new Vector(res);
         } else if (other instanceof Vector) {
             Vector vector = (Vector) other;
+            chekSize((Vector)other);
             double[] res = Arrays.copyOf(this.value, this.value.length);
             for (int i = 0; i < res.length; i++) {
                 res[i] += ((Vector) other).value[i];
@@ -57,7 +62,7 @@ class Vector extends Var {
 
 
     @Override
-    public Var sub(Var other) {
+    public Var sub(Var other) throws CalcException {
 
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
@@ -68,6 +73,7 @@ class Vector extends Var {
             }
             return new Vector(res);
         } else if (other instanceof Vector) {
+            chekSize(other);
             Vector vector = (Vector) other;
             double[] res = Arrays.copyOf(this.value, this.value.length);
             for (int i = 0; i < res.length; i++) {
@@ -78,7 +84,7 @@ class Vector extends Var {
     }
 
     @Override
-    public Var mul(Var other) {
+    public Var mul(Var other) throws CalcException {
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();
@@ -89,6 +95,7 @@ class Vector extends Var {
             return new Vector(res);
         } else if (other instanceof Vector) {
             double sum = 0;
+            chekSize(other);
             Vector vector = (Vector) other;
             double[] res = Arrays.copyOf(this.value, this.value.length);
             for (int i = 0; i < res.length; i++) {
@@ -99,7 +106,7 @@ class Vector extends Var {
     }
 
     @Override
-    public Var div(Var other) {
+    public Var div(Var other) throws CalcException {
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();

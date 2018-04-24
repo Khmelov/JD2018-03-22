@@ -12,8 +12,12 @@ class ConsoleRunner {
         String line;
 
         while (!(line = scaner.nextLine()).equals("end")) {
-            Var reult = parser.calc(line);
-            printer.print(reult);
+            try {
+                Var result = parser.calc(line);
+                printer.print(result);
+            } catch (CalcException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 }

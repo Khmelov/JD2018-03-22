@@ -32,25 +32,22 @@ abstract class Var implements Operation {
 
     @Override
     public Var add(Var other) throws CalcException {
-        System.out.printf("Операция сложения %s+%s невозможна\n", this, other);
-        return null;
+        throw new CalcException("Операция сложения " + this + " " + other + " невозможна\n");
     }
 
     @Override
     public Var sub(Var other) throws CalcException {
-        System.out.printf("Операция вычитания %s-%s невозможна\n", this, other);
-        return null;
+        throw new CalcException("Операция вычитания " + this + " " + other + " невозможна\n");
     }
 
     @Override
     public Var mul(Var other) throws CalcException {
-        System.out.printf("Операция умножения %s*%s невозможна\n", this, other);
-        return null;
+        throw new CalcException("Операция умножения " + this + " " + other + " невозможна\n");
     }
 
     @Override
     public Var div(Var other) throws CalcException {
-        System.out.printf("Операция деления %s/%s невозможна\n", this, other);
-        return null;
+        throw new CalcException("Операция деления " + this + " " + other + " невозможна\n");
     }
+
 }

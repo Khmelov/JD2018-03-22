@@ -2,7 +2,7 @@ package by.it.desykevich.calc;
 
 import java.util.Scanner;
 
-public class ConsoleRunner {
+public class ConsoleRunner  {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         Parser parser=new Parser();
