@@ -31,7 +31,7 @@ public class TaskA {
                 sum+= i;
             }
             System.out.println("avg = "+sum/list.size());
-            pr.println("avg = "+sum/list.size());
+            pr.print("avg = "+sum/list.size());
             for (Integer i:list) {
                 System.out.print(i + " ");
                 pr.print(i+" ");
