@@ -26,9 +26,10 @@ public class Runner {
         System.out.println(v2);
         System.out.println(v3);
         /*Матрицы*/
-        AbstractVar m1 = new Matrix(new double[][]{{1.0,2.0,3.0},{3.0,4.0,5.0}});
-        AbstractVar m2 = new Matrix((Matrix) m1);
-        AbstractVar m3 = new Matrix(m1.toString());
+        double matr[][]={{1,2,3,4},{3,4,3,4}};
+        Matrix m1 = new Matrix(matr);
+        Matrix m2 = new Matrix(m1);
+        Matrix m3 = new Matrix(m2.toString());
         System.out.println(m1);
         System.out.println(m2);
         System.out.println(m3);
