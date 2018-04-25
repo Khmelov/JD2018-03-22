@@ -2,12 +2,7 @@
 package by.it.volchek.jd01_15;
 import java.io.*;
 
-/**d
- * sdfsdf
- * sdf
- * sdf
- *
- */
+
 
 
 public class TaskB {
