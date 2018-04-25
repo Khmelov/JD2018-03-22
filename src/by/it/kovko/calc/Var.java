@@ -1,6 +1,9 @@
 package by.it.kovko.calc;
 
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 public abstract class Var implements Operation {
@@ -22,8 +25,15 @@ public abstract class Var implements Operation {
         }
 
     }
-    public static Var saveVar(String s, Var two) {
-        variables.put(s,two);
+    public static Var saveVar(String s, Var two) throws CalcException {
+        variables.put(s,two); // добавить для дозаписи
+        try (PrintWriter printer = new PrintWriter(new FileWriter(Util.getPathVarsTxt()))){
+            for (Map.Entry<String, Var> entry : variables.entrySet()) {
+                printer.println(entry.getKey()+"="+entry.getValue());
+            }
+        } catch (IOException e) {
+            throw new CalcException("Не удалось сохранить переменную "+ s+"="+two);
+        }
         return two;
     }
 
