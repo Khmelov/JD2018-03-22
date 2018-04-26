@@ -16,7 +16,7 @@ public class TaskB {
         String src = dir(TaskB.class);
         String filename = src + "text.txt";
         File f = new File(filename);
-        File f1 = new File(filename);
+//        File f1 = new File(filename);
         Scanner scan = new Scanner(f);
         scan.useDelimiter("[^А-яЁ-ё]+");
         int word = 0;
