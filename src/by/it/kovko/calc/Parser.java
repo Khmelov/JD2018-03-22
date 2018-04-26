@@ -12,7 +12,7 @@ class Parser {
             Var two = Var.createVar(strOp[1]);
             String operation = m.group();
             if (operation.equals("="))
-                Var.saveVar(strOp[0],two);
+                Var.saveVar(strOp[0], two);
             Var one = Var.createVar(strOp[0]);
             switch (operation){
                 case "+": return one.add(two);
@@ -21,6 +21,6 @@ class Parser {
                 case "/": return one.div(two);
             }
         }
-        return Var.createVar(expression);
+        return null;//Var.createVar(expression);
     }
 }
