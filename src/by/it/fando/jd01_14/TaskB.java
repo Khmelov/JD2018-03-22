@@ -19,7 +19,7 @@ public class TaskB {
     }
 
     public static void main(String[] args) {
-        String fn = getPath(TaskB.class,"text.txt");
+        String fn = getPath(TaskB.class,"TaskB.txt");
         String fout = getPath(TaskB.class,"resultTaskB.txt");
 
         StringBuilder sb = new StringBuilder();

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class TaskA {
 
-    static String getPath(Class<?> cl) {
+    private static String getPath(Class<?> cl) {
         String path = System.getProperty("user.dir");
         path+= File.separator + "src" + File.separator;
         path+= cl.getName()
@@ -15,7 +15,7 @@ public class TaskA {
         return path;
     }
 
-    static String getPath(Class<?> cl, String filename) {
+    private static String getPath(Class<?> cl, String filename) {
         return getPath(cl)+filename;
     }
 
