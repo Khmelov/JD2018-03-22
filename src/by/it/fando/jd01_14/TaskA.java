@@ -6,16 +6,16 @@ import java.util.List;
 
 public class TaskA {
 
-    private static String getPath(Class<?> cl) {
+    static String getPath(Class<?> cl) {
         String path = System.getProperty("user.dir");
-        path += File.separator + "src" + File.separator;
-        path += cl.getName()
+        path+= File.separator + "src" + File.separator;
+        path+= cl.getName()
                 .replace(cl.getSimpleName(),"")
                 .replace(".", File.separator);
         return path;
     }
 
-    private static String getPath(Class<?> cl, String filename) {
+    static String getPath(Class<?> cl, String filename) {
         return getPath(cl)+filename;
     }
 
@@ -23,6 +23,7 @@ public class TaskA {
         String fn = getPath(TaskA.class,"dataTaskA.bin");
         String fout = getPath(TaskA.class,"resultTaskA.txt");
         System.out.println(fn);
+
         try (DataOutputStream ds = new DataOutputStream(
                 new BufferedOutputStream(
                         new FileOutputStream(fn)))){
@@ -33,26 +34,35 @@ public class TaskA {
             e.printStackTrace();
         }
 
-        try (DataInputStream dis = new DataInputStream (
-                new BufferedInputStream (
-                        new FileInputStream(fn)));
-            PrintWriter pr = new PrintWriter(new FileWriter(fout))) {
-            List <Integer> list = new ArrayList<>();
-            double sum = 0;
-            while (dis.available()>0) {
+        List<Integer> list = new ArrayList<>();
+        try (DataInputStream dis = new DataInputStream(
+                new BufferedInputStream(
+                        new FileInputStream(fn)))
+        ) {
+            while (dis.available() > 0) {
                 list.add(dis.readInt());
-                int i = dis.readInt();
-                list.add(i);
-                sum+= i;
             }
-            System.out.println("avg="+sum/list.size());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try (PrintWriter pr = new PrintWriter(new FileWriter(fout))) {
+            double sum = 0;
             for (Integer i : list) {
-                System.out.println(i+" ");
+                sum += i;
             }
+            System.out.println("avg=" + sum / list.size());
+            pr.println("avg=" + sum / list.size());
+
+            for (Integer i : list) {
+                System.out.print(i + " ");
+                pr.print(i + " ");
+            }
+
             System.out.println();
             pr.println();
-            }
-        catch (IOException e) {
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
