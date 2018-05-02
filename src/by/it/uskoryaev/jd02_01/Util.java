@@ -5,13 +5,12 @@ class Util {
         try {
             Thread.sleep(msTimeOut);
         }catch (InterruptedException e){
-            e.getStackTrace();
+            e.printStackTrace();
         }
     }
-    static int random(int from,int to){
-        return from+(int) Math.random()*(1+to-from);
+    static int random(int from,int to){ return from+(int)Math.random()*(1+to-from);
     }
-    static int random(){ return random(0, 2);
+    static int random(int count){ return random(0,count);
     }
 }
 
