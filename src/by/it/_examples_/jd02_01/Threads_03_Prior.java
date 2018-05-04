@@ -23,6 +23,10 @@ class Threads_03_Prior {
         PriorThread max =  new PriorThread("Max");
         PriorThread norm = new PriorThread("       Norm");
         PriorThread min =  new PriorThread("               Min");
+
+        PriorThread mmm = new PriorThread("ttttttt");
+        mmm.setPriority(Thread.MAX_PRIORITY);
+        mmm.start();
         min.setPriority(Thread.MIN_PRIORITY); // 1
         max.setPriority(Thread.MAX_PRIORITY); // 10
         norm.setPriority(Thread.NORM_PRIORITY); // 5
