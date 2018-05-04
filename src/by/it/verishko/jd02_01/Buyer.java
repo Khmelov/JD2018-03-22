@@ -28,13 +28,9 @@ public class Buyer extends Thread implements IBuyer {
     @Override
     public void chooseGoods() {
         System.out.println(this + "зашел в торговый зал");
-        try {
-            sleep((int) (500 + Math.random() * 1500));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Util.sleep(Util.random(500, 2000));
         System.out.println(this + "выбрал товар");
-
+        QueueBuyer.addBuyer(this);
     }
 
     @Override

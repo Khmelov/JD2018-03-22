@@ -8,7 +8,6 @@ public class Runner {
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {
             Util.sleep(500);
-
             int count = (int) (Math.random() * 3);
             for (int j = 0; j <= count; j++) {
                 Buyer buyer = new Buyer(++numberBuyer);
@@ -16,6 +15,4 @@ public class Runner {
             }
         }
     }
-
-
 }

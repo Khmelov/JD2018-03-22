@@ -6,12 +6,17 @@ class QueueBuyer {
 
     private static LinkedList<Buyer> internalQueue = new LinkedList<>();
 
-    void addBuyer(Buyer byuer) {
-        internalQueue.addLast(byuer);
+    static void addBuyer(Buyer buyer) {
+        for (int i = 0; i < 100; i++) {
+            internalQueue.addLast(buyer);
+        }
+        if (Math.random() > 0.5)
+            for (int i = 0; i < 100; i++) {
+                System.out.println("Extract" + extractBuyer());
+            }
     }
 
-    static Buyer extractByuer () {
+    static Buyer extractBuyer() {
         return internalQueue.pollFirst();
     }
-
 }
