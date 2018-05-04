@@ -33,7 +33,18 @@ public class TaskB {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
+        int startIndex, endIndex;
+        while ((startIndex = sb.indexOf("\u002f*")) >= 0 && (endIndex = sb.indexOf("*\u002f")) >= 0) {
+            sb.delete(startIndex, endIndex + 2);
+        }
+        while ((startIndex = sb.indexOf("\u002f/")) >= 0 && (endIndex = sb.indexOf("\n", startIndex)) >= 0) {
+            sb.delete(startIndex, endIndex);
+        }
+        try (PrintWriter printer = new PrintWriter(new FileWriter(path))) {
+            printer.print(sb);
+            System.out.print(sb);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
