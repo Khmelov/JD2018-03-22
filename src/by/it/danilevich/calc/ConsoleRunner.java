@@ -1,17 +1,27 @@
 package by.it.danilevich.calc;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ConsoleRunner {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Printer printer=new Printer();
         Parser parser=new Parser();
-       // {{1,2},{8,3}}-{{2,3,3},{2,3,3}}
-       // {{1,2},{8,3}}*{{1,2},{8,3}}
-       // {{-1.0, -1.0}, {6.0, 0.0}}
-       // {{17.0, 8.0}, {32.0, 25.0}}
         Scanner scanner=new Scanner(System.in);
         String line;
+
+        try {
+            BufferedReader reder = new BufferedReader(new FileReader(Util.getPathVarsTxt()));
+          //  String line;
+          //  while (line = reder.readLine())!=null){
+
+           // }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
 
         while (!(line=scanner.nextLine()).equals("end")){
             try{
