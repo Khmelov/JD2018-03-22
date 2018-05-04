@@ -1,14 +1,29 @@
 package by.it.verishko.calc;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
 abstract class Var implements Operation {
-
     private static Map<String, Var> variables = new HashMap<>();
 
-    static Var saveVar(String nameVar, Var valueVar) {
+    static Var saveVar(String nameVar, Var valueVar) throws CalcException {
         variables.put(nameVar, valueVar);
+        try (PrintWriter printer = new PrintWriter(
+                new FileWriter(
+                        Util.getPathVarsTxt()
+                )
+        )) {
+            for (Map.Entry<String, Var> entry : variables.entrySet()) {
+                printer.println(entry.getKey() + "=" + entry.getValue());
+            }
+        } catch (IOException e) {
+            throw new CalcException("Не удалось сохранить переменную " + nameVar + "=" + valueVar, e);
+        }
+
+
         return valueVar;
     }
 
