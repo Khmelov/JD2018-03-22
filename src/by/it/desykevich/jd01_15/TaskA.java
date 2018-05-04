@@ -26,7 +26,7 @@ public class TaskA {
         ) {
             for (int i = 0; i < m.length; i++) {
                 for (int j = 0; j < m[i].length; j++) {
-                    printer.printf("%3d", (int) (-15 + Math.random() * 31));
+                    printer.printf("%3d ", (int) (-15 + Math.random() * 31));
                 }
                 printer.println();
             }
@@ -39,8 +39,8 @@ public class TaskA {
         ){
             for (int i = 0; i <m.length ; i++) {
                 String[] sarr =bufferedReader.readLine().trim().split("\\s+");
-                for (int j = 0; j <m.length ; j++) {
-                    m[i][j]= Integer.parseInt(sarr[j]);
+                for (int j = 0; j <m[i].length ; j++) {
+                    m[i][j] = Integer.parseInt(sarr[j]);
                     System.out.printf("%3d ", m[i][j]);
                 }
                 System.out.println();
