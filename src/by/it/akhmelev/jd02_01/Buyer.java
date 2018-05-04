@@ -17,17 +17,18 @@ public class Buyer extends Thread implements IBuyer {
     public void run() {
         enterToMarket();
         chooseGoods();
+
         goOut();
     }
 
     @Override
     public void enterToMarket() {
-        System.out.println(this+"Покупатель зашел в магазин");
+        System.out.println(this+"зашел в магазин");
     }
 
     @Override
     public void chooseGoods() {
-        System.out.println(this+"Зашел в торговый зал");
+        System.out.println(this+"зашел в торговый зал");
         Util.sleep(Util.random(500,2000));
         System.out.println(this+"выбрал товар");
         QueueBuyer.addBuyer(this);
