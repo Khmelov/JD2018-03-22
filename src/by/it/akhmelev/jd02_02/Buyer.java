@@ -29,15 +29,16 @@ public class Buyer extends Thread implements IBuyer {
     @Override
     public void chooseGoods() {
         System.out.println(this + "зашел в торговый зал");
-        Util.sleep(Util.random(500, 2000));
+        Util.sleep(Util.random(500, 5000));
         System.out.println(this + "выбрал товар");
-        QueueBuyer.addBuyer(this);
+        //QueueBuyer.addBuyer(this); теперь это происходит в goQueue()
     }
 
     @Override
     public void goQueue() {
         System.out.println(this + "встал в очередь");
         QueueBuyer.addBuyer(this);
+        //синхронизация происходит по this (текущий покупатель)
         synchronized (this) {
             while (QueueBuyer.buyerInQueue(this))
                 try {

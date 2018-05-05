@@ -8,16 +8,18 @@ public class Runner {
     static List<Thread> cashiers=new ArrayList<>();
 
     public static void main(String[] args) {
+        //создали кассиров
         for (int i = 1; i <= 5; i++) {
             Thread cashier = new Thread(new Cashier(i));
             cashiers.add(cashier);
             cashier.start();
         }
 
+        //создаем покупателей пока не выполнен план
         while (!Dispatcher.allBuyersInShop()) {
             Util.sleep(1000);
             int count = Util.random(2);
-            System.out.println("count=" + count);
+            //System.out.println("count=" + count);
             for (int j = 1; j <= count; j++) {
                 if (Dispatcher.allBuyersInShop())
                     break;
@@ -26,6 +28,7 @@ public class Runner {
             }
         }
 
+        //ожидаем закрытия последней кассы
         for (Thread cashier : cashiers) {
             try {
                 cashier.join();
@@ -33,6 +36,7 @@ public class Runner {
                 e.printStackTrace();
             }
         }
+        //отдаем управление потоком для завершения выводов покупателей
         Thread.yield();
         System.out.println("Магазин закрылся");
     }
