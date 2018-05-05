@@ -1,5 +1,8 @@
 package by.it.poprugo.calc;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.IllegalFormatCodePointException;
 import java.util.Map;
@@ -8,12 +11,27 @@ abstract class Var implements Operation {
 
     private static Map<String, Var> variables = new HashMap<>();
 
-    public static Var saveVar(String nameVar, Var valueVar) {
+    public static Var saveVar(String nameVar, Var valueVar) throws CalcExeption {
         //этот метод должен в карту сохранить значение
         variables.put(nameVar, valueVar);
+    // до return valueVar; создадим 24.04
+        variables.put(nameVar,valueVar); //если такой переменной раньше (?) не было (в put - null), то надо дописать,
+                                        // а если (?) была - перезаписать
+                                        // можно оптимизировать дозапись
+        try (PrintWriter printer = new PrintWriter(new FileWriter(Util.getPathVarsTxt()))) {
+            for (Map.Entry<String, Var> entry : variables.entrySet()) {
+                printer.println(entry.getKey()+"="+entry.getValue());
+            }
+
+
+
+        } catch (IOException e) {
+            throw new CalcExeption("Не удалось сохранить переменную"+nameVar+"="+valueVar,e); // вместо e.printStackTrace();
+        }
+
+
         return valueVar;
     }
-
 
     /*static Var createVar(String strVar) { - БЫЛО ДО 13й лекции
         strVar=strVar.replaceAll("\\s+","").trim();
