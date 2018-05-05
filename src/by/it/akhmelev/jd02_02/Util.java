@@ -3,7 +3,7 @@ package by.it.akhmelev.jd02_02;
 class Util {
     static void sleep(int msTimeout) {
         try {
-            Thread.sleep(msTimeout/Dispatcher.speed);
+            Thread.sleep(msTimeout / Dispatcher.speed);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

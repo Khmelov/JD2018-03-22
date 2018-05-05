@@ -5,11 +5,11 @@ import java.util.List;
 
 public class Runner {
 
-    static List<Thread> cashiers=new ArrayList<>();
+    static List<Thread> cashiers = new ArrayList<>();
 
     public static void main(String[] args) {
-        //создали кассиров
-        for (int i = 1; i <= 5; i++) {
+        //создали кассиров (чтобы было видно очередь сделаем их два
+        for (int i = 1; i <= 2; i++) {
             Thread cashier = new Thread(new Cashier(i));
             cashiers.add(cashier);
             cashier.start();

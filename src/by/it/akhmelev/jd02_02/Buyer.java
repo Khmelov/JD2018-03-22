@@ -29,7 +29,7 @@ public class Buyer extends Thread implements IBuyer {
     @Override
     public void chooseGoods() {
         System.out.println(this + "зашел в торговый зал");
-        Util.sleep(Util.random(500, 5000));
+        Util.sleep(Util.random(500, 1000));
         System.out.println(this + "выбрал товар");
         //QueueBuyer.addBuyer(this); теперь это происходит в goQueue()
     }

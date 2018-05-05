@@ -6,17 +6,27 @@ class QueueBuyer {
 
     private final static LinkedList<Buyer> internalQueue = new LinkedList<>();
 
+    private static void printSize() {
+        if (internalQueue.size() > 0)
+            System.out.println("Длина очереди покупателей: " + internalQueue.size());
+    }
+
+
     static void addBuyer(Buyer buyer) {
         //синхронизация происходит по объекту internalQueue
         synchronized (internalQueue) {
             internalQueue.addLast(buyer);
+            printSize();
         }
     }
+
 
     static Buyer extractBuyer() {
         //синхронизация происходит по объекту internalQueue
         synchronized (internalQueue) {
-            return internalQueue.pollFirst();
+            Buyer buyer = internalQueue.pollFirst();
+            printSize();
+            return buyer;
         }
     }
 
