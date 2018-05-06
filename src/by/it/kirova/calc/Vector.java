@@ -30,7 +30,7 @@ public class Vector extends Var {
 
 
     @Override
-    public Var add(Var other) throws CalcExeption {
+    public Var add(Var other) throws CalcException {
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();
@@ -41,7 +41,7 @@ public class Vector extends Var {
             return new Vector(sum);
         } else if (other instanceof Vector) {
             if (this.value.length != ((Vector) other).value.length)
-                throw new CalcExeption("Вектора имеют разную длину. Операция сложения невозможна");
+                throw new CalcException("Вектора имеют разную длину. Операция сложения невозможна");
             double[] sum = Arrays.copyOf(this.value, this.value.length);
             for (int i = 0; i < sum.length; i++) {
                 sum[i] += ((Vector) other).value[i];
@@ -52,7 +52,7 @@ public class Vector extends Var {
     }
 
     @Override
-    public Var sub(Var other)throws CalcExeption{
+    public Var sub(Var other)throws CalcException{
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();
@@ -63,7 +63,7 @@ public class Vector extends Var {
             return new Vector(sub);
         } else if (other instanceof Vector) {
             if (this.value.length != ((Vector) other).value.length)
-                throw new CalcExeption("Вектора имеют разную длину. Операция вычитания невозможна");
+                throw new CalcException("Вектора имеют разную длину. Операция вычитания невозможна");
             double[] sub = Arrays.copyOf(this.value, this.value.length);
             for (int i = 0; i < sub.length; i++) {
                 sub[i] -= ((Vector) other).value[i];
@@ -74,7 +74,7 @@ public class Vector extends Var {
     }
 
     @Override
-    public Var mul(Var other) throws CalcExeption {
+    public Var mul(Var other) throws CalcException {
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();
@@ -85,7 +85,7 @@ public class Vector extends Var {
             return new Vector(mul);
         } else if (other instanceof Vector) {
             if (this.value.length != ((Vector) other).value.length)
-                throw new CalcExeption("Вектора имеют разную длину. Операция умножения невозможна");
+                throw new CalcException("Вектора имеют разную длину. Операция умножения невозможна");
             double[] mul = Arrays.copyOf(this.value, this.value.length);
             double sum = 0;
             for (int i = 0; i < mul.length; i++) {
@@ -98,13 +98,13 @@ public class Vector extends Var {
     }
 
     @Override
-    public Var div(Var other)throws CalcExeption {
+    public Var div(Var other)throws CalcException {
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();
             double[] div = Arrays.copyOf(this.value, this.value.length);
             if (v == 0)
-                throw new CalcExeption("Деление на ноль");
+                throw new CalcException("Деление на ноль");
             for (int i = 0; i < div.length; i++) {
                 div[i] /= v;
             }

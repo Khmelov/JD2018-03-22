@@ -55,24 +55,24 @@ public class TaskB {
                         }
 
                         if (!flag)
-                        sbPart.append(chars[i]);
+                            sbPart.append(chars[i]);
 
                     }
                     if (!sbPart.toString().equals("")){
-                    sb.append(sbPart);
-                    sb.append("\n");}
+                        sb.append(sbPart);
+                        sb.append("\n");}
                     sbPart.setLength(0);
                 }
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
 
-      path = getPath (TaskB.class, "TaskB.txt");
-        try ( PrintWriter printer  = new PrintWriter (
-                new FileWriter(path)))
-        {
-           printer.print(sb);
-            System.out.println(sb);
+            path = getPath (TaskB.class, "TaskB.txt");
+            try ( PrintWriter printer  = new PrintWriter (
+                    new FileWriter(path)))
+            {
+                printer.print(sb);
+                System.out.println(sb);
             }
         }
         catch (IOException e){
