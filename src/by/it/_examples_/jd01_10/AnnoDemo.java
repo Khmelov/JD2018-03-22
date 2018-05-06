@@ -20,8 +20,8 @@ public class AnnoDemo {
     )
     public class Base {
         void doAction() {
-            Class<Base> f = AnnoDemo.Base.class;
-            BaseAction a = f.getAnnotation(AnnoDemo.BaseAction.class);
+            Class<Base> f = Base.class;
+            BaseAction a = f.getAnnotation(BaseAction.class);
             System.out.println("level=" + a.level());
             System.out.println("sqlRequest=" + a.sqlRequest());
         }

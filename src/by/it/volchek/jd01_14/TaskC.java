@@ -38,9 +38,9 @@ public class TaskC {
              fileList.add("dir:"+s.getName());
              }
              else {
-                 if (s.getName().charAt(0)=='.') continue;
-                 System.out.println("file:"+s.getName().substring(0,s.getName().lastIndexOf(".")));
-                 fileList.add("file:"+s.getName().substring(0,s.getName().lastIndexOf(".")));
+
+                 System.out.println("file:"+s.getName());
+                 fileList.add("file:"+s.getName());
              }
              if (s.isDirectory()) dirWatcher(s.getAbsolutePath());
          }

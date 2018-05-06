@@ -5,7 +5,6 @@ import java.util.*;
 public class TaskB3 {
 
     static String process(ArrayList<String> peoples) {
-
         int i = 0;
         while (peoples.size() > 1) {
             Iterator<String> iterator = peoples.iterator();
@@ -15,24 +14,16 @@ public class TaskB3 {
                 i++;
             }
         }
-        String str = peoples.get(0);
-        return str;
+        return peoples.get(0);
     }
 
 
     static String process(LinkedList<String> peoples) {
-
-        int i = 0;
         while (peoples.size() > 1) {
-            Iterator<String> iterator = peoples.iterator();
-            while (iterator.hasNext()) {
-                iterator.next();
-                if (i % 2 > 0) iterator.remove();
-                i++;
-            }
+            peoples.addLast(peoples.removeFirst());
+            peoples.removeFirst();
         }
-        String str = peoples.get(0);
-        return str;
+        return peoples.get(0);
     }
 
     public static void main(String[] args) {

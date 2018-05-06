@@ -6,49 +6,38 @@ class Matrix extends Var {
     private double[][] value;
 
     public Matrix(double[][] value) {
-        this.value = value;
+        this.value = new double[value.length][value[0].length];
+        for (int i = 0; i < value.length; i++) {
+            System.arraycopy(value[i], 0, this.value[i], 0, value.length);
+        }
     }
 
     public Matrix(Matrix otherMatrix) {
-        this.value = otherMatrix.value;
+        this(otherMatrix.value);
     }
 
     public Matrix(String matrix) {
-
+        String[] str = matrix.split("[^0-9]+");
         char[] ch = matrix.toCharArray();
-        int a = 0, b = 0;
+        int a = 0;
         for (char c : ch) {
             if (c == '{') a++;
-            if (c == '}') b++;
         }
+        value = new double[a - 1][(str.length - 1) / (a - 1)];
 
-        if (a != b) System.out.println("Введите правильную матрицу!!!");
-        double[][] value1 = new double[a - 1][b - 1];
+        int col = (str.length - 1) / (a - 1), strn = 1;
 
-        String[] str = matrix.split("[^0-9]+");
-
-        int col = 0, strn = 0;
-        for (int i = 0; i < str.length; i++) {
-
-            if (i != 0) {
-                if (strn == b - 1) {
-                    col++;
-                    strn = 0;
-                }
-                if (strn < b - 1) {
-                    value1[col][strn] = Double.parseDouble(str[i]);
-                    strn++;
-                }
+        for (int i = 0; i < value.length; i++) {
+            for (int j = 0; j < col; j++) {
+                value[i][j] = Double.parseDouble(str[strn]);
+                strn++;
             }
+
         }
-
-        value = value1;
-
     }
 
-
     @Override
-    public Var add(Var other) {
+    public Var add(Var other) throws CalcException {
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();
@@ -72,7 +61,7 @@ class Matrix extends Var {
     }
 
     @Override
-    public Var sub(Var other) {
+    public Var sub(Var other) throws CalcException {
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();
@@ -97,7 +86,7 @@ class Matrix extends Var {
 
 
     @Override
-    public Var mul(Var other) {
+    public Var mul(Var other) throws CalcException {
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();
@@ -133,7 +122,7 @@ class Matrix extends Var {
     }
 
     @Override
-    public Var div(Var other) {
+    public Var div(Var other) throws CalcException {
         if (other instanceof Scalar) {
             Scalar scalar = (Scalar) other;
             double v = scalar.getValue();

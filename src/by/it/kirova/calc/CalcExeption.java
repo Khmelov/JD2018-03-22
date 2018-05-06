@@ -1,22 +1,22 @@
 package by.it.kirova.calc;
 
-public class CalcExeption extends Exception{
-    public CalcExeption() {
+class CalcException extends Exception{
+    public CalcException() {
     }
 
-    public CalcExeption(String message) {
+    public CalcException(String message) {
         super("ERROR:" + message);
     }
 
-    public CalcExeption(String message, Throwable cause) {
+    public CalcException(String message, Throwable cause) {
         super("ERROR:" + message, cause);
     }
 
-    public CalcExeption(Throwable cause) {
+    public CalcException(Throwable cause) {
         super(cause);
     }
 
-    public CalcExeption(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public CalcException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super("ERROR:" + message, cause, enableSuppression, writableStackTrace);
     }
 }
