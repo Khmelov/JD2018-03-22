@@ -1,19 +1,31 @@
 package by.it.verishko.jd02_01;
 
-class Util {
-    static void sleep(int timeout) {
+import java.util.Random;
+
+public class Util {
+    static void sleep(int start, int stop) {
         try {
-            Thread.sleep(timeout);
+            Thread.sleep(Util.random(start, stop));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    static int random(int from, int to) {
-        return from + (int) (Math.random() * (1 + to - from));
+    private final static Random RANDOM = new Random();
+
+    static int random(int bound) {
+        return RANDOM.nextInt(bound);
     }
 
-    static int random(int count) {
-        return random(0, count);
+    private static int random(int start, int stop) {
+        return start + RANDOM.nextInt(stop - start);
+    }
+
+    static void sleep(int timeout) {
+        try {
+            Thread.sleep(timeout / 10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
