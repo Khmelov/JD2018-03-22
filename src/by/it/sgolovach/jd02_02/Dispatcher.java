@@ -7,7 +7,7 @@ public class Dispatcher {
     private static int processCount = 0;
     private static int factCount = 0;
 
-    //синхронизация происходить по классу Dispatcher
+
 
    synchronized static boolean planComplete() {
         return factCount >= planCount;
@@ -26,7 +26,7 @@ public class Dispatcher {
     }
 
     synchronized static boolean allBuyersInShop(){
-       return numberBuyer>=planCount;
+       return numberBuyer==planCount;
     }
 
 
