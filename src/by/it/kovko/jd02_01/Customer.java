@@ -58,6 +58,13 @@ public class Customer implements Runnable{
             putInCart();
         }
         gotInLine();
+//        synchronized (this){
+//            try {
+//                this.wait();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 
     private synchronized int numberOfCustomers(int d){return count=count+d;}
