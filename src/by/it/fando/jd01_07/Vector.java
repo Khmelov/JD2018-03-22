@@ -4,7 +4,9 @@ class Vector extends AbstractVar{
 
     private double [] value;
 
-    Vector(double[ ] value) {this.value = value;}
+    Vector(double[ ] value) {
+        this.value = value;
+    }
 
     Vector(Vector vector) {
         this.value = vector.value;

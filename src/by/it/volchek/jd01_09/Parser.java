@@ -8,8 +8,6 @@ import java.util.regex.Pattern;
  */
 public class Parser {
     Var calc (String expression){
-        //String[] strOp = expression.split(Patterns.OPERATION);
-
         Pattern p = Pattern.compile(Patterns.OPERATION);
         Matcher m = p.matcher(expression);
         if (m.find()){
