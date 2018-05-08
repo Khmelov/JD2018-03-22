@@ -1,8 +1,13 @@
 package by.it.akhmelev.jd02_03;
 
-public class Buyer extends Thread implements IBuyer {
+public class Buyer extends Thread implements IBuyer, Comparable<Buyer> {
 
     private String name;
+
+    @Override
+    public int compareTo(Buyer o) {
+        return 0;
+    }
 
     public Buyer(int number) {
         name = "Покупатель №" + number;
