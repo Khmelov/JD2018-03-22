@@ -1,6 +1,7 @@
 package by.it.kovko.jd02_01;
 
 public class Shop {
+
     private int maxCustomers=10; // Увеличил количество покупателе в секунду,
     // потому что с таими таймингами они не доходили до 30-40.
     private long pauseBetweenCustomers=1000;

@@ -1,7 +1,9 @@
-package by.it.verishko.jd02_01;
+package by.it.desykevich.jd02_01;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+
+
 
 public class Runner {
 
@@ -9,7 +11,7 @@ public class Runner {
     private static int countBuyer = 0;
 
     public static void main(String[] args) {
-        for (int second = 0; second < 10; second++) {
+        for (int second = 0; second < 100; second++) {
             int count = Util.random(2);
             for (int i = 0; i <= count; i++) {
                 Buyer b = new Buyer(++countBuyer);
@@ -34,4 +36,6 @@ public class Runner {
         }
         System.out.println("Все вышли, магазин закрыт.");
     }
+
+
 }

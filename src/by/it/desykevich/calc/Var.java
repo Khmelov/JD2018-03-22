@@ -28,8 +28,10 @@ abstract class Var implements Operation {
   }
 
      @Override
-  public Var add(Var other) throws CalcException {
-    throw  new CalcException("Операция сложения "+this+"+"+other+"невозможна");
+  public Var add(Var other)  {
+       System.out.println("Операция сложения "+this+"+"+other+"невозможна");
+       return null;
+
 
   }
 

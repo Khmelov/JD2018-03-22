@@ -1,15 +1,9 @@
-package by.it.verishko.jd02_01;
+package by.it.desykevich.jd02_01;
 
 import java.util.Random;
 
 public class Util {
-    static void sleep(int start, int stop) {
-        try {
-            Thread.sleep(Util.random(start, stop));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+
 
     private final static Random RANDOM = new Random();
 
@@ -21,11 +15,15 @@ public class Util {
         return start + RANDOM.nextInt(stop - start);
     }
 
-    static void sleep(int timeout) {
+
+    static void sleep(int start, int stop) {
+
         try {
-            Thread.sleep(timeout / 10);
+            Thread.sleep(Util.random(start, stop));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
+
+
 }
