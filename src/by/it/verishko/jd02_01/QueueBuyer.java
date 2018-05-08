@@ -6,12 +6,11 @@ class QueueBuyer {
 
     private static LinkedList<Buyer> internalQueue = new LinkedList<>();
 
-    void addBuyer(Buyer byuer) {
-        internalQueue.addLast(byuer);
+    static void addBuyer(Buyer buyer) {
+        internalQueue.addLast(buyer);
     }
 
-    static Buyer extractByuer () {
+    static Buyer extractBuyer() {
         return internalQueue.pollFirst();
     }
-
 }
