@@ -33,4 +33,6 @@ public class Cashier implements Runnable {
     public String toString() {
         return "Кассир №" + number;
     }
+
+
 }

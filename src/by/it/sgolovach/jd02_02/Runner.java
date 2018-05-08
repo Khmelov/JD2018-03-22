@@ -11,7 +11,7 @@ public class Runner {
 
     static Map<String, Integer> goods = new HashMap<>();
 
-    static List<Thread> cashiers = new ArrayList<>();
+//    static List<Thread> cashiers = new ArrayList<>();
 
 
     public static void main(String[] args) {
@@ -38,15 +38,15 @@ public class Runner {
         goods.put("шоколад", 7);
         goods.put("макароны", 12);
 
-        for (int i = 1; i <= 6; i++) {
-            Thread cashier = new Thread(new Cashier(i));
-            cashiers.add(cashier);
-            cashier.start();
-        }
+//        for (int i = 1; i <= 6; i++) {
+//            Thread cashier = new Thread(new Cashier(i));
+//            cashiers.add(cashier);
+//            cashier.start();
+//        }
 
 
         while (!Dispatcher.allBuyersInShop()) {
-            Util.sleep(5);
+            Util.sleep(500);
             int count = Util.random(2);
             for (int j = 1; j <= count; j++) {
                 if (Dispatcher.allBuyersInShop())
@@ -56,15 +56,15 @@ public class Runner {
             }
         }
 
-        for (Thread cashier : cashiers) {
-            try {
-                cashier.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        Thread.yield();
-        System.out.println("Магазин закрылся");
+//        for (Thread cashier : cashiers) {
+//            try {
+//                cashier.join();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        Thread.yield();
+//        System.out.println("Магазин закрылся");
 
 
     }

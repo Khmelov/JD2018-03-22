@@ -69,14 +69,16 @@ public class Buyer extends Thread implements IBuyer, IUseBacket {
     public void goQueue() {
         System.out.println(this + "встал в очередь");
         if (nm % 4 == 0) QueueBuyer.addBuyerPensioner(this);
-        QueueBuyer.addBuyer(this);
+        else QueueBuyer.addBuyer(this);
         synchronized (this) {
-            while (QueueBuyer.buyerInQueuePensioner(this) || QueueBuyer.buyerInQueue(this))
+            while (QueueBuyer.buyerInQueuePensioner(this) || QueueBuyer.buyerInQueue(this)) {
+                QueueBuyer.openCashier();
                 try {
                     wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+            }
         }
     }
 
