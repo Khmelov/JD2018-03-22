@@ -4,11 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-class Goods extends HashMap<String, Double> {
-
-    static {
-
-    }
+class Goods extends HashMap <String, Double> {
 
     private static Goods goods = new Goods() {
         {
@@ -19,11 +15,8 @@ class Goods extends HashMap<String, Double> {
         }
     };
 
-    private Goods() {
-
-    }
-
     static Double getPrice(String name) {
+
         return goods.get(name);
     }
 

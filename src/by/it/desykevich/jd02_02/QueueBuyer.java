@@ -1,23 +1,38 @@
 package by.it.desykevich.jd02_02;
 
-import by.it.akhmelev.jd02_01.Buyer;
-
 import java.util.LinkedList;
 
 class QueueBuyer {
 
-    private final static LinkedList<Buyer> internalQueue=new LinkedList<>();
+    private final static LinkedList<Buyer> internalQueue = new LinkedList<>();
 
-    static void addBuyer(Buyer buyer){
-        synchronized (internalQueue){
-            internalQueue.addLast(buyer);
-        }
-
+    private static void printSize() {
+        if (internalQueue.size() > 0)
+            System.out.println("Длина очереди покупателей: " + internalQueue.size());
     }
 
-    static Buyer extractBuyer(){
 
-        return internalQueue.pollFirst();
+    static void addBuyer(Buyer buyer) {
+
+        synchronized (internalQueue) {
+            internalQueue.addLast(buyer);
+            printSize();
+        }
+    }
+
+
+    static Buyer extractBuyer() {
+        synchronized (internalQueue) {
+            Buyer buyer = internalQueue.pollFirst();
+            printSize();
+            return buyer;
+        }
+    }
+
+    static boolean buyerInQueue(Buyer buyer) {
+        synchronized (internalQueue) {
+            return internalQueue.indexOf(buyer) > -1;
+        }
     }
 
 }

@@ -2,28 +2,34 @@ package by.it.desykevich.jd02_02;
 
 import java.util.Random;
 
-public class Util {
+class Util {
 
+    private final static Random random = new Random();
 
-    private final static Random RANDOM = new Random();
-
-    static int random(int bound) {
-        return RANDOM.nextInt(bound);
+    static void sleep(int msTimeout) {
+        try {
+            Thread.sleep(msTimeout / Dispatcher.speed);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
-
-    private static int random(int start, int stop) {
-        return start + RANDOM.nextInt(stop - start);
-    }
-
-
     static void sleep(int start, int stop) {
 
-        try {
-            Thread.sleep(Util.random(start, stop));
+        try {Thread.sleep(random(start, stop));
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
+    static int random(int start, int stop) {
 
+//        return from + (int) (Math.random() * (1 + to - from));
+        return random.nextInt(stop - start) + 1;
+    }
+
+    static int random(int count) {
+//        return random(0, count);
+        return random.nextInt(count);
+    }
 }
