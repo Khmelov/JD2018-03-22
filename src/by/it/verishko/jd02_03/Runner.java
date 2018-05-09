@@ -6,21 +6,17 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Runner {
-
-    static List<Thread> buyersThread = new ArrayList<>();
+    private static List<Thread> buyersThread = new ArrayList<>();
 
     public static void main(String[] args) {
         ExecutorService service = Executors.newFixedThreadPool(5);
-
-        for (int i = 0; i <= 5; i++) {
+        for (int i = 1; i <= 2; i++) {
             service.execute(new Cashier(i));
         }
-
         while (!Dispatcher.allBuyersInShop()) {
             Util.sleep(1000);
             int count = Util.random(2);
-            System.out.println("count=" + count);
-            for (int j = 0; j <= count; j++) {
+            for (int j = 1; j <= count; j++) {
                 if (Dispatcher.allBuyersInShop())
                     break;
                 Buyer buyer = Dispatcher.addNewBuyer();
@@ -28,7 +24,6 @@ public class Runner {
                 buyer.start();
             }
         }
-
         for (Thread buyer : buyersThread) {
             try {
                 buyer.join();
@@ -36,7 +31,7 @@ public class Runner {
                 e.printStackTrace();
             }
         }
-        Thread.yield();
+        Util.sleep(500);
         System.out.println("Магазин закрылся");
         service.shutdown();
     }

@@ -1,25 +1,32 @@
 package by.it.verishko.jd02_03;
 
-public class Dispatcher {
+import java.util.concurrent.atomic.AtomicInteger;
 
-    private static final int numberBuyer = 0;
-    private static final int planCount = 5;
-//    private static int processCount = 0;
-    private static int factCount = 0;
+class Dispatcher {
 
-    synchronized static boolean planComplete() {
-        return factCount >= planCount;
+    static int speed = 25; //во сколько раз ускорить приложение
+//    private static final int numberBuyer = 0;
+    private static final int planCount = 10;
+
+    private static final AtomicInteger numberBuyer =
+            new AtomicInteger(0);
+
+    private static final AtomicInteger factCount =
+            new AtomicInteger(0);
+
+    static boolean planComplete() {
+        return factCount.get() >= planCount;
     }
 
-    synchronized static Buyer addNewBuyer() {
-        return new Buyer(numberBuyer);
+    static Buyer addNewBuyer() {
+        return new Buyer(numberBuyer.addAndGet(1));
     }
 
-    synchronized static void finalBuyer() {
-        factCount++;
+    static void finalBuyer() {
+        factCount.addAndGet(1);
     }
 
-    static synchronized boolean allBuyersInShop() {
-        return numberBuyer == planCount;
+    static boolean allBuyersInShop() {
+        return numberBuyer.get() >= planCount;
     }
 }
