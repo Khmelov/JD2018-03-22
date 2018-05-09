@@ -17,7 +17,6 @@ public class Buyer extends Thread implements IBuyer {
     public void run() {
         enterToMarket();
         chooseGoods();
-
         goOut();
     }
 
