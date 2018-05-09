@@ -1,15 +1,13 @@
 package by.it.akhmelev.jd02_03;
 
-import java.util.LinkedList;
-import java.util.concurrent.ConcurrentLinkedQueue;
-import java.util.concurrent.PriorityBlockingQueue;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 class QueueBuyer {
 
 
-    private final static PriorityBlockingQueue<Buyer> internalQueue =
-            new PriorityBlockingQueue<>(30);
+    private final static BlockingQueue<Buyer> internalQueue =
+            new LinkedBlockingQueue<>(30);
 
     private static void printSize() {
         if (internalQueue.size() > 0)
@@ -18,24 +16,35 @@ class QueueBuyer {
 
 
     static void addBuyer(Buyer buyer) {
-        internalQueue.put(buyer);
+        try {
+            internalQueue.put(buyer);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         printSize();
     }
 
 
     static Buyer extractBuyer() {
-        Buyer buyer = null;
-        try {
-            buyer = internalQueue.poll(100, TimeUnit.MICROSECONDS);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Buyer buyer = internalQueue.poll();
         printSize();
         return buyer;
     }
 
     static boolean buyerInQueue(Buyer buyer) {
-        return internalQueue.size() > 0;
+        return internalQueue.contains(buyer);
+
+        //ошибка из-за которой не работала наша работа в классе
+        //этот метод вызывается в goQueue() класса Buyer
+        //и его смысл найти конкретного покупателя в очереди
+        //а не просто проверить есть ли какой-то покупатель в очереди
+        //поэтому такой способ приводит к ошибке
+
+        //return internalQueue.size() > 0;
+
+        //p.s. это ошибка не многопоточки, а логики.
+        //Sorry (
+
     }
 
 }
