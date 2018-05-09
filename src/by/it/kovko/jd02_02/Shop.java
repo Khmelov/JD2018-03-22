@@ -1,6 +1,8 @@
 package by.it.kovko.jd02_02;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class Shop {
@@ -70,7 +72,9 @@ public class Shop {
     CustomersQueue q = new CustomersQueue(this);
     void open() {
         System.out.println("Магазин открылся");
+
         for (int i = 1; i <= CASHIERS_MAX; i++) {
+
             Thread t = new Thread(new ConcreteCashier(i, this));
             t.setDaemon(true);
             t.start();
