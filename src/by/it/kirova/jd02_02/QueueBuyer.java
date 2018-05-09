@@ -59,7 +59,7 @@ class QueueBuyer {
         }
     }
 
-    static void openCashier(){
+    private static void openCashier(){
         for (Cashier c: cashiers) {
             if(!c.isOpen()){
                 c.openCashier();
@@ -68,7 +68,7 @@ class QueueBuyer {
         }
     }
 
-    static int getOpenedCashiersCount(){
+    private static int getOpenedCashiersCount(){
         int count = 0;
         for (Cashier c: cashiers) {
             if(c.isOpen()){

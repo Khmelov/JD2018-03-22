@@ -23,7 +23,7 @@ class Dispatcher {
 
     }
 
-    static ArrayList<Integer> chart = new ArrayList<>();
+    private static ArrayList<Integer> chart = new ArrayList<>();
     synchronized static boolean needNext(int i){
         int t = i % 60;
         boolean todo = t < 30 ? processCount < (t + 10) : processCount <= 40 + (30 - t);

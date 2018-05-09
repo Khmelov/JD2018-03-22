@@ -4,7 +4,7 @@ package by.it.kirova.jd02_02;
 import java.util.HashMap;
 
 public class Goods {
-    HashMap<String, Double> goods = new HashMap<>();
+    private HashMap<String, Double> goods = new HashMap<>();
 
     public static Goods goodsAccess = new Goods();
 
