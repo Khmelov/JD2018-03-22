@@ -5,17 +5,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 class Dispatcher {
 
     static int speed = 25; //во сколько раз ускорить приложение
-    private final static int planCount = 50; //сколько покупателей нужно всего
+    private final static int planCount = 100; //сколько покупателей нужно всего
 
     private static final AtomicInteger numberBuyer =
             new AtomicInteger(0); //счетчик покупателей
+
     //private static int processCount = 0; //сколько их в магазине
+
     private static final AtomicInteger factCount =
             new AtomicInteger(0);  //сколько вышло из магазина
 
     //синхронизация происходит по объекту Dispatcher.class
     static boolean planComplete() {
-        System.out.println("SIZE="+factCount.get());
         return factCount.get() >= planCount;
     }
 

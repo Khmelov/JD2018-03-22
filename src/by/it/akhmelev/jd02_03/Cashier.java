@@ -14,7 +14,6 @@ public class Cashier implements Runnable {
         //пока план не выполнен, покупатель ищется в очереди
         while (!Dispatcher.planComplete()) {
             Buyer buyer = QueueBuyer.extractBuyer();
-            System.out.println("LOG"+buyer);
             //покупатель найден
             if (buyer != null) {
                 System.out.println(this + ". Начало обслуживания для объекта: " + buyer);

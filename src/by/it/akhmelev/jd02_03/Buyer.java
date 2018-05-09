@@ -43,15 +43,15 @@ public class Buyer extends Thread implements IBuyer, Comparable<Buyer> {
     public void goQueue() {
         System.out.println(this + "встал в очередь");
         QueueBuyer.addBuyer(this);
-        //синхронизация происходит по this (текущий покупатель)
-        synchronized (this) {
-            while (QueueBuyer.buyerInQueue(this))
+        while (QueueBuyer.buyerInQueue(this))
+            //синхронизация происходит по this (текущий покупатель)
+            synchronized (this) {
                 try {
                     wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-        }
+            }
     }
 
     @Override
