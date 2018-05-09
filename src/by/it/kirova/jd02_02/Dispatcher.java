@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 class Dispatcher {
 
-    static int speed = 1; //во сколько раз ускорить приложение
+    static int speed = 25; //во сколько раз ускорить приложение
     private final static int planCount = 100; //сколько покупателей нужно всего
 
     private static int numberBuyer = 0; //счетчик покупателей

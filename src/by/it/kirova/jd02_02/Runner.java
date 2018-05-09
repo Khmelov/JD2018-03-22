@@ -5,8 +5,10 @@ import java.util.List;
 
 public class Runner {
 
+
     public static void main(String[] args) {
         List<Thread> cashierThreads = new ArrayList<>();
+        System.out.println("\nКАССИР №1           КАССИР №2           КАССИР №3           КАССИР №4           КАССИР №5           РАЗМЕР ОЧЕРЕДИ      ВЫРУЧКА МАГАЗИНА    \n");
 
         //создали кассиров (чтобы было видно очередь сделаем их два
         for (int i = 1; i <= 5; i++) {

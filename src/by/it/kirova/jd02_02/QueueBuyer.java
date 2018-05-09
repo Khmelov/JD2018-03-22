@@ -23,6 +23,12 @@ class QueueBuyer {
         Printer.printMessage(sb.toString());
     }
 
+    public static int getSize() {
+        synchronized (internalQueue) {
+            return internalQueue.size();
+        }
+    }
+
     public static Cashier createCashier(){
         Cashier c = new Cashier(cashiers.size());
         cashiers.add(c);
