@@ -1,6 +1,6 @@
 package by.it.verishko.jd02_01;
 
-public class Buyer extends Thread implements IBuyer {
+public class Buyer extends Thread implements IBuyer, IUseBacket {
 
     private String name;
 
@@ -11,7 +11,9 @@ public class Buyer extends Thread implements IBuyer {
     @Override
     public void run() {
         enterToMarket();
+        takeBacket();
         chooseGoods();
+        putGoodsToBacket();
         goOut();
     }
 
@@ -26,14 +28,29 @@ public class Buyer extends Thread implements IBuyer {
     }
 
     @Override
+    public void takeBacket() {
+        Util.sleep(100, 200);
+        System.out.println(this + "взял корзину.");
+    }
+
+    @Override
     public void chooseGoods() {
-        System.out.println(this + "зашел в торговый зал");
-        try {
-            sleep((int) (500 + Math.random() * 1500));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+
+        for (int i = 1; i <= Util.random(5); i++) {
+            Util.sleep(500, 2000);
+            String goodName = Goods.rndGoodName();
+            Double goodPrice = Goods.getPrice(goodName);
+            System.out.println(this + "выбрал товар " + goodName + " цена: " + goodPrice + ".");
         }
-        System.out.println(this + "выбрал товар");
+        System.out.println(this + "завершил выбор.");
+
+
+    }
+
+    @Override
+    public void putGoodsToBacket() {
+        Util.sleep(100, 200);
+        System.out.println(this + "положил товары в корзину.");
 
     }
 
