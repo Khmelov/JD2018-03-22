@@ -24,6 +24,7 @@ public class Runner {
                     break;
                 }
                 Buyer buyer = Dispatcher.addNewBuyer();
+                buyersThread.add(buyer);
                 buyer.start();
             }
         }
@@ -34,7 +35,7 @@ public class Runner {
                 e.printStackTrace();
             }
         }
-        Thread.yield();
+        Util.sleep(500);
         System.out.println("Магазин закрылся");
         service.shutdown();
     }
