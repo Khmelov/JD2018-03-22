@@ -24,7 +24,7 @@ public class TaskB {
         int slash=0; int star=0; int count=0;
         try (BufferedReader br = new BufferedReader(new FileReader(getPath(TaskB.class, "TaskB.java")))) {
             while ((s = br.readLine()) != null) {
-             char[] q = s.toCharArray();
+                char[] q = s.toCharArray();
                 for ( char element: q) {
                     boolean one=false; boolean many=false;
                     if (element == '/') slash++;
@@ -35,21 +35,21 @@ public class TaskB {
                     if (slash==1 && star==1 &&count==1) {
                         count = 0;
                     }
-                        if (slash == 1 && star == 1 && count > 1) {
-                            many = true;
-                            count = 0;
+                    if (slash == 1 && star == 1 && count > 1) {
+                        many = true;
+                        count = 0;
                     }
                     if(!one && !many)
                         sb.append(s);
                     sb.append('\n');
-                    }
+                }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
         System.out.println(sb.toString());
         bw.write(sb.toString());
-        }
+    }
 }
 
 
