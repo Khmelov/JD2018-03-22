@@ -18,7 +18,7 @@ public class TaskA {
 
     public static void main(String[] args) {
         String path = getPath(TaskA.class,"matrix.txt");
-        int[][] m = new int[4][6];
+        int[][] m = new int[6][4];
 
         try (PrintWriter printer = new PrintWriter((new FileWriter(getPath(TaskA.class, "matrix.txt"))))) {
 

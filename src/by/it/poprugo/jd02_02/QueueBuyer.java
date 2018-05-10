@@ -1,0 +1,43 @@
+package by.it.poprugo.jd02_02;
+
+import java.util.LinkedList;
+
+class QueueBuyer {
+
+    private static LinkedList<Buyer> internalQueue = new LinkedList<>();
+
+    private static void printSize() {
+        if (internalQueue.size() > 0)
+            System.out.println("Длина очереди покупателей:" + internalQueue.size());
+    }
+
+    static void addBuyer(Buyer buyer) {
+        //синхронизация происходит по объекту internalQueue
+        synchronized (internalQueue) {
+            internalQueue.addLast(buyer);
+            printSize();
+        }
+
+    }
+
+    static Buyer extractBuyer() {
+        synchronized (internalQueue) {
+            //синхронизация происходит по объекту internalQueue
+            return internalQueue.pollFirst();
+            /*
+            synchronized (internalQueue) {
+            Buyer buyer = internalQueue.pollFirst();
+            printSize();
+            return buyer;
+        }
+             */
+
+        }
+    }
+
+    static boolean buyerInQueue (Buyer buyer) {
+        synchronized (internalQueue) {
+            return internalQueue.indexOf(buyer) > -1;
+        }
+    }
+}
