@@ -42,6 +42,6 @@ public class Runner {
         //отдаем управление потоком для завершения выводов покупателей
         Thread.yield();
 
-        Printer.printMessage("Магазин закрылся");
+        System.out.println("Магазин закрылся");
     }
 }
