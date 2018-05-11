@@ -6,18 +6,20 @@ import java.util.concurrent.Executors;
 
 public class DispatcherCashier extends Thread {
 
+    static ExecutorService executorService = Executors.newFixedThreadPool(5);
+
     @Override
     public void run() {
 
-        int countCashier = 5;
 
-        ExecutorService executorService = Executors.newFixedThreadPool(countCashier);
+        executorService.execute(new Cashier(1));
+        executorService.execute(new Cashier(2));
+        executorService.execute(new Cashier(3));
+        executorService.execute(new Cashier(4));
+        executorService.execute(new Cashier(5));
 
-        for (int i = 1; i <= countCashier; i++) {
-            executorService.execute(new Cashier(i));
-        }
 
-        executorService.shutdown();
+//        executorService.shutdown();
 
     }
 }

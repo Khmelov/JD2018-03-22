@@ -20,16 +20,16 @@ public class QueueBuyer extends Thread {
         if (sizeQueue() <= 30) {
             if (buyer.numberBuyer % 4 == 0) {
                 pensionerinQueue.add(buyer);
-                sizeQueueInAdd.getAndIncrement();
+                sizeQueueInAdd.incrementAndGet();
             } else {
                 buyersInQueue.add(buyer);
-                sizeQueueInAdd.getAndIncrement();
+                sizeQueueInAdd.incrementAndGet();
             }
         }
         if (countBuyerInQueue.get() == 0) {
             DispatcherCashier dispatcherCashier = new DispatcherCashier();
             dispatcherCashier.start();
-            countBuyerInQueue.getAndIncrement();
+            countBuyerInQueue.incrementAndGet();
         }
     }
 
@@ -37,11 +37,11 @@ public class QueueBuyer extends Thread {
         Buyer buyer;
         if (!(pensionerinQueue.isEmpty())) {
             sizeQueueRemove.incrementAndGet();
-            sizeQueueInAdd.getAndDecrement();
+            sizeQueueInAdd.decrementAndGet();
                 buyer = pensionerinQueue.poll();
         } else {
             sizeQueueRemove.incrementAndGet();
-            sizeQueueInAdd.getAndDecrement();
+            sizeQueueInAdd.decrementAndGet();
                 buyer = buyersInQueue.poll();
         }
         return buyer;

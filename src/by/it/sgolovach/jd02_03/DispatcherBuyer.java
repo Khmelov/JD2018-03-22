@@ -1,12 +1,14 @@
 package by.it.sgolovach.jd02_03;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class DispatcherBuyer extends Thread{
 
     static int countBuyers=100;
 
     static int countBuyersInShop=0;
 
-    static int countBuyersGoOut=0;
+//    final static AtomicInteger countBuyersGoOut = new AtomicInteger(0);
 
     @Override
     public void run()  {

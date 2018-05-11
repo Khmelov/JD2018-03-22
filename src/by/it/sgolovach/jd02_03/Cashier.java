@@ -157,8 +157,6 @@ public class Cashier extends Thread implements ICashier {
             buyer.notify();
         }
 
-        Buyer.semaphoreBacket.release();
-
     }
 
 

@@ -38,10 +38,12 @@ public class Buyer extends Thread implements IBuyer {
                 semaphore.release();
             }
             goQueue();
+            goOut();
         } catch (InterruptedException e) {
             e.printStackTrace();
+        } finally {
+            semaphoreBacket.release();
         }
-        goOut();
     }
 
 
@@ -115,10 +117,10 @@ public class Buyer extends Thread implements IBuyer {
     @Override
     public void goOut() {
         System.out.println(this + " вышел из магазин");
-        synchronized (monitor1) {
-            ++DispatcherBuyer.countBuyersGoOut;
-        }
-        if(QueueBuyer.sizeQueueRemove.get()==DispatcherBuyer.countBuyers){
+//        DispatcherBuyer.countBuyersGoOut.incrementAndGet();
+        if (QueueBuyer.sizeQueueRemove.get() == DispatcherBuyer.countBuyers) {
+            DispatcherCashier.executorService.shutdown();
+            Util.sleep(1000);
             System.out.println("Обслужено клиентов:" + QueueBuyer.sizeQueueRemove.get());
             System.out.println("Длина очереди:" + QueueBuyer.sizeQueueInAdd.get());
             System.out.println("Выручка магазина:" + Cashier.countShop);
