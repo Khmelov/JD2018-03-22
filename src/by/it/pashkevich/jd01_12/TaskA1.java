@@ -1,7 +1,5 @@
 package by.it.pashkevich.jd01_12;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 import java.util.ArrayList;
 import java.util.List;
 

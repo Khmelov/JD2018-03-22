@@ -1,8 +1,11 @@
-package by.it.uskoryaev.jd02_01;
+package by.it.kirova.jd02_02;
 
 public interface IBuyer {
     void enterToMarket();
-    void chooseGoods();
-    void goOut();
 
+    void chooseGoods();
+
+    void goQueue();
+
+    void goOut();
 }
