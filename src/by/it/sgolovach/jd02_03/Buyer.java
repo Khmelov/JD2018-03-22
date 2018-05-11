@@ -1,114 +1,141 @@
 package by.it.sgolovach.jd02_03;
 
 import java.util.ArrayList;
+import java.util.concurrent.Semaphore;
 
-public class Buyer extends Thread implements IBuyer, IUseBacket, Comparable<Buyer> {
+public class Buyer extends Thread implements IBuyer {
 
-    private String name;
+    private static Semaphore semaphore = new Semaphore(20);
 
-    int nm = 0;
+    static Semaphore semaphoreBacket = new Semaphore(50);
 
-    boolean pensioneer() {
-        if (nm % 4 == 0) return true;
+    private final static Integer monitor1 = 0;
+
+    int numberBuyer = 0;
+
+    boolean pensioner() {
+        if (numberBuyer % 4 == 0) return true;
         else return false;
     }
 
-    public Buyer(int number) {
-        nm = number;
-        if (!pensioneer()) {
-            name = "Покупатель № " + number;
+
+    @Override
+    public void run() {
+        enterToShop();
+        System.out.println(this + "ждет свободной корзины");
+        try {
+            semaphoreBacket.acquire();
+            takeBacket();
+            System.out.println(this + "ждет входа в торговый зал");
+            try {
+                semaphore.acquire();
+                System.out.println(this + "вошел в торговый зал");
+                chooseGoods();
+                putGoodsToBacket();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                semaphore.release();
+            }
+            goQueue();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        goOut();
+    }
+
+
+    private String name;
+
+
+    @Override
+    public void enterToShop() {
+        System.out.println(this + " вошел в магазин");
+    }
+
+    @Override
+    public void takeBacket() {
+        if (!pensioner()) {
+            Util.sleep(Util.random(100, 200));
         } else {
-            name = "Покупатель № " + number + " пенсионер";
+            Util.sleep(Util.random(150, 300));
+        }
+        System.out.println(this + " взял корзину");
+    }
+
+    @Override
+    public void chooseGoods() {
+        if (!pensioner()) {
+            Util.sleep(Util.random(500, 2000));
+        } else {
+            Util.sleep(Util.random(750, 3000));
+        }
+        synchronized (monitor1) {
+            int count = Util.random(1, 4);
+            ArrayList<String> goods = new ArrayList<>();
+            for (int i = 0; i < count; i++) {
+                int countGood = Util.random(0, 9);
+                goods.add(Runner.goodCatalague.get(countGood));
+            }
+            System.out.println(this + "выбрал товар");
+            BacketBuyers.backetByuer(numberBuyer, goods);
         }
     }
+
+    @Override
+    public void putGoodsToBacket() {
+        if (!pensioner()) {
+            Util.sleep(Util.random(100, 200));
+        } else {
+            Util.sleep(Util.random(150, 300));
+        }
+        String str = "";
+        synchronized (monitor1) {
+            for (Object o : BacketBuyers.backetBuyer.get(numberBuyer)) {
+                str += o + " ";
+            }
+        }
+        System.out.println(this + "положил " + str + "в корзину");
+    }
+
+    @Override
+    public void goQueue() {
+        System.out.println(this + " встал в очередь");
+
+        QueueBuyer.addInQueue(this);
+        synchronized (this) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @Override
+    public void goOut() {
+        System.out.println(this + " вышел из магазин");
+        synchronized (monitor1) {
+            ++DispatcherBuyer.countBuyersGoOut;
+        }
+        if(QueueBuyer.sizeQueueRemove.get()==DispatcherBuyer.countBuyers){
+            System.out.println("Обслужено клиентов:" + QueueBuyer.sizeQueueRemove.get());
+            System.out.println("Длина очереди:" + QueueBuyer.sizeQueueInAdd.get());
+            System.out.println("Выручка магазина:" + Cashier.countShop);
+            System.out.println("Магазин закрылся!!!");
+        }
+    }
+
 
     @Override
     public String toString() {
         return name + " ";
     }
 
-    @Override
-    public void run() {
-        enterToMarket();
-        takeBacket();
-        chooseGoods();
-        putGoodsToBacket();
-        goQueue();
-        goOut();
-    }
-
-    @Override
-    public void enterToMarket() {
-        System.out.println(this + "зашел в магазин");
-    }
-
-    @Override
-    public void chooseGoods() {
-        if (!pensioneer()) {
-            Util.sleep(Util.random(500, 2000));
-        } else {
-            Util.sleep(Util.random(750, 3000));
-        }
-        int count = Util.random(1, 4);
-        ArrayList<String> goods = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            int countGood = Util.random(0, 9);
-            goods.add(Runner.goodCatalague.get(countGood));
-        }
-        System.out.println(this + "выбрал товар");
-        BacketBuyers.backetByuer(nm, goods);
-    }
-
-    @Override
-    public void goOut() {
-        System.out.println(this + "вышел из магазина");
-        Dispatcher.finalBuyer();
-    }
-
-    @Override
-    public void goQueue() {
-        System.out.println(this + "встал в очередь");
-         QueueBuyer.addBuyer(this);
-        synchronized (this) {
-            while (QueueBuyer.buyerInQueue(this)) {
-                try {
-                    wait();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    @Override
-    public void takeBacket() {
-        if (!pensioneer()) {
-            Util.sleep(Util.random(100, 200));
-        } else {
-            Util.sleep(Util.random(150, 300));
-        }
-        System.out.println(this + "взял корзину");
-    }
-
-    @Override
-    public void putGoodsToBacket() {
-        int cost = 0;
-        if (!pensioneer()) {
-            Util.sleep(Util.random(100, 200));
-        } else {
-            Util.sleep(Util.random(150, 300));
-        }
-        String str = "";
-        for (Object o : BacketBuyers.backetBuyer.get(nm)) {
-            str += o + " ";
-            cost += Runner.goods.get(o);
-        }
-        System.out.println(this + "положил " + str + "в корзину, на сумму = " + cost);
-
-    }
-
-    @Override
-    public int compareTo(Buyer o) {
-        return 0;
+    public Buyer(int number) {
+        numberBuyer = number;
+        if (pensioner()) {
+            name = "Покупатель № " + number + " пенсионер";
+        } else name = "Покупатель № " + number;
     }
 }
