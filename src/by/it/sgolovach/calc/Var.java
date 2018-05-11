@@ -29,7 +29,7 @@ abstract class Var implements Operation {
     }
 
     static Var createVar(String strVar) throws CalcException {
-//        strVar = strVar.replace("\\s+", "").trim();
+        strVar = strVar.replaceAll("\\s", "");
         if (strVar.matches(Patterns.SCALAR))
             return new Scalar(strVar);
         if (strVar.matches(Patterns.VECTOR))

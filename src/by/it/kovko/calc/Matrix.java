@@ -109,10 +109,12 @@ public class Matrix extends Var {
                 throw new CalcException("Матрицы разной длины");
             double result[][] = new double[this.value.length][((Matrix) other).value[0].length];
             for (int i = 0; i < result.length; i++)
-                for (int j = 0; j < result[i].length; j++)
-                        for (int k = 0; k < result[i].length; k++)
-                            result[i][j] += (this.value[i][k] * ((Matrix) other).value[k][j]);
-            return new Matrix(result);
+                for (int j = 0; j < result[i].length; j++) {
+                    for (int k = 0; k < result[i].length; k++)
+                        result[i][j] += (this.value[i][k] * ((Matrix) other).value[k][j]);
+                    //System.out.println(result[i][j]);
+                }
+                return new Matrix(result);
         } else
             return super.mul(other);
     }
