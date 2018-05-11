@@ -29,36 +29,42 @@ class Parser {
 
 
     Var calc(String expression) throws CalcException {
-        //2.0*3.0
-        operands = new ArrayList<>(Arrays.asList(expression.split(Patterns.OPERATION)));
-        operations = new ArrayList<>();
+        //D=2.0*3.0/5+3
 
+        operands = new ArrayList<>(
+                Arrays.asList(expression.split(Patterns.OPERATION))
+        );
+        operations = new ArrayList<>();
         Pattern p = Pattern.compile(Patterns.OPERATION);
         Matcher m = p.matcher(expression);
-
-
         while (m.find()) {
-            String[] strOp = expression.split(Patterns.OPERATION);
-            String operation = m.group();
-            String strVarLeft = strOp[0];
-            String strVarRight = strOp[1];
-
-
-            Var two = Var.createVar(strVarRight);
-            if (operation.equals("=") && strVarLeft.matches(Patterns.VARNAME))
-                return Var.saveVar(strVarLeft, two);
-            Var one = Var.createVar(strVarLeft);
-            switch (operation) {
-                case "+":
-                    return one.add(two);
-                case "-":
-                    return one.sub(two);
-                case "*":
-                    return one.mul(two);
-                case "/":
-                    return one.div(two);
-            }
+            operations.add(m.group());
         }
-        return Var.createVar(expression);
+        while (operations.size() > 0) {
+            int index = getNumberOperation();
+            String op = operations.remove(index);
+            String oLeft = operands.get(index);
+            String oRight = operands.remove(index + 1);
+            operands.set(index, calcOneOperation(oLeft, op, oRight).toString());
+        }
+        return Var.createVar(operands.get(0));
+    }
+
+    private Var calcOneOperation(String strVarLeft, String operaton, String strVarRight) throws CalcException {
+        Var two = Var.createVar(strVarRight); // a=9
+        if (operaton.equals("=") && strVarLeft.matches(Patterns.VARNAME))
+            return Var.saveVar(strVarLeft, two);
+        Var one = Var.createVar(strVarLeft);
+        switch (operaton) {
+            case "+":
+                return one.add(two);
+            case "-":
+                return one.sub(two);
+            case "*":
+                return one.mul(two);
+            case "/":
+                return one.div(two);
+        }
+        throw new CalcException("Нет такой операции");
     }
 }
