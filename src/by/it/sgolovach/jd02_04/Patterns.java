@@ -1,4 +1,4 @@
-package by.it.sgolovach.calc;
+package by.it.sgolovach.jd02_04;
 
 abstract class Patterns {
 

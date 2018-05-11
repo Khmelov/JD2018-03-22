@@ -1,14 +1,14 @@
-package by.it.sgolovach.jd02_02;
+package by.it.sgolovach.jd02_03;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Cashier extends Thread implements ICashier {
-
-    private final static Integer monitor3 = 0;
 
     private String name;
 
     int numberCashier = 0;
 
-    static int countShop = 0;
+    final static AtomicInteger countShop = new AtomicInteger(0);
 
     @Override
     public void run() {
@@ -80,10 +80,6 @@ public class Cashier extends Thread implements ICashier {
     public void serviceBuyer() {
         Buyer buyer = QueueBuyer.removeOfQueue();
 
-        synchronized (buyer) {
-            buyer.notify();
-        }
-
         int countGoods = 0;
         String nameGoods = "";
         int countQueue = QueueBuyer.sizeQueue();
@@ -111,29 +107,29 @@ public class Cashier extends Thread implements ICashier {
             }
         }
 
-        synchronized (monitor3) {
-            countShop += countGoods;
-        }
+
+        countShop.getAndAdd(+countGoods);
+
 
         if (numberCashier == 1) {
             Util.sleep(Util.random(2000, 5000));
             System.out.println(this + " start\n" + buyer.toString());
             System.out.println("Чек №" + buyer.numberBuyer + "\n" + nameGoods + "Итого= " + countGoods);
-            System.out.println("                                                                                                                               Размер очереди:" + countQueue + "              Выручка:" + countShop);
+            System.out.println("                                                                                                                               Размер очереди:" + countQueue + "              Выручка:" + countShop.get());
             System.out.println(this + " finish");
         }
         if (numberCashier == 2) {
             Util.sleep(Util.random(2000, 5000));
             System.out.println("                      " + this + " start\n                      " + buyer.toString());
             System.out.println("                      Чек №" + buyer.numberBuyer + "\n" + nameGoods + "                      Итого= " + countGoods);
-            System.out.println("                                                                                                                               Размер очереди:" + countQueue + "              Выручка:" + countShop);
+            System.out.println("                                                                                                                               Размер очереди:" + countQueue + "              Выручка:" + countShop.get());
             System.out.println("                      " + this + " finish");
         }
         if (numberCashier == 3) {
             Util.sleep(Util.random(2000, 5000));
             System.out.println("                                              " + this + " start\n                                              " + buyer.toString());
             System.out.println("                                              Чек № " + buyer.numberBuyer + "\n" + nameGoods + "                                              Итого= " + countGoods);
-            System.out.println("                                                                                                                               Размер очереди:" + countQueue + "              Выручка:" + countShop);
+            System.out.println("                                                                                                                               Размер очереди:" + countQueue + "              Выручка:" + countShop.get());
             System.out.println("                                              " + this + " finish\n                                              " + buyer.toString());
         }
         if (numberCashier == 4) {
@@ -142,7 +138,7 @@ public class Cashier extends Thread implements ICashier {
                     " satrt\n                                                                    " + buyer.toString());
             System.out.println("                                                                    Чек № " + buyer.numberBuyer + "\n" + nameGoods +
                     "                                                                    Итого= " + countGoods);
-            System.out.println("                                                                                                                               Размер очереди:" + countQueue + "              Выручка:" + countShop);
+            System.out.println("                                                                                                                               Размер очереди:" + countQueue + "              Выручка:" + countShop.get());
             System.out.println("                                                                    " + this +
                     " finish\n                                                                    " + buyer.toString());
         }
@@ -152,9 +148,13 @@ public class Cashier extends Thread implements ICashier {
                     " start\n                                                                                          " + buyer.toString());
             System.out.println("                                                                                          Чек № " + buyer.numberBuyer + "\n" + nameGoods +
                     "                                                                                          Итого= " + countGoods);
-            System.out.println("                                                                                                                               Размер очереди:" + countQueue + "              Выручка:" + countShop);
+            System.out.println("                                                                                                                               Размер очереди:" + countQueue + "              Выручка:" + countShop.get());
             System.out.println("                                                                                          " + this +
                     " finish\n                                                                                          " + buyer.toString());
+        }
+
+        synchronized (buyer){
+            buyer.notify();
         }
 
     }
@@ -166,9 +166,7 @@ public class Cashier extends Thread implements ICashier {
     }
 
     public boolean testQueue() {
-        synchronized (monitor3) {
-            return QueueBuyer.sizeQueueRemove == DispatcherBuyer.countBuyers;
-        }
+            return QueueBuyer.sizeQueueRemove.get() == DispatcherBuyer.countBuyers;
     }
 
     public Cashier(int number) {

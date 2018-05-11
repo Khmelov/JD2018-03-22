@@ -1,4 +1,4 @@
-package by.it.sgolovach.calc;
+package by.it.sgolovach.jd02_04;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -10,18 +10,17 @@ abstract class Var implements Operation {
 
     private static Map<String, Var> variables = new HashMap<>();
 
-
     static Var saveVar(String nameVar, Var valueVar) throws CalcException {
-       variables.put(nameVar, valueVar);
-
+        variables.put(nameVar, valueVar); //можно оптимизитровать дозапись
         try (PrintWriter printer = new PrintWriter(
-                new FileWriter(Util.getPathVarsTxt()))) {
+                new FileWriter(Util.getPathVarsTxt()
+                )
+        )) {
             for (Map.Entry<String, Var> entry : variables.entrySet()) {
                 printer.println(entry.getKey() + "=" + entry.getValue());
             }
-
         } catch (IOException e) {
-            throw new CalcException("Не удалось сохранить переменную" + nameVar + "=" + valueVar, e);
+            throw new CalcException("Не удалось сохранить переменную " + nameVar + "=" + valueVar, e);
         }
 
 
