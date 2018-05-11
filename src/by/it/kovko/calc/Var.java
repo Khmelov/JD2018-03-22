@@ -39,15 +39,20 @@ public abstract class Var implements Operation {
 
 
     static Var createVar(String strVar) throws CalcException {
-        strVar=strVar.replace("\\s+","");
+        strVar=strVar.replaceAll("\\s*","");
         if (strVar.matches(Patterns.SCALAR))
             return new Scalar(strVar);
-        if (strVar.matches(Patterns.VECTOR))
+        if (strVar.matches(Patterns.VECTOR)) {
+            //System.out.println("вектор "+strVar);
+
             return new Vector(strVar);
+
+        }
         if (strVar.matches(Patterns.MATRIX))
             return new Matrix(strVar);
         if (strVar.matches(Patterns.VARNAME))
             return variables.get(strVar);
+        //System.out.println("Не вернул вектор");
         throw new CalcException("Ошибка обработки");
     }
 
