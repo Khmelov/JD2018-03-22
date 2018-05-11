@@ -1,12 +1,14 @@
-package by.it.kirova.jd02_02;
+package by.it.kirova.jd02_03;
+
+import by.it.kirova.jd02_02.Goods;
 
 import java.util.ArrayList;
 
 public class Printer {
 
-    static boolean printAll = false;
-    static final Object singlePrinterAccess = new Object();
-    static double total = 0;
+    private static boolean printAll = false;
+    private static final Object singlePrinterAccess = new Object();
+    private static double total = 0;
 
     public static void printMessage(String message) {
         if (!printAll)
@@ -32,9 +34,9 @@ public class Printer {
             System.out.print(spaces + "\u001B[32mИТОГО: ");
             System.out.printf("%.2f", totalCost);
             System.out.println(" р.\u001B[0m");
-            String cntStr =  QueueBuyer.getSize() + " человек";
+            String cntStr = QueueBuyer.getSize() + " человек ";
             System.out.print(String.format("%" + 100 + "s", " ") + cntStr);
-            System.out.print(String.format("%" + (20-cntStr.length()) + "s", " "));
+            System.out.print(String.format("%" + (20 - cntStr.length()) + "s", " "));
             System.out.print("\u001B[32m");
             System.out.printf("%.2f", total);
             System.out.println(" р.\u001B[0m");

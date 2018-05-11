@@ -1,4 +1,4 @@
-package by.it.kirova.jd02_02;
+package by.it.kirova.jd02_03;
 
 public class Cashier implements Runnable {
 
@@ -33,7 +33,7 @@ public class Cashier implements Runnable {
     private int number;
     private boolean isOpen = true;
     private int count = -1;
-    private int totalCount = 0;
+    int totalCount = 0;
 
     public double getTotalCost() {
         return totalCost;
@@ -52,12 +52,13 @@ public class Cashier implements Runnable {
             Buyer buyer = QueueBuyer.extractBuyer();
             //покупатель найден
             if (buyer != null) {
-                //openCashier();
                 processBuyer(buyer);
-            } else{
+                //покупатель запущен из состояния wait
+                synchronized (buyer) {
+                    buyer.notify();
+                }
+            } else
                 closeCashier();
-            }
-
             //тут лучше сделать wait() кассиру на общем для кассиров мониторе,
             //а notify() выполнять на этом же мониторе
             //из метода очереди (после добавления покупателя в очередь)
@@ -65,8 +66,7 @@ public class Cashier implements Runnable {
             //когда эта работа для него появится
             //подумайте, где и почему еще будет нужен notifyAll()
         }
-        Printer.printMessage("Кассир " + number +
-                " завершил рабочий день обработав " + totalCount + " человек.");
+        System.out.println(this + " закрыл кассу.");
     }
 
     private void processBuyer(Buyer buyer){
@@ -81,10 +81,9 @@ public class Cashier implements Runnable {
         count++;
     }
 
+
     @Override
     public String toString() {
         return "Кассир №" + number;
     }
-
-
 }
