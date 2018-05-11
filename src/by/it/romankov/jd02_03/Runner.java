@@ -12,9 +12,8 @@ public class Runner {
     public static void main(String[] args) {
         ExecutorService service = Executors.newFixedThreadPool(5);
         for (int i = 1; i <= 2; i++) {
-           service.execute(new Cashier(i));
+            service.execute(new Cashier(i));
         }
-service.shutdown();
 
         while (!Dispatcher.allBuyersInShop()) {
             Util.sleep(1000);
@@ -36,7 +35,8 @@ service.shutdown();
                 e.printStackTrace();
             }
         }
-        Thread.yield();
+        Util.sleep(500);
         System.out.println("Магазин закрылся");
+        service.shutdown();
     }
 }

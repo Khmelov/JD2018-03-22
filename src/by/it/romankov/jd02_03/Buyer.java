@@ -2,7 +2,7 @@ package by.it.romankov.jd02_03;
 
 import java.util.Comparator;
 
-public class Buyer extends Thread implements IBuyer{
+public class Buyer extends Thread implements IBuyer,Comparable<Buyer>{
 
     private String name;
 
@@ -56,4 +56,8 @@ public class Buyer extends Thread implements IBuyer{
         Dispatcher.finalBuyer();
     }
 
+    @Override
+    public int compareTo(Buyer o) {
+        return 0;
+    }
 }

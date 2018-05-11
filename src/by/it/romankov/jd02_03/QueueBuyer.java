@@ -30,9 +30,8 @@ class QueueBuyer {
 
 
     static boolean buyerInQueue(Buyer buyer) {
-        synchronized (internalQueue) {
-            return internalQueue.size()>0;
+          return internalQueue.contains(buyer);
         }
     }
 
-}
+
