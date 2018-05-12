@@ -3,7 +3,7 @@ package by.it.akhmelev.jd02_02;
 class Dispatcher {
 
     static int speed = 25; //во сколько раз ускорить приложение
-    private final static int planCount = 100; //сколько покупателей нужно всего
+    private final static int planCount = 10; //сколько покупателей нужно всего
 
     private static int numberBuyer = 0; //счетчик покупателей
     private static int processCount = 0; //сколько их в магазине
@@ -11,6 +11,7 @@ class Dispatcher {
 
     //синхронизация происходит по объекту Dispatcher.class
     synchronized static boolean planComplete() {
+
         return factCount >= planCount;
     }
 
@@ -28,6 +29,7 @@ class Dispatcher {
 
     //синхронизация происходит по объекту Dispatcher.class
     synchronized static boolean allBuyersInShop() {
+
         return numberBuyer == planCount;
     }
 
