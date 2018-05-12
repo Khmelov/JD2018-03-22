@@ -23,6 +23,12 @@ class QueueBuyer {
         Printer.printMessage(sb.toString());
     }
 
+    public static int getSize() {
+        synchronized (internalQueue) {
+            return internalQueue.size();
+        }
+    }
+
     public static Cashier createCashier(){
         Cashier c = new Cashier(cashiers.size());
         cashiers.add(c);
@@ -53,7 +59,7 @@ class QueueBuyer {
         }
     }
 
-    static void openCashier(){
+    private static void openCashier(){
         for (Cashier c: cashiers) {
             if(!c.isOpen()){
                 c.openCashier();
@@ -62,7 +68,7 @@ class QueueBuyer {
         }
     }
 
-    static int getOpenedCashiersCount(){
+    private static int getOpenedCashiersCount(){
         int count = 0;
         for (Cashier c: cashiers) {
             if(c.isOpen()){

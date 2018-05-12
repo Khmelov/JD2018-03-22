@@ -6,14 +6,14 @@ import java.util.ArrayList;
 public class Buyer extends Thread implements IBuyer, IUseBacket {
 
     private String name;
-    Goods goods;
+    private Goods goods;
 
     public boolean isPensioner() {
         return pensioner;
     }
 
-    boolean pensioner;
-    ArrayList<String> backet;
+    private boolean pensioner;
+    private ArrayList<String> backet;
 
     public Integer getQueuePriority(){
         return pensioner ? 1 : 2;

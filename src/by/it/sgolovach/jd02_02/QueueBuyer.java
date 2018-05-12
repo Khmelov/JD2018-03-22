@@ -2,54 +2,60 @@ package by.it.sgolovach.jd02_02;
 
 import java.util.LinkedList;
 
-class QueueBuyer {
+public class QueueBuyer extends Thread {
 
-    final static LinkedList<Buyer> internalQueue = new LinkedList<>();
-    final static LinkedList<Buyer> internalQueuePensioner = new LinkedList<>();
+    static int countBuyerInQueue = 0;
 
-    static void printSize() {
-        int count = internalQueue.size() + internalQueuePensioner.size();
-        if (count > 0) System.out.println("Длина очереди покупателей: " + count);
-    }
+    private final static Integer monitor2 = 0;
 
-    static void addBuyer(Buyer buyer) {
-        synchronized (internalQueue) {
-            internalQueue.addLast(buyer);
+    static int sizeQueueInAdd = 0;
+
+    static int sizeQueueRemove = 0;
+
+
+    static LinkedList<Buyer> buyersInQueue = new LinkedList<>();
+
+    static LinkedList<Buyer> pensionerinQueue = new LinkedList<>();
+
+
+    static void addInQueue(Buyer buyer) {
+        synchronized (monitor2) {
+            if (buyer.numberBuyer % 4 == 0) {
+                pensionerinQueue.addLast(buyer);
+                ++sizeQueueInAdd;
+            } else {
+                buyersInQueue.addLast(buyer);
+                ++sizeQueueInAdd;
+            }
+            if (countBuyerInQueue == 0) {
+                DispatcherCashier dispatcherCashier = new DispatcherCashier();
+                dispatcherCashier.start();
+                countBuyerInQueue++;
+            }
         }
     }
 
-    static void addBuyerPensioner(Buyer buyer) {
-        synchronized (internalQueuePensioner) {
-            internalQueuePensioner.addLast(buyer);
-        }
-    }
-
-    static Buyer extractBuyer() {
-        synchronized (internalQueue) {
-            Buyer buyer = internalQueue.pollFirst();
-            printSize();
+    static Buyer removeOfQueue() {
+        synchronized (monitor2) {
+            Buyer buyer;
+            if (!(pensionerinQueue.isEmpty())) {
+                ++sizeQueueRemove;
+                --sizeQueueInAdd;
+                buyer = pensionerinQueue.pollFirst();
+            } else {
+                ++sizeQueueRemove;
+                --sizeQueueInAdd;
+                buyer = buyersInQueue.pollFirst();
+            }
             return buyer;
         }
+
     }
 
-    static Buyer extractBuyerPensioner() {
-        synchronized (internalQueuePensioner) {
-            Buyer buyer = internalQueuePensioner.pollFirst();
-            printSize();
-            return buyer;
+    static int sizeQueue() {
+        synchronized (monitor2) {
+            return sizeQueueInAdd;
         }
-    }
 
-    static boolean buyerInQueue(Buyer buyer) {
-        synchronized (internalQueue) {
-            return internalQueue.indexOf(buyer) > -1;
-        }
     }
-
-    static boolean buyerInQueuePensioner(Buyer buyer) {
-        synchronized (internalQueuePensioner) {
-            return internalQueuePensioner.indexOf(buyer) > -1;
-        }
-    }
-
 }
