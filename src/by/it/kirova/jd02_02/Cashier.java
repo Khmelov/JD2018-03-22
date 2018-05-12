@@ -9,7 +9,7 @@ public class Cashier implements Runnable {
     public synchronized void openCashier() {
         if(!isOpen){
             isOpen = true;
-            System.out.println("\u001B[36m" + this + " открыл кассу.\u001B[0m");
+            Printer.printMessage("\u001B[36m" + this + " открыл кассу.\u001B[0m");
             this.notify();
         }
     }
@@ -19,7 +19,7 @@ public class Cashier implements Runnable {
             isOpen = false;
             if(count != -1){
                 totalCount += count;
-                System.out.println("\u001B[31m" + this + " закрыл кассу обработав "+ count +" человек.\u001B[0m");
+                Printer.printMessage("\u001B[31m" + this + " закрыл кассу обработав "+ count +" человек.\u001B[0m");
             }
             count = 0;
             try {
@@ -65,15 +65,15 @@ public class Cashier implements Runnable {
             //когда эта работа для него появится
             //подумайте, где и почему еще будет нужен notifyAll()
         }
-        System.out.println("Кассир " + number +
+        Printer.printMessage("Кассир " + number +
                 " завершил рабочий день обработав " + totalCount + " человек.");
     }
 
     private void processBuyer(Buyer buyer){
-        System.out.println(this + ". Начало обслуживания для " + buyer);
+        Printer.printMessage(this + ". Начало обслуживания для " + buyer);
         Util.sleep(Util.random(2000, 5000));
-        totalCost += Printer.printCheck(buyer.getBacket(), buyer.toString(), this.toString());
-        System.out.println(this + ". Конец обслуживания для " + buyer);
+        totalCost += Printer.printCheck(buyer.getBacket(), buyer.toString(), this.number);
+        Printer.printMessage(this + ". Конец обслуживания для " + buyer);
         //покупатель запущен из состояния wait
         synchronized (buyer) {
             buyer.notify();

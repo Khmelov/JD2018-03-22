@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 class Dispatcher {
 
-    static int speed = 1; //во сколько раз ускорить приложение
+    static int speed = 25; //во сколько раз ускорить приложение
     private final static int planCount = 100; //сколько покупателей нужно всего
 
     private static int numberBuyer = 0; //счетчик покупателей
@@ -23,7 +23,7 @@ class Dispatcher {
 
     }
 
-    static ArrayList<Integer> chart = new ArrayList<>();
+    private static ArrayList<Integer> chart = new ArrayList<>();
     synchronized static boolean needNext(int i){
         int t = i % 60;
         boolean todo = t < 30 ? processCount < (t + 10) : processCount <= 40 + (30 - t);
