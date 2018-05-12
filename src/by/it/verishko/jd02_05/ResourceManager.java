@@ -17,7 +17,7 @@ public enum ResourceManager {
 
     private ResourceBundle resourceBundle;
 
-    ResourceManager() {
+    private ResourceManager() {
         resourceBundle = ResourceBundle.getBundle(path, locale);
 
     }

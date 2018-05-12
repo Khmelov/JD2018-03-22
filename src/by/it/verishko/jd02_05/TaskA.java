@@ -12,8 +12,8 @@ public class TaskA {
             rm.setLocale(new Locale(args[0], args[1]));
 //        rm.setLocale(new Locale(be, BY));
         System.out.println(rm.get(Messages.WELCOME));
-        System.out.println(rm.get(Messages.HOWDOYOUDO));
         System.out.println(rm.get(Messages.NAME));
+        System.out.println(rm.get(Messages.HOWDOYOUDO));
     }
 
 
@@ -27,7 +27,6 @@ public class TaskA {
 //                    country = "ru";
 //                    language = "RU";
 //                    System.out.println("\n" + i + " — русский");
-//
 //                    break;
 //                case '2':
 //                    country = "BY";
