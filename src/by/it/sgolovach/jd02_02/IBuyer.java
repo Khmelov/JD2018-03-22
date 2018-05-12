@@ -1,11 +1,16 @@
 package by.it.sgolovach.jd02_02;
 
 public interface IBuyer {
-    void enterToMarket();
+
+    void enterToShop();
+
+    void takeBacket();
 
     void chooseGoods();
 
-    void goOut();
+    void putGoodsToBacket();
 
     void goQueue();
+
+    void goOut();
 }
