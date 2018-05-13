@@ -1,0 +1,2 @@
+msg.welcome=привет!
+msg.name=Саша

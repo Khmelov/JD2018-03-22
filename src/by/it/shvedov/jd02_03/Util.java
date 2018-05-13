@@ -1,7 +1,7 @@
-package by.it.shvedov.jd02_01;
+package by.it.shvedov.jd02_03;
 
 public class Util {
-    public static void sleep(int s) {
+    static void sleep(int s) {
         try {
             Thread.sleep(s);
         } catch (InterruptedException e) {
