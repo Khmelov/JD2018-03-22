@@ -1,9 +1,6 @@
 package by.it.akhmelev.calc;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 class ConsoleRunner {
@@ -11,17 +8,19 @@ class ConsoleRunner {
         Printer printer = new Printer();
         Parser parser = new Parser();
 
-        try (BufferedReader reader = new BufferedReader(
-                new FileReader(Util.getPathVarsTxt()))
-        ) {
-            String line;
-            while ((line = reader.readLine()) != null)
-                parser.calc(line);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (CalcException e) {
-            System.out.println(e);
-        }
+        File file = new File(Util.getPathVarsTxt());
+        if (file.exists())
+            try (BufferedReader reader = new BufferedReader(
+                    new FileReader(file))
+            ) {
+                String line;
+                while ((line = reader.readLine()) != null)
+                    parser.calc(line);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (CalcException e) {
+                System.out.println(e);
+            }
 
 
         Scanner scanner = new Scanner(System.in);
