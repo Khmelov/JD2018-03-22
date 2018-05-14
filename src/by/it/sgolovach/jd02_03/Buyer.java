@@ -38,12 +38,12 @@ public class Buyer extends Thread implements IBuyer {
                 semaphore.release();
             }
             goQueue();
-            goOut();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
             semaphoreBacket.release();
         }
+        goOut();
     }
 
 
