@@ -34,7 +34,7 @@ class Vector extends Var {
 
     private void chekSize(Var otherVar) throws CalcException {
         if (this.value.length != ((Vector) otherVar).value.length)
-            throw new CalcException("Различный размер векторов");
+            throw new CalcException(ConsoleRunner.rm.get(Messages.VECTOR));
     }
 
 

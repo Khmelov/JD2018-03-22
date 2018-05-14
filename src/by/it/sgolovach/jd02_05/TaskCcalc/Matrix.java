@@ -50,7 +50,7 @@ class Matrix extends Var {
             return new Matrix(res);
         } else if (other instanceof Matrix) {
             if (this.value.length != ((Matrix) other).value.length || this.value[0].length != ((Matrix) other).value[0].length) {
-                throw new CalcException("Различный размер матриц");
+                throw new CalcException(ConsoleRunner.rm.get(Messages.MATRIX));
             }
             Matrix matrix = (Matrix) other;
             double[][] res = new double[this.value.length][this.value.length];
@@ -77,7 +77,7 @@ class Matrix extends Var {
             return new Matrix(res);
         } else if (other instanceof Matrix) {
             if (this.value.length != ((Matrix) other).value.length || this.value[0].length != ((Matrix) other).value[0].length) {
-                throw new CalcException("Различный размер матриц");
+                throw new CalcException(ConsoleRunner.rm.get(Messages.MATRIX));
             }
             Matrix matrix = (Matrix) other;
             double[][] res = new double[this.value.length][this.value.length];
@@ -115,7 +115,7 @@ class Matrix extends Var {
             return new Vector(res);
         } else if (other instanceof Matrix) {
             if (this.value[0].length != ((Matrix) other).value.length) {
-                throw new CalcException("Различный размер матриц");
+                throw new CalcException(ConsoleRunner.rm.get(Messages.MATRIX));
             }
             Matrix matrix = (Matrix) other;
             double[][] res = new double[this.value.length][((Matrix) other).value[0].length];

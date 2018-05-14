@@ -20,7 +20,7 @@ abstract class Var implements Operation {
                 printer.println(entry.getKey() + "=" + entry.getValue());
             }
         } catch (IOException e) {
-            throw new CalcException("Не удалось сохранить переменную " + nameVar + "=" + valueVar, e);
+            throw new CalcException(ConsoleRunner.rm.get(Messages.VAR1) + nameVar + "=" + valueVar, e);
         }
 
 
@@ -37,34 +37,34 @@ abstract class Var implements Operation {
             return new Matrix(strVar);
         if (strVar.matches(Patterns.VARNAME))
             return variables.get(strVar);
-        throw new CalcException("Ошибка обработки: " + strVar);
+        throw new CalcException(ConsoleRunner.rm.get(Messages.VAR2) + strVar);
 
     }
 
 
     @Override
     public String toString() {
-        return "Это класс AbstractVar{}";
+        return ConsoleRunner.rm.get(Messages.VAR3);
     }
 
 
     @Override
     public Var add(Var other) throws CalcException {
-        throw new CalcException("Операция сложения " + this + "+" + other + " невозможна ");
+        throw new CalcException(ConsoleRunner.rm.get(Messages.VAR4) + this + "+" + other + ConsoleRunner.rm.get(Messages.VAR8));
     }
 
     @Override
     public Var sub(Var other) throws CalcException {
-        throw new CalcException("Операция вычитания " + this + "-" + other + " невозможна ");
+        throw new CalcException(ConsoleRunner.rm.get(Messages.VAR5) + this + "-" + other + ConsoleRunner.rm.get(Messages.VAR8));
     }
 
     @Override
     public Var mul(Var other) throws CalcException {
-        throw new CalcException("Операция умнжения " + this + "*" + other + " невозможна ");
+        throw new CalcException(ConsoleRunner.rm.get(Messages.VAR6) + this + "*" + other + ConsoleRunner.rm.get(Messages.VAR8));
     }
 
     @Override
     public Var div(Var other) throws CalcException {
-        throw new CalcException("Операция деления " + this + "/" + other + " невозможна ");
+        throw new CalcException(ConsoleRunner.rm.get(Messages.VAR7) + this + "/" + other + ConsoleRunner.rm.get(Messages.VAR8));
     }
 }
