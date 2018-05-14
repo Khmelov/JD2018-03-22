@@ -3,6 +3,9 @@ package by.it.danilevich.calc;
 import java.io.File;
 
 public class Util {
+    static ResourceManager rm;
+
+
     private static String getPath(Class<?> cl,String clName){
         String path = System.getProperty("user.dir");
         path+= File.separator + "src" + File.separator;
@@ -13,4 +16,16 @@ public class Util {
         return getPath(Util.class, "vars.txt");
     }
 
+
+    static String getPathBundle(Class<?> cl, String nameBundle){
+        String path = System.getProperty("user.dir");
+        path = cl.getName().replace(cl.getSimpleName(),"");
+        path= path+ "ok." + nameBundle;
+
+        return path;
+    }
+
+    public static String getError(String name){
+        return rm.get(name);
+    }
 }

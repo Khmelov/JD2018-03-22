@@ -1,0 +1,3 @@
+msg.welcome = Прывiтанне
+msg.myName = Святлана
+msg.YourQuestion = Як справы?

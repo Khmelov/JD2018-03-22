@@ -1,8 +1,6 @@
 package by.it.verishko.calc;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 class ConsoleRunner {
@@ -10,11 +8,11 @@ class ConsoleRunner {
         Printer printer = new Printer();
         Parser parser = new Parser();
 
-        try (BufferedReader reader = new BufferedReader(
-                new FileReader(
-                        Util.getPathVarsTxt()
-                )
-        )) {
+        File file = new File(Util.getPathVarsTxt());
+        if (file.exists())
+            try (BufferedReader reader = new BufferedReader(
+                    new FileReader(file))
+            ) {
             String line;
             while ((line = reader.readLine()) != null)
                 parser.calc(line);
