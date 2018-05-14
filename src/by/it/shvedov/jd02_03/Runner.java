@@ -1,33 +1,45 @@
 package by.it.shvedov.jd02_03;
 
-import by.it.shvedov.jd02_01.Buyer;
-import by.it.shvedov.jd02_01.Util;
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Runner {
-    static int numberByuer=0;
-public static void main(String[] args) {
-    for (int i = 0; i <20 ; i++) {
-        int s=500;
-        Util.sleep(s);
-        int count=(int)(Math.random()*3);
-        for (int j = 0; j <count ; j++) {
-            Buyer buyer = new Buyer(++numberByuer);
-            buyer.start();
-        }
-    }
-}
-//ExecutorService service= Executors.newFixedThreadPool(5);
- //for(int i=0; i<=2; i++){
 
-   // }
-   // private static void sleep(int s) {
-     //   try {
-       //     Thread.sleep(s);
-       // } catch (Inter ruptedException e) {
-       //     e.printStackTrace();
-       // }
-   // }
+    private static List<Thread> buyersThread = new ArrayList<>();
+
+    public static void main(String[] args) {
+        //создали кассиров (чтобы было видно очередь сделаем их два
+        ExecutorService service= Executors.newFixedThreadPool(5);
+        for (int i = 1; i <= 2; i++) {
+            service.execute(new Cashier(i));
+        }
+        //создаем покупателей пока не выполнен план
+        while (!Dispatcher.allBuyersInShop()) {
+            Util.sleep(1000);
+            int count = Util.random(2);
+            //System.out.println("count=" + count);
+            for (int j = 1; j <= count; j++) {
+                if (Dispatcher.allBuyersInShop())
+                    break;
+                Buyer buyer = Dispatcher.addNewBuyer();
+                buyersThread.add(buyer);
+                buyer.start();
+            }
+        }
+
+        //ожидаем закрытия последней кассы
+        for (Thread buyer : buyersThread) {
+            try {
+                buyer.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        //отдаем управление потоком для завершения выводов покупателей
+        Util.sleep(500); //тут нужно подождать дольше чем любой из кассиров
+        System.out.println("Магазин закрылся");
+        service.shutdown();
+    }
 }

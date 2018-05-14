@@ -1,29 +1,43 @@
 package by.it.shvedov.jd02_02;
 
-import by.it.shvedov.jd02_01.Buyer;
-import by.it.shvedov.jd02_01.Util;
-
-import static java.lang.Thread.sleep;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Runner {
-    static int numberByuer=0;
-public static void main(String[] args) {
-    for (int i = 0; i <20 ; i++) {
-        int s=500;
-        Util.sleep(s);
-        int count=(int)(Math.random()*3);
-        for (int j = 0; j <count ; j++) {
-            Buyer buyer = new Buyer(++numberByuer);
-            buyer.start();
-        }
-    }
-}
 
-   // private static void sleep(int s) {
-     //   try {
-       //     Thread.sleep(s);
-       // } catch (Inter ruptedException e) {
-       //     e.printStackTrace();
-       // }
-   // }
+    static List<Thread> cashiers = new ArrayList<>();
+
+    public static void main(String[] args) {
+
+        for (int i = 1; i <= 2; i++) {
+            Thread cashier = new Thread(new Cashier(i));
+            cashiers.add(cashier);
+            cashier.start();
+        }
+
+
+        while (!Dispatcher.allBuyersInShop()) {
+            Util.sleep(1000);
+            int count = Util.random(2);
+
+            for (int j = 1; j <= count; j++) {
+                if (Dispatcher.allBuyersInShop())
+                    break;
+                Buyer buyer = Dispatcher.addNewBuyer();
+                buyer.start();
+            }
+        }
+
+
+        for (Thread cashier : cashiers) {
+            try {
+                cashier.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        Thread.yield();
+        System.out.println("Магазин закрылся");
+    }
 }
