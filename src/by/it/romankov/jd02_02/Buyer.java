@@ -64,9 +64,12 @@ public class Buyer extends Thread implements IBuyer {
     }
 
     public void printBascet(){
+        int itog= 0;
         for (Map.Entry<String, Integer> good : bascet.entrySet()){
             System.out.println(name + " купил товар " + good.getKey() + " стоимостью " + good.getValue()+" рублей.");
+            itog= itog+good.getValue() ;
         }
+        System.out.println("Сумма чека равна "+ itog + " рублей");
     }
 
 }
