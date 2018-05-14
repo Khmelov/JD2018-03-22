@@ -1,4 +1,4 @@
-package by.it.sgolovach.jd02_04;
+package by.it.sgolovach.jd02_05.TaskCcalc;
 
 
 class Matrix extends Var {

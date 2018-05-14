@@ -1,0 +1,3 @@
+msg.welcom=Прывiтанне!
+msg.myname=Сяргей Галавач
+msg.howdoyoudo=Як справы?

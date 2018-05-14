@@ -1,8 +1,8 @@
-package by.it.sgolovach.jd02_04;
+package by.it.sgolovach.jd02_05.TaskCcalc;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class TestParser {
 
