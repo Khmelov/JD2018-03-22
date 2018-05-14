@@ -1,4 +1,4 @@
-package by.it.sgolovach.jd02_04;
+package by.it.sgolovach.jd02_05.TaskCcalc;
 
 
 import java.util.ArrayList;
@@ -49,7 +49,7 @@ class Parser {
                 Var expres2 = calc(expres1);
                 expression = expression.replaceFirst(Patterns.EXPRESSION, expres2.toString());
             }
-        } else throw new CalcException("Не верное выражение");
+        } else throw new CalcException(ConsoleRunner.rm.get(Messages.PARSER1));
 
         Var result = calc(expression);
 
@@ -92,7 +92,7 @@ class Parser {
             case "/":
                 return one.div(two);
         }
-        throw new CalcException("Нет такой операции");
+        throw new CalcException(ConsoleRunner.rm.get(Messages.PARSER2));
     }
 
 }

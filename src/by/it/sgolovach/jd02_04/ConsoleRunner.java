@@ -28,7 +28,7 @@ class ConsoleRunner {
 
         while (!(line = scanner.nextLine()).equals("end")) {
             try {
-                Var result = parser.calc(line);
+                Var result = parser.calcExpression(line);
                 printer.print(result);
             } catch (CalcException e) {
                 System.out.println(e.getMessage());

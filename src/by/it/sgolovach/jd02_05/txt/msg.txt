@@ -1,0 +1,3 @@
+msg.welcom=Welcom!
+msg.myname=Sergey Golovach
+msg.howdoyoudo=How do you do?
