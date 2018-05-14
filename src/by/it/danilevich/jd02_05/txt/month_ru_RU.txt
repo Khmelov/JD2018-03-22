@@ -1,0 +1,13 @@
+﻿month.m1 = Январь
+month.m2 = Февраль
+month.m3 = Март
+month.m4 = Апрель
+month.m5 = Май
+month.m6 = Июнь
+month.m7 = Июль
+month.m8 = Август
+month.m9 = Сентябрь
+month.m10 = Октябрь
+month.m11 = Ноябрь
+month.m12 = Декабрь
+month.year = г.
