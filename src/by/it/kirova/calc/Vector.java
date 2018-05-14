@@ -3,6 +3,8 @@ package by.it.kirova.calc;
 
 import java.util.Arrays;
 
+import static by.it.kirova.calc.ConsoleRunner.rm;
+
 public class Vector extends Var {
 
     private double[] value;
@@ -41,7 +43,7 @@ public class Vector extends Var {
             return new Vector(sum);
         } else if (other instanceof Vector) {
             if (this.value.length != ((Vector) other).value.length)
-                throw new CalcException("Вектора имеют разную длину. Операция сложения невозможна");
+                throw new CalcException(rm.get(Messages.ADDVECTOR));
             double[] sum = Arrays.copyOf(this.value, this.value.length);
             for (int i = 0; i < sum.length; i++) {
                 sum[i] += ((Vector) other).value[i];
@@ -63,7 +65,7 @@ public class Vector extends Var {
             return new Vector(sub);
         } else if (other instanceof Vector) {
             if (this.value.length != ((Vector) other).value.length)
-                throw new CalcException("Вектора имеют разную длину. Операция вычитания невозможна");
+                throw new CalcException(rm.get(Messages.SUBVECTOR));
             double[] sub = Arrays.copyOf(this.value, this.value.length);
             for (int i = 0; i < sub.length; i++) {
                 sub[i] -= ((Vector) other).value[i];
@@ -85,7 +87,7 @@ public class Vector extends Var {
             return new Vector(mul);
         } else if (other instanceof Vector) {
             if (this.value.length != ((Vector) other).value.length)
-                throw new CalcException("Вектора имеют разную длину. Операция умножения невозможна");
+                throw new CalcException(rm.get(Messages.MULVECTOR));
             double[] mul = Arrays.copyOf(this.value, this.value.length);
             double sum = 0;
             for (int i = 0; i < mul.length; i++) {
@@ -104,7 +106,7 @@ public class Vector extends Var {
             double v = scalar.getValue();
             double[] div = Arrays.copyOf(this.value, this.value.length);
             if (v == 0)
-                throw new CalcException("Деление на ноль");
+                throw new CalcException(rm.get(Messages.DIVBYZERO));
             for (int i = 0; i < div.length; i++) {
                 div[i] /= v;
             }
