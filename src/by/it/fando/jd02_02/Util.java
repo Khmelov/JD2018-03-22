@@ -1,4 +1,4 @@
-package by.it.fando.jd02_01;
+package by.it.fando.jd02_02;
 
 class Util {
     static void sleep(int msTimeout) {

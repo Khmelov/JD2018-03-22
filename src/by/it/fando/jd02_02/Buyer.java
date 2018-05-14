@@ -1,4 +1,4 @@
-package by.it.fando.jd02_01;
+package by.it.fando.jd02_02;
 
 public class Buyer extends Thread implements IBuyer, IUseBasket {
     private String name;
@@ -15,6 +15,7 @@ public class Buyer extends Thread implements IBuyer, IUseBasket {
         takeBasket();
         chooseGoods();
         putGoodsToBasket();
+        goQueue();
         goOut();
     }
 
@@ -26,14 +27,30 @@ public class Buyer extends Thread implements IBuyer, IUseBasket {
     @Override
     public void chooseGoods() {
         System.out.println(this + "Зашел в торговый зал");
-        Util.sleep(Util.random(500,2000));
+        Util.sleep(Util.random(500,1000));
         System.out.println(this + "выбрал товар");
+    }
+
+    @Override
+    public void goQueue() {
+        System.out.println(this + "встал в очередь");
         QueueBuyer.addBuyer(this);
+
+        synchronized (this) {
+            while (QueueBuyer.buyerInQueue(this)) {
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     @Override
     public void goOut() {
         System.out.println(this + "вышел из магазина");
+        Controller.finalBuyer();
     }
 
     @Override
@@ -54,5 +71,4 @@ public class Buyer extends Thread implements IBuyer, IUseBasket {
             System.out.println(this+"Положил товар " + key +" (" + value + ") в корзину");
         }
     }
-
 }
