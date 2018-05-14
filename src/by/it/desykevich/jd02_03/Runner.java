@@ -11,7 +11,6 @@ public class Runner {
 
     public static void main(String[] args) {
         ExecutorService service= Executors.newFixedThreadPool(5);
-        //создали кассиров (чтобы было видно очередь сделаем их два
         for (int i = 1; i <= 3; i++) {
           service.execute(new Cashier(i));
 

@@ -1,11 +1,14 @@
 package by.it.desykevich.jd02_03;
 
 import java.util.LinkedList;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 
 class QueueBuyer {
 
-    private final static PriorityBlockingQueue<Buyer> internalQueue = new PriorityBlockingQueue<>();
+    private final static BlockingQueue<Buyer> internalQueue =
+            new LinkedBlockingQueue<>(30);
 
     private static void printSize() {
         if (internalQueue.size() > 0)
@@ -14,8 +17,12 @@ class QueueBuyer {
 
 
     static void addBuyer(Buyer buyer) {
+        try {
             internalQueue.put(buyer);
-            printSize();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        printSize();
     }
 
 
