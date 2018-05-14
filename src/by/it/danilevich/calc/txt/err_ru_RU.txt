@@ -1,0 +1,17 @@
+err.differentSizeMatrix4Mult = Размеры матриц не подходят для умножения
+err.differentSizeMatrixVector4Mult = Размеры матриц и вектора не подходят для умножения
+err.addimpossible = Сложение невозможно
+err.differentSizeMatrixVector4Sub = Размеры матриц не подходят для вычитания
+err.falseOperation = Нет такой операции
+err.falseDivScalar = На скаляр можно делить только число
+err.falseSaveVar = Не удалось сохранить переменную
+err.errorProces = Ошибка обработки:
+err.OperationAdd = Операция сложения
+err.OperationSub = Операция вычитания
+err.OperationMult = Операция умножения
+err.OperationDiv = Операция деления
+err.ItsAbstract = Это класс Абстракт
+err.DifferenSizeVector = Разные размеры векторов
+err.With = c
+err.Impossible = невозможна
+err.Div0 = Деление на 0 невозможно!

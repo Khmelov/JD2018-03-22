@@ -1,0 +1,17 @@
+err.differentSizeMatrix4Mult = Памеры матрыц не падыходзяць для множання
+err.differentSizeMatrixVector4Mult = Памеры матрыцы i вектара не падыходзяць для множання
+err.addimpossible = Складанне немагчыма
+err.differentSizeMatrixVector4Sub = Памеры матрыц не падыходзяць для аднiмання
+err.falseOperation = Няма такой аперацыi
+err.falseDivScalar = На скаляр можно дзялiць толькi лiк
+err.falseSaveVar = Не атрымалася захавать пераменную
+err.errorProces = Памылка апрацоукi:
+err.OperationAdd = Аперация складання
+err.OperationSub = Аперацыя аднiмання
+err.OperationMult = Аперацыя множання
+err.OperationDiv = Аперацыя дзялення
+err.ItsAbstract = Эта клас Абстракт
+err.DifferenSizeVector = Розныя памеры вектароу
+err.With = c
+err.Impossible = немагчыма
+err.Div0 = Дзяленне на 0 немагчыма!

@@ -1,6 +1,6 @@
 package by.it.danilevich.calc;
 
-public class ActionMatrix {
+class ActionMatrix {
     /*static double findMin(double[ ] arr){
       double min = Double.MAX_VALUE;
        for (double elem: arr) {
@@ -137,12 +137,10 @@ public class ActionMatrix {
     private static boolean checkMatrixForMult(double[][] matrixLeft, double[][] matrixRight){
         //count column in Matrix1== count line in Matrix2
         if (matrixLeft.length!=0 &&matrixRight.length!=0){
-            if (matrixLeft[0].length==matrixRight.length) {
-                return true;
-            }
-            else System.out.println("Count of column matrix left not equal count of line matrix right");
+            return matrixLeft[0].length == matrixRight.length;
+            //else System.out.println("Count of column matrix left not equal count of line matrix right");
         }
-        else  System.out.println("Empty matrix!");
+        //else  System.out.println("Empty matrix!");
         return false;
     }
 }
