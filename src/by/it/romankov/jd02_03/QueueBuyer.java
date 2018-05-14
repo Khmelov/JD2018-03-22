@@ -1,12 +1,14 @@
 package by.it.romankov.jd02_03;
 
 import java.util.LinkedList;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentLinkedQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.PriorityBlockingQueue;
 
 class QueueBuyer {
 
-    private final static PriorityBlockingQueue<Buyer> internalQueue = new PriorityBlockingQueue <Buyer>(30);
+    private final static BlockingQueue<Buyer> internalQueue = new LinkedBlockingQueue<>(30);
 
     private static void printSize() {
         if (internalQueue.size() > 0)
@@ -14,7 +16,7 @@ class QueueBuyer {
     }
 
 
-    static void addBuyer(Buyer buyer) {
+    static void addBuyer(Buyer buyer) throws InterruptedException {
 
             internalQueue.put(buyer);
             printSize();

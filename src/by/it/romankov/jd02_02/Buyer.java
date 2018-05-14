@@ -1,8 +1,12 @@
 package by.it.romankov.jd02_02;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Buyer extends Thread implements IBuyer {
 
     private String name;
+    private Map<String, Integer> bascet;
 
     public Buyer(int number) {
         name = "Покупатель №" + number;
@@ -30,8 +34,13 @@ public class Buyer extends Thread implements IBuyer {
     public void chooseGoods() {
         System.out.println(this + "зашел в торговый зал");
         Util.sleep(Util.random(500, 1000));
+        int bSize = Util.random(1, 4);
+        bascet = new HashMap <>(bSize);
+        for ( int i = 0; i < bSize; i++ ){
+            Map.Entry <String, Integer> good = Goods.getRandomGood();
+            bascet.put(good.getKey(), good.getValue());
+        }
         System.out.println(this + "выбрал товар");
-
     }
 
     @Override
@@ -52,6 +61,12 @@ public class Buyer extends Thread implements IBuyer {
     public void goOut() {
         System.out.println(this + "вышел из магазина");
         Dispatcher.finalBuyer();
+    }
+
+    public void printBascet(){
+        for (Map.Entry<String, Integer> good : bascet.entrySet()){
+            System.out.println(name + " купил товар " + good.getKey() + " стоимостью " + good.getValue()+" рублей.");
+        }
     }
 
 }
