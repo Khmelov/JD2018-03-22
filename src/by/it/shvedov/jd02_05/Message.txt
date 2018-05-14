@@ -1,0 +1,2 @@
+msg.welcome=welcome!
+msg.name=Aleksandr
