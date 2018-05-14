@@ -1,0 +1,2 @@
+﻿local.language = en
+local.region = US

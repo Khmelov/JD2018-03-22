@@ -26,7 +26,7 @@ class Goods {
          this.backet = backet;
     }
 
-    void selectGoods(int countProduct){
+    ArrayList<ArrayList<String>> selectGoods(int countProduct){
         ArrayList<ArrayList<String>> selectProduct = new ArrayList<>();
 
         for (int i = 1; i <= countProduct; i++) {
@@ -39,7 +39,7 @@ class Goods {
             selectProduct.add(struct);
         }
         printSelectedProduct(selectProduct);
-
+        return selectProduct;
     }
     private void printSelectedProduct(ArrayList<ArrayList<String>> selectProduct){
         double sum = 0;
