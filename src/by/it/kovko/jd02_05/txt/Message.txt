@@ -1,0 +1,3 @@
+msg.welcome=Welcome!
+msg.name=Eugene
+msg.question=How do you do?

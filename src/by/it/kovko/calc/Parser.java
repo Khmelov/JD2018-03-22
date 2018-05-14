@@ -75,6 +75,7 @@ class Parser {
             case "/":
                 return one.div(two);
         }
-        throw new CalcException("Нет такой операции");
+        //throw new CalcException("Нет такой операции");
+        throw new CalcException(Errors.NO_OPERATION.toString());
     }
 }

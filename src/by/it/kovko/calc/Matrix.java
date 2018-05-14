@@ -59,7 +59,7 @@ public class Matrix extends Var {
             return new Matrix(result);
         } else if (other instanceof Matrix){
             if (this.value.length!=(((Matrix) other).value.length) || this.value[0].length!=(((Matrix) other).value[0].length))
-                throw new CalcException("Матрицы разной длины");
+                throw new CalcException(Errors.UNMATCHED_MATRICIES.toString());
             double result[][]= new double [this.value.length][];
             for (int i = 0; i < this.value.length; i++){
                 result[i] = Arrays.copyOf(this.value[i], this.value[i].length);
@@ -106,7 +106,7 @@ public class Matrix extends Var {
             return new Vector(result);
         } else if (other instanceof Matrix){
             if (this.value[0].length!=(((Matrix) other).value.length))
-                throw new CalcException("Матрицы разной длины");
+                throw new CalcException(Errors.UNMATCHED_MATRICIES.toString());
             double result[][] = new double[this.value.length][((Matrix) other).value[0].length];
             for (int i = 0; i < result.length; i++)
                 for (int j = 0; j < result[i].length; j++) {
