@@ -3,7 +3,7 @@ package by.it._examples_.jd02_06.p07_facade.objects;
 import by.it._examples_.jd02_06.p07_facade.facade.CarFacade;
 import by.it._examples_.jd02_06.p07_facade.parts.Door;
 import by.it._examples_.jd02_06.p07_facade.parts.Wheel;
-import by.it._examples_.jd02_06.p07_facade.parts.Zazhiganie;
+import by.it._examples_.jd02_06.p07_facade.parts.Clamping;
 
 public class Client {
 
@@ -12,8 +12,8 @@ public class Client {
         Door door = new Door();
         door.open();
 
-        Zazhiganie zazhiganie = new Zazhiganie();
-        zazhiganie.fire();
+        Clamping clamping = new Clamping();
+        clamping.fire();
         
         Wheel wheel = new Wheel();
         wheel.turn();
