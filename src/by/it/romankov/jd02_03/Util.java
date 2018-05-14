@@ -1,16 +1,16 @@
-package by.it.romankov.jd02_02;
+package by.it.romankov.jd02_03;
 
-public class Util {
+class Util {
     static void sleep(int msTimeout) {
         try {
-            Thread.sleep(msTimeout / Dispatcher.speed);
+            Thread.sleep(msTimeout /Dispatcher.speed);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
 
-    public static int random(int from, int to) {
+    static int random(int from, int to) {
         return from + (int) (Math.random() * (1 + to - from));
     }
 

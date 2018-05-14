@@ -1,4 +1,4 @@
-package by.it.romankov.jd02_02;
+package by.it.romankov.jd02_03;
 
 public class Cashier implements Runnable {
 
@@ -11,7 +11,7 @@ public class Cashier implements Runnable {
     @Override
     public void run() {
         System.out.println(this + " открыл кассу.");
-        while (!Dispatcher.planComplete()) {
+         while (!Dispatcher.planComplete()) {
             Buyer buyer = QueueBuyer.extractBuyer();
 
             if (buyer != null) {
@@ -23,13 +23,10 @@ public class Cashier implements Runnable {
                 synchronized (buyer) {
                     buyer.notify();
                 }
-            } else {
+            } else
                 Util.sleep(100);
-
             }
-        }
         System.out.println(this + " закрыл кассу.");
-
     }
 
     @Override

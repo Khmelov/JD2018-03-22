@@ -1,6 +1,6 @@
 package by.it.romankov.jd01_06;
 
-class Poem {
+public class Poem {
     static final String text=
             "У лукоморья дуб зелёный,\n" +
             "Златая цепь на дубе том.\n" +
