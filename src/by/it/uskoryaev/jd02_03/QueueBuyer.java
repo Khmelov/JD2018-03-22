@@ -1,9 +1,10 @@
 package by.it.uskoryaev.jd02_03;
 
-import java.util.concurrent.PriorityBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class QueueBuyer {
-    private final static PriorityBlockingQueue<Buyer> internalQueue = new PriorityBlockingQueue<>(30);
+    private final static BlockingQueue<Buyer> internalQueue = new LinkedBlockingQueue<>(30);
 
     private static void printSize() {
         if (internalQueue.size() > 0) {
@@ -12,20 +13,22 @@ public class QueueBuyer {
     }
 
     static void addBuyer(Buyer buyer) {
-        synchronized (internalQueue) {
+        try {
             internalQueue.put(buyer);
-            printSize();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+        printSize();
     }
 
     static Buyer extractBuyer() {
-            Buyer buyer = internalQueue.poll();
-            printSize();
-            return buyer;
+        Buyer buyer = internalQueue.poll();
+        printSize();
+        return buyer;
 
     }
 
     static boolean buyerInQueue(Buyer buyer) {
-        return internalQueue.peek() != null;
+        return internalQueue.contains(buyer);
     }
 }

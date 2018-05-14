@@ -1,57 +1,57 @@
 package by.it.uskoryaev.calc;
 
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-abstract  class Var implements Operation{
-    private  static  Map<String,Var> variabels = new HashMap<>();
-    static Var createVar(String strVAr){
-        strVAr = strVAr.replace("\\s+","").trim();
-        if (strVAr.matches(Patterns.SCALAR))return new Scalar(strVAr);
-        if (strVAr.matches(Patterns.VECTOR))return new Vector(strVAr);
-        if (strVAr.matches(Patterns.VARNAME))
-            return variabels.get(strVAr);
+abstract class Var implements Operation {
 
-        /*if (strVAr.matches(Patterns.MATRIX))return new Matrix(strVAr);
-        return new Matrix(strVAr);*/
-     return null;
+    private static Map<String, Var> variables = new HashMap<>();
+
+    static Var saveVar(String nameVar, Var valurVar) throws CalcException {
+        variables.put(nameVar, valurVar);
+        try (PrintWriter printer = new PrintWriter(new FileWriter(Util.getPathVarsTxt()))) {
+            for (Map.Entry<String, Var> entry : variables.entrySet()) {
+                printer.println(entry.getKey() + "=" + entry.getValue());
+            }
+        } catch (IOException e) {
+            throw new CalcException("Не удалось сохранить переменную " + nameVar + "=" + valurVar, e);
+        }
+        return valurVar;
+    }
+
+    static Var createVar(String strVar) throws CalcException {
+        if (strVar.matches(Patterns.SCALAR))
+            return new Scalar(strVar);
+        if (strVar.matches(Patterns.VECTOR))
+            return new Vector(strVar);
+        if (strVar.matches(Patterns.MATRIX))
+            return new Matrix(strVar);
+        if (strVar.matches(Patterns.VARNAME))
+            return variables.get(strVar);
+        throw new CalcException("Ошибка обработки: " + strVar);
     }
 
     @Override
-    public String toString() {
-        return "это класс AbstractVar{}";
+    public Var add(Var other) throws CalcException {
+        throw new CalcException("Операция сложения " + this + "+" + other + " невоможна");
     }
 
     @Override
-    public Var add(Var other) {
-        System.out.printf("Операция сложения %s+%s невозможна\n", this, other);
-        return null;
+    public Var sub(Var other) throws CalcException {
+        throw new CalcException("Операция вычитания " + this + "-" + other + " невоможна");
     }
 
     @Override
-    public Var sub(Var other) {
-        System.out.printf("Операция сложения %s-%s невозможна\n", this, other);
-        return null;
+    public Var mul(Var other) throws CalcException {
+        throw new CalcException("Операция умножения " + this + "*" + other + " невоможна");
     }
 
     @Override
-    public Var mul(Var other) {
-        System.out.printf("Операция сложения %s*%s невозможна\n", this, other);
-        return null;
-    }
-
-    @Override
-    public Var div(Var other) {
-        System.out.printf("Операция сложения %s/%s невозможна\n", this, other);
-        return null;
-    }
-
-
-    public static Var saveVar(String s, Var two) {
-    }
-
-    public static void saveVAr(String s, Var two) {
-
+    public Var div(Var other) throws CalcException {
+        throw new CalcException("Операция деления " + this + "/" + other + " невоможна");
     }
 }
