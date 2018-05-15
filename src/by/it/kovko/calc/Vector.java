@@ -35,7 +35,7 @@ public class Vector extends Var {
             return new Vector(result);
         } else if (other instanceof Vector){
             if (((Vector)other).value.length!=this.value.length)
-                throw new CalcException("Вектора разной длины");
+                throw new CalcException(Errors.UNMATCHED_VECTORS.toString());
             double result[] = Arrays.copyOf(this.value, this.value.length);
 //            try{
                 for (int i = 0; i < result.length; i++)
@@ -69,7 +69,7 @@ public class Vector extends Var {
             return new Vector(result);
         } else if (other instanceof Vector){
             if (((Vector)other).value.length!=this.value.length)
-                throw new CalcException("Вектора разной длины");
+                throw new CalcException(Errors.UNMATCHED_VECTORS.toString());
             double result=0;
 //            try {
                 for (int i = 0; i < this.value.length; i++)
@@ -87,7 +87,7 @@ public class Vector extends Var {
         if (other instanceof Scalar){
             double dn=((Scalar) other).getValue();
             if (Double.isNaN(dn))
-                throw new CalcException("Деление на ноль");
+                throw new CalcException(Errors.DIVISION_BY_ZERO.toString());
 //            try{
                 return this.mul(new Scalar(1/dn));
 //            } catch (ArithmeticException e) {

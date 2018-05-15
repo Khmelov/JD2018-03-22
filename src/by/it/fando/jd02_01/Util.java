@@ -1,9 +1,9 @@
 package by.it.fando.jd02_01;
 
-public class Util {
+class Util {
     static void sleep(int msTimeout) {
         try {
-            Thread.sleep (msTimeout);
+            Thread.sleep(msTimeout);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

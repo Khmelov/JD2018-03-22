@@ -39,9 +39,9 @@ public class Scalar extends Var {
                 double rez = (this.value / z);
                 return (new Scalar(rez));
             }
-            else throw new CallException("Деление на 0 невозможен");
+            else throw new CallException(Util.getError(Err.div0));
         }
-        else throw new CallException("На скаляр можно делить только число");
+        else throw new CallException(Util.getError(Err.falseDivScalar));
     }
 
     @Override

@@ -30,6 +30,32 @@ class Parser {
         return curnum;
     }
 
+    Var calcExpression(String expression) throws CalcException {
+        char[] exp = expression.toCharArray();
+        int a = 0;
+        int b = 0;
+        for (char c : exp) {
+            if (c == '(') a++;
+            if (c == ')') b++;
+        }
+        if (a == b) {
+            for (int i = 0; i < a; i++) {
+                Pattern p = Pattern.compile(Patterns.EXPRESSION);
+                Matcher m = p.matcher(expression);
+                String expres = "";
+                m.find();
+                expres = m.group();
+                String expres1 = expres.replaceAll("[\\(\\)]", "");
+                Var expres2 = calc(expres1);
+                expression = expression.replaceFirst(Patterns.EXPRESSION, expres2.toString());
+            }
+        } else throw new CalcException("Не верное выражение");
+
+        Var result = calc(expression);
+
+        return result;
+    }
+
 
     Var calc(String expression) throws CalcException {
         operands = new ArrayList<>(

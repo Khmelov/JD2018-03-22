@@ -1,6 +1,6 @@
 package by.it.romankov.jd02_02;
 
-class Util {
+public class Util {
     static void sleep(int msTimeout) {
         try {
             Thread.sleep(msTimeout / Dispatcher.speed);
@@ -10,7 +10,7 @@ class Util {
     }
 
 
-    static int random(int from, int to) {
+    public static int random(int from, int to) {
         return from + (int) (Math.random() * (1 + to - from));
     }
 

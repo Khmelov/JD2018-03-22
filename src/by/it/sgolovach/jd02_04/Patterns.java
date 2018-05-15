@@ -2,6 +2,7 @@ package by.it.sgolovach.jd02_04;
 
 abstract class Patterns {
 
+    static final String EXPRESSION = "(\\([-+*/,{}.\\ 0-9A-z]+\\))";
     static final String OPERATION = "(?<=[^-{,+/*=])[-+*/=]";
     static final String SCALAR = "-?[0-9]+\\.?[0-9]*";
     static final String VECTOR = "\\{((-?[0-9]+\\.?[0-9]*),?)+}";

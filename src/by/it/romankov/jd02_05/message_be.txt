@@ -1,0 +1,4 @@
+
+    msg.welcome=Прывитанне!
+    msg.myname= Микита Раманькоу
+    msg.goedoyuodo= як справы

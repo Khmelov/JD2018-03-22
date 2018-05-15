@@ -1,0 +1,8 @@
+msg.Hello=Прывiтанне, %s!
+msg.Bye=Да пабачэння, %s!
+msg.PickedLang=Вы абралі беларускую мову!
+msg.WhatName=Як ваша iмя?
+msg.PickLang=Каб абраць мову, напішыце ў кансолі pick (lang) (country). Напрыклад: pick en GB, альбо pick en.
+msg.curDate=Дата:
+msg.curLang=Мова:
+msg.curCountry=Краiна:
