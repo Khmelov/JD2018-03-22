@@ -32,7 +32,7 @@ public abstract class Var implements Operation {
                 printer.println(entry.getKey()+"="+entry.getValue());
             }
         } catch (IOException e) {
-            throw new CalcException("Не удалось сохранить переменную "+ s+"="+two);
+            throw new CalcException(Errors.FAIL_TO_SAVE+" "+s+"="+two);
         }
         return two;
     }
@@ -53,7 +53,7 @@ public abstract class Var implements Operation {
         if (strVar.matches(Patterns.VARNAME))
             return variables.get(strVar);
         //System.out.println("Не вернул вектор");
-        throw new CalcException("Ошибка обработки");
+        throw new CalcException(Errors.PROCESSING_ERROR.toString());
     }
 
     @Override
@@ -63,22 +63,22 @@ public abstract class Var implements Operation {
 
     @Override
     public Var add(Var other) throws CalcException {
-        throw  new CalcException("Операция сложения "+this+" "+other+" невозможна\n");
+        throw  new CalcException(this+"+"+other+Errors.IMPOSSIBLE_OPERATION.toString());
     }
 
     @Override
     public Var sub(Var other) throws CalcException {
-        throw  new CalcException("Операция вычитания "+this+" "+other+" невозможна\n");
+        throw  new CalcException(this+"-"+other+Errors.IMPOSSIBLE_OPERATION.toString());
     }
 
     @Override
     public Var mul(Var other) throws CalcException {
-        throw  new CalcException("Операция умножения "+this+" "+other+" невозможна\n");
+        throw  new CalcException(this+"*"+other+Errors.IMPOSSIBLE_OPERATION.toString());
     }
 
     @Override
     public Var div(Var other) throws CalcException {
-        throw  new CalcException("Операция деления "+this+" "+other+" невозможна\n");
+        throw  new CalcException(this+"/"+other+Errors.IMPOSSIBLE_OPERATION.toString());
     }
 
 

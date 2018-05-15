@@ -5,7 +5,9 @@ import java.util.*;
 public class Buyer extends Thread implements IBuyer,IUseBasket{
 private String name;
 
-    HashMap<String, Integer> goods = new HashMap <>();{
+    HashMap<String, Integer> goods = new HashMap <>();
+
+    {
         goods.put("хлеб", 10);
         goods.put("батон", 24);
         goods.put("молоко", 37);

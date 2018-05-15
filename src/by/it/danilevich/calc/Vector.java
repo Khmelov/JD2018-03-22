@@ -38,9 +38,9 @@ public class Vector extends Var {
         if (value.length>0){
             rez ="{";
             for (int i = 0; i < (value.length-1); i++) {
-                rez = rez.concat(String.valueOf(value[i]))+", ";
+                rez = rez.concat(String.valueOf((int)value[i]))+",";
               }
-              rez = rez + String.valueOf(value[value.length-1]);
+              rez = rez + String.valueOf((int)value[value.length-1]);
             rez =rez+"}";
         }
         return rez;
@@ -52,7 +52,8 @@ public class Vector extends Var {
     @Override
     public Var sub(Var other) throws CallException {
         if (other instanceof Vector) {
-            if ( (this.value.length)!= ((Vector) other).value.length) throw new CallException("Разные размеры векторов");
+            if ( (this.value.length)!= ((Vector) other).value.length)
+                throw new CallException("Разные размеры векторов");
             double[] rez = new double[((Vector) other).value.length];
             for (int i = 0; i < ((Vector) other).value.length; i++) {
                 rez[i] = this.value[i] - ((Vector) other).value[i];
@@ -73,7 +74,8 @@ public class Vector extends Var {
     @Override
     public Var mul(Var other) throws CallException {
         if (other instanceof Vector) {
-            if ( (this.value.length)!= ((Vector) other).value.length) throw new CallException("Разные размеры векторов");
+            if ( (this.value.length)!= ((Vector) other).value.length)
+                throw new CallException(Util.getError(Err.DifferenSizeVector));
             double rez = ActionMatrix.mulToSum(this.value, ((Vector)other).value);
             return (new Scalar(rez));
         }
@@ -88,7 +90,8 @@ public class Vector extends Var {
     @Override
     public Var add(Var other) throws CallException {
         if (other instanceof Vector) {
-            if ( (this.value.length)!= ((Vector) other).value.length) throw new CallException("Разные размеры векторов");
+            if ( (this.value.length)!= ((Vector) other).value.length)
+                throw new CallException(Util.getError(Err.DifferenSizeVector));
             double[] rez = new double[((Vector) other).value.length];
             for (int i = 0; i < ((Vector) other).value.length; i++) {
                 rez[i] = this.value[i] + ((Vector) other).value[i];
@@ -107,12 +110,15 @@ public class Vector extends Var {
     }
 
     @Override
-    public Var div(Var other) {
+    public Var div(Var other) throws CallException {
         if (other instanceof Scalar){
             double[] rez = new double[this.value.length];
-            for (int i = 0; i < this.value.length; i++) {
-                rez[i] = this.value[i] / ((Scalar) other).getValue();
+            if (((Scalar) other).getValue()!=0){
+                for (int i = 0; i < this.value.length; i++) {
+                    rez[i] = this.value[i] / ((Scalar) other).getValue();
+                }
             }
+            else throw new CallException(Util.getError(Err.DifferenSizeVector));
             return (new Vector(rez));
         }
         return null;

@@ -154,10 +154,10 @@ class Matrix extends Var {
             b++;
             str = str + "{";
             int a = 0;
-            for (int j = 0; j < value.length; j++) {
+            for (int j = 0; j < value[i].length; j++) {
                 a++;
                 str = str + value[i][j];
-                if (a < value.length) str = str + ", ";
+                if (a < value[i].length) str = str + ", ";
             }
             str = str + "}";
             if (b < value.length) str = str + ", ";

@@ -1,8 +1,7 @@
 package by.it.akhmelev.jd02_05;
 
-interface Messages {
-    String WELCOME="msg.welcome";
-    String NAME="msg.myname";
-    String HOWDOYOUDO="msg.howdoyoudo";
-
+abstract class Messages {
+    final static String WELCOME="msg.welcome";
+    final static String NAME="msg.myname";
+    final static String HOWDOYOUDO="msg.howdoyoudo";
 }

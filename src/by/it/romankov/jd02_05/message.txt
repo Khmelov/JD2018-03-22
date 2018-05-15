@@ -1,0 +1,4 @@
+
+       msg.welcome=Welcome!
+    msg.myname= Nikita Romankov
+    msg.goedoyuodo= How do yuo do

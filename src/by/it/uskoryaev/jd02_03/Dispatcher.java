@@ -1,22 +1,21 @@
 package by.it.uskoryaev.jd02_03;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Dispatcher {
     static int speed = 25;
     private final static int planCount = 100;
 
-    private  static int numberBuyer = 0;
-    private static int processCount = 0;
-    private static int factCount = 0;
+    private static final AtomicInteger numberBuyer = new AtomicInteger(0);
+    private static final AtomicInteger factCount = new AtomicInteger(0);
 
-    synchronized static boolean planComplete(){return factCount >= planCount;}
-    synchronized static Buyer addNewBuyer(){
-        processCount++;
-        return new Buyer(++numberBuyer);
+
+    static boolean planComplete(){return factCount.get() >= planCount;}
+    static Buyer addNewBuyer(){
+        return new Buyer(numberBuyer.addAndGet(1));
     }
-    synchronized static void finalBuyer(){
-        processCount--;
-        factCount++;
+    static void finalBuyer(){factCount.addAndGet(1);
     }
-    synchronized static boolean allBuyersInShop(){return numberBuyer == planCount;}
+    static boolean allBuyersInShop(){return numberBuyer.get() >= planCount;}
 
 }

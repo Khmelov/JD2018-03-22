@@ -1,0 +1,2 @@
+﻿local.language = be
+local.region = BY

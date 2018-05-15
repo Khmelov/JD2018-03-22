@@ -14,7 +14,7 @@ public class TestParser {
     @Test
     public void mul() throws Exception {
         Parser parser = new Parser();
-        parser.calc("A=2+5.3");
+        parser.calc("A=2*5.3");
         assertEquals(parser.calc("B=A*3.5").toString(),"25.55");
     }
 
