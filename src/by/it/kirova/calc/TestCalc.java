@@ -12,6 +12,7 @@ public class TestCalc {
         //проверка работы конструкторов класса Scalar
         //создание переменной типа Scalar на основе числа
         Scalar sc1 = new Scalar(5.2);
+        assertEquals(sc1.getValue(), 5.2, 0.0);
         assertEquals(sc1.toString(), "5.2");
 
         //создание переменной типа Scalar на основе объекта Scalar

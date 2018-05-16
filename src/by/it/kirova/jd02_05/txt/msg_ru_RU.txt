@@ -1,0 +1,3 @@
+msg.welcome = Привет!
+msg.myname = Кирова Ксения
+msg.howdoyoudo = Как дела?

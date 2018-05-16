@@ -3,6 +3,7 @@ package by.it.kovko.calc;
 import java.util.Arrays;
 
 public class Vector extends Var {
+    //static Logger logger = Logger.getLogger();
     private double value[];
     public double[] getValue() {
         return value;
@@ -68,8 +69,10 @@ public class Vector extends Var {
                 result [i]*=s;
             return new Vector(result);
         } else if (other instanceof Vector){
-            if (((Vector)other).value.length!=this.value.length)
+            if (((Vector)other).value.length!=this.value.length) {
+                //logger.toLog(Errors.UNMATCHED_VECTORS.toString());
                 throw new CalcException(Errors.UNMATCHED_VECTORS.toString());
+            }
             double result=0;
 //            try {
                 for (int i = 0; i < this.value.length; i++)
@@ -86,8 +89,10 @@ public class Vector extends Var {
     public Var div(Var other) throws CalcException {
         if (other instanceof Scalar){
             double dn=((Scalar) other).getValue();
-            if (Double.isNaN(dn))
+            if (Double.isNaN(dn)) {
+                //logger.toLog(Errors.DIVISION_BY_ZERO.toString());
                 throw new CalcException(Errors.DIVISION_BY_ZERO.toString());
+            }
 //            try{
                 return this.mul(new Scalar(1/dn));
 //            } catch (ArithmeticException e) {

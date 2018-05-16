@@ -1,11 +1,14 @@
 package by.it.kovko.calc;
 
 public class CalcException extends Exception {
+    Logger logger = Logger.getLogger();
+    Report report = ReportFactory.createReport();
     public CalcException() {
     }
 
     public CalcException(String message) {
         super("ERROR: "+ message);
+        report.toReport(this);
     }
 
     public CalcException(String message, Throwable cause) {

@@ -4,17 +4,13 @@ import java.util.Locale;
 
 public class TaskA {
     public static void main(String[] args) {
-        ResourceManager rm = ResourceManager.INSTANSE;
-
-        if (args.length < 2) {
+        ResourceManager rm = ResourceManager.INSTANCE;
+        if (args.length < 2)
             rm.setLocale(Locale.US);
-        } else {
-
-            rm.setLocale(new Locale(args[0],args[1]));
-
-            System.out.println(rm.get(Message.WELCOME));
-            System.out.println(rm.get(Message.NAME));
-            System.out.println(rm.get(Message.HOWDOYOUDO));
-        }
+        else
+            rm.setLocale(new Locale(args[0], args[1]));
+        System.out.println(rm.get(Messages.WELCOME));
+        System.out.println(rm.get(Messages.HOWDOYOUDO));
+        System.out.println(rm.get(Messages.NAME));
     }
 }
