@@ -1,5 +1,7 @@
 package by.it.romankov.calc;
 
+import java.util.Scanner;
+
 class Scalar extends Var {
 
     private double value;
@@ -8,9 +10,7 @@ class Scalar extends Var {
         return value;
     }
 
-    Scalar(double value) {
-        this.value = value;
-    }
+
 
     @Override
     public Var add(Var other) throws CalcException {
@@ -18,6 +18,7 @@ class Scalar extends Var {
             Scalar res = new Scalar(this);
             res.value += ((Scalar) other).value;
             return res;
+
         } else return other.add(this);
     }
 
@@ -52,10 +53,13 @@ class Scalar extends Var {
     Scalar(String strValue) {
         this.value = Double.parseDouble(strValue);
     }
-
     Scalar(Scalar varScalar) {
         this.value = varScalar.value;
     }
+    Scalar(double value) {
+        this.value = value;
+    }
+
 
     @Override
     public String toString() {
