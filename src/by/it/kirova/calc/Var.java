@@ -1,11 +1,11 @@
 package by.it.kirova.calc;
 
-import com.oracle.tools.packager.Log;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
+
+import static by.it.kirova.calc.ConsoleRunner.rm;
 
 public abstract class Var implements Operation {
 
@@ -19,7 +19,7 @@ public abstract class Var implements Operation {
                 printer.println(entry.getKey() + "=" + entry.getValue());
             }
         } catch (IOException e) {
-            throw new CalcException("Не удалось сохранить переменную " + nameVar + "=" + valueVar, e);
+            throw new CalcException(rm.get(Messages.COULDNTSAVEVAR) + nameVar + "=" + valueVar, e);
         }
         return valueVar;
     }
@@ -34,7 +34,7 @@ public abstract class Var implements Operation {
             return new Matrix(strVar);
         if (strVar.matches(Patterns.VARNAME))
             return variables.get(strVar);
-        throw new CalcException("Ошибка обработки:" + strVar);
+        throw new CalcException(rm.get(Messages.PROCESSINGERROR) + strVar);
     }
 
     public static void printvar() {
@@ -74,26 +74,26 @@ public abstract class Var implements Operation {
 
     @Override
     public String toString() {
-        return "Это класс AbstractVar{}";
+        return rm.get(Messages.CLASSABSTRACTVAR);
     }
 
     @Override
     public Var add(Var other) throws CalcException {
-        throw new CalcException("Операция сложения " + this + "+" + other + " невозможна");
+        throw new CalcException(rm.get(Messages.ADD) + this + "+" + other + rm.get(Messages.IMPOSSIBLE));
     }
 
     @Override
     public Var sub(Var other) throws CalcException {
-        throw new CalcException("Операция вычитания " + this + "-" + other + " невозможна");
+        throw new CalcException(rm.get(Messages.SUB) + this + "-" + other + rm.get(Messages.IMPOSSIBLE));
     }
 
     @Override
     public Var mul(Var other) throws CalcException {
-        throw new CalcException("Операция умножения " + this + "*" + other + " невозможна");
+        throw new CalcException(rm.get(Messages.MUL) + this + "*" + other + rm.get(Messages.IMPOSSIBLE));
     }
 
     @Override
     public Var div(Var other) throws CalcException {
-        throw new CalcException("Операция деления " + this + "/" + other + " невозможна");
+        throw new CalcException(rm.get(Messages.DIV) + this + "/" + other + rm.get(Messages.IMPOSSIBLE));
     }
 }

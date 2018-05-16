@@ -1,6 +1,8 @@
 package by.it.kirova.calc;
 
 
+import static by.it.kirova.calc.ConsoleRunner.rm;
+
 public class Matrix extends Var {
 
     private double[][] value;
@@ -45,7 +47,7 @@ public class Matrix extends Var {
         } else if (other instanceof Matrix) {
             double[][] sum = new double[this.value.length][this.value[0].length];
             if ((this.value.length != ((Matrix) other).value.length) || (this.value[0].length != ((Matrix) other).value[0].length))
-                throw new CalcException("Матрицы имеют разную размерность. Операция сложения невозможна");
+                throw new CalcException(rm.get(Messages.ADDMATRIX));
             for (int i = 0; i < this.value.length; i++) {
                 System.arraycopy(this.value[i], 0, sum[i], 0, this.value[i].length);
             }
@@ -78,7 +80,7 @@ public class Matrix extends Var {
         } else if (other instanceof Matrix) {
             double[][] sub = new double[this.value.length][this.value[0].length];
             if ((this.value.length != ((Matrix) other).value.length) || (this.value[0].length != ((Matrix) other).value[0].length))
-                throw new CalcException("Матрицы имеют разную размерность. Операция вычитания невозможна");
+                throw new CalcException(rm.get(Messages.SUBMATRIX));
             for (int i = 0; i < this.value.length; i++) {
                 System.arraycopy(this.value[i], 0, sub[i], 0, this.value[i].length);
             }
@@ -124,7 +126,7 @@ public class Matrix extends Var {
             return new Vector(mulVector);
         } else {
             if ((this.value.length != ((Matrix) other).value.length) || (this.value[0].length != ((Matrix) other).value[0].length))
-                throw new CalcException("Матрицы имеют разную размерность. Операция умножения невозможна");
+                throw new CalcException(rm.get(Messages.MULMATRIX));
             double[][] mul = new double[this.value.length][this.value[0].length];
             double[][] mulMatrix = new double[this.value.length][this.value[0].length];
             for (int i = 0; i < this.value.length; i++) {
@@ -153,7 +155,7 @@ public class Matrix extends Var {
                 System.arraycopy(this.value[i], 0, div[i], 0, this.value[i].length);
             }
             if (v == 0)
-                throw new CalcException("Деление на ноль");
+                throw new CalcException(rm.get(Messages.DIVBYZERO));
             for (int i = 0; i < div.length; i++) {
                 for (int j = 0; j < div[i].length; j++) {
                     div[i][j] /= v;

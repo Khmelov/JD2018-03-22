@@ -1,0 +1,17 @@
+msg.classabstractvar = This is the AbstractVar {} class
+msg.divbyzero = Division by zero!
+msg.nosuchoperation = No such operation
+msg.varnotfound = Variable not found
+msg.couldntsavevar = Couldn't save variable
+msg.processingerror = Processing error
+msg.impossible = is impossible
+msg.add = Addition operation
+msg.sub = Subtraction operation
+msg.mul = Multiplication operation
+msg.div = Operation of division
+msg.addmatrix = The matrices have different dimensions. The addition operation is impossible
+msg.submatrix = The matrices have different dimensions. The operation of subtraction is impossible
+msg.mulmatrix = The matrices have different dimensions. The operation of multiplication is impossible
+msg.addvector = Vectors have different lengths. The addition operation is impossible
+msg.subvector = Vectors have different lengths. The operation of subtraction is impossible
+msg.mulvector = Vectors have different lengths. The operation of multiplication is impossible
