@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Matrix extends Var {
     private double value[][];
-
+    //Logger logger = Logger.getLogger();
     Matrix(){}
 
     Matrix(double [][] value){
@@ -58,8 +58,10 @@ public class Matrix extends Var {
                     line[i]+=s;
             return new Matrix(result);
         } else if (other instanceof Matrix){
-            if (this.value.length!=(((Matrix) other).value.length) || this.value[0].length!=(((Matrix) other).value[0].length))
+            if (this.value.length!=(((Matrix) other).value.length) || this.value[0].length!=(((Matrix) other).value[0].length)) {
+                //logger.toLog(Errors.UNMATCHED_MATRICIES.toString());
                 throw new CalcException(Errors.UNMATCHED_MATRICIES.toString());
+            }
             double result[][]= new double [this.value.length][];
             for (int i = 0; i < this.value.length; i++){
                 result[i] = Arrays.copyOf(this.value[i], this.value[i].length);
@@ -105,8 +107,10 @@ public class Matrix extends Var {
             }
             return new Vector(result);
         } else if (other instanceof Matrix){
-            if (this.value[0].length!=(((Matrix) other).value.length))
+            if (this.value[0].length!=(((Matrix) other).value.length)) {
+                //logger.toLog(Errors.UNMATCHED_MATRICIES.toString());
                 throw new CalcException(Errors.UNMATCHED_MATRICIES.toString());
+            }
             double result[][] = new double[this.value.length][((Matrix) other).value[0].length];
             for (int i = 0; i < result.length; i++)
                 for (int j = 0; j < result[i].length; j++) {
