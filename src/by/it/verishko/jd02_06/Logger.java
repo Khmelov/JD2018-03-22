@@ -1,4 +1,4 @@
-package by.it.akhmelev.jd02_06;
+package by.it.verishko.jd02_06;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -48,4 +48,6 @@ class Logger {
     private static String getPath(Class<?> cl, String filename) {
         return getPath(cl) + filename;
     }
+
+
 }
