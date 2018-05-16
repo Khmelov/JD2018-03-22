@@ -4,11 +4,16 @@ package by.it.kovko.calc;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class ConsoleRunner {
     public static void main(String[] args) throws CalcException {
+        Logger logger = Logger.getLogger();
+        Report report = ReportFactory.createReport();
+        System.out.println(report.getType());
         Locale us = new Locale("en", "US");
         Locale ru = new Locale("ru", "RU");
         Locale by = new Locale("be", "BY");
@@ -36,6 +41,8 @@ public class ConsoleRunner {
         Scanner scanner = new Scanner(System.in);
         String line;
         while (!(line = scanner.nextLine()).equals("end")){
+            logger.toLog(line);
+            report.toReport(line);
 //            if (line.equals("printvar"))
 //                Var.printVar();
 //            if (line.equals("sortvar"))
@@ -49,10 +56,15 @@ public class ConsoleRunner {
             }
             try {
                 Var result = parser.calc(line);
+                report.toReport(result.toString());
                 printer.print(result);
             } catch (CalcException e){
+                logger.toLog(e.getMessage());
                 System.out.println(e.getMessage());
             }
         }
+        report.toReport("End of session");
+        report.toReport(new Date());
+        report.toReport("----------------------------------\n");
     }
 }
