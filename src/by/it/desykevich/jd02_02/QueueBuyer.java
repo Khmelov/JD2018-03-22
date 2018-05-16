@@ -13,7 +13,7 @@ class QueueBuyer {
 
 
     static void addBuyer(Buyer buyer) {
-
+        //синхронизация происходит по объекту internalQueue
         synchronized (internalQueue) {
             internalQueue.addLast(buyer);
             printSize();
@@ -22,6 +22,7 @@ class QueueBuyer {
 
 
     static Buyer extractBuyer() {
+        //синхронизация происходит по объекту internalQueue
         synchronized (internalQueue) {
             Buyer buyer = internalQueue.pollFirst();
             printSize();
@@ -30,6 +31,7 @@ class QueueBuyer {
     }
 
     static boolean buyerInQueue(Buyer buyer) {
+        //синхронизация происходит по объекту internalQueue
         synchronized (internalQueue) {
             return internalQueue.indexOf(buyer) > -1;
         }

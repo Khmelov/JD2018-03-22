@@ -1,4 +1,4 @@
-package by.it.desykevich.calc;
+package by.it.desykevich.jd02_04;
 
 import java.util.*;
 import java.util.regex.Matcher;

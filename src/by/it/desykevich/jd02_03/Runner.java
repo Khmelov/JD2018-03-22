@@ -7,15 +7,14 @@ import java.util.concurrent.Executors;
 
 public class Runner {
 
-    static List<Thread> buyersThread = new ArrayList<>();
+    private static List<Thread> buyersThread = new ArrayList<>();
 
     public static void main(String[] args) {
+        //создали кассиров (чтобы было видно очередь сделаем их два
         ExecutorService service= Executors.newFixedThreadPool(5);
-        for (int i = 1; i <= 3; i++) {
-          service.execute(new Cashier(i));
-
+        for (int i = 1; i <= 5; i++) {
+            service.execute(new Cashier(i));
         }
-
         //создаем покупателей пока не выполнен план
         while (!Dispatcher.allBuyersInShop()) {
             Util.sleep(1000);
@@ -39,7 +38,7 @@ public class Runner {
             }
         }
         //отдаем управление потоком для завершения выводов покупателей
-        Thread.yield();
+        Util.sleep(500); //тут нужно подождать дольше чем любой из кассиров
         System.out.println("Магазин закрылся");
         service.shutdown();
     }

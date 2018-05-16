@@ -35,19 +35,7 @@ public class Runner {
                 e.printStackTrace();
             }
         }
-
-        Thread.yield();
-
-        Util.sleep(100, 200);
-        System.out.println("Количество покупателей в очереди: " +
-                Dispatcher.getQueueSize() + ".");
-        if (Dispatcher.getServedCustomers() == Dispatcher.getAllCustomers())
-            System.out.println("Магазин закрыт.\n");
-        System.out.println("Количество обслуженных покупателей: " +
-                Dispatcher.getServedCustomers() + ".");
-        System.out.println("Количество покупателей всего: " +
-                Dispatcher.getAllCustomers() + ".");
-//        System.out.println("Выручка магазина составила " +
-//                Cashier.totalSum + " рублей.");
+               Thread.yield();
+        System.out.println("Магазин закрылся");
     }
 }

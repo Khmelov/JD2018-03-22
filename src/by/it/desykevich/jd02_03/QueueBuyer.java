@@ -1,11 +1,10 @@
 package by.it.desykevich.jd02_03;
 
-import java.util.LinkedList;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.PriorityBlockingQueue;
 
 class QueueBuyer {
+
 
     private final static BlockingQueue<Buyer> internalQueue =
             new LinkedBlockingQueue<>(30);
@@ -27,18 +26,13 @@ class QueueBuyer {
 
 
     static Buyer extractBuyer() {
-        synchronized (internalQueue) {
-            Buyer buyer=internalQueue.poll();
-            printSize();
-            return buyer;
-        }
+        Buyer buyer = internalQueue.poll();
+        printSize();
+        return buyer;
     }
 
     static boolean buyerInQueue(Buyer buyer) {
-        //синхронизация происходит по объекту internalQueue
-        synchronized (internalQueue) {
-            return internalQueue.size() > 0;
-        }
+        return internalQueue.contains(buyer);
     }
 
 }

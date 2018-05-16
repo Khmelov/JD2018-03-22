@@ -1,8 +1,13 @@
 package by.it.desykevich.jd02_03;
 
-public class Buyer extends Thread implements IBuyer {
+public class Buyer extends Thread implements IBuyer, Comparable<Buyer> {
 
     private String name;
+
+    @Override
+    public int compareTo(Buyer o) {
+        return 0;
+    }
 
     public Buyer(int number) {
         name = "Покупатель №" + number;
@@ -31,22 +36,20 @@ public class Buyer extends Thread implements IBuyer {
         System.out.println(this + "зашел в торговый зал");
         Util.sleep(Util.random(500, 1000));
         System.out.println(this + "выбрал товар");
-        //QueueBuyer.addBuyer(this); теперь это происходит в goQueue()
     }
 
     @Override
     public void goQueue() {
         System.out.println(this + "встал в очередь");
         QueueBuyer.addBuyer(this);
-        //синхронизация происходит по this (текущий покупатель)
-        synchronized (this) {
-            while (QueueBuyer.buyerInQueue(this))
+        while (QueueBuyer.buyerInQueue(this))
+            synchronized (this) {
                 try {
                     wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-        }
+            }
     }
 
     @Override
