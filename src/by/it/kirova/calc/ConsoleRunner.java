@@ -6,9 +6,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ConsoleRunner {
+    static ResourceManager rm = ResourceManager.INSTANCE;
     public static void main(String[] args) {
 
         Printer printer = new Printer();
@@ -36,6 +38,7 @@ public class ConsoleRunner {
         Scanner scanner = new Scanner(System.in);
         String line;
 
+
         while (!(line = scanner.nextLine()).equals("end")) {
             Logger.println(line, Logger.MessageType.USER_INPUT);
             switch (line) {
@@ -44,6 +47,15 @@ public class ConsoleRunner {
                     break;
                 case "sortvar":
                     Var.sortvar();
+                    break;
+                case "ru":
+                    rm.setLocale(new Locale("ru", "RU"));
+                    break;
+                case "en":
+                    rm.setLocale(new Locale("en", "US"));
+                    break;
+                case "be":
+                    rm.setLocale(new Locale("be", "BY"));
                     break;
                 default:
                     try {

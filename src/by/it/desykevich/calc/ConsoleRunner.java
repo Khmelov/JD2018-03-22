@@ -1,16 +1,52 @@
 package by.it.desykevich.calc;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
+
 
 public class ConsoleRunner  {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
-        Parser parser=new Parser();
-        Printer printer=new Printer();
+        Printer printer = new Printer();
+        Parser parser = new Parser();
+
+        File file = new File(Util.getPathVarsTxt());
+        if (file.exists())
+            try (BufferedReader reader = new BufferedReader(
+                    new FileReader(file))
+            ) {
+                String line;
+                while ((line = reader.readLine()) != null)
+                    parser.calc(line);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (CalcException e) {
+                System.out.println(e);
+            }
+
+
+        Scanner scanner = new Scanner(System.in);
         String line;
-        while (!(line=scanner.nextLine()).equals("end")){
-            Var result=parser.calc(line);
-            printer.print(result);
+
+        while (!(line = scanner.nextLine()).equals("end")) {
+            if (line.equals("print")) {
+                printer.printVariable();
+                continue;
+            }
+            if (line.equals("sort")) {
+                printer.sortVariable();
+                continue;
+            }
+            String result;
+            try {
+                result = parser.calc(line.trim());
+                printer.print(result);
+            } catch (CalcException e) {
+                System.out.println("ERROR: " + e.getMessage());
+            }
         }
+
     }
 }

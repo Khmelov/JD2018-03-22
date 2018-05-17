@@ -1,4 +1,4 @@
-package by.it.desykevich.calc;
+package by.it.poprugo.jd02_04.calc;
 
 
 import org.junit.Test;

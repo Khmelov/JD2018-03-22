@@ -11,7 +11,7 @@ public class Runner {
     private static int countBuyer = 0;
 
     public static void main(String[] args) {
-        for (int second = 0; second < 100; second++) {
+        for (int second = 0; second < 50; second++) {
             int count = Util.random(2);
             for (int i = 0; i <= count; i++) {
                 Buyer b = new Buyer(++countBuyer);

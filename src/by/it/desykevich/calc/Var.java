@@ -1,55 +1,48 @@
 package by.it.desykevich.calc;
 
 
-import java.util.HashMap;
-import java.util.Map;
-
 abstract class Var implements Operation {
 
-  private static Map<String, Var> variables=new HashMap<>();
-  public  static  Var saveVar (String nameVar, Var valueVar){
-    variables.put(nameVar,valueVar);
-    return valueVar;
-  }
-
-  static Var createVar(String strVar){
-    strVar=strVar.trim().replace("\\s+","");
-    if (strVar.matches(Patterns.SCALAR))
-      return new Scalar(strVar);
-    if (strVar.matches(Patterns.VECTOR))
-      return new Vector(strVar);
-
-//    if (strVar.matches(Pattern.MATRIX))
-//      return new Matrix(strVar);
-//    if (strVar.matches(Patterns.VARNAME))
-    return null;
-
-
-  }
-
-     @Override
-  public Var add(Var other)  {
-       System.out.println("Операция сложения "+this+"+"+other+"невозможна");
-       return null;
-
-
+  @Override
+  public Var add(Var other) throws CalcException {
+    throw new CalcException(String.format(
+            "Сложение %s + %s невозможно.\n", this, other));
   }
 
   @Override
-  public Var sub(Var other) {
-    System.out.println("Операция вычитания "+this+"-"+other+"невозможна");
-    return null;
+  public Var sub(Var other) throws CalcException {
+    throw new CalcException(String.format(
+            "Вычитание %s - %s невозможно.\n", this, other));
   }
 
   @Override
-  public Var mul(Var other) {
-    System.out.println("Операция умножения "+this+"*"+other+"невозможна");
-    return null;
+  public Var mul(Var other) throws CalcException {
+    throw new CalcException(String.format(
+            "Умножение %s * %s невозможно.\n", this, other));
   }
 
   @Override
-  public Var div(Var other) {
-    System.out.println("Операция деления"+this+"/"+other+"невозможна");
-    return null;
+  public Var div(Var other) throws CalcException {
+    throw new CalcException(String.format(
+            "Деление %s / %s невозможно.\n", this, other));
+  }
+
+  @Override
+  public Var assign(Var other) throws CalcException {
+    throw new CalcException(String.format(
+            "Присваивание %s = %s невозможно.\n", this, other));
+  }
+
+  static Var createVar(String operand)throws CalcException {
+    operand = operand.trim();
+    if (operand.matches(Patterns.SCALAR))
+      return new Scalar(operand);
+    if (operand.matches(Patterns.VECTOR))
+      return new Vector(operand);
+//    if (operand.matches(Patterns.MATRIX))
+//      return new Matrix(operand);
+    if (operand.matches(Patterns.KEY))
+      return Variable.getValue(operand);
+    throw new CalcException("Ошибка обработки: " + operand);
   }
 }

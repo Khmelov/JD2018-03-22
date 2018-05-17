@@ -1,5 +1,7 @@
 package by.it.kirova.calc;
 
+import static by.it.kirova.calc.ConsoleRunner.rm;
+
 public class Scalar extends Var {
 
     private double value;
@@ -58,7 +60,7 @@ public class Scalar extends Var {
         if (other instanceof Scalar) {
             double value = ((Scalar) other).value;
             if (value == 0)
-                throw new CalcException("Деление на ноль");
+                throw new CalcException(rm.get(Messages.DIVBYZERO));
             double res = this.value/value;
             return new Scalar(res);
         }

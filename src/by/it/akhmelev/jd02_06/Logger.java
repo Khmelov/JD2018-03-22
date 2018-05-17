@@ -15,28 +15,26 @@ class Logger {
 
     private static Logger instance;
 
-    static Logger getLogger(){
-        if (instance==null){
-            synchronized (Logger.class){
-                if (instance==null)
-                 instance=new Logger();
+    static Logger getLogger() {
+        if (instance == null) {
+            synchronized (Logger.class) {
+                if (instance == null)
+                    instance = new Logger();
             }
         }
         return instance;
     }
 
-    void toLog(String message){
+    void toLog(String message) {
         try (PrintWriter printWriter =
                      new PrintWriter(
-                             new FileWriter(filename,true))
-        ){
+                             new FileWriter(filename, true))
+        ) {
             printWriter.println(message);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
 
     private static String getPath(Class<?> cl) {
         String path = System.getProperty("user.dir");
@@ -50,6 +48,4 @@ class Logger {
     private static String getPath(Class<?> cl, String filename) {
         return getPath(cl) + filename;
     }
-
-
 }

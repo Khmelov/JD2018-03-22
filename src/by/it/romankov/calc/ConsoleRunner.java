@@ -4,8 +4,11 @@ import java.io.*;
 import java.util.Scanner;
 
 class ConsoleRunner {
+
     public static void main(String[] args) {
 
+VarSelektor varSelektor = new VarSelektor();
+varSelektor.getVar("789");
         Printer printer = new Printer();
         Parser parser = new Parser();
 
@@ -23,13 +26,15 @@ class ConsoleRunner {
                 System.out.println(e);
             }
 
-
+        Logger logger = Logger.getLogger();
         Scanner scanner = new Scanner(System.in);
         String line;
 
         while (!(line = scanner.nextLine()).equals("end")) {
+        logger.toLog(line);
             try {
                 Var result = parser.calc(line);
+
                 printer.print(result);
             } catch (CalcException e) {
                 System.out.println(e.getMessage());

@@ -5,5 +5,4 @@ public class Clamping {
     public void fire() {
         System.out.println("fire");
     }
-
 }

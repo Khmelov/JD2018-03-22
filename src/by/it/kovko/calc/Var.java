@@ -7,8 +7,9 @@ import java.io.PrintWriter;
 import java.util.*;
 
 public abstract class Var implements Operation {
-
-    private static Map<String, Var> variables = new HashMap<>();
+    //static Logger logger = Logger.getLogger();
+    static VarFactory factory = new VarFactory();
+    static Map<String, Var> variables = new HashMap<>();
 
     public static void printVar(){
         Set<Map.Entry<String, Var>> entries = variables.entrySet();
@@ -39,21 +40,18 @@ public abstract class Var implements Operation {
 
 
     static Var createVar(String strVar) throws CalcException {
-        strVar=strVar.replaceAll("\\s*","");
-        if (strVar.matches(Patterns.SCALAR))
-            return new Scalar(strVar);
-        if (strVar.matches(Patterns.VECTOR)) {
-            //System.out.println("вектор "+strVar);
-
-            return new Vector(strVar);
-
-        }
-        if (strVar.matches(Patterns.MATRIX))
-            return new Matrix(strVar);
-        if (strVar.matches(Patterns.VARNAME))
-            return variables.get(strVar);
-        //System.out.println("Не вернул вектор");
-        throw new CalcException(Errors.PROCESSING_ERROR.toString());
+        return factory.getVar(strVar);
+//        strVar=strVar.replaceAll("\\s*","");
+//        if (strVar.matches(Patterns.SCALAR))
+//            return new Scalar(strVar);
+//        if (strVar.matches(Patterns.VECTOR))
+//            return new Vector(strVar);
+//        if (strVar.matches(Patterns.MATRIX))
+//            return new Matrix(strVar);
+//        if (strVar.matches(Patterns.VARNAME))
+//            return variables.get(strVar);
+//        logger.toLog(Errors.PROCESSING_ERROR.toString());
+//        throw new CalcException(Errors.PROCESSING_ERROR.toString());
     }
 
     @Override
@@ -63,21 +61,25 @@ public abstract class Var implements Operation {
 
     @Override
     public Var add(Var other) throws CalcException {
+        //logger.toLog(this+"+"+other+Errors.IMPOSSIBLE_OPERATION.toString());
         throw  new CalcException(this+"+"+other+Errors.IMPOSSIBLE_OPERATION.toString());
     }
 
     @Override
     public Var sub(Var other) throws CalcException {
+        //logger.toLog(this+"-"+other+Errors.IMPOSSIBLE_OPERATION.toString());
         throw  new CalcException(this+"-"+other+Errors.IMPOSSIBLE_OPERATION.toString());
     }
 
     @Override
     public Var mul(Var other) throws CalcException {
+        //logger.toLog(this+"*"+other+Errors.IMPOSSIBLE_OPERATION.toString());
         throw  new CalcException(this+"*"+other+Errors.IMPOSSIBLE_OPERATION.toString());
     }
 
     @Override
     public Var div(Var other) throws CalcException {
+        //logger.toLog(this+"/"+other+Errors.IMPOSSIBLE_OPERATION.toString());
         throw  new CalcException(this+"/"+other+Errors.IMPOSSIBLE_OPERATION.toString());
     }
 

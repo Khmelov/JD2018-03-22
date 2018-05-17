@@ -1,32 +1,33 @@
 package by.it.desykevich.calc;
 
-import java.util.Arrays;
-
 public class Vector extends Var {
 
     private double[] value;
 
 
+    public double[] getValue() {
+        return value;
+    }
 
-
-    @Override
-    public String toString(){
-        StringBuilder result= new StringBuilder();
-        result.append('{');
-        for (int i = 0; i <value.length ; i++) {
-
-            if (i>0) result.append(", ");
-            result.append(value[i]);
-
-        }
-        result.append('}');
-        return result.toString();
-
+    public double getValue(int i) {
+        return value[i];
     }
 
 
     @Override
-    public Var add(Var other) {
+    public String toString() {
+        StringBuilder result = new StringBuilder();
+        result.append('{');
+        for (int i = 0; i < value.length; i++) {
+            if (i > 0) result.append(",");
+            result.append(value[i]);
+        }
+        result.append('}');
+        return result.toString();
+    }
+
+    @Override
+    public Var add(Var other) throws CalcException {
         double[] result = new double[this.value.length];
         if (other instanceof Scalar) {
             for (int i = 0; i < result.length; i++) {
@@ -34,15 +35,19 @@ public class Vector extends Var {
             }
             return new Vector(result);
         } else if (other instanceof Vector) {
-            for (int i = 0; i < result.length; i++) {
-                result[i] = this.value[i] + ((Vector) other).value[i];
-            }
+            if (this.value.length < ((Vector) other).value.length
+                    || ((Vector) other).value.length < this.value.length) {
+                throw new CalcException(" Сложение векторов разной длинны невозможно ");
+            } else
+                for (int i = 0; i < result.length; i++) {
+                    result[i] = this.value[i] + ((Vector) other).value[i];
+                }
             return new Vector(result);
         } else return other.add(this);
     }
 
     @Override
-    public Var sub(Var other) {
+    public Var sub(Var other) throws CalcException {
         double[] result = new double[this.value.length];
         if (other instanceof Scalar) {
             for (int i = 0; i < result.length; i++) {
@@ -50,66 +55,61 @@ public class Vector extends Var {
             }
             return new Vector(result);
         } else if (other instanceof Vector) {
-            for (int i = 0; i < result.length; i++) {
-                result[i] = this.value[i] - ((Vector) other).value[i];
-            }
+            if (this.value.length < ((Vector) other).value.length
+                    || ((Vector) other).value.length < this.value.length) {
+                throw new CalcException(" Вычитание векторов разной длинны невозможно ");
+            } else
+                for (int i = 0; i < result.length; i++) {
+                    result[i] = this.value[i] - ((Vector) other).value[i];
+                }
             return new Vector(result);
         } else return super.sub(other);
     }
 
-
     @Override
-    public Var mul(Var other) {
-        if (other instanceof Scalar) {
-            Scalar scalar = (Scalar) other;
-            double v = scalar.getValue();
-            double[] res = Arrays.copyOf(this.value, this.value.length);
-            for (int i = 0; i < res.length; i++) {
-                res[i] *= v;
-            }
-            return new Vector(res);
-        } else if (other instanceof Vector) {
-            double sum = 0;
-            Vector vector = (Vector) other;
-            double[] res = Arrays.copyOf(this.value, this.value.length);
-            for (int i = 0; i < res.length; i++) {
-                sum += res[i] * vector.value[i];
-            }
-            return new Scalar(sum);
-        } else return super.mul(other);
-    }
-
-
-    @Override
-    public Var div(Var other) {
+    public Var mul(Var other) throws CalcException {
         double[] result = new double[this.value.length];
         if (other instanceof Scalar) {
             for (int i = 0; i < result.length; i++) {
-                result[i] = this.value[i] / ((Scalar) other).getValue();
+                result[i] = this.value[i] * ((Scalar) other).getValue();
             }
             return new Vector(result);
-        } else return super.div(other);
+        } else if (other instanceof Vector && this.value.length == ((Vector) other).value.length) {
+            for (int i = 0; i < result.length; i++) {
+                result[i] = this.value[i] * ((Vector) other).value[i];
+            }
+            return new Vector(result);
+        } else throw new CalcException(" Операция невозможна ");
     }
 
-    Vector(double[] value){
-
-        this.value=new double[value.length];
-        System.arraycopy(value,0,this.value,0,value.length);
+    @Override
+    public Var div(Var other) throws CalcException {
+        double[] result = new double[this.value.length];
+        if (other instanceof Scalar) {
+            for (int i = 0; i < result.length; i++) {
+                if (((Scalar) other).getValue() == 0) throw new CalcException(" Деление на 0 ");
+                else result[i] = this.value[i] / ((Scalar) other).getValue();
+            }
+            return new Vector(result);
+        } else throw new CalcException(" Операция невозможна ");
     }
 
-    Vector(Vector vector){
+    Vector(double[] value) {
+        this.value = new double[value.length];
+        System.arraycopy(value, 0, this.value, 0, value.length);
+    }
 
+    Vector(Vector vector) {
         this(vector.value);
     }
 
-    Vector(String strVector){
-
-        String[]str= strVector.substring(1,strVector.length()-1).split(",");
-        this.value=new double[str.length];
-        for (int i = 0; i <this.value.length; i++) {
-            this.value[i]=Double.parseDouble(str[i]);
-
+    Vector(String strVector) {
+        String[] str = strVector.substring(1, strVector.length() - 1).split(",");
+        this.value = new double[str.length];
+        for (int i = 0; i < this.value.length; i++) {
+            this.value[i] = Double.parseDouble(str[i]);
         }
     }
+
 
 }
