@@ -35,9 +35,20 @@
             <element name="Floor" type="positiveInteger"/>
             <element name="Floors" type="positiveInteger"/>
             <element name="Square" type="string"/>
-            <element name="Price" type="string">
-
-            </element>
+            <element name="Price" type="tns:Price"/>
         </sequence>
+        <!-- добавление аттрибута в комплексный тип -->
+        <attribute name="Rooms" type="positiveInteger" use="required"/>
+    </complexType>
+
+    <!-- добавление аттрибута в простой тип выполняется внутри сложного -->
+    <complexType name="Price">
+        <simpleContent>
+            <!-- описание самого простого типа -->
+            <extension base="string">
+                <!-- и аттрибут -->
+                <attribute name="currency" type="string" use="required"/>
+            </extension>
+        </simpleContent>
     </complexType>
 </schema>
