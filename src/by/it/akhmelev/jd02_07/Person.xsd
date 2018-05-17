@@ -41,7 +41,7 @@
         <attribute name="Rooms" type="positiveInteger" use="required"/>
     </complexType>
 
-    <!-- добавление аттрибута в простой тип выполняется внутри сложного -->
+    <!-- добавление аттрибута в простой тип выполняется внутри комплексного -->
     <complexType name="Price">
         <simpleContent>
             <!-- описание самого простого типа -->
