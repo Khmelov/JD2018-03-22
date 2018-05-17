@@ -46,7 +46,7 @@
         <simpleContent>
             <!-- описание самого простого типа -->
             <extension base="string">
-                <!-- и аттрибут -->
+                <!-- и аттрибут(ов) для тега этого типа -->
                 <attribute name="currency" type="string" use="required"/>
             </extension>
         </simpleContent>
