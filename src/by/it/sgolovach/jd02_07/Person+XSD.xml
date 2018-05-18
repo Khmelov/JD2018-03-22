@@ -15,7 +15,7 @@
                 <Floor>2</Floor>
                 <Floors>9</Floors>
                 <Square>55.5</Square>
-                <Price>77000</Price>
+                <Price currency="$$$">77000</Price>
             </Ad>
             <Ad>
                 <Description>Квартира в центре</Description>
@@ -23,7 +23,7 @@
                 <Floor>2</Floor>
                 <Floors>9</Floors>
                 <Square>55.5</Square>
-                <Price>77000</Price>
+                <Price currency="$$$">77000</Price>
             </Ad>
         </Ads>
     </Person>
@@ -38,7 +38,7 @@
                 <Floor>2</Floor>
                 <Floors>9</Floors>
                 <Square>63.8</Square>
-                <Price>77000</Price>
+                <Price currency="$$$">77000</Price>
             </Ad>
         </Ads>
     </Person>
