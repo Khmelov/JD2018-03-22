@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://it-academy.by/akhmelev"
+        xmlns:tns="http://it-academy.by/akhmelev"
+        elementFormDefault="qualified">
+    <!-- всё. схему описали-->
+    <element name="Persons">
+        <complexType>
+            <sequence>
+                <element name="Person"
+                         type="tns:Person"
+                         minOccurs="1"
+                         maxOccurs="unbounded">
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Person">
+        <sequence>
+            <element name="Email" type="string"/>
+            <element name="Nikname" type="string"/>
+            <element name="Password" type="string"/>
+            <element name="Ads" type="tns:Ads"/>
+            <!-- остальные-->
+        </sequence>
+    </complexType>
+    <complexType name="Ads">
+        <sequence>
+            <element name="Ad" type="tns:Ad"/>
+        </sequence>
+    </complexType>
+    <complexType name="Ad">
+        <sequence>
+            <element name="Description" type="string"/>
+            <element name="Adress" type="string"/>
+            <element name="Floor" type="positiveInteger"/>
+            <element name="Floors" type="positiveInteger"/>
+            <element name="Square" type="string"/>
+            <element name="Price" type="positiveInteger"/>
+            <!-- <element name="Price" type="tns:Price"/> -->
+        </sequence>
+    </complexType>
+    <!-- <complexType name="Price">
+        <sequence>
+            <attribute name="Ad" type="string"/>
+            <element name="Price" type="positiveInteger"/>
+        </sequence>
+    </complexType> -->
+</schema>
