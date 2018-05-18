@@ -1,0 +1,3 @@
+msg.welcome = Welcome!
+msg.name = Uskoryaev Alexey
+msg.howdoyoudo = how do you do?
