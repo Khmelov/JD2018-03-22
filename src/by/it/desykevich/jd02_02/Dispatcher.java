@@ -1,4 +1,4 @@
-package by.it.akhmelev.jd02_02;
+package by.it.desykevich.jd02_02;
 
 class Dispatcher {
 
