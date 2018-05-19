@@ -25,16 +25,19 @@ public abstract class Var implements Operation {
     }
 
     static Var createVar(String strVar) throws CalcException {
+        VarFactory.Creator creator = null;
         strVar = strVar.replaceAll("\\s+", "").trim();
         if (strVar.matches(Patterns.SCALAR))
-            return new Scalar(strVar);
+            creator = new VarFactory.CreatorScalar();
         if (strVar.matches(Patterns.VECTOR))
-            return new Vector(strVar);
+            creator = new VarFactory.CreatorVector();
         if (strVar.matches(Patterns.MATRIX))
-            return new Matrix(strVar);
+            creator = new VarFactory.CreatorMatrix();
         if (strVar.matches(Patterns.VARNAME))
             return variables.get(strVar);
-        throw new CalcException(rm.get(Messages.PROCESSINGERROR) + strVar);
+        if (creator == null)
+            throw new CalcException(rm.get(Messages.PROCESSINGERROR) + strVar);
+        return creator.parse(strVar);
     }
 
     public static void printvar() {
@@ -60,7 +63,7 @@ public abstract class Var implements Operation {
         String message = value == null ?
                 key + " is null" :
                 key + "=" + value;
-        Logger.println(message, Logger.MessageType.CALC_OUTPUT);
+        Logger.getLogger().println(message, Logger.MessageType.CALC_OUTPUT);
     }
 
     private static Comparator<String> ALPHABETICAL_ORDER =

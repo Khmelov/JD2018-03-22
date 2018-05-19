@@ -1,0 +1,14 @@
+<!ELEMENT users (user)*>
+<!ELEMENT user (name|nickName|password|email|dictionaries)*>
+<!ATTLIST user
+        id CDATA #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT nickName (#PCDATA)>
+<!ELEMENT password (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT dictionaries (dictionaty)*>
+<!ELEMENT dictionaty (words)*>
+<!ELEMENT words (word|meaning|translation)*>
+<!ELEMENT word (#PCDATA)>
+<!ELEMENT meaning (#PCDATA)>
+<!ELEMENT translation (#PCDATA)>

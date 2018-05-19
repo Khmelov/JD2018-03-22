@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://it-academy.by/kirova"
+        xmlns:tns="http://it-academy.by/kirova"
+        elementFormDefault="qualified">
+    <element name="Booking">
+        <complexType>
+            <sequence>
+                <element name="Users"
+                         type="tns:Users"
+                         minOccurs="0"
+                         maxOccurs="unbounded">
+                </element>
+                <element name="Reservations"
+                         type="tns:Reservations"
+                         minOccurs="0"
+                         maxOccurs="unbounded">
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Users">
+        <sequence>
+            <element name="User"
+                     type="tns:User"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="User">
+        <sequence>
+            <element name="UserId" type="positiveInteger"/>
+            <element name="Email" type="string"/>
+            <element name="Password" type="string"/>
+            <element name="FirstName" type="string"/>
+            <element name="LastName" type="string"/>
+            <element name="MiddleName" type="string"/>
+            <element name="Country" type="string"/>
+            <element name="PhoneNumber" type="string"/>
+            <element name="Hotels" type="tns:Hotels"/>
+            <element name="Reservations" type="tns:Reservations"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Hotels">
+        <sequence>
+            <element name="Hotel"
+                     type="tns:Hotel"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Hotel">
+        <sequence>
+            <element name="HotelId" type="positiveInteger"/>
+            <element name="Name" type="string"/>
+            <element name="Type" type="string"/>
+            <element name="StarRating" type="positiveInteger"/>
+            <element name="Country" type="string"/>
+            <element name="City" type="string"/>
+            <element name="Street" type="string"/>
+            <element name="HouseNumber" type="string"/>
+            <element name="ContactEmail" type="string"/>
+            <element name="PhoneNumber" type="string"/>
+            <element name="UserId" type="positiveInteger"/>
+            <element name="Rooms" type="tns:Rooms"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Rooms">
+        <sequence>
+            <element name="Room"
+                     type="tns:Room"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Room">
+        <sequence>
+            <element name="RoomId" type="positiveInteger"/>
+            <element name="RoomName" type="string"/>
+            <element name="RoomFactNumber" type="string"/>
+            <element name="PeopleAmount" type="positiveInteger"/>
+            <element name="Description" type="string"/>
+            <element name="Cost" type="tns:Cost"/>
+            <element name="HotelId" type="positiveInteger"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Reservations">
+        <sequence>
+            <element name="Reservation"
+                     type="tns:Reservation"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Reservation">
+        <sequence>
+            <element name="ReservationId" type="positiveInteger"/>
+            <element name="ReservationDate" type="date"/>
+            <element name="CheckInDate" type="date"/>
+            <element name="CheckOutDate" type="date"/>
+            <element name="TotalCost" type="tns:TotalCost"/>
+            <element name="RoomId" type="positiveInteger"/>
+            <element name="UserId" type="positiveInteger"/>
+            <element name="Payments" type="tns:Payments"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Payments">
+        <sequence>
+            <element name="Payment"
+                     type="tns:Payment"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Payment">
+        <sequence>
+            <element name="PaymentId" type="positiveInteger"/>
+            <element name="FirstName" type="string"/>
+            <element name="LastName" type="string"/>
+            <element name="CreditCardNumber" type="long"/>
+            <element name="ExpireDate" type="string"/>
+            <element name="ReservationId" type="positiveInteger"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Cost">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="cur" type="string" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <complexType name="TotalCost">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="cur" type="string" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+</schema>
