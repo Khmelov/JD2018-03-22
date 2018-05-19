@@ -1,5 +1,7 @@
 package by.it.danilevich.calc;
 
+import java.io.IOException;
+
 public class Scalar extends Var {
     private double value;
     Scalar(double value){
@@ -11,9 +13,10 @@ public class Scalar extends Var {
     }
 
     @Override
-    public Var sub(Var other) throws CallException {
+    public Var sub(Var other) throws IOException {
         if (other instanceof Scalar) {
         double rez = (this.value - ((Scalar) other).value);
+        Util.putToFileUserAction(this+"-"+other,String.valueOf(rez),false);
         return (new Scalar(rez));
     }
     else return null;
@@ -21,9 +24,10 @@ public class Scalar extends Var {
     }
 
     @Override
-    public Var mul(Var other) throws CallException {
+    public Var mul(Var other) throws CallException, IOException {
         if (other instanceof Scalar) {
         double rez = (this.value * ((Scalar) other).value);
+        Util.putToFileUserAction(this+"*"+other,String.valueOf(rez),false);
         return (new Scalar(rez));
     }
     else return other.mul(this);
@@ -31,24 +35,33 @@ public class Scalar extends Var {
     }
 
     @Override
-    public Var div(Var other) throws CallException {
+    public Var div(Var other) throws CallException, IOException {
         if (other instanceof Scalar) {
             if (((Scalar) other).value!=0) {
                 double z = ((Scalar) other).value;
 
                 double rez = (this.value / z);
+                Util.putToFileUserAction(this+"/"+other,String.valueOf(rez),false);
+
                 return (new Scalar(rez));
             }
-            else throw new CallException(Util.getError(Err.div0));
+            else {
+                Util.putToFileUserAction(this+"/"+other,Util.getError(Err.div0),true);
+                throw new CallException(Util.getError(Err.div0));
+            }
         }
-        else throw new CallException(Util.getError(Err.falseDivScalar));
+        else{
+            Util.putToFileUserAction(this+"/"+other,Util.getError(Err.falseDivScalar),true);
+            throw new CallException(Util.getError(Err.falseDivScalar));
+        }
     }
 
     @Override
-    public Var add(Var other) throws CallException {
+    public Var add(Var other) throws CallException, IOException {
         if (other instanceof Scalar) {
             double rez = (this.value + ((Scalar) other).value);
-            return (new Scalar(rez));
+            Util.putToFileUserAction(this+"+"+other,String.valueOf(rez),false);
+           return (new Scalar(rez));
         }
         else return other.add(this);
     }
