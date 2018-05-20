@@ -62,13 +62,16 @@ public class Buyer extends Thread implements IBuyer, IUseBasket {
     @Override
     public void putGoodsToBasket() {
         int r = Util.random(1,4);
-        for ( int i = 1; i <=r ; i++ ) {
-            Util.sleep(Util.random(100, 200));
-            int w = Util.random(0, Goods.pairs.size()-1);
-            String key = Goods.pairs.get(w).getKey();
-            Double value = Goods.pairs.get(w).getValue();
+        double totalCost = 0;
+            for ( int i = 1; i <=r ; i++ ) {
+                Util.sleep(Util.random(100, 200));
+                int w = Util.random(0, Goods.pairs.size() - 1);
+                    String key = Goods.pairs.get(w).getKey();
+                    Double value = Goods.pairs.get(w).getValue();
+                    System.out.println(this + "Положил товар " + key + " (" + value + ") в корзину");
+                    totalCost += value;
+            }
+        System.out.println(this + "взял товаров на сумму: " + totalCost);
 
-            System.out.println(this+"Положил товар " + key +" (" + value + ") в корзину");
-        }
     }
 }
