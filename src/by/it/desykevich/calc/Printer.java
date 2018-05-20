@@ -1,9 +1,20 @@
 package by.it.desykevich.calc;
 
-public class Printer {
-    void print (Var var){
+import java.util.AbstractMap;
+import java.util.TreeMap;
 
-        if (var!=null)
+public class Printer {
+    void print(String var) {
+        if (var != null)
             System.out.println(var);
+    }
+
+    void printVariable() {
+        System.out.println(Variable.map);
+    }
+
+    void sortVariable() {
+        AbstractMap<String, Var> sortedMap = new TreeMap<>(Variable.map);
+        System.out.println(sortedMap);
     }
 }

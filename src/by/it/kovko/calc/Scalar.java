@@ -2,6 +2,7 @@ package by.it.kovko.calc;
 
 
 class Scalar extends Var {
+    //Logger logger = Logger.getLogger();
     private double value;
     Scalar(){}
     Scalar(double value){
@@ -48,8 +49,10 @@ class Scalar extends Var {
     public Var div(Var other) throws CalcException {
         if (other instanceof Scalar) {
             double z = ((Scalar) other).getValue();
-            if (z == 0)
+            if (z == 0) {
+                //logger.toLog(Errors.DIVISION_BY_ZERO.toString());
                 throw new CalcException(Errors.DIVISION_BY_ZERO.toString());
+            }
             else
                 return this.mul(new Scalar(1 / ((Scalar) other).getValue()));
         }

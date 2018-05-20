@@ -1,73 +1,65 @@
 package by.it.desykevich.calc;
 
+public class Scalar extends Var {
 
-class Scalar extends Var {
-
-    private  double value;
+    private double value;
 
     public double getValue() {
         return value;
     }
 
-
-
-    Scalar (double value){
-
-        this.value=value;
-    }
-
-
-
     @Override
-    public  Var add (Var other){
-        if (other instanceof Scalar){
-            double res=this.value+((Scalar)other).value;
-            return  new Scalar(res);
-        }
-        else return  other.add(this);
+    public Var add(Var other) throws CalcException {
+        if (other instanceof Scalar) {
+            return new Scalar(this.value + ((Scalar) other).value);
+        } else
+            return other.add(this);
     }
 
     @Override
-    public  Var sub (Var other){
-        if (other instanceof Scalar){
-            double sub=this.value-((Scalar)other).value;
-            return  new Scalar(sub);
+    public Var sub(Var other) throws CalcException {
+        if (other instanceof Scalar) {
+            return new Scalar(this.value - ((Scalar) other).value);
+        } else {
+            Scalar minus = new Scalar(-1);
+            return other.sub(this).mul(minus);
         }
-        else return  new Scalar(-1).mul(other).add(this);
     }
 
     @Override
-    public Var mul (Var other) {
-        if (other instanceof Scalar){
-            double mul=this.value * ((Scalar)other).value;
-            return  new Scalar(mul);
-        }
-        else return  other.mul(this);
+    public Var mul(Var other) throws CalcException {
+        if (other instanceof Scalar) {
+            return new Scalar(this.value * ((Scalar) other).value);
+        } else
+            return other.mul(this);
     }
 
     @Override
-    public  Var div (Var other){
-        if (other instanceof Scalar){
-            double div=this.value / ((Scalar)other).value;
-            return  new Scalar(div);
-        }
-        return  super.div(other);
+    public Var div(Var other) throws CalcException {
+        if (other instanceof Scalar) {
+            double v = ((Scalar) other).value;
+            if (v == 0)
+                throw new CalcException(" Деление на 0 ");
+            else return new Scalar(this.value / ((Scalar) other).value);
+        } else throw new CalcException(" Операция невозможна ");
     }
 
 
-
-    Scalar (String str){
-        value=Double.parseDouble(str);
+    Scalar(double value) {
+        this.value = value;
     }
 
-    Scalar (Scalar otherScalar){
-        this.value=otherScalar.value;
+    Scalar(Scalar scalar) {
+        this.value = scalar.value;
+    }
+
+    Scalar(String strScalar) {
+        this.value = Double.parseDouble(strScalar);
     }
 
     @Override
     public String toString() {
-        return  Double.toString(value);
+        return Double.toString(value);
     }
-
 
 }

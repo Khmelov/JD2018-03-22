@@ -3,25 +3,27 @@ package by.it.uskoryaev.jd02_05;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public enum  ResourceManager {
+public enum ResourceManager {
+    INSTANCE;
 
-    INSTANSE;
-
-    private  final String path ="by.it.uskoryaev.jd02_05.ok.msg";
-
-    public void setLocale(Locale locale) {
-        this.locale = locale;
-        resourceBundle = ResourceBundle.getBundle(path,locale);
-    }
+    private final String path = "by.it.uskoryaev.jd02_05.ok.msg";
 
     private Locale locale = Locale.getDefault();
     private ResourceBundle resourceBundle;
 
-    ResourceManager(){
-        resourceBundle = ResourceBundle.getBundle(path,locale);
+    public void setLocale(Locale locale) {
+        this.locale = locale;
+        resourceBundle = ResourceBundle.getBundle(path, locale);
+
     }
 
-    String get(String key){
+    ResourceManager() {
+        resourceBundle = ResourceBundle.getBundle(path, locale);
+    }
+
+    String get(String key) {
         return resourceBundle.getString(key);
     }
+
+
 }

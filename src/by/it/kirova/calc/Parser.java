@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static by.it.kirova.calc.ConsoleRunner.rm;
+
 public class Parser {
 
     private List<String> priority = new ArrayList<>(Arrays.asList("=", "+", "-", "*", "/"));
@@ -106,7 +108,7 @@ public class Parser {
             case "/":
                 return one.div(two);
         }
-        throw new CalcException("Нет такой операции");
+        throw new CalcException(rm.get(Messages.NOSUCHOPERATION));
     }
 }
 
