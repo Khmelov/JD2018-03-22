@@ -20,5 +20,23 @@
         </td>
     </xsl:template>
 
+    <xsl:template match="/Persons/Person/Nickname">
+        <td>
+            <xsl:apply-templates/>
+        </td>
+    </xsl:template>
+
+    <xsl:template match="/Persons/Person/Password">
+        <td>
+            <xsl:apply-templates/>
+        </td>
+    </xsl:template>
+
+    <xsl:template match="/Persons/Person/Ads">
+        <td>
+            <xsl:apply-templates/>
+        </td>
+    </xsl:template>
+
 
 </xsl:stylesheet>

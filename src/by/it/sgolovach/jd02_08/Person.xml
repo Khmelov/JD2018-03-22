@@ -22,9 +22,11 @@
                 <Price currency="$$$">77000</Price>
             </Ad>
         </Ads>
+    </Person>
+    <Person>
         <Email>test567@mail.ru</Email>
         <Nickname>Test567</Nickname>
-        <Password> qwerty</Password>
+        <Password>qwerty</Password>
         <Ads>
             <Ad>
                 <Description>Квартира в центре</Description>
