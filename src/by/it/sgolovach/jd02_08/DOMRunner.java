@@ -17,7 +17,9 @@ public class DOMRunner {
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document document = builder.parse(filename);
             Element element = document.getDocumentElement();
+            System.out.println("Start");
             printDom(element);
+            System.out.println("Stop");
 
         } catch (Exception e) {
             System.out.print("Ошибка! " + e.toString());
@@ -27,10 +29,18 @@ public class DOMRunner {
 
     private static String tab = "";
 
+    private static int countTab = 0;
+
     private static void printDom(Node node) {
+        if (countTab > 0) tab = tab + "\t";
+        countTab++;
+        String text = node.getNodeValue();
+        if (text != null) {
+            System.out.println(tab+text.trim());
+        }
         int fd = node.getNodeType();
         if (fd == 1) {
-            System.out.print(tab+"<" + node.getNodeName());
+            System.out.print(tab + "<" + node.getNodeName());
             if (node.hasAttributes()) {
                 NamedNodeMap namedNodeMap = node.getAttributes();
                 System.out.print(" ");
@@ -41,20 +51,18 @@ public class DOMRunner {
             } else System.out.println(">");
         }
 
-        if (fd == 3) {
-            String text = node.getTextContent();
-            if (text != null) {
-                System.out.print(tab + text.trim());
-            }
-        }
+
         NodeList children = node.getChildNodes();
         for (int i = 0; i < children.getLength(); i++) {
             printDom(children.item(i));
         }
 
         if (fd == 1) {
-            System.out.println(tab+"</" + node.getNodeName() + ">");
+            System.out.println(tab + "</" + node.getNodeName() + ">");
         }
+        countTab--;
+        if (countTab > 0) tab = tab.substring(1);
+
 
     }
 }
