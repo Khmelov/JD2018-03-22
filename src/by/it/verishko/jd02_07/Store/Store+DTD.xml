@@ -17,6 +17,8 @@
                 <Price currency="BYN">33</Price>
             </Product>
         </Goods>
+    </Person>
+    <Person>
         <Email>test2@mail.ru</Email>
         <Nickname>test567</Nickname>
         <Password>qwerty</Password>
