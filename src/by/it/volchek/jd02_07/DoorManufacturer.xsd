@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://it-academy.by/svolchek"
+        xmlns:tns="http://it-academy.by/svolchek"
+        elementFormDefault="qualified">
+    <element name="Managers">
+        <complexType>
+            <sequence>
+                <element name="Manager"
+                         type="tns:Manager"
+                         minOccurs="1"
+                         maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="Manager">
+        <sequence>
+            <element name="FullName" type="string"/>
+            <element name="Email" type="string"/>
+            <element name="Contracts"
+                     type="tns:Contracts"/>
+        </sequence>
+    </complexType>
+    <complexType name="Contracts">
+        <sequence>
+            <element name="Contract"
+                     type="tns:Contract"
+                     minOccurs="1"
+                     maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="Contract">
+        <sequence>
+            <element name="Client" type="string"/>
+            <element name="ContractNumber" type="string"/>
+            <element name="Door" type="tns:Door" minOccurs="1" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <simpleType name="doorOpening">
+        <restriction base="string">
+            <enumeration value="Right"/>
+            <enumeration value="Left"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="doorType">
+        <restriction base="string">
+            <enumeration value="Door"/>
+            <enumeration value="Hatch"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="hDemention">
+        <restriction base="integer">
+            <minInclusive value="500"/>
+            <maxInclusive value="2500"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="vDemention">
+        <restriction base="integer">
+            <minInclusive value="500"/>
+            <maxInclusive value="2500"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="ralColor">
+        <restriction base="string">
+           <pattern value="[RAL][1-9][0][0-3][0-9]"/>
+        </restriction>
+    </simpleType>
+    <complexType name="Door">
+        <sequence>
+            <element name="Type" type="tns:doorType"/>
+            <element name="Price" type="positiveInteger"/>
+            <element name="Quantity" type="positiveInteger"/>
+            <element name="HDemention" type="tns:hDemention"/>
+            <element name="VDemention" type="tns:vDemention"/>
+            <element name="Opening" type="tns:doorOpening"/>
+            <element name="Color" type="string"/>
+        </sequence>
+    </complexType>
+
+
+</schema>
