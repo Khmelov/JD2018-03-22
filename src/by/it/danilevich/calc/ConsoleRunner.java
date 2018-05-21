@@ -44,6 +44,19 @@ public class ConsoleRunner {
 
         String line;
 
+         Util.setFullReport(Math.random() > 0.5);
+         if (Util.getFullReport()) System.out.println("Будет формироваться полный отчет");
+         else System.out.println("Будет формироваться краткий отчет");
+
+         Util.createLogBuilder();
+         PrintFile.getInstance().setLogBuilder(Util.getLogBuilder());
+         //PrintFile.getInstance().toLog(PrintFile.getInstance().getLogger().getTitle());
+//         Util.putToFileUserAction("adding 9-3","6",false);
+
+
+
+        Util.putTitleToFile("Начало работы");
+
         while (!(line = scanner.nextLine()).equals("end")) {
             try {
                 Var result = parser.calc(line);
@@ -52,6 +65,7 @@ public class ConsoleRunner {
                 System.out.println(e.getMessage());
             }
         }
+        Util.putTitleToFile("Окончание работы");
 
     }
 }

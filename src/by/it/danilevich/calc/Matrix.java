@@ -1,6 +1,8 @@
 package by.it.danilevich.calc;
 
 
+import java.io.IOException;
+
 public class Matrix extends Var {
     private double[][] value;
     Matrix(double[ ][ ]  value){
@@ -59,55 +61,77 @@ public class Matrix extends Var {
     }
 
     @Override
-    public Var mul(Var other) throws CallException {
+    public Var mul(Var other) throws CallException, IOException {
         if (other instanceof Matrix){
-            if (!checkMatrixForMult(this.value,((Matrix) other).value))
+            if (!checkMatrixForMult(this.value,((Matrix) other).value)){
+                Util.putToFileUserAction(this+"*"+other,Util.getError(Err.differentSizeMatrix4Mult),true);
                 throw new CallException(Util.getError(Err.differentSizeMatrix4Mult));
+            }
             double[][] rez = ActionMatrix.mul( this.value, ((Matrix) other).value);
+            Util.putToFileUserAction(this+"*"+other,rez.toString(),false);
             return  (new Matrix(rez));
         }
         else if (other instanceof Vector){
-            if (!checkMatrixVectorForMult(this.value,((Vector) other).getValue()))
+            if (!checkMatrixVectorForMult(this.value,((Vector) other).getValue())){
+                Util.putToFileUserAction(this+"*"+other,Util.getError(Err.differentSizeMatrixVector4Mult),false);
                 throw new CallException(Util.getError(Err.differentSizeMatrixVector4Mult));
+            }
 
             double[] rez = ActionMatrix.mul( this.value, ((Vector) other).getValue());
+            Util.putToFileUserAction(this+"*"+other,rez.toString(),false);
             return  (new Vector(rez));
         }
         else if (other instanceof Scalar){
             double[][] rez = ActionMatrix.mul( ((Scalar) other).getValue(),this.value);
+            Util.putToFileUserAction(this+"*"+other,rez.toString(),false);
             return  (new Matrix(rez));
         }
-        else return other.mul(this);
+        else {
+              return other.mul(this);
+        }
     }
 
     @Override
-    public Var add(Var other) throws CallException {
+    public Var add(Var other) throws CallException, IOException {
         if (other instanceof Matrix){
-            if (!compareMatrix(this.value,((Matrix) other).value))
+            if (!compareMatrix(this.value,((Matrix) other).value)){
+                Util.putToFileUserAction(this+"+"+other,Util.getError(Err.addimpossible),true);
                 throw new CallException(Util.getError(Err.addimpossible));
+            }
 
             double[][] rez = ActionMatrix.add(this.value, ((Matrix) other).value);
+            Util.putToFileUserAction(this+"+"+other,String.valueOf(rez),false);
+
             return (new Matrix(rez));
         }
         else if (other instanceof Scalar){
             double[][] rez = ActionMatrix.add(this.value, ((Scalar) other).getValue());
+            Util.putToFileUserAction(this+"+"+other,String.valueOf(rez),false);
             return (new Matrix(rez));
         }
-        else throw new
+        else{
+            Util.putToFileUserAction(this+"+"+other,Util.getError(Err.addimpossible),true);
+            throw new
                     CallException(Util.getError(Err.addimpossible));
+        }
 
     }
 
     @Override
-    public Var sub(Var other) throws CallException {
+    public Var sub(Var other) throws CallException, IOException {
         if (other instanceof Matrix){
-            if (!checkMatrixForMult(this.value,((Matrix) other).value))
+            if (!checkMatrixForMult(this.value,((Matrix) other).value)){
+                Util.putToFileUserAction(this+"-"+other,Util.getError(Err.differentSizeMatrixVector4Sub),false);
+
                 throw new CallException(Util.getError(Err.differentSizeMatrixVector4Sub));
+            }
             double[][] rez = ActionMatrix.sub(this.value, ((Matrix) other).value);
-            return (new Matrix(rez));
+            Util.putToFileUserAction(this+"-"+other,Util.getError(Err.differentSizeMatrixVector4Sub),true);
+           return (new Matrix(rez));
         }
         else if (other instanceof Scalar){
             double[][] rez = ActionMatrix.sub(this.value, ((Scalar) other).getValue());
+            Util.putToFileUserAction(this+"-"+other,String.valueOf(rez),false);
             return (new Matrix(rez));
         }
         else return other.mul(this);
