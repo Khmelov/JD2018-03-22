@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!-- поменяли идентификатор у targetNamespace -->
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://it-academy.by/akhmelev"
-        xmlns:tns="http://it-academy.by/akhmelev"
+        targetNamespace="http://jd02_09.poprugo.it.by"
+        xmlns:tns="http://jd02_09.poprugo.it.by"
         elementFormDefault="qualified">
     <!-- всё. схему описали-->
+
     <element name="Persons">
         <complexType>
             <sequence>
