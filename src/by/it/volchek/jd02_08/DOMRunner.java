@@ -1,9 +1,6 @@
 package by.it.volchek.jd02_08;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -34,7 +31,17 @@ public class DOMRunner {
     private static void printDOM(Node node) {
         tab+="\t";
         if (node.getNodeType()==Node.ELEMENT_NODE)
-            System.out.println(tab+"<"+node.getNodeName()+">");
+        if (node.hasAttributes()) {
+            System.out.print(tab+"<"+node.getNodeName());
+            NamedNodeMap attr = node.getAttributes();
+            for (int i = 0; i < attr.getLength(); i++) {
+                Node attribute = attr.item(i);
+                System.out.print(" "+attribute.getNodeName()+"=\""+attribute.getNodeValue()+"\"");
+            }
+            System.out.println(">");
+        }
+        else System.out.println(tab+"<"+node.getNodeName()+">");
+
         if ((node.getNodeType()==Node.TEXT_NODE) && (!node.getNodeValue().trim().equals("")))
             System.out.println(tab+node.getNodeValue().trim());
         NodeList children = node.getChildNodes();
