@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<Persons xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://it-academy.by/verishko"
-         xsi:schemaLocation="http://it-academy.by/verishko Store.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Persons xmlns="http://jd02_09.verishko.it.by">
     <Person>
         <Email>test@mail.ru</Email>
         <Nickname>test123</Nickname>
