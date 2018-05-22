@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://it-academy.by/romankov"
+        xmlns:tns="http://it-academy.by/romankov"
+        elementFormDefault="qualified">
+    <element name="Agents">
+        <complexType>
+            <sequence>
+                <element name="Agent"
+                         type="tns:Agent"
+                         minOccurs="1"
+                         maxOccurs="unbounded">
+
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="Agent">
+        <sequence>
+            <element name="Name" type="string"/>
+            <element name="Telephone" type="positiveInteger"/>
+            <element name="Email" type="string"/>
+            <element name="Tours" type="tns:Tours"/>
+            <element name="Reapeted_Clients" type="tns:Reapeted_Clients"/>
+        </sequence>
+    </complexType>
+<complexType name="Tours">
+    <sequence>
+        <element name="Tour" type="tns:Tour" minOccurs="1" maxOccurs="unbounded"/>
+    </sequence>
+</complexType>
+    <complexType name="Tour">
+        <sequence>
+            <element name="Type" type="string"/>
+            <element name="Destination" type="string"/>
+            <element name="AmountOfDays" type="positiveInteger"/>
+            <element name="DepartureCity" type="string"/>
+            <element name="Price" type="tns:Price"/>
+        </sequence>
+    </complexType>
+    <complexType name="Reapeted_Clients">
+        <sequence>
+            <element name="Reapeted_Client" type="tns:Reapeted_Client" minOccurs="1" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="Reapeted_Client">
+        <sequence>
+            <element name="FirstName" type="string"/>
+            <element name="Age" type="positiveInteger"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Price">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="currency" type="string" use="optional" default="$$$"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+</schema>

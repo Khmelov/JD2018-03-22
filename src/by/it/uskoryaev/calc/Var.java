@@ -11,6 +11,8 @@ abstract class Var implements Operation {
 
     private static Map<String, Var> variables = new HashMap<>();
 
+
+
     static Var saveVar(String nameVar, Var valurVar) throws CalcException {
         variables.put(nameVar, valurVar);
         try (PrintWriter printer = new PrintWriter(new FileWriter(Util.getPathVarsTxt()))) {

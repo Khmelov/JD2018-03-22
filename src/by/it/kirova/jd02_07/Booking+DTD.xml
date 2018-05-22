@@ -11,6 +11,7 @@
             <MiddleName>Иванович</MiddleName>
             <Country>Беларусь</Country>
             <PhoneNumber>+375291111111</PhoneNumber>
+            <Hotels></Hotels>
         </User>
         <User>
             <UserId>2</UserId>
@@ -26,14 +27,13 @@
                     <HotelId>1</HotelId>
                     <Name>Resort Spa</Name>
                     <Type>Отель</Type>
+                    <StarRating>5</StarRating>
                     <Country>Россия</Country>
                     <City>Москва</City>
                     <Street>Горького</Street>
                     <HouseNumber>82</HouseNumber>
                     <ContactEmail>spa@gmail.com</ContactEmail>
                     <PhoneNumber>+7395975339983</PhoneNumber>
-                    <UserId>2</UserId>
-                    <PhoneNumber>+4395975339983</PhoneNumber>
                     <Rooms>
                         <Room>
                             <RoomId>2</RoomId>
@@ -42,15 +42,26 @@
                             <PeopleAmount>1</PeopleAmount>
                             <Description>Завтрак включен в стоимость</Description>
                             <Cost cur="р.">15000</Cost>
-                            <HotelId>1</HotelId>
+                            <Reservations>
+                                <Reservation>
+                                    <ReservationId>3</ReservationId>
+                                    <ReservationDate>2018-05-11</ReservationDate>
+                                    <CheckInDate>2018-07-24</CheckInDate>
+                                    <CheckOutDate>2018-07-25</CheckOutDate>
+                                    <TotalCost cur="р.">15000</TotalCost>
+                                    <PaymentStatus>Оплачено</PaymentStatus>
+                                    <UserId>5</UserId>
+                                </Reservation>
+                            </Reservations>
                         </Room>
                         <Room>
                             <RoomId>4</RoomId>
                             <RoomName>Номер с 2 двуспальными кроватями</RoomName>
                             <RoomFactNumber>200</RoomFactNumber>
                             <PeopleAmount>4</PeopleAmount>
+                            <Description></Description>
                             <Cost cur="$">40000</Cost>
-                            <HotelId>1</HotelId>
+                            <Reservations></Reservations>
                         </Room>
                     </Rooms>
                 </Hotel>
@@ -62,6 +73,7 @@
             <Password>xyz123</Password>
             <FirstName>John</FirstName>
             <LastName>Smith</LastName>
+            <MiddleName></MiddleName>
             <Country>Австрия</Country>
             <PhoneNumber>+447871234567</PhoneNumber>
             <Hotels>
@@ -69,21 +81,42 @@
                     <HotelId>2</HotelId>
                     <Name>Resort Appartment</Name>
                     <Type>Апартаменты</Type>
+                    <StarRating>5</StarRating>
                     <Country>Австрия</Country>
                     <City>Вена</City>
                     <Street>Bahgasse</Street>
                     <HouseNumber>4</HouseNumber>
                     <ContactEmail>wienapart@gmail.com</ContactEmail>
                     <PhoneNumber>+4395975339983</PhoneNumber>
-                    <UserId>3</UserId>
                     <Rooms>
                         <Room>
                             <RoomId>1</RoomId>
                             <RoomName>Апартаменты с терассой</RoomName>
+                            <RoomFactNumber></RoomFactNumber>
                             <PeopleAmount>2</PeopleAmount>
-                            <Description>Апартаменты в сердце Вены с терассой, двуспальной кроватью и кухней</Description>
+                            <Description>Апартаменты в сердце Вены с терассой, двуспальной кроватью и кухней
+                            </Description>
                             <Cost cur="$">450</Cost>
-                            <HotelId>2</HotelId>
+                            <Reservations>
+                                <Reservation>
+                                    <ReservationId>1</ReservationId>
+                                    <ReservationDate>2018-03-14</ReservationDate>
+                                    <CheckInDate>2018-07-20</CheckInDate>
+                                    <CheckOutDate>2018-07-23</CheckOutDate>
+                                    <TotalCost cur="$">1350</TotalCost>
+                                    <PaymentStatus>Оплачено</PaymentStatus>
+                                    <UserId>5</UserId>
+                                </Reservation>
+                                <Reservation>
+                                    <ReservationId>2</ReservationId>
+                                    <ReservationDate>2018-04-18</ReservationDate>
+                                    <CheckInDate>2018-07-28</CheckInDate>
+                                    <CheckOutDate>2018-07-29</CheckOutDate>
+                                    <TotalCost cur="$">450</TotalCost>
+                                    <PaymentStatus>Оплачено</PaymentStatus>
+                                    <UserId>4</UserId>
+                                </Reservation>
+                            </Reservations>
                         </Room>
                     </Rooms>
                 </Hotel>
@@ -91,6 +124,7 @@
                     <HotelId>3</HotelId>
                     <Name>Spa Appartment</Name>
                     <Type>Апартаменты</Type>
+                    <StarRating>5</StarRating>
                     <Country>Австрия</Country>
                     <City>Вена</City>
                     <Street>Johann-Hoffmann Platz</Street>
@@ -101,10 +135,11 @@
                         <Room>
                             <RoomId>3</RoomId>
                             <RoomName>Апартаменты с 2 спальнями</RoomName>
+                            <RoomFactNumber></RoomFactNumber>
                             <PeopleAmount>2</PeopleAmount>
                             <Description>Апартаменты в сердце Вены с 2 двуспальными кроватями и кухней</Description>
                             <Cost cur="$">550</Cost>
-                            <HotelId>3</HotelId>
+                            <Reservations></Reservations>
                         </Room>
                     </Rooms>
                 </Hotel>
@@ -119,6 +154,7 @@
             <MiddleName>Петрович</MiddleName>
             <Country>Беларусь</Country>
             <PhoneNumber>+375292222222</PhoneNumber>
+            <Hotels></Hotels>
         </User>
         <User>
             <UserId>5</UserId>
@@ -126,67 +162,10 @@
             <Password>ppp123</Password>
             <FirstName>Jacob</FirstName>
             <LastName>Irwin</LastName>
+            <MiddleName></MiddleName>
             <Country>Польша</Country>
             <PhoneNumber>+485291111111</PhoneNumber>
+            <Hotels></Hotels>
         </User>
     </Users>
-    <Reservations>
-        <Reservation>
-            <ReservationId>1</ReservationId>
-            <ReservationDate>14.03.2018</ReservationDate>
-            <CheckInDate>20.07.2018</CheckInDate>
-            <CheckOutDate>23.07.2018</CheckOutDate>
-            <TotalCost cur="$">1350</TotalCost>
-            <UserId>5</UserId>
-            <RoomId>1</RoomId>
-            <Payments>
-                <Payment>
-                    <PaymentId>1</PaymentId>
-                    <FirstName>Jacob</FirstName>
-                    <LastName>Irwin</LastName>
-                    <CreditCardNumber>4551859896542222</CreditCardNumber>
-                    <ExpireDate>05/19</ExpireDate>
-                    <ReservationId>1</ReservationId>
-                </Payment>
-            </Payments>
-        </Reservation>
-        <Reservation>
-            <ReservationId>2</ReservationId>
-            <ReservationDate>18.04.2018</ReservationDate>
-            <CheckInDate>28.07.2018</CheckInDate>
-            <CheckOutDate>29.07.2018</CheckOutDate>
-            <TotalCost cur="$">450</TotalCost>
-            <UserId>4</UserId>
-            <RoomId>1</RoomId>
-            <Payments>
-                <Payment>
-                    <PaymentId>2</PaymentId>
-                    <FirstName>Петр</FirstName>
-                    <LastName>Петров</LastName>
-                    <CreditCardNumber>1257422212601472</CreditCardNumber>
-                    <ExpireDate>08/20</ExpireDate>
-                    <ReservationId>2</ReservationId>
-                </Payment>
-            </Payments>
-        </Reservation>
-        <Reservation>
-            <ReservationId>3</ReservationId>
-            <ReservationDate>11.05.2018</ReservationDate>
-            <CheckInDate>24.07.2018</CheckInDate>
-            <CheckOutDate>25.07.2018</CheckOutDate>
-            <TotalCost cur="р.">15000</TotalCost>
-            <UserId>5</UserId>
-            <RoomId>2</RoomId>
-            <Payments>
-                <Payment>
-                    <PaymentId>3</PaymentId>
-                    <FirstName>Jacob</FirstName>
-                    <LastName>Irwin</LastName>
-                    <CreditCardNumber>4551859896542222</CreditCardNumber>
-                    <ExpireDate>05/19</ExpireDate>
-                    <ReservationId>3</ReservationId>
-                </Payment>
-            </Payments>
-        </Reservation>
-    </Reservations>
 </Booking>

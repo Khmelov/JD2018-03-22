@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Manufacturer>
+    <Managers>
+        <Manager>
+            <FullName>
+                Igor Shevchenko
+            </FullName>
+            <Email>
+                i.shevchenko@bs.by
+            </Email>
+            <Contracts>
+                <Contract>
+                    <Client>Zomex Inv.</Client>
+                    <ContractNumber>23-988</ContractNumber>
+                    <Door>
+                        <Type>Door</Type>
+                        <Price>340</Price>
+                        <Quantity>4</Quantity>
+                        <HDemention>900</HDemention>
+                        <VDemention>2100</VDemention>
+                        <Opening>Right</Opening>
+                        <Color>RAL7040</Color>
+                    </Door>
+                    <Door>
+                        <Type>Hatch</Type>
+                        <Price>440</Price>
+                        <Quantity>5</Quantity>
+                        <HDemention>950</HDemention>
+                        <VDemention>2200</VDemention>
+                        <Opening>Left</Opening>
+                        <Color>RAL5040</Color>
+                    </Door>
+                </Contract>
+                <Contract>
+                    <Client>SU-94</Client>
+                    <ContractNumber>23-999</ContractNumber>
+                    <Door>
+                        <Type>Door</Type>
+                        <Price>670</Price>
+                        <Quantity>3</Quantity>
+                        <HDemention>1100</HDemention>
+                        <VDemention>2400</VDemention>
+                        <Opening>Right</Opening>
+                        <Color>RAL1020</Color>
+                    </Door>
+                </Contract>
+            </Contracts>
+        </Manager>
+        <Manager>
+            <FullName>Ivanova Diana</FullName>
+            <Email>d.ivanova@bs.by</Email>
+            <Contracts>
+                <Contract>
+                    <Client>StroyTrest3</Client>
+                    <ContractNumber>24-001</ContractNumber>
+                    <Door>
+                        <Type>Hatch</Type>
+                        <Price>560</Price>
+                        <Quantity>2</Quantity>
+                        <HDemention>1000</HDemention>
+                        <VDemention>2100</VDemention>
+                        <Opening>Left</Opening>
+                        <Color>RAL7001</Color>
+                    </Door>
+                </Contract>
+            </Contracts>
+        </Manager>
+    </Managers>
+</Manufacturer>
