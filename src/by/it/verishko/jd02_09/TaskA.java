@@ -12,7 +12,7 @@ public class TaskA {
             JAXBContext jaxbContext = JAXBContext.newInstance(Persons.class);
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
             String xmlSource = System.getProperty("user.dir") + "/src/by/it/verishko/jd02_07/Store/Store+XSD.xml";
-            String xmlTarget = System.getProperty("user.dir") + "/src/by/it/verishko/jd02_07/Store/Store+XSD.xml";
+            String xmlTarget = System.getProperty("user.dir") + "/src/by/it/verishko/jd02_09/Store+XSD.xml";
 
             Persons persons = (Persons) unmarshaller.unmarshal(new File(xmlSource));
 
