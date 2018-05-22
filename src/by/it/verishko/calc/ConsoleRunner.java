@@ -13,14 +13,14 @@ class ConsoleRunner {
             try (BufferedReader reader = new BufferedReader(
                     new FileReader(file))
             ) {
-            String line;
-            while ((line = reader.readLine()) != null)
-                parser.calc(line);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (CalcException e) {
-            System.out.println(e);
-        }
+                String line;
+                while ((line = reader.readLine()) != null)
+                    parser.calc(line);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (CalcException e) {
+                System.out.println(e);
+            }
 
         Scanner sc = new Scanner(System.in);
         String line;
@@ -33,5 +33,7 @@ class ConsoleRunner {
                 System.out.println(e.getMessage());
             }
         }
+        Logger logger = Logger.getLogger();
+        logger.toLog("Message # " + 1);
     }
 }
