@@ -11,11 +11,6 @@
                          minOccurs="0"
                          maxOccurs="unbounded">
                 </element>
-                <element name="Reservations"
-                         type="tns:Reservations"
-                         minOccurs="0"
-                         maxOccurs="unbounded">
-                </element>
             </sequence>
         </complexType>
     </element>
@@ -40,7 +35,6 @@
             <element name="Country" type="string"/>
             <element name="PhoneNumber" type="string"/>
             <element name="Hotels" type="tns:Hotels"/>
-            <element name="Reservations" type="tns:Reservations"/>
         </sequence>
     </complexType>
 
@@ -65,7 +59,6 @@
             <element name="HouseNumber" type="string"/>
             <element name="ContactEmail" type="string"/>
             <element name="PhoneNumber" type="string"/>
-            <element name="UserId" type="positiveInteger"/>
             <element name="Rooms" type="tns:Rooms"/>
         </sequence>
     </complexType>
@@ -87,7 +80,7 @@
             <element name="PeopleAmount" type="positiveInteger"/>
             <element name="Description" type="string"/>
             <element name="Cost" type="tns:Cost"/>
-            <element name="HotelId" type="positiveInteger"/>
+            <element name="Reservations" type="tns:Reservations"/>
         </sequence>
     </complexType>
 
@@ -107,29 +100,8 @@
             <element name="CheckInDate" type="date"/>
             <element name="CheckOutDate" type="date"/>
             <element name="TotalCost" type="tns:TotalCost"/>
-            <element name="RoomId" type="positiveInteger"/>
+            <element name="PaymentStatus" type="string"/>
             <element name="UserId" type="positiveInteger"/>
-            <element name="Payments" type="tns:Payments"/>
-        </sequence>
-    </complexType>
-
-    <complexType name="Payments">
-        <sequence>
-            <element name="Payment"
-                     type="tns:Payment"
-                     minOccurs="0"
-                     maxOccurs="unbounded"/>
-        </sequence>
-    </complexType>
-
-    <complexType name="Payment">
-        <sequence>
-            <element name="PaymentId" type="positiveInteger"/>
-            <element name="FirstName" type="string"/>
-            <element name="LastName" type="string"/>
-            <element name="CreditCardNumber" type="long"/>
-            <element name="ExpireDate" type="string"/>
-            <element name="ReservationId" type="positiveInteger"/>
         </sequence>
     </complexType>
 

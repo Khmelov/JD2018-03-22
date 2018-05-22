@@ -2,7 +2,7 @@
         <!ELEMENT Booking (Users+, Reservations+)>
 
         <!ELEMENT Users (User)+>
-        <!ELEMENT User (UserId, Email, Password, FirstName, LastName, MiddleName?, Country, PhoneNumber, Hotels, Reservations)>
+        <!ELEMENT User (UserId, Email, Password, FirstName, LastName, MiddleName?, Country, PhoneNumber, Hotels)>
         <!ELEMENT UserId (#PCDATA)>
         <!ELEMENT Email (#PCDATA)>
         <!ELEMENT Password (#PCDATA)>
@@ -13,7 +13,7 @@
         <!ELEMENT PhoneNumber (#PCDATA)>
 
         <!ELEMENT Hotels (Hotel)+>
-        <!ELEMENT Hotel (HotelId, Name, Type, StarRating?, Country, City, Street, HouseNumber, ContactEmail, PhoneNumber, UserId, Rooms)>
+        <!ELEMENT Hotel (HotelId, Name, Type, StarRating?, Country, City, Street, HouseNumber, ContactEmail, PhoneNumber, Rooms)>
         <!ELEMENT HotelId (#PCDATA)>
         <!ELEMENT Name (#PCDATA)>
         <!ELEMENT Type (#PCDATA)>
@@ -25,7 +25,7 @@
 
 
         <!ELEMENT Rooms (Room)+>
-        <!ELEMENT Room (RoomId, RoomName, RoomFactNumber?, PeopleAmount, Description?, Cost, HotelId, Reservations)>
+        <!ELEMENT Room (RoomId, RoomName, RoomFactNumber?, PeopleAmount, Description?, Cost, Reservations)>
         <!ELEMENT RoomId (#PCDATA)>
         <!ELEMENT RoomName (#PCDATA)>
         <!ELEMENT RoomFactNumber (#PCDATA)>
@@ -35,16 +35,11 @@
         <!ATTLIST Cost cur PCDATA>
 
         <!ELEMENT Reservations (Reservation)+>
-        <!ELEMENT Reservation (ReservationId, ReservationDate, CheckInDate, CheckOutDate, TotalCost, RoomId, UserId, Payments)>
+        <!ELEMENT Reservation (ReservationId, ReservationDate, CheckInDate, CheckOutDate, TotalCost, PaymentStatus, UserId)>
         <!ELEMENT ReservationId (#PCDATA)>
         <!ELEMENT ReservationDate (#PCDATA)>
         <!ELEMENT CheckInDate (#PCDATA)>
         <!ELEMENT CheckOutDate (#PCDATA)>
         <!ELEMENT TotalCost (#PCDATA)>
         <!ATTLIST TotalCost cur PCDATA>
-
-        <!ELEMENT Payments (Payment)+>
-        <!ELEMENT Payment (PaymentId, FirstName, LastName, CreditCardNumber, ExpireDate, ReservationId)>
-        <!ELEMENT PaymentId (#PCDATA)>
-        <!ELEMENT CreditCardNumber (#PCDATA)>
-        <!ELEMENT ExpireDate (#PCDATA)>
+        <!ELEMENT PaymentStatus (#PCDATA)>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="Utf-8" ?>
+<!ELEMENT Agents (Agent)+>
+<!ELEMENT Agent (Name, Telephone, Email,Tours, Reapeted_Clients)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Telephone (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT Tours (Tour)+>
+<!ELEMENT Tour (Type, Destination, AmountOfDays,DepartureCity,Price)>
+<!ELEMENT Type (#PCDATA)>
+<!ELEMENT Destination (#PCDATA)>
+<!ELEMENT AmountOfDays (#PCDATA) >
+<!ELEMENT DepartureCity (#PCDATA)>
+<!ELEMENT Price (#PCDATA)>
+<!ATTLIST Price currency PCDATA>
+<!ELEMENT Reapeted_Clients (Reapeted_Client)+>
+<!ELEMENT Reapeted_Client (FirstName, Age)>
+<!ELEMENT FirstName (#PCDATA)>
+<!ELEMENT Age (#PCDATA)>
