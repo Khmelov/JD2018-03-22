@@ -16,10 +16,12 @@ public class Runner {
         converter.load(xmlSource);
         converter.convert();
         converter.save(jsonTarget);
+        System.out.println(converter.getText());
 
         converter = cf.getConverter(ConverterFactory.ConverterType.JSON_TO_XML);
         converter.load(jsonTarget);
         converter.convert();
         converter.save(xmlTarget);
+        System.out.println(converter.getText());
     }
 }
