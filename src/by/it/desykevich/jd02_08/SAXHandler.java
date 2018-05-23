@@ -10,12 +10,12 @@ public class SAXHandler extends DefaultHandler{
     @Override
     public void startDocument() throws SAXException {
 
-        System.out.println("START");
+        System.out.println("<?xml version=\"1.0\" encoding=\"utf-8\" ?>");
     }
 
     @Override
     public void endDocument() throws SAXException {
-        System.out.println("STOP");
+//        System.out.println("STOP");
     }
 
     @Override
@@ -46,6 +46,7 @@ public class SAXHandler extends DefaultHandler{
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         String Part = new String(ch,start,length);
+        text.append(Part);
     }
     private StringBuilder text=new StringBuilder();
 }
