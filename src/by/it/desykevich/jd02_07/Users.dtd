@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!ELEMENT Persens (Persen)+>
+<!ELEMENT Persen (Email, NickName, Password, Ads)>
+        <!ELEMENT Email (#PCDATA)>
+        <!ELEMENT NickName (#PCDATA)>
+        <!ELEMENT Password (#PCDATA)>
+        <!ELEMENT Ads (Ad)+>
+<!ELEMENT  Ad (Description, Address, Floor, Floors,Square, Price)>
+        <!ELEMENT Description (#PCDATA)>
+        <!ELEMENT Address (#PCDATA)>
+        <!ELEMENT Floor (#PCDATA)>
+        <!ELEMENT Floors (#PCDATA)>
+        <!ELEMENT Price (#PCDATA)>
+        <!ELEMENT Square (#PCDATA)>
+<!ATTLIST Price currency PCDATA>

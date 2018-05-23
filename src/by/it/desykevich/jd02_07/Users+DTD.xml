@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE Persens SYSTEM "Persen.dtd">
+<Persens>
+    <Persen>
+        <Email>test@mail.ru</Email>
+        <NickName>test123</NickName>
+        <Password>qqq</Password>
+
+        <Ads>
+            <Ad>
+                <Description>Квартира в центре</Description>
+                <Address>Минск, ул. Сухарева 24 кв.99</Address>
+                <Floor>3</Floor>
+                <Floors>8</Floors>
+                <Square>50</Square>
+                <Price currency="$$$">100</Price>
+            </Ad>
+
+            <Ad>
+                <Description>Квартира в центре</Description>
+                <Address>Минск, ул. Сухарева 24 кв.14</Address>
+                <Floor>2</Floor>
+                <Floors>9</Floors>
+                <Square>55</Square>
+                <Price currency="$$$">999</Price>
+            </Ad>
+        </Ads>
+
+        <Email>test5673@mail.ru</Email>
+        <NickName>Test567</NickName>
+        <Password>qwerty</Password>
+        <Ads>
+            <Ad>
+                <Description>Квартира в центре</Description>
+                <Address>Пинск, ул. Ленина, 1 кв.1</Address>
+                <Floor>4</Floor>
+                <Floors>9</Floors>
+                <Square>45.5</Square>
+                <Price currency="$$$">77000</Price>
+            </Ad>
+        </Ads>
+    </Persen>
+</Persens>
