@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE Persons SYSTEM "Person.dtd">
 <Persons>
     <Person>
         <Email>test123@mail.ru</Email>
@@ -6,7 +7,7 @@
         <Password>qwerty</Password>
         <Ads>
             <Ad>
-                <Description>Квартира &apos; в центре</Description>
+                <Description>Квартира в центре</Description>
                 <Address>Минск, ул. Сухарево, 4 кв.23</Address>
                 <Floor>2</Floor>
                 <Floors>9</Floors>
@@ -22,9 +23,8 @@
                 <Price currency="$$$">77000</Price>
             </Ad>
         </Ads>
-    </Person>
 
-    <Person>
+
         <Email>test5673@mail.ru</Email>
         <Nickname>Test567</Nickname>
         <Password>qwerty</Password>
