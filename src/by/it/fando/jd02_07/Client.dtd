@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!ELEMENT Clients (Client)+>
+<!ELEMENT Client (ClientID, Email, Nickname, Password, Orders)>
+<!ELEMENT ClientID (#PCDATA)>
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT Nickname (#PCDATA)>
+<!ELEMENT Password (#PCDATA)>
+<!ELEMENT Orders (Order)+>
+<!ELEMENT Order (Description, Size, Price)>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT Size (#PCDATA)>
+<!ELEMENT Price (#PCDATA)>
+<!ATTLIST Price currency PCDATA>

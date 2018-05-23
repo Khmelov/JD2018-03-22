@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class QueueBuyer {
 
-    private static LinkedList<Buyer> internalQueue = new LinkedList<>();
+    private final static LinkedList<Buyer> internalQueue = new LinkedList<>();
 
     private static void printSize() {
         if (internalQueue.size() > 0)
