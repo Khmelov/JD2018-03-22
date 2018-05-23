@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-
         <!ELEMENT Users (User)+>
         <!ELEMENT User (Email, Nickname, Password, Cart)>
         <!ELEMENT Email (#PCDATA)>

@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Persons xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://jd02_09.desykevich.it.by"
-         xsi:schemaLocation="http://it-academy.by/desykevich Persen.xsd">
-    <Person>
+<Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://it-academy.by/desykevich"
+       xsi:schemaLocation="http://it-academy.by/desykevich Users.xsd">
+
+    <User>
         <Email>test123@mail.ru</Email>
-        <Nickname>Test123</Nickname>
+        <Nickname>Test01</Nickname>
         <Password>qwerty</Password>
-        <Ads>
-            <Ad Rooms="2">
-                <Description>Квартира в центре</Description>
-                <Address>Минск, ул. Сухарево, 44 кв.23</Address>
-                <Floor>2</Floor>
-                <Floors>9</Floors>
-                <Square>55</Square>
-                <Price currency="$$$">77000</Price>
-            </Ad>
-            <Ad Rooms="3">
-                <Description>Квартира в центре</Description>
-                <Address>Минск, ул. Сухарево, 4 кв.24</Address>
-                <Floor>2</Floor>
-                <Floors>9</Floors>
-                <Square>55</Square>
-                <Price currency="$$$">77000</Price>
-            </Ad>
-        </Ads>
-    </Person>
-    <Person>
-        <Email>test5673@mail.ru</Email>
-        <Nickname>Test567</Nickname>
+        <Cart>
+            <Goods>
+                <Name>HP EliteBook</Name>
+                <Type>Ноутбук</Type>
+                <Description>Intel Core i7 6600U 2600 МГц</Description>
+                <Price currency="$$$">1500</Price>
+                <Availability>В наличии</Availability>
+            </Goods>
+        </Cart>
+    </User>
+
+    <User>
+        <Email>test123@yandex.ru</Email>
+        <Nickname>Test02</Nickname>
         <Password>qwerty</Password>
-        <Ads>
-            <Ad Rooms="2">
-                <Description>Квартира в центре</Description>
-                <Address>Пинск, ул. Ленина, 1 кв.1</Address>
-                <Floor>4</Floor>
-                <Floors>9</Floors>
-                <Square>45.5</Square>
-                <Price currency="$$$">77000</Price>
-            </Ad>
-        </Ads>
-    </Person>
-</Persons>
+        <Cart>
+            <Goods>
+                <Name>Xiaomi Mi Band 2</Name>
+                <Type>фитнес-браслет</Type>
+                <Description>Поддержка Android и iOS</Description>
+                <Price currency="$$$">15</Price>
+                <Availability>Предзаказ</Availability>
+            </Goods>
+
+            <Goods>
+                <Name>Samsung Galaxy Tab A</Name>
+                <Type>Планшет</Type>
+                <Description>Для просмотра видео</Description>
+                <Price currency="$$$">200</Price>
+                <Availability>В наличии</Availability>
+            </Goods>
+        </Cart>
+    </User>
+</Users>

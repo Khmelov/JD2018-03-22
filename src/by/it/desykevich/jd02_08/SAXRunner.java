@@ -1,4 +1,4 @@
-package by.it.desykevich.Jd02_08;
+package by.it.desykevich.jd02_08;
 
 import org.xml.sax.SAXException;
 

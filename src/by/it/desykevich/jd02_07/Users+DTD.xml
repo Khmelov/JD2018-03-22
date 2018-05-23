@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE Persens SYSTEM "Persen.dtd">
-<Persens>
-    <Persen>
-        <Email>test@mail.ru</Email>
-        <NickName>test123</NickName>
-        <Password>qqq</Password>
-
-        <Ads>
-            <Ad>
-                <Description>Квартира в центре</Description>
-                <Address>Минск, ул. Сухарева 24 кв.99</Address>
-                <Floor>3</Floor>
-                <Floors>8</Floors>
-                <Square>50</Square>
-                <Price currency="$$$">100</Price>
-            </Ad>
-
-            <Ad>
-                <Description>Квартира в центре</Description>
-                <Address>Минск, ул. Сухарева 24 кв.14</Address>
-                <Floor>2</Floor>
-                <Floors>9</Floors>
-                <Square>55</Square>
-                <Price currency="$$$">999</Price>
-            </Ad>
-        </Ads>
-
-        <Email>test5673@mail.ru</Email>
-        <NickName>Test567</NickName>
+<!DOCTYPE Users SYSTEM "Users.dtd">
+<Users>
+    <User>
+        <Email>test123@mail.ru</Email>
+        <Nickname>Test01</Nickname>
         <Password>qwerty</Password>
-        <Ads>
-            <Ad>
-                <Description>Квартира в центре</Description>
-                <Address>Пинск, ул. Ленина, 1 кв.1</Address>
-                <Floor>4</Floor>
-                <Floors>9</Floors>
-                <Square>45.5</Square>
-                <Price currency="$$$">77000</Price>
-            </Ad>
-        </Ads>
-    </Persen>
-</Persens>
+        <Cart>
+            <Goods>
+                <Name>HP EliteBook</Name>
+                <Type>Ноутбук</Type>
+                <Description>Intel Core i7 6600U 2600 МГц</Description>
+                <Price>1500</Price>
+                <Availability>В наличии</Availability>
+            </Goods>
+        </Cart>
+    </User>
+
+    <User>
+        <Email>test123@yandex.ru</Email>
+        <Nickname>Test02</Nickname>
+        <Password>qwerty</Password>
+        <Cart>
+            <Goods>
+                <Name>Xiaomi Mi Band 2</Name>
+                <Type>фитнес-браслет</Type>
+                <Description>Поддержка Android и iOS</Description>
+                <Price>15</Price>
+                <Availability>Предзаказ</Availability>
+            </Goods>
+
+            <Goods>
+                <Name>Samsung Galaxy Tab A</Name>
+                <Type>Планшет</Type>
+                <Description>Для просмотра видео</Description>
+                <Price>200</Price>
+                <Availability>В наличии</Availability>
+            </Goods>
+        </Cart>
+    </User>
+</Users>

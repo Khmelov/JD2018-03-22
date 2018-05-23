@@ -3,12 +3,13 @@
         targetNamespace="http://it-academy.by/desykevich"
         xmlns:tns="http://it-academy.by/desykevich"
         elementFormDefault="qualified">
-    <element name="Persons">
+
+    <element name="Users">
 
         <complexType>
             <sequence>
-                <element name="Person"
-                         type="tns:Person"
+                <element name="User"
+                         type="tns:User"
                          minOccurs="1"
                          maxOccurs="unbounded">
                 </element>
@@ -16,35 +17,31 @@
         </complexType>
     </element>
 
-    <complexType name="Person">
+    <complexType name="User">
         <sequence>
             <element name="Email" type="string"/>
             <element name="Nickname" type="string"/>
             <element name="Password" type="string"/>
-            <element name="Ads" type="tns:Ads"/>
+            <element name="Cart" type="tns:Cart"/>
         </sequence>
     </complexType>
 
-    <complexType name="Ads">
+    <complexType name="Cart">
         <sequence>
-            <element name="Ad" type="tns:Ad" minOccurs="1" maxOccurs="unbounded"/>
+            <element name="Goods" type="tns:Goods" minOccurs="1" maxOccurs="unbounded"/>
         </sequence>
     </complexType>
 
-    <complexType name="Ad">
-        <sequence>
+    <complexType name="Goods">
+        <all>
+            <element name="Name" type="string"/>
+            <element name="Type" type="string"/>
             <element name="Description" type="string"/>
-            <element name="Address" type="string"/>
-            <element name="Floor" type="positiveInteger"/>
-            <element name="Floors" type="positiveInteger"/>
-            <element name="Square" type="string"/>
             <element name="Price" type="tns:Price"/>
-        </sequence>
-        <!-- добавление аттрибута в комплексный тип -->
-        <attribute name="Rooms" type="positiveInteger" use="required"/>
+            <element name="Availability" type="string"/>
+        </all>
     </complexType>
 
-    <!-- добавление аттрибута в простой тип выполняется внутри комплексного -->
     <complexType name="Price">
         <simpleContent>
             <!-- описание самого простого типа -->
