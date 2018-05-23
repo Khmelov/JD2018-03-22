@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Persons xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://it-academy.by/verishko"
+         xsi:schemaLocation="http://it-academy.by/verishko Store.xsd">
+    <Person>
+        <Email>test@mail.ru</Email>
+        <Nickname>test123</Nickname>
+        <Password>qwerty</Password>
+        <Goods>
+            <Product>
+                <Name>Кофемолка</Name>
+                <Description>Мелет кофе</Description>
+                <Price currency="BYN">22</Price>
+            </Product>
+            <Product>
+                <Name>Чайник</Name>
+                <Description>Греет воду</Description>
+                <Price currency="BYN">33</Price>
+            </Product>
+        </Goods>
+    </Person>
+    <Person>
+        <Email>test2@mail.ru</Email>
+        <Nickname>test567</Nickname>
+        <Password>qwerty</Password>
+        <Goods>
+            <Product>
+                <Name>Утюг</Name>
+                <Description>Гладит одежду</Description>
+                <Price currency="BYN">44</Price>
+            </Product>
+        </Goods>
+    </Person>
+</Persons>

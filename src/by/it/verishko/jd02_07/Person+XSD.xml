@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Persons xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://it-academy.by/verishko"
+         xsi:schemaLocation="http://it-academy.by/verishko Person.xsd">
+    <Person>
+        <Email>test@mail.ru</Email>
+        <Nickname>test123</Nickname>
+        <Password>qwerty</Password>
+        <Ads>
+            <Ad Rooms="2">
+                <Description>Квартира в центре</Description>
+                <Address>Минск, ул. Сухарево, 4 кв.23</Address>
+                <Floor>2</Floor>
+                <Floors>9</Floors>
+                <Square>55.5</Square>
+                <Price currency="$">77000</Price>
+            </Ad>
+            <Ad Rooms="3">
+                <Description>Квартира в центре</Description>
+                <Address>Минск, ул. Сухарево, 4 кв.24</Address>
+                <Floor>2</Floor>
+                <Floors>9</Floors>
+                <Square>55</Square>
+                <Price currency="$">77000</Price>
+            </Ad>
+        </Ads>
+    </Person>
+    <Person>
+        <Email>test2@mail.ru</Email>
+        <Nickname>test567</Nickname>
+        <Password>qwerty</Password>
+        <Ads>
+            <Ad Rooms="2">
+                <Description>Квартира в центре</Description>
+                <Address>Пинск, ул. Ленина, 3 кв.23</Address>
+                <Floor>4</Floor>
+                <Floors>5</Floors>
+                <Square>55.5</Square>
+                <Price currency="$">77000</Price>
+            </Ad>
+        </Ads>
+    </Person>
+</Persons>
