@@ -1,9 +1,4 @@
-package by.it.danilevich.jd02_06_02;
-
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+package by.it.danilevich.jd02_06;
 
 class Log {
     private String title = "";

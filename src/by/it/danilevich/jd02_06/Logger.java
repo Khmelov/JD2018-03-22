@@ -1,4 +1,4 @@
-package by.it.danilevich.jd02_06_02;
+package by.it.danilevich.jd02_06;
 
 import java.io.File;
 import java.io.FileWriter;

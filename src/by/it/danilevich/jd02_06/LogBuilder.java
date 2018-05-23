@@ -1,6 +1,4 @@
-package by.it.danilevich.jd02_06_02;
-
-import java.io.IOException;
+package by.it.danilevich.jd02_06;
 
 /**
  * "Abstract Builder"
