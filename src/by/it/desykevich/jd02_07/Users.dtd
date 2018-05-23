@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!ELEMENT Persens (Persen)+>
-<!ELEMENT Persen (Email, NickName, Password, Ads)>
+
+        <!ELEMENT Users (User)+>
+        <!ELEMENT User (Email, Nickname, Password, Cart)>
         <!ELEMENT Email (#PCDATA)>
-        <!ELEMENT NickName (#PCDATA)>
+        <!ELEMENT Nickname (#PCDATA)>
         <!ELEMENT Password (#PCDATA)>
-        <!ELEMENT Ads (Ad)+>
-<!ELEMENT  Ad (Description, Address, Floor, Floors,Square, Price)>
+        <!ELEMENT Cart (Goods)+>
+        <!ELEMENT Goods (Name,Type,Description,Price,Availability)>
+        <!ELEMENT Name (#PCDATA)>
+        <!ELEMENT Type (#PCDATA)>
         <!ELEMENT Description (#PCDATA)>
-        <!ELEMENT Address (#PCDATA)>
-        <!ELEMENT Floor (#PCDATA)>
-        <!ELEMENT Floors (#PCDATA)>
         <!ELEMENT Price (#PCDATA)>
-        <!ELEMENT Square (#PCDATA)>
-<!ATTLIST Price currency PCDATA>
+        <!ELEMENT Availability (#PCDATA)>
