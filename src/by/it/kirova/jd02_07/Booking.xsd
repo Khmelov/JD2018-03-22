@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://it-academy.by/kirova"
-        xmlns:tns="http://it-academy.by/kirova"
+        targetNamespace="http://jd02_09.kirova.it.by"
+        xmlns:tns="http://jd02_09.kirova.it.by"
         elementFormDefault="qualified">
     <element name="Booking">
         <complexType>
@@ -96,9 +96,9 @@
     <complexType name="Reservation">
         <sequence>
             <element name="ReservationId" type="positiveInteger"/>
-            <element name="ReservationDate" type="date"/>
-            <element name="CheckInDate" type="date"/>
-            <element name="CheckOutDate" type="date"/>
+            <element name="ReservationDate" type="string"/>
+            <element name="CheckInDate" type="string"/>
+            <element name="CheckOutDate" type="string"/>
             <element name="TotalCost" type="tns:TotalCost"/>
             <element name="PaymentStatus" type="string"/>
             <element name="UserId" type="positiveInteger"/>

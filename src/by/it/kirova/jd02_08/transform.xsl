@@ -51,7 +51,7 @@
                 <th>Дата отъезда</th>
                 <th>Итоговая стомость</th>
                 <th>Статус платежа</th>
-                <th>Зарезервирована пользователем</th>
+                <th>Зарезервировано пользователем</th>
             </tr>
             <xsl:for-each select="/Booking/Users/User">
                 <xsl:if test="count(Hotels/Hotel) = 0">
