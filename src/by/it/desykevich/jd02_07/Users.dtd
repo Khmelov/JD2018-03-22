@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!ELEMENT Users (User)+>
+        <!ELEMENT User (Email, Nickname, Password, Cart)>
+        <!ELEMENT Email (#PCDATA)>
+        <!ELEMENT Nickname (#PCDATA)>
+        <!ELEMENT Password (#PCDATA)>
+        <!ELEMENT Cart (Goods)+>
+        <!ELEMENT Goods (Name,Type,Description,Price,Availability)>
+        <!ELEMENT Name (#PCDATA)>
+        <!ELEMENT Type (#PCDATA)>
+        <!ELEMENT Description (#PCDATA)>
+        <!ELEMENT Price (#PCDATA)>
+        <!ELEMENT Availability (#PCDATA)>
