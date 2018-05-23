@@ -1,5 +1,6 @@
 package by.it.danilevich.calc;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,7 +27,7 @@ public class Parser {
 
     }
 
-    public Var calc(String expression) throws CallException {
+    public Var calc(String expression) throws CallException, IOException {
         Deque<String> deque = new ArrayDeque<>();
         String current = "";
 
@@ -66,7 +67,7 @@ public class Parser {
     }
 
 
-    private Var calc_impl(String expression) throws CallException {
+    private Var calc_impl(String expression) throws CallException, IOException {
         operands = new ArrayList<>(Arrays.asList(expression.split(Patterns.OPERATION)));
         operations = new ArrayList<>();
 
@@ -90,7 +91,7 @@ public class Parser {
 
 
     private Var calcOneOperation(String strVarLeft, String operation, String strVarRight)
-            throws CallException {
+            throws CallException, IOException {
         strVarLeft = strVarLeft.trim();
         strVarRight = strVarRight.trim();
         Var two = Var.createVar(strVarRight); // a=9
@@ -107,6 +108,8 @@ public class Parser {
             case "/":
                 return one.div(two);
         }
+        Util.putToFileUserAction(strVarLeft+" " + operation+strVarRight,Util.getError(Err.falseOperation),true);
+
         throw new CallException(Util.getError(Err.falseOperation));
     }
 }

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<users>
+    <user id="2131" additionaAttribute="value" thirdAttribute="value">
+        <name username="firstname">Eugene</name>
+        <nickName>Eeee</nickName>
+        <password>12345</password>
+        <email>eu.kovko@gmail.com</email>
+        <dictionaries>
+            <dictionary>
+                <words>
+                    <word>Text</word>
+                    <meaning>Meaning</meaning>
+                    <translation>Translation</translation>
+                </words>
+            </dictionary>
+        </dictionaries>
+    </user>
+    <user id="2131">
+        <name>Eugene</name>
+        <nickName>Eeee</nickName>
+        <password>12345</password>
+        <email>eu.kovko@gmail.com</email>
+        <dictionaries>
+            <dictionary>
+                <words>
+                    <word>Text</word>
+                    <meaning>Meaning</meaning>
+                    <translation>Translation</translation>
+                </words>
+            </dictionary>
+        </dictionaries>
+    </user>
+</users>

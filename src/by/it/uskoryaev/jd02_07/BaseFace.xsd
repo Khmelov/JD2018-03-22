@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://it-academy.by/uskoryaev"
+        xmlns:tns = "http://it-academy.by/uskoryaev"
+        elementFormDefault="qualified">
+
+    <element name="BaseFase">
+        <complexType>
+            <sequence>
+                <element name="User"
+                         type="tns:User"
+                         minOccurs="1"
+                         maxOccurs="unbounded">
+
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="User">
+        <sequence>
+            <element name="UserID" type="integer"/>
+            <element name="NickName" type="string"/>
+            <element name="Email" type="string"/>
+            <element name="Password" type="string"/>
+            <element name="FirstName" type="string"/>
+            <element name="LastName" type="string"/>
+            <element name="MiddleName" type="string"/>
+            <element name="PhoneNumber" type="integer"/>
+            <element name="ChoseCar" type="tns:ChoseCar"/>
+        </sequence>
+    </complexType>
+    <complexType name="ChoseCar">
+        <sequence>
+            <element name="Car" type="tns:Car" minOccurs="1" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="Car">
+        <sequence>
+            <element name="CarID" type="integer"/>
+            <element name="SerialNumber" type="string"/>
+            <element name="Brand" type="string"/>
+            <element name="Model" type="string"/>
+            <element name="BodyCar" type="string"/>
+            <element name="YearRelease" type="string"/>
+            <element name="Color" type="string"/>
+            <element name="UserID" type="integer"/>
+            <element name="CreateReport" type="tns:CreateReport"/>
+        </sequence>
+    </complexType>
+    <complexType name="CreateReport">
+        <sequence>
+            <element name="Report" type="tns:Report"/>
+        </sequence>
+    </complexType>
+    <complexType name="Report">
+        <sequence>
+            <element name="ReportID" type="integer"/>
+            <element name="BrandAndModel" type="string"/>
+            <element name="DataOrder" type="string"/>
+            <element name="Commission" type="integer"/>
+            <element name="Cost" type="integer"/>
+            <element name="TotalCost" type="integer"/>
+            <element name="CarID" type="integer"/>
+        </sequence>
+    </complexType>
+</schema>

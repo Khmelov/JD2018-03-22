@@ -1,0 +1,45 @@
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="html"/>
+    <xsl:template match="/Agents">
+        <table border = "1">
+            <tr><td>Name</td><td>Telephone</td><td>Email</td><td>Tours</td><td>Reapeted_Clients</td></tr>
+
+            <xsl:apply-templates/>
+        </table>
+    </xsl:template>
+
+    <xsl:template match="/Agents/Agent">
+        <tr>
+            <xsl:apply-templates/>
+        </tr>
+    </xsl:template>
+    <xsl:template match="/Agents/Agent/Name">
+        <td>
+            <xsl:apply-templates/>
+        </td>
+    </xsl:template>
+
+    <xsl:template match="/Agents/Agent/Telephone">
+        <td>
+            <xsl:apply-templates/>
+        </td>
+    </xsl:template>
+    <xsl:template match="/Agents/Agent/Email">
+        <td>
+            <xsl:apply-templates/>
+        </td>
+    </xsl:template>
+    <xsl:template match="/Agents/Agent/Tours">
+        <td>
+            <xsl:apply-templates/>
+        </td>
+    </xsl:template>
+    <xsl:template match="/Agents/Agent/Reapeted_Clients">
+        <td>
+            <xsl:apply-templates/>
+        </td>
+    </xsl:template>
+
+
+
+</xsl:stylesheet>

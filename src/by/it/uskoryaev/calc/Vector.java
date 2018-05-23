@@ -10,28 +10,30 @@ class Vector extends Var {
         return value;
     }
 
+    private Logger logger = new Logger();
+
     Vector(double[] value) {
-        this.value=new double[value.length];
-        System.arraycopy(value,0,this.value,0,value.length);
+        this.value = new double[value.length];
+        System.arraycopy(value, 0, this.value, 0, value.length);
     }
 
     Vector(String strValue) {
-        String[] sArray=strValue
-                .replace('{',' ').replace('}',' ')
+        String[] sArray = strValue
+                .replace('{', ' ').replace('}', ' ')
                 .trim().split(",\\s*");
-        value=new double[sArray.length];
+        value = new double[sArray.length];
         for (int i = 0; i < value.length; i++) {
-            value[i]=Double.parseDouble(sArray[i]);
+            value[i] = Double.parseDouble(sArray[i]);
         }
     }
 
-    Vector(Vector varScalar){
+    Vector(Vector varScalar) {
         this(varScalar.value);
     }
 
 
     @Override
-    public Var add(Var otherVar)  throws CalcException {
+    public Var add(Var otherVar) throws CalcException {
         if (otherVar instanceof Vector) {
             Vector result = new Vector(this);
             checkSize((Vector) otherVar);
@@ -49,12 +51,12 @@ class Vector extends Var {
     }
 
     private void checkSize(Var otherVar) throws CalcException {
-        if (this.value.length!= ((Vector)otherVar).value.length)
+        if (this.value.length != ((Vector) otherVar).value.length)
             throw new CalcException("Различный размер векторов");
     }
 
     @Override
-    public Var sub(Var otherVar)  throws CalcException {
+    public Var sub(Var otherVar) throws CalcException {
         if (otherVar instanceof Vector) {
             checkSize(otherVar);
             Vector result = new Vector(this);
@@ -71,12 +73,12 @@ class Vector extends Var {
     }
 
     @Override
-    public Var mul(Var otherVar)  throws CalcException {
+    public Var mul(Var otherVar) throws CalcException {
         if (otherVar instanceof Vector) {
-            double sum=0;
+            double sum = 0;
             checkSize(otherVar);
             for (int i = 0; i < this.value.length; i++)
-                sum += this.value[i]*((Vector) otherVar).value[i];
+                sum += this.value[i] * ((Vector) otherVar).value[i];
             return new Scalar(sum);
 
         } else if (otherVar instanceof Scalar) {
@@ -91,7 +93,7 @@ class Vector extends Var {
     }
 
     @Override
-    public Var div(Var otherVar)  throws CalcException {
+    public Var div(Var otherVar) throws CalcException {
         if (otherVar instanceof Scalar) {
             Vector result = new Vector(this);
             for (int i = 0; i < result.value.length; i++)
@@ -100,10 +102,11 @@ class Vector extends Var {
         } else
             return super.div(otherVar);
     }
+
     @Override
     public String toString() {
         return Arrays.toString(value)
-                .replace('[','{')
-                .replace(']','}');
+                .replace('[', '{')
+                .replace(']', '}');
     }
 }
