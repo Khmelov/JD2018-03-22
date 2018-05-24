@@ -4,7 +4,7 @@ import com.mysql.fabric.jdbc.FabricMySQLDriver;
 
 import java.sql.*;
 
-public class TaskA {
+public class TaskC_Init {
     public static void main(String[] args) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
