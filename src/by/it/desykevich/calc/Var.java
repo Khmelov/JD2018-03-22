@@ -33,16 +33,4 @@ abstract class Var implements Operation {
             "Присваивание %s = %s невозможно.\n", this, other));
   }
 
-  static Var createVar(String operand)throws CalcException {
-    operand = operand.trim();
-    if (operand.matches(Patterns.SCALAR))
-      return new Scalar(operand);
-    if (operand.matches(Patterns.VECTOR))
-      return new Vector(operand);
-//    if (operand.matches(Patterns.MATRIX))
-//      return new Matrix(operand);
-    if (operand.matches(Patterns.KEY))
-      return Variable.getValue(operand);
-    throw new CalcException("Ошибка обработки: " + operand);
-  }
 }

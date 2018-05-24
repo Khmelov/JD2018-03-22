@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!ELEMENT WorkPlan (Order+)>
+        <!ELEMENT Order (number,
+                date, user,
+                telephone, adress,
+                totalMoneyOrder, totalTimeOrder,
+                status, executor,
+                beginWork, planEndWork, endWork,kindOfWorks)>
+        <!ATTLIST Order id ID>
+        <!ELEMENT number (#PCDATA)>
+        <!ELEMENT date (#PCDATA)>
+        <!ELEMENT user (#PCDATA)>
+        <!ELEMENT telephone (#PCDATA)>
+        <!ELEMENT adress (#PCDATA)>
+        <!ELEMENT totalMoneyOrder (#PCDATA)>
+        <!ELEMENT totalTimeOrder (#PCDATA)>
+        <!ELEMENT status (#PCDATA)>
+        <!ELEMENT executor (#PCDATA)>
+        <!ELEMENT beginWork (#PCDATA)>
+        <!ELEMENT planEndWork (#PCDATA)>
+        <!ELEMENT endWork (#PCDATA)>
+        <!ELEMENT kindOfWorks (kindOfWork+)>
+        <!ELEMENT kindOfWork (name, timeNorm,unit, price, amount, totalMoney,totalTime)>
+        <!ATTLIST kindOfWork category PCDATA>
+        <!ATTLIST timeNorm unit PCDATA>
+        <!ATTLIST price valuta PCDATA>
+        <!ATTLIST totalMoney valuta PCDATA>
+        <!ATTLIST totalMoneyOrder valuta PCDATA>
+        <!ATTLIST totalTime unit PCDATA>
+        <!ATTLIST totalTimeOrder unit PCDATA>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT timeNorm (#PCDATA)>
+        <!ELEMENT unit (#PCDATA)>
+        <!ELEMENT price (#PCDATA)>
+        <!ELEMENT amount (#PCDATA)>
+        <!ELEMENT totalMoney (#PCDATA)>
+        <!ELEMENT totalTime (#PCDATA)>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Booking xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://it-academy.by/kirova"
-         xsi:schemaLocation="http://it-academy.by/kirova Booking.xsd">
+         xmlns="http://jd02_09.kirova.it.by"
+         xsi:schemaLocation="http://jd02_09.kirova.it.by Booking.xsd">
     <Users>
         <User>
             <UserId>1</UserId>

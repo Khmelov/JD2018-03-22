@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Persons xmlns="http://it-academy.by/sgolovach"
+<Persons xmlns="http://jd02_09.sgolovach.it.by"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://it-academy.by/sgolovach Persons.xsd"
+         xsi:schemaLocation="http://jd02_09.sgolovach.it.by Persons.xsd"
 
 >
     <Person>

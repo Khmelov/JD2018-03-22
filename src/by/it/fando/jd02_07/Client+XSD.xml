@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Clients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://it-academy.by/fando"
+         xsi:schemaLocation="http://it-academy.by/fando Client.xsd">
+    <Client>
+        <ClientID>1</ClientID>
+        <Email>abc@mail.ru</Email>
+        <Nickname>Andrew</Nickname>
+        <Password>qwer</Password>
+        <Orders>
+            <Order>
+                <Description>Пицца 1</Description>
+                <Size>Маленькая</Size>
+                <Price currency="р.">10</Price>
+            </Order>
+            <Order>
+                <Description>Пицца 2</Description>
+                <Size>Средняя</Size>
+                <Price currency="р.">20</Price>
+            </Order>
+        </Orders>
+    </Client>
+
+    <Client>
+        <ClientID>2</ClientID>
+        <Email>def@gmail.com</Email>
+        <Nickname>Sergey</Nickname>
+        <Password>asdf</Password>
+        <Orders>
+            <Order>
+                <Description>Пицца 3</Description>
+                <Size>Большая</Size>
+                <Price currency="р.">30</Price>
+            </Order>
+        </Orders>
+    </Client>
+</Clients>

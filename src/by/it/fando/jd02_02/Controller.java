@@ -2,6 +2,8 @@ package by.it.fando.jd02_02;
 
 public class Controller {
 
+    static int speed = 30;
+
     private final static int planCount = 100;
     private static int numberBuyer = 0;
     private static int processCount = 0;

@@ -1,0 +1,1 @@
+"C:\Program Files\Java\jdk-9.0.1\bin\xjc.exe" D:\Java\github\git\JD2018-03-22\src\by\it\sgolovach\jd02_07\Persons.xsd -d D:\Java\github\git\JD2018-03-22\src

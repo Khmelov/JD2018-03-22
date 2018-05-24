@@ -1,0 +1,217 @@
+{
+  "users": [
+    {
+      "user": [
+        {
+          "userId": 1,
+          "email": "abc@gmail.com",
+          "password": "abc123",
+          "firstName": "Иван",
+          "lastName": "Иванов",
+          "middleName": "Иванович",
+          "country": "Беларусь",
+          "phoneNumber": "+375291111111",
+          "hotels": {
+            "hotel": null
+          }
+        },
+        {
+          "userId": 2,
+          "email": "def@gmail.com",
+          "password": "def123",
+          "firstName": "Александр",
+          "lastName": "Александров",
+          "middleName": "Александрович",
+          "country": "Россия",
+          "phoneNumber": "+749597556983",
+          "hotels": {
+            "hotel": [
+              {
+                "hotelId": 1,
+                "name": "Resort Spa",
+                "type": "Отель",
+                "starRating": 5,
+                "country": "Россия",
+                "city": "Москва",
+                "street": "Горького",
+                "houseNumber": "82",
+                "contactEmail": "spa@gmail.com",
+                "phoneNumber": "+7395975339983",
+                "rooms": {
+                  "room": [
+                    {
+                      "roomId": 2,
+                      "roomName": "Номер с односпальной кроватью",
+                      "roomFactNumber": "100",
+                      "peopleAmount": 1,
+                      "description": "Завтрак включен в стоимость",
+                      "cost": {
+                        "value": "15000",
+                        "cur": "р."
+                      },
+                      "reservations": {
+                        "reservation": [
+                          {
+                            "reservationId": 3,
+                            "reservationDate": "2018-05-11",
+                            "checkInDate": "2018-07-24",
+                            "checkOutDate": "2018-07-25",
+                            "totalCost": {
+                              "value": "15000",
+                              "cur": "р."
+                            },
+                            "paymentStatus": "Оплачено",
+                            "userId": 5
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "roomId": 4,
+                      "roomName": "Номер с 2 двуспальными кроватями",
+                      "roomFactNumber": "200",
+                      "peopleAmount": 4,
+                      "description": "",
+                      "cost": {
+                        "value": "40000",
+                        "cur": "$"
+                      },
+                      "reservations": {
+                        "reservation": null
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "userId": 3,
+          "email": "xyz@gmail.com",
+          "password": "xyz123",
+          "firstName": "John",
+          "lastName": "Smith",
+          "middleName": "",
+          "country": "Австрия",
+          "phoneNumber": "+447871234567",
+          "hotels": {
+            "hotel": [
+              {
+                "hotelId": 2,
+                "name": "Resort Appartment",
+                "type": "Апартаменты",
+                "starRating": 5,
+                "country": "Австрия",
+                "city": "Вена",
+                "street": "Bahgasse",
+                "houseNumber": "4",
+                "contactEmail": "wienapart@gmail.com",
+                "phoneNumber": "+4395975339983",
+                "rooms": {
+                  "room": [
+                    {
+                      "roomId": 1,
+                      "roomName": "Апартаменты с терассой",
+                      "roomFactNumber": "",
+                      "peopleAmount": 2,
+                      "description": "Апартаменты в сердце Вены с терассой, двуспальной кроватью и кухней\n                            ",
+                      "cost": {
+                        "value": "450",
+                        "cur": "$"
+                      },
+                      "reservations": {
+                        "reservation": [
+                          {
+                            "reservationId": 1,
+                            "reservationDate": "2018-03-14",
+                            "checkInDate": "2018-07-20",
+                            "checkOutDate": "2018-07-23",
+                            "totalCost": {
+                              "value": "1350",
+                              "cur": "$"
+                            },
+                            "paymentStatus": "Оплачено",
+                            "userId": 5
+                          },
+                          {
+                            "reservationId": 2,
+                            "reservationDate": "2018-04-18",
+                            "checkInDate": "2018-07-28",
+                            "checkOutDate": "2018-07-29",
+                            "totalCost": {
+                              "value": "450",
+                              "cur": "$"
+                            },
+                            "paymentStatus": "Оплачено",
+                            "userId": 4
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "hotelId": 3,
+                "name": "Spa Appartment",
+                "type": "Апартаменты",
+                "starRating": 5,
+                "country": "Австрия",
+                "city": "Вена",
+                "street": "Johann-Hoffmann Platz",
+                "houseNumber": "16",
+                "contactEmail": "wienapart@gmail.com",
+                "phoneNumber": "+4395975339983",
+                "rooms": {
+                  "room": [
+                    {
+                      "roomId": 3,
+                      "roomName": "Апартаменты с 2 спальнями",
+                      "roomFactNumber": "",
+                      "peopleAmount": 2,
+                      "description": "Апартаменты в сердце Вены с 2 двуспальными кроватями и кухней",
+                      "cost": {
+                        "value": "550",
+                        "cur": "$"
+                      },
+                      "reservations": {
+                        "reservation": null
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "userId": 4,
+          "email": "glg@gmail.com",
+          "password": "glg123",
+          "firstName": "Петр",
+          "lastName": "Петров",
+          "middleName": "Петрович",
+          "country": "Беларусь",
+          "phoneNumber": "+375292222222",
+          "hotels": {
+            "hotel": null
+          }
+        },
+        {
+          "userId": 5,
+          "email": "ppp@gmail.com",
+          "password": "ppp123",
+          "firstName": "Jacob",
+          "lastName": "Irwin",
+          "middleName": "",
+          "country": "Польша",
+          "phoneNumber": "+485291111111",
+          "hotels": {
+            "hotel": null
+          }
+        }
+      ]
+    }
+  ]
+}

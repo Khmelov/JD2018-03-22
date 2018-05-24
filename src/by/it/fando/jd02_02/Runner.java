@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Runner {
 
-    private static List<Thread> cashiers = new ArrayList<>();
+    private static final List<Thread> cashiers = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -17,7 +17,7 @@ public class Runner {
 
         while (!Controller.allBuyersInShop()) {
             Util.sleep(1000);
-            int count = Util.random(5);
+            int count = Util.random(2);
             for (int j = 1; j <= count; j++) {
                 if (Controller.allBuyersInShop())
                     break;
