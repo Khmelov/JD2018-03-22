@@ -17,7 +17,10 @@ public class TaskA {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        try (Connection connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:2016/verishko", "root", "")) {
+        try (Connection connection = DriverManager.getConnection(
+                "jdbc:mysql://127.0.0.1:2016/verishko",
+                "root",
+                "")) {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("select * from users");
             while (resultSet.next()) {
