@@ -1,6 +1,6 @@
 package by.it.danilevich.calc;
 
-import by.it.danilevich.jd02_06_02.Util;
+import by.it.danilevich.jd02_06.Util;
 
 import java.io.FileWriter;
 import java.io.IOException;

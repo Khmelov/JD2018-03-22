@@ -3,8 +3,9 @@ package by.it.fando.jd02_02;
 public class Cashier implements Runnable {
 
     private int number;
-
-    Cashier (int number) {this.number = number;}
+    Cashier (int number) {
+        this.number = number;
+    }
 
     @Override
     public void run() {
@@ -13,9 +14,9 @@ public class Cashier implements Runnable {
         while (!Controller.planComplete()) {
             Buyer buyer = QueueBuyer.extractBuyer();
             if (buyer != null) {
-                System.out.println(this + ". Начало обслуживания для объекта: " + buyer);
+                System.out.println(this + ". Начало обслуживания: " + buyer);
                 Util.sleep(Util.random(2000, 5000));
-                System.out.println(this + ". Конец обслуживания  для объекта: " + buyer);
+                System.out.println(this + ". Конец обслуживания: " + buyer);
                 synchronized (buyer) {
                     buyer.notify();
                 }

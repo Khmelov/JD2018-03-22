@@ -9,32 +9,45 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class DOMRunner {
-    public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
-        String fileName = "src/by/it/verishko/jd02_08/Store.xml";
+    private static String tab = "";
 
+    public static void main(String[] args) {
+        String fileName = "src/by/it/verishko/jd02_08/Store.xml";
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse(fileName);
-            Element el = doc.getDocumentElement();
-            printDom("", el);
-        } catch (Exception e) {
-            System.out.print("Ошибка! " + e.toString());
+            try {
+                Document doc = builder.parse(fileName);
+                Element element = doc.getDocumentElement();
+                printDOM(element);
+            } catch (SAXException | IOException e) {
+                e.printStackTrace();
+            }
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
         }
     }
 
-    static void printDom(String prefix, Node node) {
-        String text = node.getNodeValue();
-        boolean bool = node.hasAttributes();
-        String name = node.getNodeName();
-        if (text != null) {
-            System.out.println(prefix + text.trim());
-            if (bool)
-                System.out.print(name);
-        }
+    private static void printDOM(Node node) {
+        tab += "\t";
+        if (node.getNodeType() == Node.ELEMENT_NODE)
+            if (node.hasAttributes()) {
+                System.out.print(tab + "<" + node.getNodeName());
+                NamedNodeMap attr = node.getAttributes();
+                for (int i = 0; i < attr.getLength(); i++) {
+                    Node attribute = attr.item(i);
+                    System.out.print(" " + attribute.getNodeName() + "=\"" + attribute.getNodeValue() + "\"");
+                }
+                System.out.println(">");
+            } else System.out.println(tab + "<" + node.getNodeName() + ">");
+        if ((node.getNodeType() == Node.TEXT_NODE) && (!node.getNodeValue().trim().equals("")))
+            System.out.println(tab + node.getNodeValue().trim());
         NodeList children = node.getChildNodes();
         for (int i = 0; i < children.getLength(); i++) {
-            printDom(prefix + node.getNodeName() + " > ", children.item(i));
+            printDOM(children.item(i));
         }
+        if (node.getNodeType() == Node.ELEMENT_NODE) System.out.println(tab + "</" + node.getNodeName() + ">");
+        tab = tab.substring(1);
     }
 }
+
