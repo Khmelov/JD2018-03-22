@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Users xmlns="http://jd02_09.desykevich.it.by">
+<User>
+        <Email>test123@mail.ru</Email>
+        <Nickname>Test01</Nickname>
+        <Password>qwerty</Password>
+        <Cart>
+            <Goods>
+                <Name>HP EliteBook</Name>
+                <Type>Ноутбук</Type>
+                <Description>Intel Core i7 6600U 2600 МГц</Description>
+                <Price currency="$$$">1500</Price>
+                <Availability>В наличии</Availability>
+            </Goods>
+        </Cart>
+    </User>
+
+    <User>
+        <Email>test123@yandex.ru</Email>
+        <Nickname>Test02</Nickname>
+        <Password>qwerty</Password>
+        <Cart>
+            <Goods>
+                <Name>Xiaomi Mi Band 2</Name>
+                <Type>фитнес-браслет</Type>
+                <Description>Поддержка Android и iOS</Description>
+                <Price currency="$$$">15</Price>
+                <Availability>Предзаказ</Availability>
+            </Goods>
+
+            <Goods>
+                <Name>Samsung Galaxy Tab A</Name>
+                <Type>Планшет</Type>
+                <Description>Для просмотра видео</Description>
+                <Price currency="$$$">200</Price>
+                <Availability>В наличии</Availability>
+            </Goods>
+        </Cart>
+    </User>
+</Users>
