@@ -128,19 +128,25 @@ public class C_Init {
             statement.executeUpdate("INSERT INTO `kirova`.`users` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`) VALUES (DEFAULT, 'klm@gmail.com', 'klm123', 'John', 'Smith', NULL, 'Austria', '+437874589567');");
             statement.executeUpdate("INSERT INTO `kirova`.`users` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`) VALUES (DEFAULT, 'rst@gmail.com', 'rst123', 'Petr', 'Petrov', 'Petrovich', 'Belarus', '+375292222222');");
             statement.executeUpdate("INSERT INTO `kirova`.`users` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`) VALUES (DEFAULT, 'nop@gmail.com', 'nop123', 'Ivan', 'Ivanov', 'Ivanovich', 'Russia', '+749597556983');");
+
             statement.executeUpdate("INSERT INTO `kirova`.`role` (`role_id`, `role_name`) VALUES (DEFAULT, 'admin');");
             statement.executeUpdate("INSERT INTO `kirova`.`role` (`role_id`, `role_name`) VALUES (DEFAULT, 'user');");
+            statement.executeUpdate("INSERT INTO `kirova`.`role` (`role_id`, `role_name`) VALUES (DEFAULT, 'owner');");
             statement.executeUpdate("INSERT INTO `kirova`.`role` (`role_id`, `role_name`) VALUES (DEFAULT, 'guest');");
+
             statement.executeUpdate("INSERT INTO `kirova`.`hotel` (`hotel_id`, `hotel_name`, `hotel_type`, `star_rating`, `country`, `city`, `street`, `house_number`, `contact_email`, `contact_phone_number`, `user_user_id`) VALUES (DEFAULT, 'Resort Spa', 'Hotel', 5, 'Russia', 'Moscow', 'Horkogo', '82', 'spa@gmail.com', '+7395975339983', 3);");
             statement.executeUpdate("INSERT INTO `kirova`.`hotel` (`hotel_id`, `hotel_name`, `hotel_type`, `star_rating`, `country`, `city`, `street`, `house_number`, `contact_email`, `contact_phone_number`, `user_user_id`) VALUES (DEFAULT, 'Resort Appartment', 'Appartment', NULL, 'Austria', 'Vienna', 'Bahgasse', '4', 'weinapart@gmail.com', '+4395975339983', 4);");
             statement.executeUpdate("INSERT INTO `kirova`.`hotel` (`hotel_id`, `hotel_name`, `hotel_type`, `star_rating`, `country`, `city`, `street`, `house_number`, `contact_email`, `contact_phone_number`, `user_user_id`) VALUES (DEFAULT, 'Spa Appartment', 'Appartment', NULL, 'Austria', 'Vienna', 'Johann-Hoffmann Platz', '16', 'weinapart@gmail.com', '+4395975339983', 4);");
+
             statement.executeUpdate("INSERT INTO `kirova`.`room` (`room_id`, `room_name`, `room_fact_number`, `people_amount`, `description`, `cost`, `hotel_hotel_id`) VALUES (DEFAULT, 'Room with a single bed', '100', 1, 'breakfast included', 50, 1);");
             statement.executeUpdate("INSERT INTO `kirova`.`room` (`room_id`, `room_name`, `room_fact_number`, `people_amount`, `description`, `cost`, `hotel_hotel_id`) VALUES (DEFAULT, 'Room with 2 double beds', '200', 4, NULL, 110, 1);");
             statement.executeUpdate("INSERT INTO `kirova`.`room` (`room_id`, `room_name`, `room_fact_number`, `people_amount`, `description`, `cost`, `hotel_hotel_id`) VALUES (DEFAULT, 'Apartment with terrace', NULL, 2, 'Apartment in heart of Vienna with terrace, double bed and kitchen', 90, 2);");
             statement.executeUpdate("INSERT INTO `kirova`.`room` (`room_id`, `room_name`, `room_fact_number`, `people_amount`, `description`, `cost`, `hotel_hotel_id`) VALUES (DEFAULT, 'Two-Bedroom apartment', NULL, 4, 'Apartment in heart of Vienna with 2 double beds and kitchen', 150, 2);");
+
             statement.executeUpdate("INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 61481855662587, 61492914887284, 61493174113533, 270, 3, 2);");
             statement.executeUpdate("INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 61484793462731, 61493606288358, 61493692701377, 90, 2, 5);");
             statement.executeUpdate("INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 61486867235416, 61493260856405, 61493347273586, 50, 1, 2);");
+
             statement.executeUpdate("INSERT INTO `kirova`.`role_has_users` (`role_role_id`, `users_user_id`) VALUES (1, 1);");
             statement.executeUpdate("INSERT INTO `kirova`.`role_has_users` (`role_role_id`, `users_user_id`) VALUES (2, 1);");
             statement.executeUpdate("INSERT INTO `kirova`.`role_has_users` (`role_role_id`, `users_user_id`) VALUES (2, 2);");
@@ -148,6 +154,9 @@ public class C_Init {
             statement.executeUpdate("INSERT INTO `kirova`.`role_has_users` (`role_role_id`, `users_user_id`) VALUES (2, 4);");
             statement.executeUpdate("INSERT INTO `kirova`.`role_has_users` (`role_role_id`, `users_user_id`) VALUES (2, 5);");
             statement.executeUpdate("INSERT INTO `kirova`.`role_has_users` (`role_role_id`, `users_user_id`) VALUES (2, 6);");
+            statement.executeUpdate("INSERT INTO `kirova`.`role_has_users` (`role_role_id`, `users_user_id`) VALUES (3, 3);");
+            statement.executeUpdate("INSERT INTO `kirova`.`role_has_users` (`role_role_id`, `users_user_id`) VALUES (3, 4);");
+
 
         } catch (SQLException e) {
             e.printStackTrace();
