@@ -1,4 +1,4 @@
-package by.it.akhmelev.jd02_06;
+package by.it.lyukovich.jd_02_06;
 
 public class TaskA {
     public static void main(String[] args) {

@@ -1,8 +1,7 @@
-package by.it.kovko.calc;
+package by.it.lyukovich.Calc;
 
-public class VarFactory {
-    Logger logger = Logger.getLogger();
-    public Var getVar(String strVar) throws CalcException {
+public class VarFactory{
+    public Var getVar(String strVar){
         strVar=strVar.replaceAll("\\s*","");
         if (strVar.matches(Patterns.SCALAR))
             return new Scalar(strVar);
@@ -12,7 +11,7 @@ public class VarFactory {
             return new Matrix(strVar);
         if (strVar.matches(Patterns.VARNAME))
             return Var.variables.get(strVar);
-        logger.toLog(Errors.PROCESSING_ERROR.toString());
-        throw new CalcException(Errors.PROCESSING_ERROR.toString());
+        return null;
     }
 }
+
