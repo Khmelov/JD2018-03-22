@@ -1,4 +1,4 @@
-package by.it.lyukovich.jd_02_06;
+package by.it.akhmelev.jd02_06;
 
 import java.io.File;
 import java.io.FileWriter;

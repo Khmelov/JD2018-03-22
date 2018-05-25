@@ -27,19 +27,18 @@ public class Matrix extends AbstractVar {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         for (int i = 0; i < value.length; i++) {
-            sb.append("{");
-            for (int j = 0; j < value[0].length; j++) {
-                if (j == value[0].length - 1) sb.append(value[i][j]);
-                else {
-                    sb.append(value[i][j]);
-                    sb.append(", ");
-                }
+            if (i<value.length-1){sb.append("{");}
+            for (int j = 0; j < value[i].length; j++) {
+                if (j==0 && i>0){sb.append(",{");}
+                sb.append(value[i][j]);
+                if(j<value[i].length-1){sb.append(", ");}
+                if (j==value[i].length-1){sb.append("}");}
             }
-            sb.append("}");
-            if (i < value.length - 1) sb.append(", ");
+            if (i==value.length-1){sb.append("}");}
         }
-        sb.append("}");
-        return sb.toString();
+
+        String string=new String(sb);
+        return string;
     }
 
 

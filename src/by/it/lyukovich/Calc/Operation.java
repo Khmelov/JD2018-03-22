@@ -1,8 +1,19 @@
 package by.it.lyukovich.Calc;
 
+import java.util.HashMap;
+import java.util.Map;
+
 interface Operation {
-Var add(Var other) throws CalcException;
-Var sub(Var other) throws CalcException;
-Var mul(Var other) throws CalcException;
-Var div(Var other) throws CalcException;
+    Map<String, Var> variables=new HashMap<>();
+    public static Var saveVar(String nameVar, Var valueVar){
+        variables.put(nameVar, valueVar);
+        return valueVar;
+    }
+
+
+Var add(Var other);
+Var sub(Var other);
+Var mul(Var other);
+Var div(Var other);
+
 }

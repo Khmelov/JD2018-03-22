@@ -42,22 +42,7 @@ public class InOut {
         for (int i = 0; i < arr.length; i++) {
             System.out.printf(arr[i] + " ");
         }
+
     }
-    static void printMulMM(double[][] arr, double[][] arr2){
-        double[][] result = Helper.mul(arr, arr2);
-        System.out.println("Умножение матрицы на матрицу");
-        for (int i = 0; i < result.length; i++) {
-            for (int j = 0; j < result[i].length; j++) {
-                System.out.printf(result[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
-    static void printMulMV(double[][] arr, double[] arr2){
-        double [] result = Helper.mul(arr, arr2);
-        System.out.println("Умножение матрицы на вектор");
-        for (int i = 0; i < result.length; i++) {
-            System.out.printf(result[i] + " ");
-        }
-    }
+
 }
