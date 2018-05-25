@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Agents xmlns="http://jd02_09.romankov.it.by">
+    <Agent>
+        <Name>Dmitry</Name>
+        <Telephone>8956235</Telephone>
+        <Email>dmitry@mail.ru</Email>
+        <Tours>
+            <Tour>
+                <Type>Beach holidays</Type>
+                <Destination> Barselona</Destination>
+                <AmountOfDays>11</AmountOfDays>
+                <DepartureCity>Minsk</DepartureCity>
+                <Price currency="uio">1000</Price>
+            </Tour>
+            <Tour>
+                <Type>Shopping</Type>
+                <Destination> Vilnus</Destination>
+                <AmountOfDays>1</AmountOfDays>
+                <DepartureCity>Minsk</DepartureCity>
+                <Price currency="$$$">30</Price>
+            </Tour>
+        </Tours>
+        <ReapetedClients>
+            <ReapetedClient>
+                <FirstName> Nikita </FirstName>
+                <Age>29</Age>
+            </ReapetedClient>
+            <ReapetedClient>
+                <FirstName>Anna</FirstName>
+                <Age>29</Age>
+            </ReapetedClient>
+        </ReapetedClients>
+    </Agent>
+    <Agent>
+        <Name>Alisa</Name>
+        <Telephone>7896542</Telephone>
+        <Email>alisa@mail.ru</Email>
+        <Tours>
+            <Tour>
+                <Type>Excursion</Type>
+                <Destination> Krakov</Destination>
+                <AmountOfDays>4</AmountOfDays>
+                <DepartureCity>Minsk</DepartureCity>
+                <Price currency="777">120</Price>
+            </Tour>
+        </Tours>
+        <ReapetedClients>
+            <ReapetedClient>
+                <FirstName> Ilya </FirstName>
+                <Age>31</Age>
+            </ReapetedClient>
+        </ReapetedClients>
+    </Agent>
+</Agents>
