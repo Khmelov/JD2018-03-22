@@ -23,7 +23,7 @@ public class TaskC_Init {
                              "root",
                              "")) {
             Statement statement = connection.createStatement();
-            statement.executeUpdate("DROP SCHEMA IF EXISTS `akhmelev`");
+            statement.executeUpdate("DROP SCHEMA IF EXISTS `verishko`");
             statement.executeUpdate("CREATE SCHEMA IF NOT EXISTS `verishko` DEFAULT CHARACTER SET utf8");
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS `verishko`.`roles` (\n" +
                     "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
