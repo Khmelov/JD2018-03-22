@@ -1,0 +1,1 @@
+INSERT INTO `desykevich`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'test');
