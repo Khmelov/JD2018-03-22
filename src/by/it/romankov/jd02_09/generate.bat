@@ -1,0 +1,1 @@
+"C:\Program Files\Progs\Java\jdk1.8.0_151\bin\xjc" C:\Users\nikita\IdeaProjects\JD2018-03-22\src\by\it\romankov\jd02_07\Agent.xsd -d C:\Users\nikita\IdeaProjects\JD2018-03-22\src
