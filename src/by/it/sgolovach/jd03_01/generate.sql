@@ -79,6 +79,7 @@ USE `sgolovach`;
 INSERT INTO `sgolovach`.`roles` (`id`, `role`) VALUES (DEFAULT, 'admin');
 INSERT INTO `sgolovach`.`roles` (`id`, `role`) VALUES (DEFAULT, 'user');
 INSERT INTO `sgolovach`.`roles` (`id`, `role`) VALUES (DEFAULT, 'guest');
+INSERT INTO `sgolovach`.`roles` (`id`, `role`) VALUES (DEFAULT, 'director');
 
 COMMIT;
 
@@ -90,6 +91,7 @@ START TRANSACTION;
 USE `sgolovach`;
 INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'administrator', 'adm@mail.ru', 'administrator', 1);
 INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'user', 'user@mail.ru', 'user', 2);
+INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'director', 'director@mail.ru', 'user', 4);
 
 COMMIT;
 
