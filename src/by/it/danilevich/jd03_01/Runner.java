@@ -5,5 +5,6 @@ public class Runner {
         TaskA.printUser();
         TaskA.printUserRole();
         TaskB.addRoles();
+        TaskC.deleteDateBase();
     }
 }
