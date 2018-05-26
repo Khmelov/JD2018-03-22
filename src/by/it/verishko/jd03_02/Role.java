@@ -1,7 +1,9 @@
 package by.it.verishko.jd03_02;
 
 public class Role {
+
     private int id;
+
     private String role;
 
     @Override
