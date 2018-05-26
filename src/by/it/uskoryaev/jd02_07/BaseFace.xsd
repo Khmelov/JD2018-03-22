@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://it-academy.by/uskoryaev"
-        xmlns:tns = "http://it-academy.by/uskoryaev"
+        targetNamespace="http://jd02_09.uskoryaev.it.by"
+        xmlns:tns = "http://jd02_09.uskoryaev.it.by"
         elementFormDefault="qualified">
 
-    <element name="BaseFase">
+    <element name="BaseFace">
         <complexType>
             <sequence>
                 <element name="User"

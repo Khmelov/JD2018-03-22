@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<BaseFase xmlns="http://it-academy.by/uskoryaev">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<BaseFace xmlns="http://jd02_09.uskoryaev.it.by">
     <User>
         <UserID>1</UserID>
         <NickName>LikeTester</NickName>
@@ -33,4 +33,4 @@
             </Car>
         </ChoseCar>
     </User>
-</BaseFase>
+</BaseFace>
