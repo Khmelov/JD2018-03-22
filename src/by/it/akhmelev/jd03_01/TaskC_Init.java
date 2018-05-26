@@ -37,7 +37,7 @@ public class TaskC_Init {
                     "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
                     "  `login` VARCHAR(45) NOT NULL,\n" +
                     "  `email` VARCHAR(45) NOT NULL,\n" +
-                    "  `pasword` VARCHAR(45) NOT NULL,\n" +
+                    "  `password` VARCHAR(45) NOT NULL,\n" +
                     "  `roles_id` INT NOT NULL,\n" +
                     "  PRIMARY KEY (`id`),\n" +
                     "  INDEX `fk_users_roles_idx` (`roles_id` ASC),\n" +
@@ -68,8 +68,8 @@ public class TaskC_Init {
             statement.executeUpdate("INSERT INTO `akhmelev`.`roles` (`id`, `role`) VALUES (DEFAULT, 'admin')");
             statement.executeUpdate("INSERT INTO `akhmelev`.`roles` (`id`, `role`) VALUES (DEFAULT, 'user')");
             statement.executeUpdate("INSERT INTO `akhmelev`.`roles` (`id`, `role`) VALUES (DEFAULT, 'guest')");
-            statement.executeUpdate("INSERT INTO `akhmelev`.`users` (`id`, `login`, `email`, `pasword`, `roles_id`) VALUES (DEFAULT, 'adminitrator', 'adm@mail.ru', 'administrator', 1)");
-            statement.executeUpdate("INSERT INTO `akhmelev`.`users` (`id`, `login`, `email`, `pasword`, `roles_id`) VALUES (DEFAULT, 'user', 'user@mail.ru', 'user', 2)");
+            statement.executeUpdate("INSERT INTO `akhmelev`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'adminitrator', 'adm@mail.ru', 'administrator', 1)");
+            statement.executeUpdate("INSERT INTO `akhmelev`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'user', 'user@mail.ru', 'user', 2)");
             statement.executeUpdate("INSERT INTO `akhmelev`.`ads` (`id`, `description`, `rooms`, `price`, `area`, `flat`, `flats`, `address`, `users_id`) VALUES (DEFAULT, 'good flat', 1, 111111, 111, 1, 1, 'minsk 1', 2)");
 
         } catch (SQLException e) {
