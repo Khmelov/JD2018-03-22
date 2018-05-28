@@ -1,1 +1,2 @@
-INSERT INTO `desykevich`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'test');
+
+INSERT INTO `desykevich`.`users` (`id`, `login`, `password`, `email`, `nickname`, `phonenumber`, `roles_id`) VALUES (DEFAULT , 'test');
