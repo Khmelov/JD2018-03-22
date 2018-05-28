@@ -13,12 +13,10 @@ import java.io.*;
 public class TaskB {
 
     public static void main(String[] args) throws JAXBException {
-
         readXml();
         getJson();
         readJson(users.toString());
         saveXml();
-
     }
 
 
