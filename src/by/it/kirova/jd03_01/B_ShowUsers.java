@@ -37,12 +37,12 @@ public class B_ShowUsers {
 
             ResultSet resultSet = statement.executeQuery("SELECT role_id, role_name from role");
             while (resultSet.next()) {
-                roles.put(Integer.parseInt(resultSet.getString("role_id")), resultSet.getString("role_name"));
+                roles.put(resultSet.getInt("role_id"), resultSet.getString("role_name"));
             }
             ResultSet resultSet1 = statement.executeQuery("SELECT role_role_id, users_user_id from role_has_users");
             while (resultSet1.next()) {
-                int roleId = Integer.parseInt(resultSet1.getString("role_role_id"));
-                int userId = Integer.parseInt(resultSet1.getString("users_user_id"));
+                int roleId = resultSet1.getInt("role_role_id");
+                int userId = resultSet1.getInt("users_user_id");
                 ArrayList<String> list;
                 if (res.containsKey(userId)) {
                     list = res.get(userId);
@@ -56,7 +56,7 @@ public class B_ShowUsers {
 
             ResultSet resultSet3 = statement.executeQuery("SELECT user_id, first_name, last_name from users");
             while (resultSet3.next()) {
-                int userId = Integer.parseInt(resultSet3.getString("user_id"));
+                int userId = resultSet3.getInt("user_id");
                 String name = resultSet3.getString("first_name") + " " +
                         resultSet3.getString("last_name");
                 ArrayList<String> userRoles = res.get(userId);
