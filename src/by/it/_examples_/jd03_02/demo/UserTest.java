@@ -1,7 +1,7 @@
 package by.it._examples_.jd03_02.demo;
 
-import by.it.akhmelev.jd03_02.demo.beans.User;
-import by.it.akhmelev.jd03_02.demo.crud.UserCRUD;
+import by.it._examples_.jd03_02.demo.beans.User;
+import by.it._examples_.jd03_02.demo.crud.UserCRUD;
 
 import java.sql.SQLException;
 

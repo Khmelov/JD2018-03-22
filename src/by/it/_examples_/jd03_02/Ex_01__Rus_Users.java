@@ -1,6 +1,6 @@
 package by.it._examples_.jd03_02;
 
-import by.it.akhmelev.jd03_02.ConnectionCreator;
+import by.it._examples_.jd03_02.ConnectionCreator;
 
 import java.sql.Connection;
 import java.sql.Statement;

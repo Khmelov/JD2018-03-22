@@ -1,6 +1,6 @@
 package by.it._examples_.jd03_02;
 
-import by.it.akhmelev.jd03_02.ConnectionCreator;
+import by.it._examples_.jd03_02.ConnectionCreator;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,7 +10,7 @@ public class Ex_01__CreateTable {
 
 
     public static void main(String[] args) {
-        try (Connection connection = by.it.akhmelev.jd03_02.ConnectionCreator.getConnection();
+        try (Connection connection = ConnectionCreator.getConnection();
              Statement statement = connection.createStatement()) {
             //ПРИМЕР. удаляем таблицу
             statement.executeUpdate("DROP TABLE IF EXISTS DB_USER ");

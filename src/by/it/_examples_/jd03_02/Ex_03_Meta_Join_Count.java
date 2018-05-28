@@ -1,7 +1,7 @@
 package by.it._examples_.jd03_02;
 
 
-import by.it.akhmelev.jd03_02.ConnectionCreator;
+import by.it._examples_.jd03_02.ConnectionCreator;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,7 +10,7 @@ import java.sql.Statement;
 
 public class Ex_03_Meta_Join_Count {
     public static void main(String[] args) {
-        try (Connection connection = by.it.akhmelev.jd03_02.ConnectionCreator.getConnection();
+        try (Connection connection = ConnectionCreator.getConnection();
              Statement statement = connection.createStatement()) {
 
             //получаем пользователей. Если неизвестно число полей, то нужно получить метаданные
