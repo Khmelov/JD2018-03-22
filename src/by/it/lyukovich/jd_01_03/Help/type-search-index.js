@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"by.it.lyukovich.jd_01_03","l":"Helper"}]
