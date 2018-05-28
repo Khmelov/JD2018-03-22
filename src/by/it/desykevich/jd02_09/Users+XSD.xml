@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Users xmlns="http://jd02_09.desykevich.it.by">
-<User>
+    <User>
         <Email>test123@mail.ru</Email>
         <Nickname>Test01</Nickname>
         <Password>qwerty</Password>
@@ -14,7 +14,6 @@
             </Goods>
         </Cart>
     </User>
-
     <User>
         <Email>test123@yandex.ru</Email>
         <Nickname>Test02</Nickname>
@@ -27,7 +26,6 @@
                 <Price currency="$$$">15</Price>
                 <Availability>Предзаказ</Availability>
             </Goods>
-
             <Goods>
                 <Name>Samsung Galaxy Tab A</Name>
                 <Type>Планшет</Type>
