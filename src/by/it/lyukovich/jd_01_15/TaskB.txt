@@ -1,0 +1,66 @@
+package by.it.lyukovich.jd_01_15;
+
+import java.io.*;
+
+public class TaskB {
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder();
+        String pathRead = getPath(TaskB.class, "TaskB.java"); 
+        String pathWriter = getPath(TaskB.class, "TaskB.txt");
+       
+        try (BufferedReader br = new BufferedReader(new FileReader(pathRead));
+PrintWriter pw = new PrintWriter(new FileWriter(pathWriter))) {
+            String line;
+            String end="*"+"/"; String start= "/"+"*"; String onecom="/"+"/";
+            while ((line = br.readLine()) != null) {
+                if ((line.contains(onecom) && !(line.substring(line.indexOf(onecom), line.length()-1).contains("\")"))) ||
+                        line.trim().startsWith(onecom)){ 
+                    sb.append(line.substring(0, line.indexOf(onecom))).append("\n");
+                } else if ((line.contains(start))){
+                        String templine;
+                        if (line.contains(end)) {
+
+                                templine = line.substring(0, line.indexOf(start) - 1) + " " +
+                                        line.substring(line.indexOf(end) + 2, line.length());
+                                if (templine.length() > 0) sb.append(templine).append("\n");
+
+                        } else {
+                            templine = line.substring(0, line.indexOf(start) - 1);
+                            if (templine.length() > 0) sb.append(templine).append("\n");
+                            while (!(line.contains(end))) {
+                                br.skip(1);
+                                line = br.readLine();
+                            }
+                            if (line.contains(end)) {
+                                templine = line.substring(line.indexOf(end)+2, line.length());
+                                if (templine.length() > 0) sb.append(templine).append("\n");
+                            } 
+                        }
+
+
+                    } else sb.append(line).append("\n");
+            }
+            System.out.println(sb.toString());
+            pw.println(sb.toString());
+            
+            
+        } catch (
+                IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+    
+    private static String getPath(Class<?> cl) {
+        String path = System.getProperty("user.dir")
+        path += File.separator + "src" + File.separator;
+        path += cl.getName()
+                .replace(cl.getSimpleName(), "")
+                .replace(".", File.separator);
+        return path;
+    }
+    private static String getPath(Class<?> cl, String filename) {
+        return getPath(cl) + filename;
+    }
+}
+

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns="http://it-academy.by/desykevich"
-       xsi:schemaLocation="http://it-academy.by/desykevich Users.xsd">
+<Users xmlns="http://jd02_09.desykevich.it.by">
+<!--<Users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+       <!--xmlns="http://jd02_09.desykevich.it.by"-->
+       <!--xsi:schemaLocation="http://jd02_09.desykevich.it.by Users.xsd">-->
 
     <User>
         <Email>test123@mail.ru</Email>
