@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-abstract class AbstactDAO<Type> implements InterfaceDAO<Type> {
+abstract class AbstractDAO<Type> implements InterfaceDAO<Type> {
 
     int executeUpdate(String sql, boolean generateId) throws SQLException {
         try (Connection connection = ConnectionCreator.getConnection();

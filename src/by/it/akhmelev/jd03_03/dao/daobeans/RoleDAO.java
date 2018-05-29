@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class RoleDAO extends AbstactDAO<Role> {
+public class RoleDAO extends AbstractDAO<Role> {
 
     @Override
     public boolean create(Role role) throws SQLException {
