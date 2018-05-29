@@ -12,7 +12,7 @@ public class Runner {
         DAO dao = DAO.getInstance();
         dao.reset();
 
-        System.out.println("\nпроверим DAO для бина Role");
+        System.out.println("\n=== Проверим DAO для бина Role");
         System.out.println(dao.role.getAll(""));
         Role role=new Role(-1,"testRole");
         dao.role.create(role);
@@ -23,7 +23,7 @@ public class Runner {
         dao.role.delete(role);
         System.out.println(dao.role.getAll(""));
 
-        System.out.println("\nпроверим DAO для бина User");
+        System.out.println("\n=== Проверим DAO для бина User");
         System.out.println(dao.user.getAll(""));
         User user = new User(-1, "testUser", "testUserPass", "testUserEmail", 2);
         dao.user.create(user);
@@ -34,7 +34,7 @@ public class Runner {
         dao.user.delete(user);
         System.out.println(dao.user.getAll(""));
 
-        System.out.println("\nпроверим DAO для бина Ad");
+        System.out.println("\n=== Проверим DAO для бина Ad");
         System.out.println(dao.ad.getAll(""));
         Ad ad = new Ad(
                 -1,
