@@ -1,7 +1,6 @@
 package by.it.sgolovach.jd03_03.dao;
 
 import by.it.sgolovach.jd03_03.dao.connect.ConnectionCreator;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
@@ -196,7 +195,7 @@ public class UniversalDAO<TypeBean> implements InterfaceDAO<TypeBean> {
                 //но этот способ надежнее (не зависит от базы данных и безопаснее)
                 ResultSet resultSet = statement.getGeneratedKeys();
                 if (resultSet.next()) result = resultSet.getInt(1);
-                System.out.println("id: " + result);
+//                System.out.println("id: " + result);
             }
         } catch (SQLException e) {
             throw new SQLException(e);

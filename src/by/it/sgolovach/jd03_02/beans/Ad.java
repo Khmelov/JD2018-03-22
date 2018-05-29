@@ -1,4 +1,4 @@
-package by.it.sgolovach.jd03_03.beans;
+package by.it.sgolovach.jd03_02.beans;
 
 public class Ad {
 
@@ -15,7 +15,7 @@ public class Ad {
     public Ad() {
     }
 
-    public Ad(int id, String description, int rooms, double price, double area, int flat, int flats, String address, int users_id) {
+    public Ad(int id, String description, int rooms, double price, double area, int flat, int flats, String adress, int users_id) {
         this.id = id;
         this.description = description;
         this.rooms = rooms;

@@ -1,4 +1,4 @@
-package by.it.sgolovach.jd03_02;
+package by.it.sgolovach.jd03_02.beans;
 
 public class User {
 
