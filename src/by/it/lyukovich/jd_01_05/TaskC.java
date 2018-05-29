@@ -6,7 +6,6 @@ import static java.lang.Math.*;
 
 public class TaskC {
     public static void main(String[] args) {
-        double arrn;
         step1(5);
     }
     private static void step1(int columnCount){
@@ -33,7 +32,6 @@ public class TaskC {
         System.out.println("");
         double[] arr2=new double[g2];
         g2=0;
-        int v=0;
         for (int i = 0; i < arr.length; i++) {
             if(arr[i]>3.5){
                 arr2[g2]=arr[i];
@@ -48,6 +46,8 @@ public class TaskC {
         }
 
     }
+
+
 
 
 }
