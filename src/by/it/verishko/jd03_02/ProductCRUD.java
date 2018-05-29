@@ -32,7 +32,7 @@ class ProductCRUD {
     static boolean update(Product product) throws SQLException {
         String sql = String.format(Locale.US, "UPDATE `goods` SET " +
                         "`name`='%s',`description`='%s',`price`=%f,`users_id`=%d WHERE `id`=%d",
-                product.getName(), product.getDescription(), product.getPrice(), product.getUsers_id());
+                product.getName(), product.getDescription(), product.getPrice(), product.getUsers_id(),product.getId());
         try (Connection connection = ConnectionCreator.getConnection();
              Statement statement = connection.createStatement()
         ) {

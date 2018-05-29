@@ -17,7 +17,7 @@ public class Runner {
 
         System.out.println("Create + Read + Delete User");
         User user = new User(-1, "testUser", "testUserPass", "testUserEmail", 2);
-//        UserCRUD.create(user);
+        UserCRUD.create(user);
         user.setLogin("testUserForDelete");
         UserCRUD.update(user);
         UserCRUD.delete(user);
@@ -33,9 +33,9 @@ public class Runner {
                 777,
                 2
         );
-//        ProductCRUD.create(product);
+        ProductCRUD.create(product);
         product.setDescription("testAdForDelete");
-//        ProductCRUD.update(product);
+        ProductCRUD.update(product);
         ProductCRUD.delete(product);
         System.out.println(product);
         product = ProductCRUD.read(1);
