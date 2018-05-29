@@ -8,8 +8,8 @@ public abstract class Var implements Operation {
             return new Scalar(operand);
         if (operand.matches(Patterns.VECTOR))
             return new Vector(operand);
-        /*if (operand.matches(Patterns.MATRIX))
-            return new Matrix(operand);*/
+        if (operand.matches(Patterns.MATRIX))
+            return new Matrix(operand);
         return null;
     }
     @Override
