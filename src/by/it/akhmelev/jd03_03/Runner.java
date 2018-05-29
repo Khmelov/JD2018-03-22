@@ -14,7 +14,7 @@ public class Runner {
 
         System.out.println("\n=== Проверим DAO для бина Role");
         System.out.println(dao.role.getAll(""));
-        Role role=new Role(-1,"testRole");
+        Role role = new Role(-1, "testRole");
         dao.role.create(role);
         System.out.println(dao.role.getAll(""));
         role.setRole("testRoleForDelete");
@@ -36,17 +36,7 @@ public class Runner {
 
         System.out.println("\n=== Проверим DAO для бина Ad");
         System.out.println(dao.ad.getAll(""));
-        Ad ad = new Ad(
-                -1,
-                "testAd",
-                2,
-                66666.0,
-                48.0,
-                3,
-                5,
-                "пр. Мулявина 3, кв. 33 ",
-                2
-        );
+        Ad ad = new Ad(-1, "testAd", 2, 66666.0, 48.0, 3, 5, "пр. Мулявина 3, кв. 33 ", 2);
         dao.ad.create(ad);
         System.out.println(dao.ad.getAll(""));
         ad.setDescription("testAdForDelete");
