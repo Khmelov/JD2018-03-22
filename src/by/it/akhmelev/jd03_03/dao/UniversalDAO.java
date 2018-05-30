@@ -1,6 +1,7 @@
-package by.it._examples_.jd03_03.generics_dao;
+package by.it.akhmelev.jd03_03.dao;
 
-import by.it._examples_.jd03_03.connection.ConnectionCreator;
+
+import by.it.akhmelev.jd03_03.dao.connect.ConnectionCreator;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
