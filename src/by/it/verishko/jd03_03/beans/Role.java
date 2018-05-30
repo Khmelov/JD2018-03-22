@@ -22,7 +22,6 @@ public class Role {
     }
 
     public int getId() {
-
         return id;
     }
 
@@ -38,6 +37,6 @@ public class Role {
         this.role = role;
     }
 
-    public void setId() {
-    }
+//    public void setId() {
+//    }
 }

@@ -25,6 +25,4 @@ abstract class AbstractDAO<Type> implements InterfaceDAO<Type> {
             return result;
         }
     }
-
-
 }
