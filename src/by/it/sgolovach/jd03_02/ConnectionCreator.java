@@ -1,5 +1,4 @@
-package by.it.desykevich.jd03_02;
-
+package by.it.sgolovach.jd03_02;
 
 import com.mysql.fabric.jdbc.FabricMySQLDriver;
 
@@ -8,7 +7,8 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
- public class ConnectionCreator {
+public class ConnectionCreator {
+
     static private Connection connection;
 
     static {
@@ -24,7 +24,7 @@ import java.sql.SQLException;
     private ConnectionCreator() {
     }
 
-    static Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed()) {
             synchronized (ConnectionCreator.class) {
                 if (connection == null || connection.isClosed()) {
@@ -35,26 +35,3 @@ import java.sql.SQLException;
         return connection;
     }
 }
-
-
-//public class ConnectionCreator {
-//
-//    private static Connection connection;
-//
-//    public static Connection getConnection() {
-//        try {
-//            if (connection == null || connection.isClosed()) {
-//                connection = DriverManager.getConnection(
-//                        "jdbc:mysql://127.0.0.1:3306/krasutski" +
-//                                "?useUnicode=true&characterEncoding=UTF-8",
-//                        "root",
-//                        ""
-//                );
-//            }
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return connection;
-//    }
-//}
