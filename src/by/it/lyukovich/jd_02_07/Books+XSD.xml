@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://it-academy.by/lyukovich"
+    xsi:schemaLocation="http://it-academy.by/lyukovich books.xsd">
+    <Book>
+        <BookSysInfo>
+            <BookID>1</BookID>
+            <BookCategoryID>1</BookCategoryID>
+            <BookDateUploaded>2018-05-10T00:00:00Z</BookDateUploaded>
+        </BookSysInfo>
+        <BookLanguage>English</BookLanguage>
+        <BookName>Java The Complete Reference Ninth Edition</BookName>
+        <BookAuthors>
+            <BookAuthor>
+                <AuthorID>1</AuthorID>
+                <AuthorName>Herbert Shildt</AuthorName>
+                <AuthorCountry>USA</AuthorCountry>
+            </BookAuthor>
+        </BookAuthors>
+        <BookCountry>USA</BookCountry>
+        <BookDescription>This edition of the book contains a substantial amount of
+            new material because Java SE 8 adds several new features to the Java language.</BookDescription>
+        <BookFileName>\books\1.zip</BookFileName>
+        <BookImgName>\books\images\1.jpg</BookImgName>
+        <BookFormat>PDF</BookFormat>
+        <BookBuyInfo>
+            <BookBuyLink><![CDATA[https://www.amazon.com/Java-Complete-Reference-Herbert-Schildt/dp/0071808558/ref=sr_1_4?ie=UTF8&qid=1527511896&sr=8-4&keywords=schildt+java]]></BookBuyLink>
+            <BookPrice currency="$">36.87</BookPrice>
+        </BookBuyInfo>
+    </Book>
+
+    <Book>
+        <BookSysInfo>
+            <BookID>2</BookID>
+            <BookCategoryID>1</BookCategoryID>
+            <BookDateUploaded>2018-05-10T00:00:00Z</BookDateUploaded>
+        </BookSysInfo>
+        <BookLanguage>English</BookLanguage>
+        <BookName>Effective Java (3rd Edition)</BookName>
+        <BookAuthors>
+            <BookAuthor>
+                <AuthorID>2</AuthorID>
+                <AuthorName>Joshua Bloch</AuthorName>
+                <AuthorCountry>USA</AuthorCountry>
+            </BookAuthor>
+        </BookAuthors>
+        <BookCountry>USA</BookCountry>
+        <BookDescription>Java has changed dramatically since the previous edition
+            of Effective Java was published shortly after the release of Java 6.
+            This Jolt award-winning classic has now been thoroughly updated to take
+            full advantage of the latest language and library features. The support
+            in modern Java for multiple paradigms increases the need for
+            specific best-practices advice, and this book delivers.</BookDescription>
+        <BookFileName>\books\2.zip</BookFileName>
+        <BookImgName>\books\images\2.jpg</BookImgName>
+        <BookFormat>PDF</BookFormat>
+        <BookBuyInfo>
+            <BookBuyLink><![CDATA[https://www.amazon.com/Effective-Java-3rd-Joshua-Bloch/dp/0134685997/ref=sr_1_1?s=books&ie=UTF8&qid=1527512394&sr=1-1&keywords=bloch+java]]></BookBuyLink>
+            <BookPrice currency="$">23.99</BookPrice>
+        </BookBuyInfo>
+    </Book>
+</Books>
