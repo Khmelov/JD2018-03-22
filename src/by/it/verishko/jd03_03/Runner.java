@@ -8,6 +8,7 @@ import by.it.verishko.jd03_03.dao.DAO;
 import java.sql.SQLException;
 
 public class Runner {
+
     public static void main(String[] args) throws SQLException {
         DAO dao = DAO.getInstance();
         dao.reset();
