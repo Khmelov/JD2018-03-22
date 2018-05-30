@@ -32,8 +32,8 @@ public class A_AddUser {
                     "")){
 
             Statement statement = connection.createStatement();
-            statement.executeUpdate("INSERT INTO `desykevich`.`users` ( `login`, `password`, `email`, `nickname`, `phonenumber`, `roles_id`) VALUES ( 'admin', '1234', 'admin@tut.by', 'administrator', '+3275278532', 1);");
-            System.out.println(statement);
+            statement.executeUpdate("INSERT INTO `desykevich`.`users` ( `login`, `password`, `email`, `nickname`, `phonenumber`, `roles_id`) VALUES ( 'admin', '123456789', 'admin@tut.by', 'administrator', '+3275278532', 1);");
+            System.out.println("Пользователь добавлен.");
 
 //            Statement statement= connection.createStatement();
 //            ResultSet resultSet=statement.executeQuery("select * from users");
