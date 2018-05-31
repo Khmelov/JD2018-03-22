@@ -5,7 +5,6 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-// do it!
 public class XSLTransform {
 
     private final static String root="src/by/it/uskoryaev/jd02_07/";

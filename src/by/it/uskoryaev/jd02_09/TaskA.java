@@ -10,11 +10,11 @@ public class TaskA {
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(BaseFace.class);
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-            String xmlSourse = System.getProperty("user.dir")+ "/src/by/it/uskoryaev/jd02_07/BaseFace+XSD.xml";
+            String xmlSource = System.getProperty("user.dir")+ "/src/by/it/uskoryaev/jd02_07/BaseFace+XSD.xml";
 
             String xmlTarget = System.getProperty("user.dir")+ "/src/by/it/uskoryaev/jd02_07/BaseFace+XSD.xml";
 
-            BaseFace baseFace = (BaseFace) unmarshaller.unmarshal(new File(xmlSourse));
+            BaseFace baseFace = (BaseFace) unmarshaller.unmarshal(new File(xmlSource));
             Marshaller marshaller = jaxbContext.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
             marshaller.marshal(baseFace,System.out);

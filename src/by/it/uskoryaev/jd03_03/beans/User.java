@@ -1,7 +1,6 @@
-package by.it.uskoryaev.jd03_02;
+package by.it.uskoryaev.jd03_03.beans;
 
 public class User {
-
     private int id;
     private String nickName;
     private String email;
@@ -10,21 +9,21 @@ public class User {
     private String lastName;
     private String middleName;
     private int phoneNumber;
-    private int baseFace_id;
+    private int baseFaceId;
 
     public User() {
     }
 
-    public User(int id, String nickName,String email, String password, String firstName,String lastName,String middleName,int phoneNumber,int baseFace_id) {
-    this.id = id;
-    this.nickName = nickName;
-    this.email = email;
-    this.password = password;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.middleName = middleName;
-    this.phoneNumber = phoneNumber;
-    this.baseFace_id = baseFace_id;
+    public User(int id, String nickName, String email, String password, String firstName, String lastName, String middleName, int phoneNumber, int baseFaceId) {
+        this.id = id;
+        this.nickName = nickName;
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.phoneNumber = phoneNumber;
+        this.baseFaceId = baseFaceId;
     }
 
     public int getId() {
@@ -91,28 +90,25 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getBaseFace_id() {
-        return baseFace_id;
+    public int getBaseFaceId() {
+        return baseFaceId;
     }
 
-    public void setBaseFace_id(int baseFace_id) {
-        this.baseFace_id = baseFace_id;
+    public void setBaseFaceId(int baseFaceId) {
+        this.baseFaceId = baseFaceId;
     }
-
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", nickName='" + nickName + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", middleName='" + middleName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", baseFace_id=" + baseFace_id +
-                '}';
+        return "\nUser{" + "id=" + id
+                + ",nick_name=" + nickName + '\''
+                + ",email=" + email + '\''
+                + ",password=" + password + '\''
+                + ",first_name=" + firstName + '\''
+                + ",last_name=" + lastName + '\''
+                + ",middle_name=" + middleName + '\''
+                + ",phone_number=" + phoneNumber + '\''
+                + ",base_face_id=" + baseFaceId + '\''
+                + '}';
     }
 }
-//ready!!!
