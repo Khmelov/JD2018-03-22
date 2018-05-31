@@ -18,7 +18,7 @@ public class C_Init {
             e.printStackTrace();
         }
 
-        try (Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:2016/desykevich" +
+        try (Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://127.0.0.1:2016/" +
                         "?useUnicode=true&characterEncoding=UTF-8",
                 "root",
                 "")) {
