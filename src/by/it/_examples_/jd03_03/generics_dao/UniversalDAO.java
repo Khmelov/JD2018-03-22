@@ -196,7 +196,6 @@ public class UniversalDAO<TypeBean> implements InterfaceDAO<TypeBean> {
                 //но этот способ надежнее (не зависит от базы данных и безопаснее)
                 ResultSet resultSet = statement.getGeneratedKeys();
                 if (resultSet.next()) result = resultSet.getInt(1);
-                System.out.println("id: " + result);
             }
         } catch (SQLException e) {
             throw new SQLException(e);
