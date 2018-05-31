@@ -23,7 +23,7 @@ public class FrontController extends HttpServlet {
 
     private void process(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-
+        resp.setHeader("Cache-control","no-store");
         ActionFactory actionFactory = new ActionFactory();
         ActionComand cmd = actionFactory.defineCmd(req);
         String viewPage;
