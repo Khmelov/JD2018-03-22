@@ -1,7 +1,5 @@
 package by.it.desykevich.jd03_03.dao.connect;
 
-import com.mysql.fabric.jdbc.FabricMySQLDriver;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
