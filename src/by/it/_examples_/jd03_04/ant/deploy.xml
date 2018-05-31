@@ -4,6 +4,7 @@
 -->
 
 <project name="Ant to AKHMELEV" default="10deploy" basedir="..">
+
     <!-- подключаем файл с настройками -->
     <property file="ant/deploy.properties"/>
 
