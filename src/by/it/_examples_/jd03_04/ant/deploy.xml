@@ -3,7 +3,8 @@
 Смотрите тут https://ant.apache.org/manual/
 -->
 
-<project name="Ant to AKHMELEV" default="10deploy" basedir="..">
+<project name="Ant to YourName" default="10deploy" basedir="..">
+
     <!-- подключаем файл с настройками -->
     <property file="ant/deploy.properties"/>
 
@@ -127,8 +128,9 @@
     Удаляем старое приложение. Аналог кнопки undeploy в
     http://localhost:28080/manager/html/list
     -->
+
+    <!-- вариант удаления который проверяет наличие сайта перед удалением
     <target name="09undeploy" depends="07if-has-tomcat, 08check-if-deployed" if="is.webapp.olddeployed">
-        <!-- TOMCAT undeploy-->
         <echo>url=${tomcat.manager.url} login=${tomcat.user.name} password="${tomcat.user.password}" path="/${web.root}"</echo>
         <undeploy
                 url="${tomcat.manager.url}"
@@ -137,15 +139,16 @@
                 path="/${web.root}"
         />
     </target>
+    -->
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  - - -  -->
     <!-- аварийный вариант удаления. Нужен если ant не завершается нормально
     Вручную удаляем старое приложение. Аналог кнопки undeploy в
     -->
-    <target name="10-Manual-Undeploy" depends="08check-if-deployed">
+    <target name="09-Manual-Undeploy" depends="08check-if-deployed">
         <!-- TOMCAT undeploy-->
         <echo>Back bad deploy</echo>
-        <undeploy
+        <undeploy failonerror="false"
                 url="${tomcat.manager.url}"
                 username="${tomcat.user.name}"
                 password="${tomcat.user.password}"
@@ -157,7 +160,7 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  - - -  -->
     <!-- ставим новое приложение. Аналог кнопки deploy в
     http://localhost:28080/manager/html/list -->
-    <target name="10deploy" depends="09undeploy" if="has.tomcat">
+    <target name="10deploy" depends="09-Manual-Undeploy" if="has.tomcat">
         <echo>Deploy ${war.fullpath}</echo>
         <deploy
                 url="${tomcat.manager.url}"
@@ -170,4 +173,12 @@
             <http url="${tomcat.base.url}/${web.root}" />
         </condition>
     </target>
+
+    <!-- запуск браузера по умолчанию (только Windows) -->
+    <target name="Win browser" depends="10deploy">
+        <exec executable="cmd.exe" spawn="true">
+            <arg value="/k start ${tomcat.base.url}/${web.root}"/>
+        </exec>
+    </target>
+
 </project>
