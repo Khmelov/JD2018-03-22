@@ -22,25 +22,38 @@ import java.util.Locale;
 
 public class RoleDAO extends AbstractDAO<Role> {
 
+
     @Override
-    public boolean create(Role bean) throws SQLException {
-        throw new SQLException("Not implements");
+    public boolean create(Role role) throws SQLException {
+        String sql = String.format(Locale.US, "INSERT INTO `roles`(`role`) VALUES ('%s')",
+                role.getRole());
+        int id = executeUpdate(sql, true);
+        if (id > 0) {
+            role.setId(id);
+            return true;
+        }
+        return false;
     }
 
     @Override
-    public boolean update(Role bean) throws SQLException {
-        throw new SQLException("Not implements");
+    public boolean update(Role role) throws SQLException {
+        String sql = String.format(Locale.US, "UPDATE `roles` SET `role`='%s' " +
+                "WHERE `id`=%d", role.getRole(), role.getId());
+        return executeUpdate(sql, false) == 1;
     }
 
     @Override
-    public boolean delete(Role bean) throws SQLException {
-        throw new SQLException("Not implements");
+    public boolean delete(Role role) throws SQLException {
+        String sql = String.format(Locale.US, "DELETE FROM `roles` WHERE `id`=%d", role.getId());
+        return executeUpdate(sql, false) == 1;
     }
 
     @Override
     public Role read(int id) throws SQLException {
-        List<Role> list = getAll(" where ID=" + id);
-        return list.size() > 0 ? list.get(0) : null;
+        List<Role> list=getAll("WHERE `id`="+id);
+        if (list.size()==1)
+            return list.get(0);
+        return null;
     }
 
     @Override

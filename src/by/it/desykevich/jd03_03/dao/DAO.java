@@ -1,5 +1,7 @@
 package by.it.desykevich.jd03_03.dao;
 
+import by.it.desykevich.jd03_03.dao.daobeans.AdDAO;
+import by.it.desykevich.jd03_03.dao.daobeans.CategoryDAO;
 import by.it.desykevich.jd03_03.dao.daobeans.RoleDAO;
 import by.it.desykevich.jd03_03.dao.daobeans.UserDAO;
 import com.mysql.fabric.jdbc.FabricMySQLDriver;
@@ -13,14 +15,14 @@ public class DAO {
     public DAO() {
         roleDAO = new RoleDAO();
         userDAO = new UserDAO();
-//        adDAO = new AdDAO();
-//        categoryDAO = new CategoryDAO();
+        adDAO = new AdDAO();
+        categoryDAO = new CategoryDAO();
     }
 
     public  RoleDAO roleDAO;
     public  UserDAO userDAO;
-//    public final AdDAO adDAO;
-//    public final CategoryDAO categoryDAO;
+    public  AdDAO adDAO;
+    public  CategoryDAO categoryDAO;
 
 
     public static  DAO getInstanse(){
