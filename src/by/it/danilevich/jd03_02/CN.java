@@ -1,4 +1,4 @@
-package by.it.danilevich.jd03_01;
+package by.it.danilevich.jd03_02;
 
 public class CN {
     public static final String URL_DB = "jdbc:mysql://127.0.0.1:2016/";
