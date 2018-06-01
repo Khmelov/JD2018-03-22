@@ -21,9 +21,8 @@ public class FrontController extends HttpServlet {
 
     private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ActionFactory actionFactory = new ActionFactory();
-        ActionCmd cmd = actionFactory.defineCmd(req);
+        IActionCmd cmd = actionFactory.defineCmd(req);
         String viewPage;
-
         try {
             viewPage = cmd.execute(req);
 

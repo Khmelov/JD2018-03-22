@@ -3,9 +3,9 @@ package by.it.verishko.jd03_04.java;
 import javax.servlet.http.HttpServletRequest;
 
 public class ActionFactory {
-    ActionCmd defineCmd(HttpServletRequest req) {
+    IActionCmd defineCmd(HttpServletRequest req) {
         String commandName = req.getParameter("command");
-        ActionCmd current = Actions.ERROR.command;
+        IActionCmd current = Actions.ERROR.command;
         if (commandName != null && !commandName.isEmpty()) {
             try {
                 current = Actions.valueOf(commandName.toUpperCase()).command;

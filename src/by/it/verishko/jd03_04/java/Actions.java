@@ -29,6 +29,6 @@ public enum Actions {
     };
 
     String jsp = "/error.jsp";
-    ActionCmd command;
+    IActionCmd command;
 
 }

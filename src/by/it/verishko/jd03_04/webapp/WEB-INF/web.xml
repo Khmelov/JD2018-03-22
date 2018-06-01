@@ -9,10 +9,21 @@
         <servlet-name>FrontController</servlet-name>
         <servlet-class>by.it.verishko.jd03_04.java.FrontController</servlet-class>
     </servlet>
-<servlet-mapping>
-    <servlet-name>FrontController</servlet-name>
-    <url-pattern>/do</url-pattern>
-</servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FrontController</servlet-name>
+        <url-pattern>/do</url-pattern>
+    </servlet-mapping>
+
+
+    <display-name>Servlet CacheControl</display-name>
+    <filter>
+        <filter-name>CacheControlFilter</filter-name>
+        <filter-class>by.it.verishko.jd03_04.java.CacheControl</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CacheControlFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 
 </web-app>

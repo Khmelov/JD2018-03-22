@@ -5,7 +5,3 @@
 <p>Cmd Sign-up: ${message}</p>
 </body>
 </html>
-
-
-
-
