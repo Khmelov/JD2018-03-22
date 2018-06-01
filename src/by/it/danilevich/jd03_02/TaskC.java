@@ -1,8 +1,8 @@
-package by.it.danilevich.jd03_01;
+package by.it.danilevich.jd03_02;
 
-import com.mysql.fabric.jdbc.FabricMySQLDriver;
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class TaskC {
     public static void deleteDateBase(){
@@ -25,21 +25,13 @@ public class TaskC {
         {
 //            statement.executeUpdate("use " + CN.NAME_DB);
             statement.executeUpdate(InitBase.createSchema);
-            statement.executeUpdate(InitBase.createCurrency);
-            statement.executeUpdate(InitBase.createCategory);
-            statement.executeUpdate(InitBase.createUnits);
-            statement.executeUpdate(InitBase.createStatusWork);
-            statement.executeUpdate(InitBase.createRoles);
+            statement.executeUpdate(InitBase.createRole);
             statement.executeUpdate(InitBase.createKindofWork);
-            statement.executeUpdate(InitBase.createUsers);
+            statement.executeUpdate(InitBase.createUser);
             statement.executeUpdate(InitBase.createOrder);
 
-            statement.executeUpdate(InitBase.insertCurrency);
-            statement.executeUpdate(InitBase.insertCategory);
-            statement.executeUpdate(InitBase.insertUnits);
-            statement.executeUpdate(InitBase.insertStatus);
-            statement.executeUpdate(InitBase.insertRoles);
-            statement.executeUpdate(InitBase.insertUsers);
+            statement.executeUpdate(InitBase.insertRole);
+            statement.executeUpdate(InitBase.insertUser);
             statement.executeUpdate(InitBase.insertKindOfWork);
             statement.executeUpdate(InitBase.insertOrder);
             System.out.println("Create dateBase");
