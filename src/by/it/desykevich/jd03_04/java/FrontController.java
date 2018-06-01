@@ -1,5 +1,6 @@
 package by.it.desykevich.jd03_04.java;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,14 +27,16 @@ public class FrontController  extends HttpServlet{
     private void process(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException{
         ActionFactory actionFactory = new ActionFactory();
-        ActionCmd cmd = actionFactory.defineCmd(reg);
+        ActionCmd cmd = actionFactory.defineCmd(req);
         String viewPage;
         try{
-            viewPage=cmd.execute(reg)
+            viewPage=cmd.execute(req);
         }catch (Exception e){
             viewPage=Actions.ERROR.jsp;
         }
-        ServletContext servletContext=getServletContext();
+        ServletContext servletContext = getServletContext();
+        RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(viewPage);
+        requestDispatcher.forward(req, resp);
 
     }
 }

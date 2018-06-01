@@ -17,6 +17,11 @@ public enum Actions {
             this.command=new CmdLogout();
             this.jsp="/logout.jsp";
         }
+    },SIGNUP {
+        {
+            this.command = new CmdSignup();
+            this.jsp = "/signup.jsp";
+        }
     },ERROR{        {
         this.command=new CmdError();
         this.jsp="/error.jsp";
