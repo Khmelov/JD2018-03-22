@@ -1,4 +1,4 @@
-package by.it.akhmelev.project.java;
+package by.it.akhmelev.project.java.controller;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -24,13 +24,13 @@ public class FrontController extends HttpServlet {
 
     private void process(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        by.it.akhmelev.project.java.ActionFactory actionFactory = new ActionFactory();
-        ActionCmd cmd = actionFactory.defineCmd(req);
+        ActionFactory actionFactory = new ActionFactory();
+        CmdAbstract cmd = actionFactory.defineCmd(req);
         String viewPage;
         try {
-            viewPage = cmd.execute(req);
+            viewPage = cmd.getJsp();
         } catch (Exception e) {
-            viewPage = by.it.akhmelev.project.java.Actions.ERROR.jsp;
+            viewPage = Actions.ERROR.command.getJsp();
         }
         ServletContext servletContext = getServletContext();
         RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(viewPage);
