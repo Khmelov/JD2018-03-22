@@ -8,13 +8,16 @@ import java.io.PrintWriter;
 public class Logger {
 
     private String fileName;
-    private  Logger(){fileName = getPath(Logger.class,"log.txt");}
+
+    private Logger() {
+        fileName = getPath(Logger.class, "log.txt");
+    }
 
     private static Logger instance;
 
-    static Logger getLogger(){
-        if (instance==null){
-            synchronized (Logger.class){
+    static Logger getLogger() {
+        if (instance == null) {
+            synchronized (Logger.class) {
                 if (instance == null)
                     instance = new Logger();
             }
@@ -22,8 +25,8 @@ public class Logger {
         return instance;
     }
 
-    void toLog(String message){
-        try (PrintWriter printWriter = new PrintWriter(new FileWriter(fileName,true))){
+    void toLog(String message) {
+        try (PrintWriter printWriter = new PrintWriter(new FileWriter(fileName, true))) {
             printWriter.println(message);
         } catch (IOException e) {
             e.printStackTrace();
@@ -31,14 +34,14 @@ public class Logger {
     }
 
 
-    private static String getPath(Class<?> cl){
+    private static String getPath(Class<?> cl) {
         String path = System.getProperty("user.dir");
-        path += File.separator+"src"+File.separator;
-        path += cl.getName().replace(cl.getSimpleName(),"").replace(".",File.separator);
+        path += File.separator + "src" + File.separator;
+        path += cl.getName().replace(cl.getSimpleName(), "").replace(".", File.separator);
         return path;
     }
 
-    private static String getPath(Class<?>cl,String fileName){
-        return getPath(cl)+fileName;
+    private static String getPath(Class<?> cl, String fileName) {
+        return getPath(cl) + fileName;
     }
 }

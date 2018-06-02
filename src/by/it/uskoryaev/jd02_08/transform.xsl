@@ -4,7 +4,7 @@
         <html>
             <head>
                 <body>
-                    <table border = "1">
+                    <table border="1">
                         <tr>
                             <td>
                                 nickName
@@ -34,11 +34,13 @@
         <td>
             <xsl:apply-templates/>
         </td>
-    </xsl:template> <xsl:template match="/BaseFace/User/emal">
+    </xsl:template>
+    <xsl:template match="/BaseFace/User/emal">
         <td>
             <xsl:apply-templates/>
         </td>
-    </xsl:template> <xsl:template match="/BaseFace/User/password">
+    </xsl:template>
+    <xsl:template match="/BaseFace/User/password">
         <td>
             <xsl:apply-templates/>
         </td>

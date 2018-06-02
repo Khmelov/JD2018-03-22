@@ -23,9 +23,9 @@ class Scalar extends Var {
     }
 
     @Override
-    public Var add(Var other){
-        if (other instanceof Scalar){
-            double result = this.value+((Scalar) other).value;
+    public Var add(Var other) {
+        if (other instanceof Scalar) {
+            double result = this.value + ((Scalar) other).value;
             return new Scalar(result);
         }
         return other.add(this);
@@ -33,8 +33,8 @@ class Scalar extends Var {
 
     @Override
     public Var sub(Var other) {
-        if (other instanceof Scalar){
-            double result = this.value-((Scalar)other).value;
+        if (other instanceof Scalar) {
+            double result = this.value - ((Scalar) other).value;
             return new Scalar(result);
         }
         return other.sub(this);
@@ -42,8 +42,8 @@ class Scalar extends Var {
 
     @Override
     public Var mul(Var other) {
-        if (other instanceof Scalar){
-            double result = this.value * ((Scalar)other).value;
+        if (other instanceof Scalar) {
+            double result = this.value * ((Scalar) other).value;
             return new Scalar(result);
         }
         return other.mul(this);
@@ -58,7 +58,7 @@ class Scalar extends Var {
                 return new Scalar(result);
             }
             return other.div(this);
-        }else{
+        } else {
             return super.div(other);
         }
 

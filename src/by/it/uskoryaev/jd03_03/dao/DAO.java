@@ -33,7 +33,7 @@ public class DAO {
         return dao;
     }
 
-    public void reset(){
+    public void reset() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
@@ -69,7 +69,7 @@ public class DAO {
                     "  `first_name` VARCHAR(45) NOT NULL,\n" +
                     "  `last_name` VARCHAR(45) NOT NULL,\n" +
                     "  `middle_name` VARCHAR(45) NOT NULL,\n" +
-                    "  `phone_number` INT NOT NULL\n"+
+                    "  `phone_number` INT NOT NULL\n" +
                     "  `base_face_id` INT NOT NULL,\n" +
                     "  PRIMARY KEY (`user_id`),\n" +
                     "  INDEX `fk_user_base_face1_idx` (`base_fase_id` ASC),\n" +
@@ -104,7 +104,7 @@ public class DAO {
             statement.executeUpdate("INSERT INTO `uskoryaev`.`user` (`id`, `nick_name`, `email`, `password`,`first_name`,`last_name`,`middle_name`,`phone_number`, `base_face_id`) " +
                     "                                             VALUES (DEFAULT, 'alex', 'alex@mail.ru', 'alex', 'alex','smolin','victorovich','444444444444',2)");
             statement.executeUpdate("INSERT INTO `uskoryaev`.`car` (`id`, `serial_number`, `brand`, `model`, `body_car`, `year_realese`, `color`,`user_user_id`) " +
-                               "                                VALUES (DEFAULT, '5jh2g45h3g5', mercedes, S-class, coupe, 11.10.2017, black,2)");
+                    "                                VALUES (DEFAULT, '5jh2g45h3g5', mercedes, S-class, coupe, 11.10.2017, black,2)");
 
         } catch (SQLException e) {
             e.printStackTrace();

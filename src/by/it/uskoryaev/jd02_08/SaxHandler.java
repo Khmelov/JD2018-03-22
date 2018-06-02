@@ -24,7 +24,7 @@ public class SaxHandler extends DefaultHandler {
         for (int i = 0; i < attCount; i++) {
             String name = attributes.getLocalName(i);
             String value = attributes.getValue(i);
-            System.out.print(" " + name + "=\"" + value+"\"");
+            System.out.print(" " + name + "=\"" + value + "\"");
         }
         System.out.println(">");
         tab = tab + '\t';
@@ -35,7 +35,7 @@ public class SaxHandler extends DefaultHandler {
         String content = text.toString().trim();
         text.setLength(0);
         if (!content.isEmpty())
-            System.out.println(tab+content);
+            System.out.println(tab + content);
         tab = tab.substring(1);
         System.out.println(tab + "</" + qName + ">");
     }
@@ -46,5 +46,5 @@ public class SaxHandler extends DefaultHandler {
         text.append(part);
     }
 
-    private StringBuilder text=new StringBuilder();
+    private StringBuilder text = new StringBuilder();
 }

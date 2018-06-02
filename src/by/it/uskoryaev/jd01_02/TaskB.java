@@ -11,8 +11,9 @@ public class TaskB {
         step2(scanner.nextInt());
         step3(scanner.nextDouble(), scanner.nextDouble(), scanner.nextDouble());
     }
+
     private static void step1() {
-        for (int i = 1; i <=25 ; i++) {
+        for (int i = 1; i <= 25; i++) {
             System.out.print(i + " ");
             if (i % 5 == 0) System.out.println();
         }
@@ -63,14 +64,14 @@ public class TaskB {
     }
 
     private static void step3(double a, double b, double c) {
-        double discriminant = b*b-4*a*c;
+        double discriminant = b * b - 4 * a * c;
         if (discriminant < 0) System.out.println("корней нет");
-        else if (discriminant == 0){
-            double x = -b/(2*a);
+        else if (discriminant == 0) {
+            double x = -b / (2 * a);
             System.out.println(x);
-        }else {
-            double x1 = (-b+Math.sqrt(discriminant))/(2*a);
-            double x2 = (-b-Math.sqrt(discriminant))/(2*a);
+        } else {
+            double x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+            double x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
             System.out.println(x1 + " " + x2);
         }
     }

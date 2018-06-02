@@ -139,7 +139,7 @@ public class Test_jd01_10 {
                 .exclude("negativeZeroDoubleBits")
                 .exclude("twoToTheDoubleScaleUp")
                 .exclude("twoToTheDoubleScaleDown")
-                ;
+        ;
         System.out.println("OK");
     }
 

@@ -2,15 +2,15 @@ package by.it.uskoryaev.jd01_11;
 
 import java.util.*;
 
-public class ListB <T> implements List <T> {
-    private T[] elements =(T[]) new Object[]{};
+public class ListB<T> implements List<T> {
+    private T[] elements = (T[]) new Object[]{};
     private int size = 0;
 
     @Override
     public boolean add(T t) {
         if (size == elements.length)
-            elements = Arrays.copyOf(elements,(size*3)/2+1);
-        elements[size++]= t;
+            elements = Arrays.copyOf(elements, (size * 3) / 2 + 1);
+        elements[size++] = t;
         return false;
     }
 
@@ -18,7 +18,7 @@ public class ListB <T> implements List <T> {
     public String toString() {
         StringBuilder sb = new StringBuilder("[");
         String delimeter = "";
-        for (int i = 0; i <size; i++) {
+        for (int i = 0; i < size; i++) {
             sb.append(delimeter).append(elements[i]);
             delimeter = ", ";
         }
@@ -30,7 +30,7 @@ public class ListB <T> implements List <T> {
     @Override
     public T set(int index, T element) {
         T sEtT = elements[index];
-        elements[index]=element;
+        elements[index] = element;
         return sEtT;
     }
 
@@ -42,15 +42,15 @@ public class ListB <T> implements List <T> {
     @Override
     public void add(int index, T element) {
         if (size == elements.length)
-            elements = Arrays.copyOf(elements,(size*3)/2+1);
-        System.arraycopy(elements,index,elements,index+1,size-index);
+            elements = Arrays.copyOf(elements, (size * 3) / 2 + 1);
+        System.arraycopy(elements, index, elements, index + 1, size - index);
         elements[index] = element;
         size++;
     }
 
     @Override
     public boolean addAll(Collection<? extends T> c) {
-        for (T t:c) {
+        for (T t : c) {
             add(t);
         }
         return true;
@@ -114,7 +114,7 @@ public class ListB <T> implements List <T> {
     @Override
     public T remove(int index) {
         T del = elements[index];
-        System.arraycopy(elements,index+1,elements,index,size-1-index );
+        System.arraycopy(elements, index + 1, elements, index, size - 1 - index);
         size--;
         return del;
     }

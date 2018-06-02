@@ -139,17 +139,19 @@ public class Test_jd01_11 {
             System.out.println("   remove(Object o) ok: " + a);
     }
 
-    private void assertSet(String message, Set<Short> e, Set<Short> a){
-        List<Short> arr=new ArrayList<>(e);
-        boolean ok=true;
-        if (e.size()!=a.size())
-            fail(message+" e.size()!=a.size()");
+    private void assertSet(String message, Set<Short> e, Set<Short> a) {
+        List<Short> arr = new ArrayList<>(e);
+        boolean ok = true;
+        if (e.size() != a.size())
+            fail(message + " e.size()!=a.size()");
         for (Short i : arr) {
             if (!a.contains(i)) {
-                fail(message+"\n+!a.contains("+i+")\nexpected:"+e.toString()+")\nactual:"+a.toString());
+                fail(message + "\n+!a.contains(" + i + ")\nexpected:" + e.toString() + ")\nactual:" + a.toString());
             }
         }
-    };
+    }
+
+    ;
 
     @Test(timeout = 1500)
     public void testTaskC__SetC() throws Exception {
@@ -217,7 +219,8 @@ public class Test_jd01_11 {
         assertEquals("ошибка isEmpty не работает", e.isEmpty(), a.isEmpty());
         assertSet("ошибка isEmpty", e, a);
         assertSet("ошибка isEmpty", e, a);
-        e.clear(); a.clear();
+        e.clear();
+        a.clear();
         assertEquals("ошибка clear", 0, a.size());
         assertEquals("ошибка clear или isEmpty не работает", e.size(), a.size());
         System.out.println("    clear и isEmpty ok: " + a);

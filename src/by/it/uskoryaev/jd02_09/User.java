@@ -17,9 +17,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for User complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="User">
  *   &lt;complexContent>
@@ -39,20 +39,18 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "User", propOrder = {
-    "userID",
-    "nickName",
-    "email",
-    "password",
-    "firstName",
-    "lastName",
-    "middleName",
-    "phoneNumber",
-    "choseCar"
+        "userID",
+        "nickName",
+        "email",
+        "password",
+        "firstName",
+        "lastName",
+        "middleName",
+        "phoneNumber",
+        "choseCar"
 })
 public class User {
     @Override
@@ -91,11 +89,9 @@ public class User {
 
     /**
      * Gets the value of the userID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getUserID() {
         return userID;
@@ -103,11 +99,9 @@ public class User {
 
     /**
      * Sets the value of the userID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setUserID(BigInteger value) {
         this.userID = value;
@@ -115,11 +109,9 @@ public class User {
 
     /**
      * Gets the value of the nickName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getNickName() {
         return nickName;
@@ -127,11 +119,9 @@ public class User {
 
     /**
      * Sets the value of the nickName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setNickName(String value) {
         this.nickName = value;
@@ -139,11 +129,9 @@ public class User {
 
     /**
      * Gets the value of the email property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getEmail() {
         return email;
@@ -151,11 +139,9 @@ public class User {
 
     /**
      * Sets the value of the email property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setEmail(String value) {
         this.email = value;
@@ -163,11 +149,9 @@ public class User {
 
     /**
      * Gets the value of the password property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPassword() {
         return password;
@@ -175,11 +159,9 @@ public class User {
 
     /**
      * Sets the value of the password property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPassword(String value) {
         this.password = value;
@@ -187,11 +169,9 @@ public class User {
 
     /**
      * Gets the value of the firstName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getFirstName() {
         return firstName;
@@ -199,11 +179,9 @@ public class User {
 
     /**
      * Sets the value of the firstName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setFirstName(String value) {
         this.firstName = value;
@@ -211,11 +189,9 @@ public class User {
 
     /**
      * Gets the value of the lastName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getLastName() {
         return lastName;
@@ -223,11 +199,9 @@ public class User {
 
     /**
      * Sets the value of the lastName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setLastName(String value) {
         this.lastName = value;
@@ -235,11 +209,9 @@ public class User {
 
     /**
      * Gets the value of the middleName property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getMiddleName() {
         return middleName;
@@ -247,11 +219,9 @@ public class User {
 
     /**
      * Sets the value of the middleName property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setMiddleName(String value) {
         this.middleName = value;
@@ -259,11 +229,9 @@ public class User {
 
     /**
      * Gets the value of the phoneNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getPhoneNumber() {
         return phoneNumber;
@@ -271,11 +239,9 @@ public class User {
 
     /**
      * Sets the value of the phoneNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setPhoneNumber(BigInteger value) {
         this.phoneNumber = value;
@@ -283,11 +249,9 @@ public class User {
 
     /**
      * Gets the value of the choseCar property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link ChoseCar }
-     *     
+     *
+     * @return possible object is
+     * {@link ChoseCar }
      */
     public ChoseCar getChoseCar() {
         return choseCar;
@@ -295,11 +259,9 @@ public class User {
 
     /**
      * Sets the value of the choseCar property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link ChoseCar }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link ChoseCar }
      */
     public void setChoseCar(ChoseCar value) {
         this.choseCar = value;

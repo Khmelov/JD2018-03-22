@@ -8,16 +8,16 @@ public class PrintMath {
     public static void main(String[] args) {
         Class<Math> mathClass = Math.class;
         Method[] methods = mathClass.getMethods();
-        for (Method method:methods) {
+        for (Method method : methods) {
             //   if (Modifier.isPublic(method.getModifiers()));
-            if ((method.getModifiers()& Modifier.PUBLIC)== Modifier.PUBLIC){
-                String res = method.toString().replaceAll("java.lang.Math.","");
+            if ((method.getModifiers() & Modifier.PUBLIC) == Modifier.PUBLIC) {
+                String res = method.toString().replaceAll("java.lang.Math.", "");
                 System.out.println(res);
             }
         }
         Field[] fields = mathClass.getFields();
-        for (Field field:fields){
-            String res = field.toString().replaceAll("java.lang.Math.","");
+        for (Field field : fields) {
+            String res = field.toString().replaceAll("java.lang.Math.", "");
             System.out.println(res);
         }
     }
