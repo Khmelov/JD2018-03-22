@@ -7,9 +7,8 @@ public abstract class CmdAbstract {
 
     @Override
     public String toString() {
-        String name = this.getClass().getSimpleName()
+        return this.getClass().getSimpleName()
                 .replaceFirst("Cmd", "");
-        return name;
     }
 
     public String getJsp(){
