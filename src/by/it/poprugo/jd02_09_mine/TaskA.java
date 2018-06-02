@@ -1,4 +1,6 @@
-package by.it.poprugo.jd02_09;
+package by.it.poprugo.jd02_09_mine;
+
+import by.it._examples_.jd01_11.Collections.Order;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -8,12 +10,12 @@ import java.io.*;
 
 public class TaskA {
     public static void main(String[] args) throws JAXBException {
-        JAXBContext jaxbContent = JAXBContext.newInstance(Persons.class);
+        JAXBContext jaxbContent = JAXBContext.newInstance(Orders.class);
         Unmarshaller unmarshaller = jaxbContent.createUnmarshaller();
         //сначала было String xmlPath = System.getProperty("user.dir") + "/src/by/it/poprugo/jd02_07/Person+XSD.xml";
         String xmlSource = System.getProperty("user.dir") + "/src/by/it/poprugo/jd02_07/Person+XSD.xml";
         String xmlTarget = System.getProperty("user.dir") + "/src/by/it/poprugo/jd02_09/Person+XSD.xml";
-        Persons persons = (Persons) unmarshaller.unmarshal(new File(xmlSource));//было File(xmlPath)
+        Orders persons = (Orders) unmarshaller.unmarshal(new File(xmlSource));//было File(xmlPath)
         //System.out.println(persons);
         Marshaller marshaller = jaxbContent.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -34,4 +36,5 @@ public class TaskA {
 
 
     }
+
 }

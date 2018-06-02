@@ -1,47 +1,44 @@
-package by.it.poprugo.jd01_11;
+package by.it.poprugo.jd01_11_old;
 
 import java.util.*;
-import java.util.function.UnaryOperator;
 
-public class ListA<T> implements List<T> {
+public class ListB<T> implements List<T> {
+
+
     private T[] elements = (T[]) new Object[]{};
     private int size = 0;
 
     @Override
-    public boolean add(T element) {
+    public boolean add(T t) {
         if (size == elements.length)
-            elements = Arrays.copyOf(elements, (size*3/2+1));
-        elements[size++] = element;
+            elements = Arrays.copyOf(elements, (size * 3) / 2 + 1);
+        elements[size++] = t;
         return false;
     }
 
     @Override
-    public T remove(int index) {
-        T deleted = elements[index];
-        if ((index + 1) < size)
-            System.arraycopy(elements, index + 1, elements, index, size - index - 1);
-        size--;
-        return deleted;
+    public boolean remove(Object o) {
+        return false;
     }
 
     @Override
     public T get(int index) {
-        return elements[index];
-    }
-
-    @Override
-    public void replaceAll(UnaryOperator<T> operator) {
-
-    }
-
-    @Override
-    public void sort(Comparator<? super T> c) {
-
-    }
-
-    @Override
-    public Spliterator<T> spliterator() {
         return null;
+    }
+
+    @Override
+    public T set(int index, T element) {
+        return null;
+    }
+
+    @Override
+    public void add(int index, T element) {
+
+    }
+
+    @Override
+    public boolean addAll(Collection<? extends T> c) {
+        return false;
     }
 
     @Override
@@ -75,17 +72,7 @@ public class ListA<T> implements List<T> {
     }
 
     @Override
-    public boolean remove(Object o) {
-        return false;
-    }
-
-    @Override
     public boolean containsAll(Collection<?> c) {
-        return false;
-    }
-
-    @Override
-    public boolean addAll(Collection<? extends T> c) {
         return false;
     }
 
@@ -110,13 +97,8 @@ public class ListA<T> implements List<T> {
     }
 
     @Override
-    public T set(int index, T element) {
+    public T remove(int index) {
         return null;
-    }
-
-    @Override
-    public void add(int index, T element) {
-
     }
 
     @Override
@@ -142,17 +124,5 @@ public class ListA<T> implements List<T> {
     @Override
     public List<T> subList(int fromIndex, int toIndex) {
         return null;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder("[");
-        String delimeter = "";
-        for (int i = 0; i < size; i++) {
-            sb.append(delimeter).append(elements[i]);
-            delimeter = ", ";
-        }
-        sb.append("]");
-        return sb.toString();
     }
 }
