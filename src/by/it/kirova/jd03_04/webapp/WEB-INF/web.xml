@@ -10,14 +10,6 @@
     Важно чтобы внутри каждого из этих тегов были теги servlet-name
     и имя сервлета в них было одинаковым!!! Здесь это имя HelloWorld
     -->
-    <filter>
-        <filter-name>SetCacheControl</filter-name>
-        <filter-class>by.it.kirova.jd03_04.java.CacheControlFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>SetCacheControl</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
 
    <servlet>
        <servlet-name>FrontController</servlet-name>
