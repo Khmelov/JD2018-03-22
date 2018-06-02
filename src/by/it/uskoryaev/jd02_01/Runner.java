@@ -7,8 +7,8 @@ public class Runner {
         for (int i = 0; i < 120; i++) {
             Util.sleep(50);
             int count = Util.random(2);
-            System.out.println("count="+count);
-            for (int j = 0; j <=count; j++) {
+            System.out.println("count=" + count);
+            for (int j = 0; j <= count; j++) {
                 Buyer buyer = new Buyer(++numberBuyer);
                 buyer.start();
 

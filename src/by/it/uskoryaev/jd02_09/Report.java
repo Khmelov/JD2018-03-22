@@ -17,9 +17,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Report complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="Report">
  *   &lt;complexContent>
@@ -37,18 +37,16 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Report", propOrder = {
-    "reportID",
-    "brandAndModel",
-    "dataOrder",
-    "commission",
-    "cost",
-    "totalCost",
-    "carID"
+        "reportID",
+        "brandAndModel",
+        "dataOrder",
+        "commission",
+        "cost",
+        "totalCost",
+        "carID"
 })
 public class Report {
     @Override
@@ -81,11 +79,9 @@ public class Report {
 
     /**
      * Gets the value of the reportID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getReportID() {
         return reportID;
@@ -93,11 +89,9 @@ public class Report {
 
     /**
      * Sets the value of the reportID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setReportID(BigInteger value) {
         this.reportID = value;
@@ -105,11 +99,9 @@ public class Report {
 
     /**
      * Gets the value of the brandAndModel property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBrandAndModel() {
         return brandAndModel;
@@ -117,11 +109,9 @@ public class Report {
 
     /**
      * Sets the value of the brandAndModel property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBrandAndModel(String value) {
         this.brandAndModel = value;
@@ -129,11 +119,9 @@ public class Report {
 
     /**
      * Gets the value of the dataOrder property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getDataOrder() {
         return dataOrder;
@@ -141,11 +129,9 @@ public class Report {
 
     /**
      * Sets the value of the dataOrder property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setDataOrder(String value) {
         this.dataOrder = value;
@@ -153,11 +139,9 @@ public class Report {
 
     /**
      * Gets the value of the commission property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getCommission() {
         return commission;
@@ -165,11 +149,9 @@ public class Report {
 
     /**
      * Sets the value of the commission property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setCommission(BigInteger value) {
         this.commission = value;
@@ -177,11 +159,9 @@ public class Report {
 
     /**
      * Gets the value of the cost property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getCost() {
         return cost;
@@ -189,11 +169,9 @@ public class Report {
 
     /**
      * Sets the value of the cost property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setCost(BigInteger value) {
         this.cost = value;
@@ -201,11 +179,9 @@ public class Report {
 
     /**
      * Gets the value of the totalCost property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getTotalCost() {
         return totalCost;
@@ -213,11 +189,9 @@ public class Report {
 
     /**
      * Sets the value of the totalCost property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setTotalCost(BigInteger value) {
         this.totalCost = value;
@@ -225,11 +199,9 @@ public class Report {
 
     /**
      * Gets the value of the carID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getCarID() {
         return carID;
@@ -237,11 +209,9 @@ public class Report {
 
     /**
      * Sets the value of the carID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setCarID(BigInteger value) {
         this.carID = value;

@@ -11,9 +11,9 @@ public class TaskA {
             StackTraceElement[] stackTraceElements = e.getStackTrace();
             for (StackTraceElement stackTraceElement : stackTraceElements) {
                 if (TaskA.class.getName().equals(stackTraceElement.getClassName())) {
-                    System.out.println("name: "+e.getClass().getName());
-                    System.out.println("class: "+stackTraceElement.getClassName());
-                    System.out.println("line: "+stackTraceElement.getLineNumber());
+                    System.out.println("name: " + e.getClass().getName());
+                    System.out.println("class: " + stackTraceElement.getClassName());
+                    System.out.println("line: " + stackTraceElement.getLineNumber());
                     break;
                 }
             }

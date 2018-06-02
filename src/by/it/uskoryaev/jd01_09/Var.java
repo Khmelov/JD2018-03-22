@@ -1,15 +1,15 @@
 package by.it.uskoryaev.jd01_09;
 
 
-abstract  class Var implements Operation{
-    static Var createVar(String strVAr){
-        strVAr = strVAr.replace("\\s+","").trim();
-        if (strVAr.matches(Patterns.SCALAR))return new Scalar(strVAr);
-        if (strVAr.matches(Patterns.VECTOR))return new Vector(strVAr);
+abstract class Var implements Operation {
+    static Var createVar(String strVAr) {
+        strVAr = strVAr.replace("\\s+", "").trim();
+        if (strVAr.matches(Patterns.SCALAR)) return new Scalar(strVAr);
+        if (strVAr.matches(Patterns.VECTOR)) return new Vector(strVAr);
 
         /*if (strVAr.matches(Patterns.MATRIX))return new Matrix(strVAr);
         return new Matrix(strVAr);*/
-     return null;
+        return null;
     }
 
     @Override

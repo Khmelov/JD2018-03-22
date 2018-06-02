@@ -239,23 +239,25 @@ public class Test_jd01_12 {
             arra.add("n" + i);
             arrl.add("n" + i);
         }
-        Long t=System.nanoTime();
-        String rA= (String) mA.invoke(null, arra);
-        Long tA=System.nanoTime()-t;
+        Long t = System.nanoTime();
+        String rA = (String) mA.invoke(null, arra);
+        Long tA = System.nanoTime() - t;
 
-        t=System.nanoTime();
-        String rL= (String) mL.invoke(null, arrl);
-        Long tL=System.nanoTime()-t;
+        t = System.nanoTime();
+        String rL = (String) mL.invoke(null, arrl);
+        Long tL = System.nanoTime() - t;
 
         assertEquals("Метод c ArrayList  работает неверно", rA, "n" + expectedRes[n - 1]);
         assertEquals("Метод с LinkedList работает неверно", rL, "n" + expectedRes[n - 1]);
 
-        System.out.println(" Время работы для  ArrayList="+tA/1000+" мкс."); System.out.flush();
-        System.out.println(" Время работы для LinkedList="+tL/1000+" мкс."); System.out.flush();
+        System.out.println(" Время работы для  ArrayList=" + tA / 1000 + " мкс.");
+        System.out.flush();
+        System.out.println(" Время работы для LinkedList=" + tL / 1000 + " мкс.");
+        System.out.flush();
 
-        assertTrue(" Время работы для  ArrayList должно быть существенно больше LinkedList",tA>tL*12/10);
+        assertTrue(" Время работы для  ArrayList должно быть существенно больше LinkedList", tA > tL * 12 / 10);
 
-}
+    }
 
 
     /*

@@ -1,6 +1,6 @@
 package by.it.uskoryaev.jd01_07;
 
-abstract  class  AbstractVar {
+abstract class AbstractVar {
 
     @Override
     public String toString() {

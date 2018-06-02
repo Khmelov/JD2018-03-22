@@ -1,6 +1,6 @@
 package by.it.uskoryaev.jd01_08.oop;
 
-class SimensMobile extends Model implements Mobile{
+class SimensMobile extends Model implements Mobile {
     @Override
     public boolean off() {
         return false;

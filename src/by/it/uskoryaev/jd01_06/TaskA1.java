@@ -8,10 +8,10 @@ public class TaskA1 {
         StringBuilder stringBuilder = new StringBuilder(Poem.text);
         Pattern pattern = Pattern.compile("[а-яА-ЯёЁ]{4,}");
         Matcher matcher = pattern.matcher(Poem.text);
-        while (matcher.find()){
-            stringBuilder.setCharAt(matcher.start()+3,'#');
-            if (matcher.group().length() >= 7){
-                stringBuilder.setCharAt(matcher.start()+6,'#');
+        while (matcher.find()) {
+            stringBuilder.setCharAt(matcher.start() + 3, '#');
+            if (matcher.group().length() >= 7) {
+                stringBuilder.setCharAt(matcher.start() + 6, '#');
             }
             System.out.println(stringBuilder.toString());
         }

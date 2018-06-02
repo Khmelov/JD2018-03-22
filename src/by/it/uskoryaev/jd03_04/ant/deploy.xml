@@ -11,7 +11,7 @@
     <!-- каждый jar нужно описать отдельно (!),
          компилятор считает, что это как бы отдельный каталог -->
     <path id="classpath">
-        <fileset dir="${local.lib.dir}" includes="mysql-connector-java.jar" />
+        <fileset dir="${local.lib.dir}" includes="mysql-connector-java.jar"/>
         <fileset dir="${global.lib.dir}" includes="servlet-api.jar"/>
     </path>
 
@@ -37,7 +37,7 @@
     <target name="03compile" depends="02init">
         <echo>Compile the source files</echo>
         <javac srcdir="${src.dir}" destdir="${build.dir}/WEB-INF/classes" debug="true">
-            <classpath  refid="classpath" />
+            <classpath refid="classpath"/>
         </javac>
     </target>
 
@@ -83,7 +83,7 @@
         <property environment="env"/>
         <condition property="has.tomcat">
             <!--<available file="${tomcat.home.dir}"/>-->
-            <http url="${tomcat.base.url}" />
+            <http url="${tomcat.base.url}"/>
         </condition>
     </target>
 
@@ -94,7 +94,7 @@
     из ant -->
     <target name="08check-if-deployed" depends="07if-has-tomcat" if="has.tomcat">
         <condition property="is.webapp.olddeployed">
-            <http url="${tomcat.base.url}/${web.root}" />
+            <http url="${tomcat.base.url}/${web.root}"/>
         </condition>
 
         <path id="tomcat.classpath">
@@ -102,24 +102,24 @@
                 <include name="khmelov_tomcat_lib.jar"/>
             </fileset>
             <!--<fileset dir="ant/lib_tomcat">-->
-                <!--<include name="catalina-ant.jar"/>-->
-                <!--<include name="tomcat-coyote.jar"/>-->
-                <!--<include name="tomcat-util.jar"/>-->
+            <!--<include name="catalina-ant.jar"/>-->
+            <!--<include name="tomcat-coyote.jar"/>-->
+            <!--<include name="tomcat-util.jar"/>-->
             <!--</fileset>-->
             <!--<fileset dir="ant/lib_tomcat">-->
-                <!--<include name="tomcat-juli.jar"/>-->
+            <!--<include name="tomcat-juli.jar"/>-->
             <!--</fileset>-->
         </path>
 
         <!-- Configure the custom Ant tasks for the Manager application -->
-        <taskdef name="deploy"    classname="org.apache.catalina.ant.DeployTask" classpathref="tomcat.classpath"/>
-        <taskdef name="undeploy"  classname="org.apache.catalina.ant.UndeployTask" classpathref="tomcat.classpath"/>
-        <taskdef name="list"      classname="org.apache.catalina.ant.ListTask" classpathref="tomcat.classpath"/>
-        <taskdef name="reload"    classname="org.apache.catalina.ant.ReloadTask" classpathref="tomcat.classpath"/>
+        <taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask" classpathref="tomcat.classpath"/>
+        <taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask" classpathref="tomcat.classpath"/>
+        <taskdef name="list" classname="org.apache.catalina.ant.ListTask" classpathref="tomcat.classpath"/>
+        <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask" classpathref="tomcat.classpath"/>
         <taskdef name="findleaks" classname="org.apache.catalina.ant.FindLeaksTask" classpathref="tomcat.classpath"/>
         <taskdef name="resources" classname="org.apache.catalina.ant.ResourcesTask" classpathref="tomcat.classpath"/>
-        <taskdef name="start"     classname="org.apache.catalina.ant.StartTask" classpathref="tomcat.classpath"/>
-        <taskdef name="stop"      classname="org.apache.catalina.ant.StopTask" classpathref="tomcat.classpath"/>
+        <taskdef name="start" classname="org.apache.catalina.ant.StartTask" classpathref="tomcat.classpath"/>
+        <taskdef name="stop" classname="org.apache.catalina.ant.StopTask" classpathref="tomcat.classpath"/>
     </target>
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  - - -  -->
@@ -129,7 +129,9 @@
     -->
     <target name="09undeploy" depends="07if-has-tomcat, 08check-if-deployed" if="is.webapp.olddeployed">
         <!-- TOMCAT undeploy-->
-        <echo>url=${tomcat.manager.url} login=${tomcat.user.name} password="${tomcat.user.password}" path="/${web.root}"</echo>
+        <echo>url=${tomcat.manager.url} login=${tomcat.user.name} password="${tomcat.user.password}"
+            path="/${web.root}"
+        </echo>
         <undeploy
                 url="${tomcat.manager.url}"
                 username="${tomcat.user.name}"
@@ -167,7 +169,7 @@
                 war="${war.fullpath}"
         />
         <condition property="is.webapp.ok.deployed">
-            <http url="${tomcat.base.url}/${web.root}" />
+            <http url="${tomcat.base.url}/${web.root}"/>
         </condition>
     </target>
 </project>

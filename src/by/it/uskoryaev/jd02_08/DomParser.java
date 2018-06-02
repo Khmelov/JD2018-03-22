@@ -20,15 +20,16 @@ public class DomParser {
         printD(element);
 
     }
+
     private static String tab = "";
     private static int countTab = 0;
 
-     private static void printD(Node node) {
+    private static void printD(Node node) {
         if (countTab > 0) tab = tab + "\t";
         countTab++;
         String text = node.getNodeValue();
         if (text != null) {
-            System.out.println(tab+text.trim());
+            System.out.println(tab + text.trim());
         }
         int fd = node.getNodeType();
         if (fd == 1) {
@@ -45,7 +46,9 @@ public class DomParser {
 
 
         NodeList children = node.getChildNodes();
-        for (int i = 0; i < children.getLength(); i++) {print(children.item(i));}
+        for (int i = 0; i < children.getLength(); i++) {
+            print(children.item(i));
+        }
         if (fd == 1) {
             System.out.println(tab + "</" + node.getNodeName() + ">");
         }
@@ -53,12 +56,14 @@ public class DomParser {
         if (countTab > 0) tab = tab.substring(1);
 
 
-    } private static void print(Node node) {
+    }
+
+    private static void print(Node node) {
         if (countTab > 0) tab = tab + "\t";
         countTab++;
         String text = node.getNodeValue();
         if (text != null) {
-            System.out.println(tab+text.trim());
+            System.out.println(tab + text.trim());
         }
         int fd = node.getNodeType();
         if (fd == 1) {

@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for CreateReport complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="CreateReport">
  *   &lt;complexContent>
@@ -30,12 +30,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "CreateReport", propOrder = {
-    "report"
+        "report"
 })
 public class CreateReport {
 
@@ -44,11 +42,9 @@ public class CreateReport {
 
     /**
      * Gets the value of the report property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Report }
-     *     
+     *
+     * @return possible object is
+     * {@link Report }
      */
     public Report getReport() {
         return report;
@@ -56,11 +52,9 @@ public class CreateReport {
 
     /**
      * Sets the value of the report property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Report }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Report }
      */
     public void setReport(Report value) {
         this.report = value;

@@ -1,4 +1,4 @@
-//package by.it.uskoryaev.jd03_02;
+package by.it.uskoryaev.jd03_02;//package by.it.uskoryaev.jd03_02;
 //
 //import java.sql.Connection;
 //import java.sql.ResultSet;

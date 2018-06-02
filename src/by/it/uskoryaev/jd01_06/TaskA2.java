@@ -25,8 +25,7 @@ public class TaskA2 {
             int p = pos(word);
             if (p >= 0) {
                 count[p]++;
-            }
-            else {
+            } else {
                 int last = w.length;
                 w = Arrays.copyOf(w, last + 1);
                 count = Arrays.copyOf(count, last + 1);
@@ -34,7 +33,7 @@ public class TaskA2 {
                 count[last] = 1;
             }
         }
-        for (int i = 0; i < w.length ; i++) {
+        for (int i = 0; i < w.length; i++) {
             System.out.println(w[i] + "=" + count[i]);
 
         }

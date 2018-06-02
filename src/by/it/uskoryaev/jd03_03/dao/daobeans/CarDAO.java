@@ -5,6 +5,6 @@ import by.it.uskoryaev.jd03_03.dao.UniversalDAO;
 
 public class CarDAO extends UniversalDAO<Car> {
     public CarDAO() {
-        super(new Car(),"car");
+        super(new Car(), "car");
     }
 }
