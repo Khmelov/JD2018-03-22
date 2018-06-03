@@ -7,7 +7,7 @@
     <display-name>Servlet uskoryaev</display-name>
     <servlet>
         <servlet-name>FrontController</servlet-name>
-        <servlet-class>by.it.uskoryaev.project.java.controller.java.controller.FrontController</servlet-class>
+        <servlet-class>by.it.uskoryaev.project.java.controller.FrontController</servlet-class>
     </servlet>
 
     <servlet-mapping>

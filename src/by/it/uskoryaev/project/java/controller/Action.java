@@ -16,12 +16,25 @@ public enum Action {
         }
     }, SIGNUP {
         {
-            this.command = new CmdSingUp();
+            this.command = new CmdSignUp();
         }
     }, ERROR {
         {
             this.command = new CmdError();
         }
+    }, ADDCAR {
+        {
+            this.command = new CmdAddCar();
+        }
+    }, CHOOSECAR {
+        {
+            this.command = new CmdChooseCar();
+        }
+    }, DELETE {
+        {
+            this.command = new CmdDelete();
+        }
     };
+
     AbstractCmd command;
 }

@@ -3,7 +3,7 @@ package by.it.uskoryaev.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class ActionFactory {
+class ActionFactory {
     AbstractCmd defineCmd(HttpServletRequest req) {
         String commandName = req.getParameter("command");
         AbstractCmd current = Action.ERROR.command;

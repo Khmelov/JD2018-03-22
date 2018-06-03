@@ -14,6 +14,14 @@ public class User {
     public User() {
     }
 
+    public User(int id, String nickName, String email, String password, int BaseFaceId) {
+        this.id = id;
+        this.nickName = nickName;
+        this.email = email;
+        this.password = password;
+        this.baseFaceId = BaseFaceId;
+    }
+
     public User(int id, String nickName, String email, String password, String firstName, String lastName, String middleName, int phoneNumber, int baseFaceId) {
         this.id = id;
         this.nickName = nickName;
