@@ -64,7 +64,7 @@ public class UserCRUD {
     static boolean update(UserBean userBean) throws SQLException {
         String sql = String.format("UPDATE "+"`"+CN.NAME_DB+"`.`user` SET " +
                         "`name`='%s'," +
-                        "`role_id`='%d'", " +
+                        "`role_id`='%d', " +
                         "`address`='%s'," +
                         "`telephone`='%s'," +
                         "`login`='%s'," +
