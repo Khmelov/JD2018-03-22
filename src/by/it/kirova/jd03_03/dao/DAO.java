@@ -55,7 +55,7 @@ public class DAO {
                              "root",
                              "")) {
             Statement statement = connection.createStatement();
-            statement.executeUpdate("DROP DATABASE IF EXISTS kirova");
+            statement.executeUpdate("DROP DATABASE kirova");
 
             statement.executeUpdate("CREATE DATABASE kirova");
             statement.executeUpdate("DROP SCHEMA IF EXISTS `kirova`");
