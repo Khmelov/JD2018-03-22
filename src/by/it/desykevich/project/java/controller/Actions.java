@@ -27,7 +27,29 @@ public enum Actions {
     },ERROR{        {
         this.command=new CmdError();
 
-    }};
+    }
+    },CREATEAD{        {
+        this.command=new CmdCreateAd();
+
+    }},MYADS {
+        {
+            this.command = new CmdMyAds();
+        }
+    },
+    EDITUSERS {
+        {
+            this.command = new CmdEditUsers();
+        }
+    },CREATECATEGORY {
+        {
+            this.command = new CmdCreateCategory();
+        }
+    },
+    EDITCATEGORY {
+        {
+            this.command = new CmdEditCategory();
+        }
+    };
 
 
     CmdAbstract command;

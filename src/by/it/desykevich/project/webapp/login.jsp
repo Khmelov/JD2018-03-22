@@ -23,7 +23,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="password">Password</label>
   <div class="col-md-4">
-  <input id="password" name="password"  value="TestPassword"type="text" placeholder="" class="form-control input-md" required="">
+  <input id="password" name="password"  value="TestPassword"type="password" placeholder="" class="form-control input-md" required="">
   <span class="help-block">Введите ваш пароль(минимум 6 символов)</span>
   </div>
 </div>
@@ -34,7 +34,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Войти</button>
+    <button id="singlebutton" name="singlebutton" class="btn btn-outline-primary">Войти</button>
   </div>
 </div>
 
