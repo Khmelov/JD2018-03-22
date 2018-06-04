@@ -25,6 +25,21 @@ enum Action {
         {
             this.comand=new CmdError();
         }
+    },
+    PAGELOG{
+        {
+            this.comand=new CmdPagelog();
+        }
+    },
+    CREATEAD{
+        {
+            this.comand=new CmdCreateAd();
+        }
+    },
+    LISTAD{
+        {
+            this.comand=new CmdListad();
+        }
     };
 
 

@@ -19,6 +19,7 @@ public class FrontController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        resp.setHeader("Cache-control","no-store");
         CmdAbstract cmd = actionFactory.defineCmd(req);
         String viewPage;
         try {
