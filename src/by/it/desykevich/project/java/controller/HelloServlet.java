@@ -1,4 +1,4 @@
-package by.it.desykevich.jd03_04.java;
+package by.it.desykevich.project.java.controller;
 
 
 import javax.servlet.ServletException;
