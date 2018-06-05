@@ -16,17 +16,13 @@ public enum Action {
         }
     }, SIGNUP {
         {
-<<<<<<< HEAD
             this.command = new CmdSignUp();
-=======
-            this.command = new CmdSingUp();
->>>>>>> origin/master
+
         }
     }, ERROR {
         {
             this.command = new CmdError();
         }
-<<<<<<< HEAD
     }, ADDCAR {
         {
             this.command = new CmdAddCar();
@@ -40,9 +36,5 @@ public enum Action {
             this.command = new CmdDelete();
         }
     };
-
-=======
-    };
->>>>>>> origin/master
-    AbstractCmd command;
+AbstractCmd command;
 }

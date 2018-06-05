@@ -7,14 +7,15 @@ import javax.servlet.http.HttpServletRequest;
 
 public class CmdLogin extends AbstractCmd {
     @Override
-    public CmdLogin execute(HttpServletRequest reg) throws Exception {
+    public AbstractCmd execute(HttpServletRequest reg) throws Exception {
         if (reg.getMethod().equalsIgnoreCase("post")) {
             String nickName = reg.getParameter("nickName");
             String email = reg.getParameter("email");
             String password = reg.getParameter("password");
-            User user = new User(0, nickName, email, password,2);
+            User user = new User(0, nickName, email, password,"","","",4547454,2);
             DAO dao = DAO.getInstanceDao();
             dao.user.create(user);
+            return Action.LOGIN.command;
         }
         return null;
     }

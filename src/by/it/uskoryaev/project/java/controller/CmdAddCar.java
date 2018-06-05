@@ -6,6 +6,9 @@ class CmdAddCar extends AbstractCmd{
 
     @Override
     AbstractCmd execute(HttpServletRequest reg) throws Exception {
+        if (reg.getMethod().equalsIgnoreCase("post")){
+
+        }
         return null;
     }
 }

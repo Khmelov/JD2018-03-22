@@ -6,7 +6,7 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Sing Up</legend>
+<legend>Login</legend>
 
 <!-- Text input-->
 <div class="form-group">
@@ -28,9 +28,9 @@
 
 <!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Sing Up">Sing Up</label>
+  <label class="col-md-4 control-label" for="Login">Login</label>
   <div class="col-md-4">
-    <button id="Sing Up" name="Sing Up" class="btn btn-primary">Sing Up</button>
+    <button id="Login" name="Login" class="btn btn-primary">Login</button>
   </div>
 </div>
 
