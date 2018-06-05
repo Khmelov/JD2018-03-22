@@ -25,7 +25,7 @@ public class TaskB {
 /**       JavaDoc комментарий                        */
 
         StringBuilder sb = new StringBuilder();
-        String fn = getPath(by.it.verishko.jd01_15.TaskB.class);
+        String fn = getPath(TaskB.class);
         String path = getPath(TaskB.class, "TaskB.txt");
         String line;
         try (BufferedReader br = new BufferedReader(new FileReader(fn))) {

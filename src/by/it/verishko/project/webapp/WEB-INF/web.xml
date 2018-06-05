@@ -7,7 +7,7 @@
     <display-name>Servlet verishko</display-name>
     <servlet>
         <servlet-name>FrontController</servlet-name>
-        <servlet-class>by.it.verishko.jd03_04.java.FrontController</servlet-class>
+        <servlet-class>by.it.verishko.project.java.controller.FrontController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
@@ -17,7 +17,7 @@
 
     <filter>
         <filter-name>CacheControlFilter</filter-name>
-        <filter-class>by.it.verishko.jd03_04.java.CacheControl</filter-class>
+        <filter-class>by.it.verishko.project.java.controller.CacheControl</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>CacheControlFilter</filter-name>
