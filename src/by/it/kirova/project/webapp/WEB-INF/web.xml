@@ -11,10 +11,10 @@
     и имя сервлета в них было одинаковым!!! Здесь это имя HelloWorld
     -->
 
-   <servlet>
-       <servlet-name>FrontController</servlet-name>
-       <servlet-class>by.it.kirova.jd03_04.java.FrontController</servlet-class>
-   </servlet>
+    <servlet>
+        <servlet-name>FrontController</servlet-name>
+        <servlet-class>by.it.kirova.project.java.controller.FrontController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
@@ -23,7 +23,7 @@
 
     <filter>
         <filter-name>SetCacheControl</filter-name>
-        <filter-class>by.it.kirova.jd03_04.java.CacheControlFilter</filter-class>
+        <filter-class>by.it.kirova.project.java.controller.CacheControlFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>SetCacheControl</filter-name>
