@@ -7,7 +7,12 @@ public class CmdIndex extends CmdAbstract {
 
     @Override
     public CmdAbstract execute(HttpServletRequest req) throws Exception {
-        return Actions.SEARCH.command;
+        if (req.getMethod().equalsIgnoreCase("post")) {
+            if (req.getParameter("search") != null) {
+                return Actions.SEARCH.command;
+            }
+        }
+        return null;
     }
 
 }

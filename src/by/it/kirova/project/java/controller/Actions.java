@@ -32,11 +32,6 @@ enum Actions {
 
         }
     },
-    INDEXUSER {
-        {
-            this.command = new CmdIndexUser();
-        }
-    },
     MYACCOUNT {
         {
             this.command = new CmdMyAccount();

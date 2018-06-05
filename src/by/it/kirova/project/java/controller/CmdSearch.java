@@ -7,7 +7,7 @@ public class CmdSearch extends CmdAbstract{
 
     @Override
     public CmdAbstract execute(HttpServletRequest req) throws Exception {
-        return Actions.SEARCH.command;
+        return null;
     }
 
 }

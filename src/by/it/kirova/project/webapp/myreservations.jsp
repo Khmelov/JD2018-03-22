@@ -1,30 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
 <%@ include file="include/head.htm" %>
 <body>
 <div class="container">
-
-
-
-      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffffff;">
-           <a class="navbar-brand" style="font-weight: bold; font-size: 20pt;" href=".">BOOKING.</a>
-           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-           </button>
-           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-               <ul class="navbar-nav">
-                   <li class="nav-item">
-                       <a class="nav-link" style="font-size: 14pt;" href="do?command=MyAccount">My account</a>
-                   </li>
-                   <li class="nav-item">
-                       <a class="nav-link" style="font-size: 14pt;" href="do?command=MyProperty">My property</a>
-                   </li>
-                   <li class="nav-item">
-                       <a class="nav-link" style="font-size: 14pt;" href="do?command=Logout">Log out</a>
-                   </li>
-               </ul>
-           </div>
-       </nav>
-
+ <%@ include file="include/menu.htm" %>
 
 
  <form class="form-horizontal" method="get" command="do?command=myreservations">

@@ -1,14 +1,17 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
 <%@ include file="include/head.htm" %>
 <body>
 <div class="container">
-    <%@ include file="include/menu.htm" %>
-   <form class="form-horizontal" method="get" command="do?command=index">
+ <%@ include file="include/menu.htm" %>
+
+
+
+
+   <form class="form-horizontal" method="post" command="do?command=index">
    <fieldset>
 
 
-   <!-- Form Name -->
-   <legend></legend>
 
 	<div class="row justify-content-center align-items-end">
 

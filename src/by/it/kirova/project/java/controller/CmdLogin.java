@@ -21,7 +21,7 @@ public class CmdLogin extends CmdAbstract {
             DAO dao = DAO.getInstanceDAO();
             String where=String.format("WHERE email='%s' AND password='%s'",email,password);
             if (dao.user.getAll(where).size()>0){
-                return Actions.INDEXUSER.command;
+                return Actions.INDEX.command;
             }
             return Actions.LOGIN.command;
         }

@@ -19,12 +19,16 @@ public class FrontController extends HttpServlet {
         CmdAbstract cmd = actionFactory.defineCmd(req);
         String viewPage;
         try {
-            cmd.execute(req);
-            viewPage = cmd.getJsp();
+            CmdAbstract next = cmd.execute(req);
+            if (next == null) {
+                viewPage = cmd.getJsp();
+                getServletContext().getRequestDispatcher(viewPage).forward(req, resp);
+            } else {
+                resp.sendRedirect("do?command=" + next.toString());
+            }
         } catch (Exception e) {
-            viewPage = Actions.ERROR.command.getJsp();
+            e.printStackTrace();
         }
-        getServletContext().getRequestDispatcher(viewPage).forward(req, resp);
 
     }
 
