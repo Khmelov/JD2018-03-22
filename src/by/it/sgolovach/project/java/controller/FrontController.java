@@ -21,14 +21,18 @@ public class FrontController extends HttpServlet {
             throws ServletException, IOException {
         resp.setHeader("Cache-control","no-store");
         CmdAbstract cmd = actionFactory.defineCmd(req);
-        String viewPage;
+        String viewPage = Action.ERROR.comand.getJsp();
         try {
-            cmd.execute(req);
-            viewPage = cmd.getJsp();
+            CmdAbstract next = cmd.execute(req);
+            if (next == null) {
+                viewPage = cmd.getJsp();
+                getServletContext().getRequestDispatcher(viewPage).forward(req, resp);
+            } else {
+                resp.sendRedirect("do?command="+next.toString());
+            }
         } catch (Exception e) {
-            viewPage = Action.ERROR.comand.getJsp();
+            e.printStackTrace();
         }
-        getServletContext().getRequestDispatcher(viewPage).forward(req, resp);
     }
 
     @Override
