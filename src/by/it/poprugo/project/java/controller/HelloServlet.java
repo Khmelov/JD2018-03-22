@@ -1,4 +1,4 @@
-package by.it.poprugo.project.java;
+package by.it.poprugo.project.java.controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -7,7 +7,7 @@
     <display-name>Servlet akhmelev</display-name>
     <servlet>
         <servlet-name>FrontController</servlet-name>
-        <servlet-class>by.it.poprugo.project.java.FrontController</servlet-class>
+        <servlet-class>by.it.poprugo.project.java.controller.FrontController</servlet-class>
     </servlet>
 
     <servlet-mapping>
