@@ -1,7 +1,5 @@
 package by.it.akhmelev.project.java.controller;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,24 +18,28 @@ public class FrontController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        CmdAbstract cmd = actionFactory.defineCmd(req);
+        Cmd cmd = actionFactory.defineCmd(req);
         String viewPage;
         try {
-            cmd.execute(req);
-            viewPage = cmd.getJsp();
+            Cmd next = cmd.execute(req);
+            if (next == null) {
+                viewPage = cmd.getJsp();
+                getServletContext().getRequestDispatcher(viewPage).forward(req, resp);
+            } else {
+                resp.sendRedirect("do?command="+next.toString());
+            }
         } catch (Exception e) {
-            viewPage = Actions.ERROR.command.getJsp();
+            e.printStackTrace();
         }
-        getServletContext().getRequestDispatcher(viewPage).forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        CmdAbstract cmd = actionFactory.defineCmd(req);
+        Cmd cmd = actionFactory.defineCmd(req);
         String viewPage;
         try {
-            CmdAbstract next = cmd.execute(req);
+            Cmd next = cmd.execute(req);
             if (next == null) {
                 viewPage = cmd.getJsp();
                 getServletContext().getRequestDispatcher(viewPage).forward(req, resp);

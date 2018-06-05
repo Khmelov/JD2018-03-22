@@ -2,9 +2,9 @@ package by.it.akhmelev.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class CmdError extends CmdAbstract {
+public class CmdError extends Cmd {
     @Override
-    public CmdError execute(HttpServletRequest reg) throws Exception {
+    public Cmd execute(HttpServletRequest req) throws Exception {
         return null;
     }
 }

@@ -1,6 +1,16 @@
 package by.it.akhmelev.project.java.controller;
 
 enum Actions {
+    LISTAD {
+        {
+            this.command = new CmdListAd();
+        }
+    },
+    CREATEAD {
+        {
+            this.command = new CmdCreateAd();
+        }
+    },
     INDEX {
         {
             this.command = new CmdIndex();
@@ -11,9 +21,9 @@ enum Actions {
             this.command = new CmdLogin();
         }
     },
-    LOGOUT {
+    PROFILE {
         {
-            this.command = new CmdLogout();
+            this.command = new CmdProfile();
         }
     },
     SIGNUP {
@@ -27,6 +37,6 @@ enum Actions {
         }
     };
 
-    CmdAbstract command;
+    Cmd command;
 
 }
