@@ -26,7 +26,7 @@ public class CmdLogin extends CmdAbstract {
 
     public static void main(String[] args) throws SQLException {
         DAO dao = DAO.getInstanse();
-        String where=String.format("WHERE login='%s' AND password='%s'","TestLogin","TestPassword");
+        String where=String.format("WHERE login='%s' AND password='%s'","TestLogintype","TestPassword");
         if (dao.userDAO.getAll(where).size()==1){
             System.out.println("ok");
         }
