@@ -1,4 +1,4 @@
-package by.it.kirova.jd03_04.java;
+package by.it.kirova.project.java.controller;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;
