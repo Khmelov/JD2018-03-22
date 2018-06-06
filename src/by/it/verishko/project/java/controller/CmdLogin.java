@@ -5,27 +5,27 @@ import by.it.verishko.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.sql.SQLException;
 import java.util.List;
 
-public class CmdLogin extends CmdAbstract {
+public class CmdLogin extends Cmd {
     @Override
-    public CmdAbstract execute(HttpServletRequest reg) throws Exception {
-        if (reg.getMethod().equalsIgnoreCase("post")) {
-            String login = reg.getParameter("login");
-            String password = reg.getParameter("password");
+    public Cmd execute(HttpServletRequest req) throws Exception {
+        if (req.getMethod().equalsIgnoreCase("post")) {
+            String login = req.getParameter("login");
+            String password = req.getParameter("password");
             User user = new User(0, login, password, "", 2);
             DAO dao = DAO.getInstance();
             String where = String.format("WHERE login='%s' AND password='%s' LIMIT 0,1", login, password);
             List<User> users = dao.user.getAll(where);
             if (users.size() > 0) {
                 user = users.get(0);
-                HttpSession session = reg.getSession();
+                HttpSession session = req.getSession();
                 session.setAttribute("user", user);
                 return Actions.PROFILE.command;
             }
         }
-        return Actions.LOGIN.command;
+        return null;
+//        return Actions.LOGIN.command;
     }
 
 //    public static void main(String[] args) throws SQLException {

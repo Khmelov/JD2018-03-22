@@ -4,6 +4,7 @@
 <body>
 <div class="container">
 <%@ include file="include/menu.htm" %>
+<p> ${listGoods}</p>
 </div>
 </body>
 </html>

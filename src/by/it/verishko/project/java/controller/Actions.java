@@ -25,15 +25,11 @@ public enum Actions {
         {
             this.command = new CmdCreateProduct();
         }
-    }, LOGINPAGE {
-        {
-            this.command = new CmdLoginPage();
-        }
     }, ERROR {
         {
             this.command = new CmdError();
         }
     };
-    CmdAbstract command;
+    Cmd command;
 }
 

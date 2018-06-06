@@ -2,9 +2,9 @@ package by.it.verishko.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class CmdIndex extends CmdAbstract {
+public class CmdIndex extends Cmd {
     @Override
-    public CmdAbstract execute(HttpServletRequest reg) throws Exception {
+    public Cmd execute(HttpServletRequest req) throws Exception {
         return null;
     }
 }

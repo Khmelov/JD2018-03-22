@@ -5,34 +5,21 @@ import by.it.verishko.project.java.beans.User;
 import by.it.verishko.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
-public class CmdCreateProduct extends CmdAbstract {
+public class CmdCreateProduct extends Cmd {
     @Override
-    public CmdAbstract execute(HttpServletRequest reg) throws Exception {
-        User user = Util.getUserFormSession(reg);
+    public Cmd execute(HttpServletRequest req) throws Exception {
+        User user = Util.getUserFromSession(req);
         if (user != null) {
-            if (reg.getMethod().equalsIgnoreCase("post")) {
-                String name = reg.getParameter("name");
-                String description = reg.getParameter("description");
-                double price = Double.parseDouble(reg.getParameter("price"));
-                Product product = new Product(0, name, description, price, 2);
-                DAO dao = DAO.getInstance();
-                dao.product.create(product);
+            if (req.getMethod().equalsIgnoreCase("post")) {
+                Product product = new Product();
+                product.setName(req.getParameter("name"));
+                product.setDescription(req.getParameter("description"));
+                product.setPrice(Double.parseDouble(req.getParameter("price")));
+                product.setUsers_id((int) user.getId());
+                DAO.getInstance().product.create(product);
             } else return null;
         }
         return Actions.LOGIN.command;
-
-//        if (reg.getMethod().equalsIgnoreCase("post")) {
-//            String name = reg.getParameter("name");
-//            String description = reg.getParameter("description");
-//            double price = Double.parseDouble(reg.getParameter("price"));
-//
-//            Product product = new Product(0, name, description, price, 2);
-//            DAO dao = DAO.getInstance();
-//            dao.product.create(product);
-//            return Actions.LOGINPAGE.command;
-//        }
-//        return null;
     }
 }
