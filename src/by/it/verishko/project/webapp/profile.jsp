@@ -4,8 +4,8 @@
 <body>
 <div class="container">
     <%@ include file="include/menu.htm" %>
-    <p>User:<br> ${user}</p>
-    <p>All ads of User:<br> ${listGoodsUser}</p>
+    <p>User:<br>${user}</p>
+    <p>All goods of User:<br>${listGoodsUser}</p>
 
     <form class="form-horizontal" method="post" action="do?command=Profile">
         <fieldset>

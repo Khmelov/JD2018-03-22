@@ -5,27 +5,33 @@ public enum Actions {
         {
             this.command = new CmdIndex();
         }
-    }, LOGIN {
+    },
+    LOGIN {
         {
             this.command = new CmdLogin();
         }
-    }, PROFILE {
+    },
+    PROFILE {
         {
             this.command = new CmdProfile();
         }
-    }, SIGNUP {
+    },
+    SIGNUP {
         {
             this.command = new CmdSignup();
         }
-    }, LISTGOODS {
+    },
+    LISTGOODS {
         {
             this.command = new CmdListGoods();
         }
-    }, CREATEPRODUCT {
+    },
+    CREATEPRODUCT {
         {
             this.command = new CmdCreateProduct();
         }
-    }, ERROR {
+    },
+    ERROR {
         {
             this.command = new CmdError();
         }

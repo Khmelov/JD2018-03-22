@@ -5,13 +5,14 @@ import by.it.verishko.project.java.beans.User;
 import by.it.verishko.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class CmdCreateProduct extends Cmd {
     @Override
-    public Cmd execute(HttpServletRequest req) throws Exception {
+    public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         User user = Util.getUserFromSession(req);
         if (user != null) {
-            if (req.getMethod().equalsIgnoreCase("post")) {
+            if (Util.isPost(req)) {
                 Product product = new Product();
                 product.setName(req.getParameter("name"));
                 product.setDescription(req.getParameter("description"));

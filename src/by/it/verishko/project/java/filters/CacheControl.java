@@ -1,5 +1,7 @@
 package by.it.verishko.project.java.filters;
 
+import by.it.verishko.project.java.dao.DAO;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -8,6 +10,8 @@ import java.io.IOException;
 public class CacheControl implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
+        DAO dao=DAO.getInstance();
+        dao.reset();
     }
 
     @Override

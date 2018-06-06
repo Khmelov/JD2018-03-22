@@ -59,9 +59,9 @@ public class DAO {
                     "ENGINE = InnoDB");
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS `verishko`.`users` (\n" +
                     "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
-                    "  `login` VARCHAR(45) NOT NULL,\n" +
-                    "  `email` VARCHAR(45) NOT NULL,\n" +
-                    "  `password` VARCHAR(45) NOT NULL,\n" +
+                    "  `login` VARCHAR(100) NOT NULL,\n" +
+                    "  `email` VARCHAR(100) NOT NULL,\n" +
+                    "  `password` VARCHAR(200) NOT NULL,\n" +
                     "  `roles_id` INT NOT NULL,\n" +
                     "  PRIMARY KEY (`id`),\n" +
                     "  INDEX `fk_users_roles_idx` (`roles_id` ASC),\n" +
