@@ -4,7 +4,7 @@
 <body>
 <div class="container">
 <%@ include file="include/menu.htm" %>
-<form class="form-horizontal" method="post" action="do?command=SignUp">
+<form class="form-horizontal" method="post" action="do?command=Login">
 <fieldset>
 
 <!-- Form Name -->
@@ -14,7 +14,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="login">Login</label>
   <div class="col-md-4">
-  <input id="login" name="login"  value ="TestLogintype"text" placeholder="" class="form-control input-md" required="">
+  <input id="login" name="login"  value ="TestLogintype" type="text" placeholder="" class="form-control input-md" required="">
   <span class="help-block">Введите ваш login</span>
   </div>
 </div>

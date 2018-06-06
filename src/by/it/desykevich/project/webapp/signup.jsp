@@ -37,6 +37,24 @@
   </div>
 </div>
 
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="nickname">Ваш ник</label>
+  <div class="col-md-4">
+  <input id="nickname" name="nickname" type="text" placeholder="Testnickname" class="form-control input-md" required="">
+  <span class="help-block">Введите ваш ник</span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="phonenumber">Номер телефона</label>
+  <div class="col-md-4">
+  <input id="phonenumber" name="phonenumber" type="text" placeholder="+37573218194" class="form-control input-md" required="">
+  <span class="help-block">Введите ваш номер телефона</span>
+  </div>
+</div>
+
 
 
 <!-- Button -->
@@ -46,6 +64,8 @@
     <button id="singlebutton" name="singlebutton" class="btn btn-outline-primary">Зарегистрироваться</button>
   </div>
 </div>
+
+
 
 </fieldset>
 </form>
