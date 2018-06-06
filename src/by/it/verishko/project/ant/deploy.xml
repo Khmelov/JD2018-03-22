@@ -12,6 +12,7 @@
     <!-- каждый jar нужно описать отдельно (!),
          компилятор считает, что это как бы отдельный каталог -->
     <path id="classpath">
+        <fileset dir="${local.lib.dir}" includes="commons-codec-1.11.jar"/>
         <fileset dir="${local.lib.dir}" includes="mysql-connector-java.jar" />
         <fileset dir="${global.lib.dir}" includes="servlet-api.jar"/>
     </path>
