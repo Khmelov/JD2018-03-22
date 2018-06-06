@@ -8,7 +8,8 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Form Name</legend>
+<legend>Добавление товара</legend>
+
 
 <!-- Text input-->
 <div class="form-group">
@@ -20,7 +21,7 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="description">description</label>
+  <label class="col-md-4 control-label" for="description">Description</label>
   <div class="col-md-4">
   <input id="description" name="description" type="text" value="Neighbour" placeholder="description" class="form-control input-md">
   <span class="help-block">Input product description</span>
@@ -29,7 +30,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="price">price</label>
+  <label class="col-md-4 control-label" for="price">Price</label>
   <div class="col-md-4">
   <input id="price" name="price" type="text" value="66" placeholder="price" class="form-control input-md">
   <span class="help-block">Input product price</span>
@@ -40,7 +41,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Create</button>
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Добавить продукт</button>
   </div>
 </div>
 

@@ -7,19 +7,20 @@ import by.it.verishko.project.java.dao.DAO;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-public class CmdProfile extends CmdAbstract {
+public class CmdProfile extends Cmd {
     @Override
-    public CmdAbstract execute(HttpServletRequest reg) throws Exception {
-        User user = Util.getUserFormSession(reg);
+    public Cmd execute(HttpServletRequest req) throws Exception {
+        User user = Util.getUserFromSession(req);
         if (user != null) {
-            if (reg.getMethod().equalsIgnoreCase("post")) {
-                if (reg.getParameter("logout") != null)
-                    reg.getSession().invalidate();
+            if (req.getMethod().equalsIgnoreCase("post")) {
+                if (req.getParameter("logout") != null)
+                    req.getSession().invalidate();
                 return Actions.LOGIN.command;
-            } else {
+            }
+            else {
                 DAO dao = DAO.getInstance();
                 List<Product> listGoodsUser = dao.product.getAll("WHERE users_id" + user.getId());
-                reg.getSession().setAttribute("listGoodsUser", listGoodsUser);
+                req.getSession().setAttribute("listGoodsUser", listGoodsUser);
             }
             return null;
         }

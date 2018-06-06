@@ -1,4 +1,4 @@
-package by.it.verishko.project.java.controller;
+package by.it.verishko.project.java.filters;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;
