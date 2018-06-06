@@ -1,10 +1,11 @@
 package by.it.sgolovach.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public abstract class CmdAbstract {
 
-    abstract CmdAbstract execute(HttpServletRequest req) throws Exception;
+    abstract CmdAbstract execute(HttpServletRequest req, HttpServletResponse resp) throws Exception;
 
 
     @Override

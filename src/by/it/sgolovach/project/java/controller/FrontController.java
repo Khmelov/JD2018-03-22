@@ -19,11 +19,10 @@ public class FrontController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        resp.setHeader("Cache-control","no-store");
         CmdAbstract cmd = actionFactory.defineCmd(req);
         String viewPage = Action.ERROR.comand.getJsp();
         try {
-            CmdAbstract next = cmd.execute(req);
+            CmdAbstract next = cmd.execute(req,resp);
             if (next == null) {
                 viewPage = cmd.getJsp();
                 getServletContext().getRequestDispatcher(viewPage).forward(req, resp);
@@ -38,11 +37,10 @@ public class FrontController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        resp.setHeader("Cache-control","no-store");
         CmdAbstract cmd = actionFactory.defineCmd(req);
         String viewPage = Action.ERROR.comand.getJsp();
         try {
-            CmdAbstract next = cmd.execute(req);
+            CmdAbstract next = cmd.execute(req,resp);
             if (next == null) {
                 viewPage = cmd.getJsp();
                 getServletContext().getRequestDispatcher(viewPage).forward(req, resp);

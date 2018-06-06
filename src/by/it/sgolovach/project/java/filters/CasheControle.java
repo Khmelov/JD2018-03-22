@@ -3,28 +3,24 @@ package by.it.sgolovach.project.java.filters;
 import by.it.sgolovach.project.java.dao.DAO;
 
 import javax.servlet.*;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class Utf8 implements Filter {
-
-    private String code;
-
+public class CasheControle implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        code = filterConfig.getInitParameter("code");
+        DAO dao=DAO.getInstance();
+        dao.reset();
 
     }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
-        String encoding = servletRequest.getCharacterEncoding();
-        if (encoding == null || !encoding.equalsIgnoreCase(code))
-            servletRequest.setCharacterEncoding(code);
-
-        encoding = servletResponse.getCharacterEncoding();
-        if (encoding == null || !encoding.equalsIgnoreCase(code))
-            servletResponse.setCharacterEncoding(code);
+        HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
+        httpResponse.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+        httpResponse.setHeader("Pragma", "no-cache");
+        httpResponse.setDateHeader("Expires", 0);
         filterChain.doFilter(servletRequest, servletResponse);
     }
 

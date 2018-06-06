@@ -2,7 +2,6 @@ package by.it.sgolovach.project.java.dao.daobeans;
 
 import by.it.sgolovach.project.java.beans.User;
 import by.it.sgolovach.project.java.dao.connect.ConnectionCreator;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

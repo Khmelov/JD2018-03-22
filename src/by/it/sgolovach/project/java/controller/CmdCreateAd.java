@@ -5,11 +5,12 @@ import by.it.sgolovach.project.java.beans.User;
 import by.it.sgolovach.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class CmdCreateAd extends CmdAbstract {
     @Override
-    CmdAbstract execute(HttpServletRequest req) throws Exception {
+    CmdAbstract execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         User user =Util.getUserFromSession(req);
         if (user != null) {
             if(req.getMethod().equalsIgnoreCase("post")) {

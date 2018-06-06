@@ -27,5 +27,13 @@
         <filter-name>UTF8</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <filter>
+        <filter-name>CasheControle</filter-name>
+        <filter-class>by.it.sgolovach.project.java.filters.CasheControle</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CasheControle</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 </web-app>

@@ -8,6 +8,11 @@ import com.mysql.fabric.jdbc.FabricMySQLDriver;
 import java.sql.*;
 
 public class DAO {
+//    public static void main(String[] args) {
+//        DAO dao=DAO.getInstance();
+//        dao.reset();
+//
+//    }
 
     private static DAO dao;
 
@@ -61,9 +66,9 @@ public class DAO {
                     "ENGINE = InnoDB;");
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS `sgolovach`.`users` (\n" +
                     "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
-                    "  `login` VARCHAR(45) NOT NULL,\n" +
-                    "  `email` VARCHAR(45) NOT NULL,\n" +
-                    "  `password` VARCHAR(45) NOT NULL,\n" +
+                    "  `login` VARCHAR(100) NOT NULL,\n" +
+                    "  `email` VARCHAR(100) NOT NULL,\n" +
+                    "  `password` VARCHAR(200) NOT NULL,\n" +
                     "  `roles_id` INT NOT NULL,\n" +
                     "  PRIMARY KEY (`id`),\n" +
                     "  INDEX `fk_users_roles_idx` (`roles_id` ASC),\n" +
@@ -95,7 +100,7 @@ public class DAO {
             statement.executeUpdate("INSERT INTO `sgolovach`.`roles` (`id`, `role`) VALUES (DEFAULT, 'user')");
             statement.executeUpdate("INSERT INTO `sgolovach`.`roles` (`id`, `role`) VALUES (DEFAULT, 'guest')");
             statement.executeUpdate("INSERT INTO `sgolovach`.`roles` (`id`, `role`) VALUES (DEFAULT, 'director')");
-//            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'administrator', 'adm@mail.ru', 'administrator', 1)");
+            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'SGolovach', 'adm@mail.ru', '79584cf9c4b7118dd5feb956c3c00e363e04183d6a2a66a99fc3b7064541c395', 1)");
 //            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'user', 'user@mail.ru', 'user', 2)");
 //            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'user2', 'user2@mail.ru', 'user2', 2)");
 //            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'user3', 'user3@mail.ru', 'user3', 2)");
