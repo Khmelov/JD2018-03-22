@@ -4,6 +4,7 @@ import by.it.verishko.project.java.beans.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.text.ParseException;
 
 public class Util {
     static User getUserFromSession(HttpServletRequest req) {
@@ -13,5 +14,14 @@ public class Util {
             return (User) objUser;
         }
         return null;
+    }
+
+    static String getString(String value, String regxp) throws ParseException {
+        if (value.equals(regxp)) return value;
+        else throw new ParseException("Input error", 1);
+    }
+
+    static boolean isPost(HttpServletRequest req){
+        return req.getMethod().equalsIgnoreCase("post");
     }
 }
