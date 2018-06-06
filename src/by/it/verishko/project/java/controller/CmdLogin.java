@@ -10,9 +10,9 @@ import java.util.List;
 public class CmdLogin extends Cmd {
     @Override
     public Cmd execute(HttpServletRequest req) throws Exception {
-        if (req.getMethod().equalsIgnoreCase("post")) {
-            String login = req.getParameter("login");
-            String password = req.getParameter("password");
+        if (Util.isPost(req)) {
+            String login = Util.getString(req.getParameter("login"), Pattern.LOGIN);
+            String password = Util.getString(req.getParameter("password"), Pattern.PASSWORD);
             User user = new User(0, login, password, "", 2);
             DAO dao = DAO.getInstance();
             String where = String.format("WHERE login='%s' AND password='%s' LIMIT 0,1", login, password);
@@ -21,18 +21,11 @@ public class CmdLogin extends Cmd {
                 user = users.get(0);
                 HttpSession session = req.getSession();
                 session.setAttribute("user", user);
-                return Actions.PROFILE.command;
+                return Actions.LISTGOODS.command;
+//                return Actions.PROFILE.command;
             }
         }
         return null;
 //        return Actions.LOGIN.command;
     }
-
-//    public static void main(String[] args) throws SQLException {
-//        DAO dao = DAO.getInstance();
-//        String where = String.format("WHERE login='%s' AND password='%s'", "TestLogin", "TestPassword");
-//        if (dao.user.getAll(where).size() == 1) {
-//            System.out.println("ok");
-//        }
-//    }
 }
