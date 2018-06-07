@@ -11,9 +11,9 @@ enum Action {
             this.comand=new CmdLogin();
         }
     },
-    LOGOUT{
+    PROFILE{
         {
-            this.comand=new CmdLogout();
+            this.comand=new CmdProfile();
         }
     },
     SIGNUP{
