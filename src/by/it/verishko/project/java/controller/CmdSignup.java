@@ -18,8 +18,8 @@ public class CmdSignup extends Cmd {
             dao.user.create(user);
             return Actions.LOGIN.command;
         }
-        return Actions.LISTGOODS.command;
-//        return null;
+//        return Actions.LISTGOODS.command;
+        return null;
 
     }
 }
