@@ -11,8 +11,8 @@ public class CmdEditCategory extends CmdAbstract {
     @Override
     CmdAbstract execute(HttpServletRequest req) throws Exception {
         if (FormUtil.isPost(req)) {
-            Category category = new Category(FormUtil.getInt(req, "ID"),
-                    FormUtil.getString(req, "Name", ".+"));
+            Category category = new Category(FormUtil.getInt(req, "id"),
+                    FormUtil.getString(req, "name", ".+"));
             if (req.getParameter("Update") != null) {
                 DAO.getInstanse().categoryDAO.update(category);
             } else if (req.getParameter("Delete") != null) {

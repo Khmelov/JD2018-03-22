@@ -18,7 +18,6 @@ public class FormUtil {
         return Integer.parseInt(value);
     }
 
-    static boolean isPost(HttpServletRequest reg){
-        return reg.getMethod().toUpperCase().equals("POST");
+    static boolean isPost(HttpServletRequest reg){return reg.getMethod().toUpperCase().equals("POST");
     }
 }
