@@ -13,6 +13,13 @@ public class CmdProfile extends Cmd {
         User user = Util.getUserFromSession(req);
         if (user != null) {
             if (req.getMethod().equalsIgnoreCase("post")) {
+                if (req.getParameter("UpdateProfile") != null){
+                    user.setPassword(req.getParameter("password"));
+                    user.setLogin(req.getParameter("login"));
+                    DAO dao = DAO.getInstance();
+                    dao.user.update(user);
+                    return null;
+                }
                 if (req.getParameter("logout") != null)
                     req.getSession().invalidate();
                 return Actions.LOGIN.command;
@@ -20,7 +27,7 @@ public class CmdProfile extends Cmd {
             else {
                 DAO dao = DAO.getInstance();
                 List<Ad> listAdsUser = dao.ad.getAll("WHERE users_id=" + user.getId());
-                req.getSession().setAttribute("listAdsUser",listAdsUser);
+                req.getSession().setAttribute("ads",listAdsUser);
             }
             return null;
         }
