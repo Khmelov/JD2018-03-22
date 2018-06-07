@@ -8,23 +8,22 @@
         <fieldset>
 
             <!-- Form Name -->
-            <legend>Signup</legend>
+            <legend>Регистрация</legend>
 
             <!-- Text input-->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="login">Login</label>
+                <label class="col-md-4 control-label" for="login">Логин</label>
                 <div class="col-md-4">
                     <input id="login" name="login" value="TestLogin" type="text" placeholder="" class="form-control input-md" required="">
-                    <span class="help-block">Input your login</span>
                 </div>
             </div>
 
                         <!-- Password input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="password">Password</label>
+                            <label class="col-md-4 control-label" for="password">Пароль</label>
                             <div class="col-md-4">
                                 <input id="password" name="password" value="TestPassword" type="password" placeholder="" class="form-control input-md" required="">
-                                <span class="help-block">a-zA-Z0-9 min 5 symbols</span>
+                                <span class="help-block">(минимум 5 символов)</span>
                             </div>
                         </div>
 

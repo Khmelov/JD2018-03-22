@@ -4,6 +4,7 @@
 <body>
 <div class="container">
     <%@ include file="include/menu.htm" %>
+    <p style = "color:#800000">Пользователь: ${user.name} Права:${userRole}</p>
     <p> ${listUser}</p>
 </div>
 </body>

@@ -4,7 +4,7 @@
 <body>
 <div class="container">
     <%@ include file="include/menu.htm" %>
-    <p>User:<br> ${user}</p>
+<p style = "color:#800000">Пользователь: ${user.name} Права:${userRole}</p>
     <p>All orders of User:<br> ${listOrder}</p>
 
     <form class="form-horizontal" method="post" action="do?command=Profile">
