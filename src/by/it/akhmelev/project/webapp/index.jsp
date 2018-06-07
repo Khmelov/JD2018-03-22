@@ -25,10 +25,10 @@
             <div class="col-md-1">${ad.price} </div>
             <div class="col-md-3">${ad.address} </div>
             <div class="col-md-4">${ad.description} </div>
-            <div class="col-md-1">${ad.roomCount} </div>
+            <div class="col-md-1">${ad.rooms} </div>
             <div class="col-md-1">${ad.area} </div>
-            <div class="col-md-1">${ad.floor} </div>
-            <div class="col-md-1">${ad.floors} </div>
+            <div class="col-md-1">${ad.flat} </div>
+            <div class="col-md-1">${ad.flats} </div>
         </div>
     </c:forEach>
 

@@ -20,7 +20,7 @@ public class CmdProfile extends Cmd {
             else {
                 DAO dao = DAO.getInstance();
                 List<Ad> listAdsUser = dao.ad.getAll("WHERE users_id=" + user.getId());
-                req.getSession().setAttribute("listAdsUser",listAdsUser);
+                req.getSession().setAttribute("ads",listAdsUser);
             }
             return null;
         }
