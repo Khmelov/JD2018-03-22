@@ -29,11 +29,11 @@ public class CmdCreateAd extends CmdAbstract {
         }
         try {
             Ad ad = new Ad(0,
-                    FormUtil.getString(req, "Title", ".+"),
-                    FormUtil.getString(req, "Description", ".+"),
-                    FormUtil.getInt(req, "Price"),
+                    FormUtil.getString(req, "title", ".+"),
+                    FormUtil.getString(req, "description", ".+"),
+                    FormUtil.getInt(req, "price"),
                     user.getID(),
-                    FormUtil.getInt(req,"category_ID")
+                    FormUtil.getInt(req,"category_id")
             );
             DAO dao = DAO.getInstanse();
             dao.adDAO.create(ad);
