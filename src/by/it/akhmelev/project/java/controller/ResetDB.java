@@ -6,12 +6,12 @@ import by.it.akhmelev.project.java.dao.DAO;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-public class CmdListAd extends Cmd {
+public class ResetDB extends Cmd {
     @Override
     public Cmd execute(HttpServletRequest req) throws Exception {
         DAO dao=DAO.getInstance();
-        List<Ad> listAd = dao.ad.getAll("");
-        req.setAttribute("listAd",listAd);
-        return null;
+        dao.reset();
+        req.getSession().invalidate();
+        return Actions.INDEX.command;
     }
 }
