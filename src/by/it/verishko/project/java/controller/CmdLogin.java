@@ -24,8 +24,8 @@ public class CmdLogin extends Cmd {
                 session.setAttribute("user", user);
                 session.setAttribute("userName",user.getLogin());
                 session.setMaxInactiveInterval(30);
-                return Actions.LISTGOODS.command;
-//                return Actions.PROFILE.command;
+//                return Actions.LISTGOODS.command;
+                return Actions.PROFILE.command;
             }
         }
         return null;

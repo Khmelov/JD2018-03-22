@@ -12,9 +12,9 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Login">Login</label>
+  <label class="col-md-4 control-label" for="login">Login</label>
   <div class="col-md-4">
-  <input id="Login" name="Login" type="text" value="TestLogin" placeholder="login" class="form-control input-md" required="">
+  <input id="login" name="login" type="text" value="TestLogin" placeholder="login" class="form-control input-md" required="">
   <span class="help-block">Input your login</span>
   </div>
 </div>

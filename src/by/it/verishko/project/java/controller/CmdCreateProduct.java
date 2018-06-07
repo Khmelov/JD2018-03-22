@@ -21,6 +21,6 @@ public class CmdCreateProduct extends Cmd {
                 DAO.getInstance().product.create(product);
             } else return null;
         }
-        return Actions.PROFILE .command;
+        return Actions.PROFILE.command;
     }
 }
