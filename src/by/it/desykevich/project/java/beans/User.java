@@ -9,7 +9,7 @@ public class User implements Serializable {
     private String login, password, email, nickname, phonenumber;
     private int roles_id;
 
-    public User(int id, String login,String password , String email, String nickname, String phonenumber, int roles_id) {
+    public User(int id, String login, String password , String email, String nickname, String phonenumber, int roles_id) {
         this.id = id;
         this.login = login;
         this.password = password;
@@ -38,20 +38,19 @@ public class User implements Serializable {
         this.login = login;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getPassword() {
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getNickname() {

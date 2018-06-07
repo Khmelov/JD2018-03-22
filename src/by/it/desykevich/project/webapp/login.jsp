@@ -37,10 +37,9 @@
     <button id="singlebutton" name="singlebutton" class="btn btn-outline-primary">Войти</button>
   </div>
 </div>
-
 </fieldset>
 </form>
-</div class="container">
+</div>
 </body>
 </html>
 
