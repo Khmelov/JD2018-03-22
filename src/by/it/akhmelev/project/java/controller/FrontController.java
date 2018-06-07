@@ -18,9 +18,9 @@ public class FrontController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Cmd cmd = actionFactory.defineCmd(req);
         String viewPage;
         try {
+            Cmd cmd = actionFactory.defineCmd(req);
             Cmd next = cmd.execute(req);
             if (next == null) {
                 viewPage = cmd.getJsp();
@@ -29,16 +29,18 @@ public class FrontController extends HttpServlet {
                 resp.sendRedirect("do?command="+next.toString());
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            req.setAttribute("err",e.getMessage());
+            req.setAttribute("log",e);
+            getServletContext().getRequestDispatcher(Actions.ERROR.command.getJsp()).forward(req, resp);
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Cmd cmd = actionFactory.defineCmd(req);
         String viewPage;
         try {
+            Cmd cmd = actionFactory.defineCmd(req);
             Cmd next = cmd.execute(req);
             if (next == null) {
                 viewPage = cmd.getJsp();
@@ -47,7 +49,9 @@ public class FrontController extends HttpServlet {
                 resp.sendRedirect("do?command="+next.toString());
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            req.setAttribute("err",e.getMessage());
+            req.setAttribute("log",e);
+            getServletContext().getRequestDispatcher(Actions.ERROR.command.getJsp()).forward(req, resp);
         }
     }
 
