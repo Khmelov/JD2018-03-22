@@ -49,6 +49,11 @@ public enum Actions {
         {
             this.command = new CmdEditCategory();
         }
+    },
+    PROFILE {
+        {
+            this.command = new CmdProfile();
+        }
     };
 
 

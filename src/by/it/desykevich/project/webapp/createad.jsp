@@ -62,6 +62,7 @@
 
     </fieldset>
 </form>
+<p>Cmd Message: ${message}</p>
 </div class="container">
 </body>
 </html>

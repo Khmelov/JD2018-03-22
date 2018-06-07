@@ -76,8 +76,8 @@ public class UserDAO extends AbstractDAO<User> {
             User user = new User(
                     rs.getInt("id"),
                     rs.getString("login"),
-                    rs.getString("email"),
                     rs.getString("password"),
+                    rs.getString("email"),
                     rs.getString("nickname"),
                     rs.getString("phonenumber"),
                     rs.getInt("roles_id")

@@ -1,60 +1,61 @@
-<html>
 <%@ page language="java" pageEncoding="UTF-8" %>
+<html>
 <%@ include file="include/head.htm" %>
 <body>
 <div class="container">
 <%@ include file="include/menu.htm" %>
+
 <!-- Form Name -->
 <legend>Изменить пользователя</legend>
     <div class="row">
-        <div class=col-md-1>ID</div>
-        <div class=col-md-1>Login</div>
-        <div class=col-md-2>Email</div>
-        <div class=col-md-1>Password</div>
-        <div class=col-md-2>Nickname</div>
-        <div class=col-md-1>Phone Number</div>
-        <div class=col-md-2>Role</div>
+        <div class=col-md-1>id</div>
+        <div class=col-md-1>login</div>
+        <div class=col-md-1>password</div>
+        <div class=col-md-2>email</div>
+        <div class=col-md-2>nickname</div>
+        <div class=col-md-1>phone number</div>
+        <div class=col-md-2>role</div>
     </div>
 </div>
 
 <div class="container">
+
     <c:forEach items="${users}" var="user">
         <form class="form-horizontal" action="do?command=EditUsers" method=post>
+
             <div class="row">
+
                 <div class=col-md-1>
-                    <input id="ID" class="form-control input-md" name="ID"
-                           value="${user.ID}"/>
+                    <input id="id" class="form-control input-md" name="id"
+                           value="${user.id}"/>
                 </div>
+
                 <div class=col-md-1>
-                    <input id="login" class="form-control input-md" name="Login"
+                    <input id="login" class="form-control input-md" name="login"
                            value="${user.login}"/>
                 </div>
-                <div class=col-md-2>
-                    <input id="email" class="form-control input-md" name="Email"
-                           value="${user.email}"/>
-                </div>
+
                 <div class=col-md-1>
-                    <input id="password" class="form-control input-md" name="Password"
+                    <input id="password" class="form-control input-md" name="password"
                            value="${user.password}"/>
-                </div>
-                <div class=col-md-2>
-                    <input id="nickname" class="form-control input-md" name="Nickname"
-                           value="${user.nickname}"/>
-                </div>
-                <div class=col-md-1>
-                    <input id="phonenumber" class="form-control input-md" name="PhoneNumber"
-                           value="${user.phoneNumber}"/>
                 </div>
 
                 <div class=col-md-2>
-                    <select id="role" name="roles_ID" class="form-control">
-                        <c:forEach items="${roles}" var="role">
-                            <option value="${role.ID}" role=${role.ID} ${role.ID==user.roles_ID?"selected":""}>
-                                    ${role.role}
-                            </option>
-                        </c:forEach>
-                    </select>
+                    <input id="email" class="form-control input-md" name="email"
+                           value="${user.email}"/>
                 </div>
+
+                <div class=col-md-2>
+                    <input id="nickname" class="form-control input-md" name="nickname"
+                           value="${user.nickname}"/>
+                </div>
+
+                <div class=col-md-1>
+                    <input id="phonenumber" class="form-control input-md" name="phonenumber"
+                           value="${user.phonenumber}"/>
+                </div>
+
+
 
                 <div class=col-md-1>
                     <button id="Update" value="Update" name="Update" class="btn btn-success">
@@ -71,7 +72,8 @@
         </form>
         <br>
     </c:forEach>
-</div class="container">
+
+</div>
 </body>
 </html>
 

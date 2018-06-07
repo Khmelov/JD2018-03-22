@@ -8,18 +8,19 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public class CmdEditUsers extends CmdAbstract {
+
     @Override
     CmdAbstract execute(HttpServletRequest req) throws Exception {
 
         if (FormUtil.isPost(req)) {
-            int id = FormUtil.getInt(req, "ID");
-            String login = FormUtil.getString(req, "Login", Patterns.LOGIN);
-            String email = FormUtil.getString(req, "Email", Patterns.EMAIL);
-            String password = FormUtil.getString(req, "Password", Patterns.PASSWORD);
-            String nickname = FormUtil.getString(req, "Nickname", Patterns.NICKNAME);
-            String phonenumber = FormUtil.getString(req, "PhoneNumber", Patterns.PHONENUMBER);
-            int roles_ID = FormUtil.getInt(req, "roles_ID");
-            User user = new User(id, login, email, password, nickname, phonenumber, roles_ID);
+            int id = FormUtil.getInt(req, "id");
+            String login = FormUtil.getString(req, "login", Patterns.LOGIN);
+            String password = FormUtil.getString(req, "password", Patterns.PASSWORD);
+            String email = FormUtil.getString(req, "email", Patterns.EMAIL);
+            String nickname = FormUtil.getString(req, "nickname", Patterns.NICKNAME);
+            String phonenumber = FormUtil.getString(req, "phonenumber", Patterns.PHONENUMBER);
+            int roles_id = FormUtil.getInt(req, "roles_id");
+            User user = new User(id, login,password, email, nickname, phonenumber, roles_id);
             if (req.getParameter("Update") != null) {
                 DAO.getInstanse().userDAO.update(user);
             } else if (req.getParameter("Delete") != null) {
