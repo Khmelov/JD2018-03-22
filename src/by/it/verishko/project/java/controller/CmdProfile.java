@@ -22,11 +22,14 @@ public class CmdProfile extends Cmd {
                 return Actions.LOGIN.command;
             }
         }
-        String login = user.getLogin();
-        String pass = user.getPassword();
-        Cookie cookie = new Cookie(login, pass);
+//        String login = user.getLogin();
+//        String pass = user.getPassword();
+        Cookie cookie = new Cookie("login", "login");
+        Cookie cookie1 = new Cookie("pass", "pass");
+        cookie1.setMaxAge(60);
         cookie.setMaxAge(60);
         resp.addCookie(cookie);
+        resp.addCookie(cookie1);
         DAO dao = DAO.getInstance();
         List<Product> listGoodsUser = dao.product.getAll("WHERE users_id=" + user.getId());
         req.getSession().setAttribute("listGoodsUser", listGoodsUser);
