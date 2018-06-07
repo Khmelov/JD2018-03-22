@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 public class ActionFactory {
     Cmd defineCmd(HttpServletRequest req) {
         String commandName = req.getParameter("command");
-        Cmd current = Actions.ERROR.command;
+        Cmd current = Actions.INDEX.command;
         if (commandName != null && !commandName.isEmpty()) {
             try {
                 current = Actions.valueOf(commandName.toUpperCase()).command;

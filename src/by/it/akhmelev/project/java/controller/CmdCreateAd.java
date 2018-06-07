@@ -27,6 +27,6 @@ public class CmdCreateAd extends Cmd {
             else
                 return null;
         }
-        return Actions.LOGIN.command;
+        return Actions.PROFILE.command;
     }
 }
