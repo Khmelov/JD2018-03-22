@@ -16,18 +16,12 @@ public class Util {
         return null;
     }
 
-//    static String getString(String value, String regxp) throws ParseException {
-//        if (value.equals(regxp)) return value;
-//        else throw new ParseException("Input error", 1);
-//    }
-
-    static String getString(String value, String regxp) {
-        if (value == null) return null;
-        else if (value.matches(regxp)) return value;
-        else return null;
+    static String getString(String value, String regxp) throws ParseException {
+        if (value.matches(regxp)) return value;
+        else throw new ParseException("Input error", 1);
     }
 
-    static boolean isPost(HttpServletRequest req) {
+    static boolean isPost(HttpServletRequest req){
         return req.getMethod().equalsIgnoreCase("post");
     }
 }

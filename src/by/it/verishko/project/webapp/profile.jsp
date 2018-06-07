@@ -7,7 +7,7 @@
     <p>User:<br>${user}</p>
     <p>All goods of User:<br>${listGoodsUser}</p>
 
-    <form class="form-horizontal" method="post" action="do?command=Profile">
+    <form class="form-horizontal" method="post" action="do?command=profile">
         <fieldset>
 
             <!-- Form Name -->
