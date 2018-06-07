@@ -15,6 +15,12 @@ public class CmdProfile extends Cmd {
         User user = Util.getUserFromSession(req);
         if (user != null) {
             if (req.getMethod().equalsIgnoreCase("post")) {
+                if (req.getParameter("UpdateProfile") != null)
+                    user.setPassword(req.getParameter("password"));
+                user.setLogin(req.getParameter("login"));
+                DAO dao = DAO.getInstance();
+                dao.user.update(user);
+
                 if (req.getParameter("logout") != null)
                     req.getSession().invalidate();
                 return Actions.LOGIN.command;
