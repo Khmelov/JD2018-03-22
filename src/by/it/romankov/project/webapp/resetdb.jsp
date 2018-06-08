@@ -4,7 +4,12 @@
 <body>
 <div class="container">
     <%@ include file="include/menu.htm" %>
-    <p> ${listTours}</p>
+    <form class="form-horizontal" method="post" action"do?command=resetdb">
+
+
+
+
+
 </div>
 </body>
 </html>

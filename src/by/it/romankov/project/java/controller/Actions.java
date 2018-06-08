@@ -1,12 +1,20 @@
 package by.it.romankov.project.java.controller;
 
 
-import by.it.romankov.project.java.beans.Tours;
-
 public enum Actions {
+    RESETDB {
+        {
+            this.command = new ResetDB();
+        }
+    },
+    EDITPEOPLE {
+        {
+            this.command = new CmdEditPeople();
+        }
+    },
     LISTTOURS {
         {
-            this.command = new CmdListTours();
+            this.command = new ResetDB();
         }
     },
     INDEX {
