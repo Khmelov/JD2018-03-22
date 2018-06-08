@@ -14,12 +14,6 @@ enum Actions {
 
         }
     },
-    LOGOUT {
-        {
-            this.command = new CmdLogout();
-
-        }
-    },
     SIGNUP {
         {
             this.command = new CmdSignup();
@@ -52,23 +46,17 @@ enum Actions {
             this.command = new CmdEditMyProperty();
         }
     },
-    EDITINFO {
-        {
-            this.command = new CmdEditInfo();
-        }
-    },
-    RESERVATIONS {
-        {
-            this.command = new CmdReservations();
-        }
-    },
     SEARCH {
         {
             this.command = new CmdSearch();
         }
+    },
+    ADMIN {
+        {
+            this.command = new CmdAdmin();
+        }
     };
 
-    String jsp = "/error.jsp";
-    CmdAbstract command;
+    Cmd command;
 
 }

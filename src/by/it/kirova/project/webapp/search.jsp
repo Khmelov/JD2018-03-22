@@ -7,118 +7,125 @@
 
 
 
- <form class="form-horizontal" method="get" command="do?command=search">
+ <form class="form-horizontal" method="post" command="do?command=search">
            <fieldset>
               <!-- Form Name -->
                       <legend>Search result:</legend>
 
 <div class="row justify-content-left align-items-start">
-          <div class="col-md-12">
+<div class="col-md-12">
+                                    <c:forEach items="${searchResult}" var="res">
+                                    <hr />
+                                            <form class="form-inline" method=POST >
+                                            <div class="row justify-content-left align-items-start">
+                                            <div class="col-md-12">
 
-          <!-- Text input-->
-          <div class="row justify-content-left align-items-start">
-          <div class="col-md-3">
-          <div class="form-group">
-            <label class="col-md-auto control-label" for="hotelname">Hotel name</label>
-            <div class="col-md-auto">
-            <input id="hotelname" name="hotelname" readonly type="text" placeholder="Resort &amp; Spa" class="form-control input-md" required="">
+                                                <div class="row justify-content-left align-items-start">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="hotel.hotel_name">Name</label>
+                                                            <div class="col-md-12">
+                                                                <input id="hotel.hotel_name" readonly name="hotel.hotel_name" class="form-control input-md" value="${res[0]}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="hotel.star_rating">Star</label>
+                                                                <div class="col-md-12">
+                                                                    <input id="hotel.star_rating" readonly name="hotel.star_rating" class="form-control input-md" value="${res[1]}" title="" />
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="hotel_type">Type</label>
+                                                            <div class="col-md-12">
+                                                                <input id="hotel_type" readonly name="hotel_type" class="form-control input-md" value="${res[2]}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-left align-items-start">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="hotel.street">Street</label>
+                                                            <div class="col-md-12">
+                                                                <input id="hotel.street" readonly name="hotel.street" class="form-control input-md" value="${res[3]}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="hotel.house_number">House Number</label>
+                                                            <div class="col-md-12">
+                                                                <input id="hotel.house_number" readonly name="hotel.house_number" class="form-control input-md" value="${res[4]}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="room.room_name">Room Name</label>
+                                                            <div class="col-md-12">
+                                                                <input id="room.room_name" readonly name="room.room_name" class="form-control input-md" value="${res[5]}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="row justify-content-left align-items-start">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="room.people_amount">People amount</label>
+                                                            <div class="col-md-12">
+                                                                <input id="room.people_amount" readonly name="room.people_amount" class="form-control input-md" value="${res[6]}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="room.description">Description</label>
+                                                                <div class="col-md-12">
+                                                             <input id="room.description" readonly name="room.description" class="form-control input-md" value="${res[7]}" title="" />
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="room.cost">Cost per night</label>
+                                                                <div class="col-md-12">
+                                                            <input id="room.cost" readonly name="room.cost" class="form-control input-md" value="${res[8]}" title="" />
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                <div class="row justify-content-end align-items-end">
+                                                <div class="col-md-12 text-right">
+                                                <div class="form-group mb-2">
+                                                  <div class="col-md-12">
+                                                    <button id="booking" name="booking" class="btn btn-default">BOOKING</button>
+                                                    </div>
+                                                    </div>
+                                                    </div>
 
-            </div>
-            </div>
-          </div>
 
-          <!-- Text input-->
-          <div class="col-md-2">
-           <div class="form-group">
-           <label class="col-md-auto control-label" for="starrating">Star rating</label>
-           <div class="col-md-auto">
-           <input id="starrating" name="starrating" readonly type="text" placeholder="5" class="form-control input-md" required="">
+                                                </div>
 
-            </div>
-            </div>
-            </div>
-
-
-          <!-- Text input-->
-          <div class="col-md-3">
-          <div class="form-group">
-            <label class="col-md-auto control-label" for="hoteltype">Hotel type</label>
-            <div class="col-md-auto">
-            <input id="hoteltype" name="hoteltype" readonly  type="text" placeholder="Hotel" class="form-control input-md" required="">
-
-            </div>
-            </div>
-          </div>
+                                             </div>
+                                             </div>
 
 
 
-          <!-- Text input-->
-           <div class="col-md-4">
-          <div class="form-group">
-            <label class="col-md-auto control-label" for="country">Address</label>
-            <div class="col-md-auto">
-            <input id="address" name="address" readonly type="text" placeholder="" class="form-control input-md" required="">
-
-            </div>
-            </div>
-            </div>
-          </div>
+                                            </form>
 
 
-<br>
-<p> Rooms list:</p>
+                                    </c:forEach>
 
 
-<!-- Text input-->
-  <div class="row justify-content-left align-items-end">
-  <div class="col-md-4">
-<div class="form-group">
-  <label class="col-md-auto control-label" for="roomname">Room name</label>
-  <div class="col-md-auto">
-  <input id="roomname" name="roomname" type="text" readonly  placeholder="Room with 2 beds" class="form-control input-md" required="">
 
-  </div>
-  </div>
+
+
 </div>
-
-
-<!-- Text input-->
-  <div class="col-md-4">
-<div class="form-group">
-  <label class="col-md-auto control-label" for="description">Description</label>
-  <div class="col-md-auto">
-  <input id="description" name="description" readonly  type="text" placeholder="" class="form-control input-md">
-
-  </div>
-  </div>
-  </div>
-
-
-
-
-<!-- Text input-->
-
-  <div class="col-md-2">
-<div class="form-group">
-  <label class="col-md-auto control-label" for="cost">Cost</label>
-  <div class="col-md-auto">
-  <input id="cost" name="cost" type="text" readonly placeholder="204.5" class="form-control input-md" required="">
-
-  </div>
-  </div>
 </div>
-
-<!-- Button (Double) -->
-<div class="col-md-2">
-<div class="form-group">
-  <label class="col-md-auto control-label" for="reservatebutton"></label>
-  <div class="col-md-auto">
-    <button id="reservatebutton" name="reservatebutton" class="btn btn-success">BOOKING ROOM</button>
-  </div>
-  </div>
-  </div>
-</div>
-
 
 
           </fieldset>
