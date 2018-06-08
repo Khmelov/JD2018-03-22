@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 public class CmdCreateTour extends CmdAbstract {
     @Override
     public CmdAbstract execute(HttpServletRequest req) throws Exception {
-        People people=Util.getPeopleFromSession(req);
 
-        if (people!=null){
-            if (req.getMethod().equalsIgnoreCase("post")){
+        People people = Util.getPeopleFromSession(req);
+        if (people != null) {
+            if (req.getMethod().equalsIgnoreCase("post")) {
                 Tours tour = new Tours();
                 tour.setTarget(req.getParameter("Target"));
                 tour.setTransport(req.getParameter("Transport"));
@@ -22,10 +22,10 @@ public class CmdCreateTour extends CmdAbstract {
                 tour.setDays(Integer.parseInt(req.getParameter("Days")));
                 tour.setPeople_id(people.getId());
                 DAO.getInstance().tour.create(tour);
-            }
-            else return null;
+            } else
+                return null;
         }
-        return Actions.LOGIN.command;
+        return Actions.PROFILE.command;
 
 
     }

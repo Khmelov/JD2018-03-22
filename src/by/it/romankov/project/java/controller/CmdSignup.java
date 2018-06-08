@@ -18,7 +18,7 @@ public class CmdSignup extends CmdAbstract {
 
 
 
-            People people=new People(0,name,email,login,password,telephone,age,1);
+            People people=new People(0,name,email,login,password,telephone,age,2);
             DAO dao = DAO.getInstance();
             dao.people.create(people);
             return Actions.LOGIN.command;
