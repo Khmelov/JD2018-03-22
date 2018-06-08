@@ -64,9 +64,6 @@
 
 
 
-
-
-
 <br><div><img src="https://www.jetsetter.com/uploads/sites/7/2018/04/Qfs-7a1K.jpeg" class="img-fluid" alt="Responsive image"></div>
 
 </fieldset>
