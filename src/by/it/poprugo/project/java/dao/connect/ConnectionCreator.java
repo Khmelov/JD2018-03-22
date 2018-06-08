@@ -1,4 +1,4 @@
-package by.it.poprugo.jd03_03_mine.dao.connect;
+package by.it.poprugo.project.java.dao.connect;
 
 import com.mysql.fabric.jdbc.FabricMySQLDriver;
 
@@ -8,7 +8,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionCreator {
+
     static private Connection connection;
+
     static {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -19,12 +21,12 @@ public class ConnectionCreator {
         }
     }
 
-    private ConnectionCreator() {} // может, всё-таки public ???
+    private ConnectionCreator() {
+    }
 
     public static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed()) {
             synchronized (ConnectionCreator.class) {
-                //connection = DriverManager.getConnection(CN.URL_DB, CN.USERDB, CN.PASSWORD);
                 if (connection == null || connection.isClosed()) {
                     connection = DriverManager.getConnection(CN.URL_DB, CN.USERDB, CN.PASSWORD);
                 }

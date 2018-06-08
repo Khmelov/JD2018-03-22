@@ -1,6 +1,6 @@
 package by.it.poprugo.jd03_03_mine;
 
-/*import by.it.akhmelev.jd03_03.beans.Ad;*/
+import by.it.poprugo.jd03_03_mine.beans.Model;
 import by.it.poprugo.jd03_03_mine.beans.Role;
 import by.it.poprugo.jd03_03_mine.beans.User;
 import by.it.poprugo.jd03_03_mine.dao.DAO;
@@ -34,25 +34,26 @@ public class Runner {
         dao.user.delete(user);
         System.out.println(dao.user.getAll(""));
 
-        /*System.out.println("проверим CRUD для бина Ad");
-        System.out.println(dao.ad.getAll(""));
-        Ad ad = new Ad(
+        System.out.println("проверим CRUD для бина Model");
+        System.out.println(dao.model.getAll(""));
+        Model modelTest = new Model(
                 -1,
-                "testAd",
-                2,
-                66666.0,
-                48.0,
-                3,
-                5,
-                "пр. Мулявина 3, кв. 33 ",
+                "testModel",
+                "Ivan",
+                "ул.Я.Коласа 8, кв. 35 ",
+                "3352533",
+                "2018-may-26-1",
+                "2018-may-26-1",
+                800,
+                350,
                 2
         );
-        dao.ad.create(ad);
-        System.out.println(dao.ad.getAll(""));
-        ad.setDescription("testAdForDelete");
-        dao.ad.update(ad);
-        System.out.println(dao.ad.getAll(""));
-        dao.ad.delete(ad);
-        System.out.println(dao.ad.getAll(""));*/
+        dao.model.create(modelTest);
+        System.out.println(dao.model.getAll(""));
+        modelTest.setModel("testModelForDelete");
+        dao.model.update(modelTest);
+        System.out.println(dao.model.getAll(""));
+        dao.model.delete(modelTest);
+        System.out.println(dao.model.getAll(""));
     }
 }

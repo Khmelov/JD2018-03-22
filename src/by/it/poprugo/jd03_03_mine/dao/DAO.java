@@ -1,6 +1,7 @@
 package by.it.poprugo.jd03_03_mine.dao;
 
 //import by.it.poprugo.jd03_03.dao.daobeans.AdDAO;
+import by.it.poprugo.jd03_03_mine.dao.daobeans.ModelDAO;
 import by.it.poprugo.jd03_03_mine.dao.daobeans.RoleDAO;
 import by.it.poprugo.jd03_03_mine.dao.daobeans.UserDAO;
 import com.mysql.fabric.jdbc.FabricMySQLDriver;
@@ -14,12 +15,12 @@ public class DAO {
     private DAO() {
         role = new RoleDAO();
         user = new UserDAO();
-        //ad = new AdDAO();
+        model = new ModelDAO();
     }
 
     public RoleDAO role;
     public UserDAO user;
-    //public AdDAO ad;
+    public ModelDAO model;
 
     public static DAO getInstance() {
         if (dao == null) {
@@ -71,8 +72,8 @@ public class DAO {
                     "  CONSTRAINT `fk_users_roles`\n" +
                     "    FOREIGN KEY (`roles_id`)\n" +
                     "    REFERENCES `poprugo_pro`.`roles` (`id`)\n" +
-                    "    ON DELETE NO ACTION\n" +
-                    "    ON UPDATE NO ACTION)\n" +
+                    "    ON DELETE RESTRICT\n" +
+                    "    ON UPDATE NO RESTRICT)\n" +
                     "ENGINE = InnoDB");
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS `poprugo_pro`.`models` (\n" +
                     "  `idcon` INT NOT NULL AUTO_INCREMENT,\n" +
@@ -90,8 +91,8 @@ public class DAO {
                     "  CONSTRAINT `fk_orders_users1`\n" +
                     "    FOREIGN KEY (`users_idus`)\n" +
                     "    REFERENCES `poprugo_pro`.`users` (`idus`)\n" +
-                    "    ON DELETE NO ACTION\n" +
-                    "    ON UPDATE NO ACTION)\n" +
+                    "    ON DELETE CASCADE\n" +
+                    "    ON UPDATE CASCADE)\n" +
                     "ENGINE = InnoDB");
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS `poprugo_pro`.`orders` (\n" +
                     "  `idord` INT NOT NULL AUTO_INCREMENT,\n" +
@@ -106,8 +107,8 @@ public class DAO {
                     "  CONSTRAINT `fk_orders_models1`\n" +
                     "    FOREIGN KEY (`models_idcon`)\n" +
                     "    REFERENCES `poprugo_pro`.`models` (`idcon`)\n" +
-                    "    ON DELETE NO ACTION\n" +
-                    "    ON UPDATE NO ACTION)\n" +
+                    "    ON DELETE CASCADE\n" +
+                    "    ON UPDATE CASCADE)\n" +
                     "ENGINE = InnoDB");
             statement.executeUpdate("INSERT INTO `poprugo_pro`.`roles` (`id`, `role`) VALUES (DEFAULT, 'admin')");
             statement.executeUpdate("INSERT INTO `poprugo_pro`.`roles` (`id`, `role`) VALUES (DEFAULT, 'user')");
