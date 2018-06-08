@@ -9,22 +9,23 @@ import javax.servlet.http.HttpServletRequest;
 public class CmdCreateTour extends CmdAbstract {
     @Override
     public CmdAbstract execute(HttpServletRequest req) throws Exception {
-        People people=Util.getPeopleFromSession(req);
 
-        if (people!=null){
-            if (req.getMethod().equalsIgnoreCase("post")){
+        People people = Util.getPeopleFromSession(req);
+        if (people != null) {
+            if (req.getMethod().equalsIgnoreCase("post")) {
                 Tours tour = new Tours();
-               tour.setTarget(req.getParameter("target"));
-               tour.setTransport(req.getParameter("transport"));
-               tour.setCountry(req.getParameter("country"));
-                tour.setCity(req.getParameter("city"));
-                tour.setPrice(Integer.parseInt(req.getParameter("price")));
-                tour.setDays(Integer.parseInt(req.getParameter("days")));
+                tour.setTarget(req.getParameter("Target"));
+                tour.setTransport(req.getParameter("Transport"));
+                tour.setCountry(req.getParameter("Country"));
+                tour.setCity(req.getParameter("City"));
+                tour.setPrice(Integer.parseInt(req.getParameter("Price")));
+                tour.setDays(Integer.parseInt(req.getParameter("Days")));
+                tour.setPeople_id(people.getId());
                 DAO.getInstance().tour.create(tour);
-            }
-            else return null;
+            } else
+                return null;
         }
-        return Actions.LOGIN.command;
+        return Actions.PROFILE.command;
 
 
     }

@@ -34,7 +34,7 @@ public class PeopleDAO extends AbstactDAO<People> {
 
     @Override
     public boolean update(People people) throws SQLException {
-        String sql = String.format(Locale.US, "UPDATE `people` SET `name`='%s',`email`='%s',`login`='%s',`password`='%s',`telephone`='%s'," +
+        String sql = String.format(Locale.US, "UPDATE `people` SET `name`='%s',`email`='%s',`login`='%s',`password`='%s',`telephone`=%d," +
                         "`age`=%d,`roles_id`=%d  WHERE `id`=%d",
                 people.getName(),people.getEmail(),people.getLogin(), people.getPassword(),people.getTelephone(),
                 people.getAge(), people.getRoles_id(),people.getId());
