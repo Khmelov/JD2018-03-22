@@ -16,10 +16,10 @@ public class FrontController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CmdAbstract cmd = actionFactory.defineCmd(req);
+        Cmd cmd = actionFactory.defineCmd(req);
         String viewPage;
         try {
-            CmdAbstract next = cmd.execute(req);
+            Cmd next = cmd.execute(req);
             if (next == null) {
                 viewPage = cmd.getJsp();
                 getServletContext().getRequestDispatcher(viewPage).forward(req, resp);
@@ -34,10 +34,10 @@ public class FrontController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CmdAbstract cmd = actionFactory.defineCmd(req);
+        Cmd cmd = actionFactory.defineCmd(req);
         String viewPage;
         try {
-            CmdAbstract next = cmd.execute(req);
+            Cmd next = cmd.execute(req);
             if (next == null) {
                 viewPage = cmd.getJsp();
                 getServletContext().getRequestDispatcher(viewPage).forward(req, resp);
@@ -52,7 +52,7 @@ public class FrontController extends HttpServlet {
 
 //    private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //
-//        CmdAbstract cmd = actionFactory.defineCmd(req);
+//        Cmd cmd = actionFactory.defineCmd(req);
 //        String viewPage;
 //        try {
 //            viewPage = cmd.getJsp();

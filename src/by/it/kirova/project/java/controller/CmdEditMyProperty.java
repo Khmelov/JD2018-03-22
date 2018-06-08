@@ -1,19 +1,24 @@
 package by.it.kirova.project.java.controller;
 
 
+import by.it.kirova.project.java.beans.Hotel;
+import by.it.kirova.project.java.beans.User;
 import by.it.kirova.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
-public class CmdEditMyProperty extends CmdAbstract{
+public class CmdEditMyProperty extends Cmd {
 
     @Override
-    public CmdAbstract execute(HttpServletRequest req) throws Exception {
-//        DAO instanceDAO = DAO.getInstanceDAO();
-//        List<Hotel> listhotel = instanceDAO.hotel.getAll("");
-//        req.setAttribute();
-//        return Actions.EDITINFO.command;
-//    }
+    public Cmd execute(HttpServletRequest req) throws Exception {
+        User user = Util.getUserFromSession(req);
+        if (user != null) {
+            DAO dao = DAO.getInstanceDAO();
+            List<Hotel> hotels = dao.hotel.getAll("WHERE user_user_id=" + user.getUser_id());
+            req.getSession().setAttribute("hotels", hotels);
+            return null;
+        }
         return null;
     }
 
