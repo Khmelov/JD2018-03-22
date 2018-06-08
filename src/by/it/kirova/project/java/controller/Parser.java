@@ -31,7 +31,7 @@ public class Parser {
                 reg = "([+]([0-9]+)([ ])([0-9]{7}))";
                 return reg(reg, parameter);
             case "hotelname":
-                reg = "([A-Za-zА-Яа-яЁё0-9 ]+)";
+                reg = "([A-Za-zА-Яа-яЁё0-9 &]+)";
                 return reg(reg, parameter);
             case "hoteltype":
                 reg = "([A-Za-zА-Яа-яЁё]+)";
@@ -68,6 +68,9 @@ public class Parser {
                 return reg(reg, parameter);
             case "cost":
                 reg = "([0-9]{1,5})([\\.])([0-9]{0,3})";
+                return reg(reg, parameter);
+            case "date":
+                reg = "([0-9]{2})([\\.])([0-9]{2})([\\.])([0-9]{4})";
                 return reg(reg, parameter);
             default:
                 break;

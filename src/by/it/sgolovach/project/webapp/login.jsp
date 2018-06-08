@@ -3,12 +3,23 @@
 <%@ include file="include/head.htm" %>
 <body>
 <div class="container">
+ <c:set var = "ID" scope = "session" value = "${userRole_id}"/>
+<c:choose>
+<c:when test="${ID==1}">
+<%@ include file="include/menuAdmin.htm" %>
+</c:when>
+<c:when test="${ID==2}">
+<%@ include file="include/menuUser.htm" %>
+</c:when>
+<c:otherwise>
 <%@ include file="include/menu.htm" %>
+</c:otherwise>
+</c:choose>
 <form class="form-horizontal" method="post" action="do?command=login">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Form Name</legend>
+<legend>Форма для входа</legend>
 
 <!-- Text input-->
 <div class="form-group">
@@ -30,7 +41,6 @@
 
 <!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="login">login</label>
   <div class="col-md-4">
     <button id="login" name="login" class="btn btn-primary">login</button>
   </div>

@@ -6,7 +6,7 @@ public class ActionFactory {
 
     CmdAbstract defineCmd(HttpServletRequest req){
         String commandName = req.getParameter("command");
-        CmdAbstract current= Action.ERROR.comand;
+        CmdAbstract current= Action.INDEX.comand;
         if(commandName!=null && !commandName.isEmpty()){
             try {
                 current = Action.valueOf(commandName.toUpperCase()).comand;
