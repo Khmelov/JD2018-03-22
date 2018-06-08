@@ -48,7 +48,7 @@
                     <div class="form-group mb-2">
                         <select id="role_id" name="role_id" class="form-control" title="">
                             <c:forEach items="${roles}" var="role">
-                                <option value="${role.role_id}" role=${role_id} ${role.role_id==user.role_role_id?"selected":""}>
+                                <option value="${role.role_id}" role=${role.role_id} ${role.role_id==user.role_role_id?"selected":""}>
                                         ${role.role_name}
                                 </option>
                             </c:forEach>

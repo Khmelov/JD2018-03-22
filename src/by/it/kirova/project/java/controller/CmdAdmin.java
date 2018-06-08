@@ -26,7 +26,7 @@ public class CmdAdmin extends Cmd {
             String middlename = req.getParameter("middle_name");
             String residencecountry = req.getParameter("residence_country");
             String phonenumber = req.getParameter("phone_number");
-            int roleid = Integer.parseInt(req.getParameter("role_role_id"));
+            int roleid = Integer.parseInt(req.getParameter("role_id"));
             User editUser = new User(id, password, email, firstname, lastname, middlename, residencecountry, phonenumber,
                     roleid);
             if (req.getParameter("Update") != null)

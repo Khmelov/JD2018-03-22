@@ -46,9 +46,8 @@ public class CmdIndex extends Cmd {
                      Statement statement = connection.createStatement()) {
                     searchResult.clear();
                     ResultSet resultSet = statement.executeQuery(sql);
-                    ArrayList<String> list = new ArrayList<>();
                     while (resultSet.next()) {
-                        list.clear();
+                        ArrayList<String> list = new ArrayList<>();
                         list.add(resultSet.getString("hotel.hotel_name"));
                         list.add(String.valueOf(resultSet.getInt("hotel.star_rating")));
                         list.add(resultSet.getString("hotel.hotel_type"));
@@ -57,7 +56,10 @@ public class CmdIndex extends Cmd {
                         list.add(resultSet.getString("room.room_name"));
                         list.add(String.valueOf(resultSet.getInt("room.people_amount")));
                         list.add(resultSet.getString("room.description"));
-                        list.add(String.valueOf(resultSet.getDouble("room.cost")));
+                        double cost = resultSet.getDouble("room.cost");
+                        int days = (int)(checkout - checkin)/(1000*60*60*24);
+                        double total_cost = cost * days;
+                        list.add(String.valueOf(total_cost));
                         searchResult.add(list);
                     }
                 }
