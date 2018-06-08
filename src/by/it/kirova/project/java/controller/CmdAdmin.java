@@ -30,6 +30,7 @@ public class CmdAdmin extends Cmd {
             User editUser = new User(id, password, email, firstname, lastname, middlename, residencecountry, phonenumber,
                     roleid);
             if (req.getParameter("Update") != null)
+
                 dao.user.update(editUser);
             else if (req.getParameter("Delete") != null)
                 dao.user.delete(editUser);

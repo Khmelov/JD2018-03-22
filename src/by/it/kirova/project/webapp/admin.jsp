@@ -11,7 +11,7 @@
 
         <c:forEach items="${users}" var="user">
             <div class="row">
-                <form class="form-inline user-${user.user_id}" action="do?command=EditUsers" method=POST>
+                <form class="form-inline user-${user.user_id}" action="do?command=Admin" method=POST>
 
                      <div class="form-group mb-2">
                         <input id="email" class="form-control input-md" name="email"
