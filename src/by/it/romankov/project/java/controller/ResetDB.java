@@ -12,12 +12,7 @@ public class ResetDB extends CmdAbstract {
         DAO dao = DAO.getInstance();
         List <Tours> listTours = dao.tour.getAll("");
         req.setAttribute("listTours", listTours);
-        if ("reset" != null) {
-            dao.reset();
-            req.getSession().invalidate();
-        }
-            return null;
-
-        }
+        return null;
+    }
 
 }
