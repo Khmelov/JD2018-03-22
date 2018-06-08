@@ -37,115 +37,139 @@
                                         </div>
                                     </div>
 
+                                    <c:forEach items="${hotels}" var="hotel">
 
 
-                                        <div style="font-size: 12pt;">
-                                         <div class="row">
-                                             <div class=col-md-auto>Name</div>
-                                             <div class=col-md-auto>Type</div>
-                                             <div class=col-md-auto>Stars</div>
-                                             <div class=col-md-auto>Country</div>
-                                             <div class=col-md-auto>City</div>
-                                             <div class=col-md-auto>Street</div>
-                                             <div class=col-md-auto>House number</div>
-                                             <div class=col-md-auto>Contact Email</div>
-                                             <div class=col-md-auto>Contact phone</div>
-                                         </div>
-                                         </div>
+                                            <form class="form-inline hotel-${hotel_id}" method=POST>
+                                            <div class="row justify-content-left align-items-start">
+                                            <div class="col-md-12">
 
-                                         <div class="table-responsive">
+                                                <div class="row justify-content-left align-items-start">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="hotel_name">Name</label>
+                                                            <div class="col-md-auto">
+                                                                <input id="hotel_name" name="hotel_name" class="form-control input-md" value="${hotel.hotel_name}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                                         <c:forEach items="${hotels}" var="hotel">
-                                             <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="hotel_type">Type</label>
+                                                            <div class="col-md-auto">
+                                                                <input id="hotel_type" name="hotel_type" class="form-control input-md" value="${hotel.hotel_type}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="star_rating">Star</label>
+                                                            <div class="col-md-auto">
+                                                                <input id="star_rating" name="star_rating" class="form-control input-md" value="${hotel.star_rating}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="row justify-content-left align-items-start">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="country">Country</label>
+                                                            <div class="col-md-auto">
+                                                                <input id="country" name="country" class="form-control input-md" value="${hotel.country}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="city">City</label>
+                                                            <div class="col-md-auto">
+                                                                <input id="city" name="city" class="form-control input-md" value="${hotel.city}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="street">Street</label>
+                                                            <div class="col-md-auto">
+                                                                <input id="street" name="street" class="form-control input-md" value="${hotel.street}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="row justify-content-left align-items-start">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="house_number">House Number</label>
+                                                            <div class="col-md-auto">
+                                                                <input id="house_number" name="house_number" class="form-control input-md" value="${hotel.house_number}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="contact_email">Contact Email</label>
+                                                            <div class="col-md-auto">
+                                                                <input id="contact_email" name="contact_email" class="form-control input-md" value="${hotel.contact_email}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <div class="form-group mb-2">
+                                                            <label class="col-md-auto control-label" for="contact_phone_number">Contact phone number</label>
+                                                            <div class="col-md-auto">
+                                                                <input id="contact_phone_number" name="contact_phone_number" class="form-control input-md" value="${hotel.contact_phone_number}" title="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="row justify-content-left align-items-start">
+                                                    <div class="col-md-4">
+                                                    <div class="form-group mb-2">
+                                                        <div class="col-md-auto">
+                                                            <button id="Update" name="Update" class="btn btn-success">Update</button>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                    <div class="form-group mb-2">
+                                                        <div class="col-md-auto">
+                                                            <button id="ViewRooms" name="ViewRooms" class="btn btn-success">View Rooms</button>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                    <div class="form-group mb-2">
+                                                        <div class="col-md-auto">
+                                                            <button id="Delete" name="Delete" class="btn btn-danger">Delete</button>
+                                                        </div>
+
+                                                    </div>
+                                                    </div>
+
+                                                </div>
+
+                                                </div>
+                                                </div>
 
 
-                                                 <form class="form-inline hotel-${hotel_id}" method=POST>
+                                            </form>
 
 
-
-
-
-                                                      <div class="form-group md">
-                                                      <div class="col-xs-auto">
-                                                         <input id="hotel_name" style="font-size: 9pt;" class="form-control input-md" name="hotel_name"
-                                                                value="${hotel.hotel_name}" title=""/>
-                                                     </div>
-                                                     </div>
-                                                      <div class="form-group md">
-                                                      <div class="col-xs-auto">
-                                                         <input id="hotel_type" style="font-size: 9pt;" style="font-size: 9pt;" class="form-control input-md" name="hotel_type"
-                                                                value="${hotel.hotel_type}" title=""/>
-                                                     </div>
-                                                     </div>
-                                                       <div class="form-group md">
-                                                       <div class="col-xs-auto">
-                                                          <input id="star_rating" style="font-size: 9pt;" class="form-control input-md" name="star_rating"
-                                                                value="${hotel.star_rating}" title=""/>
-                                                     </div>
-                                                     </div>
-                                                      <div class="form-group md">
-                                                      <div class="col-xs-auto">
-                                                         <input id="country" style="font-size: 9pt;" class="form-control input-md" name="country"
-                                                                value="${hotel.country}" title=""/>
-                                                     </div>
-                                                     </div>
-                                                     <div class="form-group md">
-                                                     <div class="col-xs-auto">
-                                                         <input id="city" style="font-size: 9pt;" class="form-control input-md" name="city"
-                                                                value="${hotel.city}" title=""/>
-                                                     </div>
-                                                     </div>
-                                                      <div class="form-group xs-2">
-                                                      <div class="col-auto">
-                                                          <input id="street" style="font-size: 9pt;" class="form-control input-md" name="street"
-                                                                value="${hotel.street}" title=""/>
-                                                     </div>
-                                                     </div>
-                                                     <div class="form-group xs-2">
-                                                     <div class="col-auto">
-                                                          <input id="house_number" style="font-size: 9pt;" class="form-control input-md" name="house_number"
-                                                                value="${hotel.house_number}" title=""/>
-                                                     </div>
-                                                      </div>
-                                                      <div class="form-group xs-2">
-                                                      <div class="col-auto">
-                                                          <input id="contact_email" style="font-size: 9pt;" class="form-control input-md" name="contact_email"
-                                                                value="${hotel.contact_email}" title=""/>
-                                                      </div>
-                                                      </div>
-                                                      <div class="form-group xs-2">
-                                                      <div class="col-auto">
-                                                           <input id="contact_phone_number" style="font-size: 9pt;" class="form-control input-md" name="contact_phone_number"
-                                                                 value="${hotel.contact_phone_number}" title=""/>
-                                                      </div>
-                                                      </div>
-
-
-                                                     <div class="form-group xs-2">
-                                                     <div class="col-auto">
-                                                         <button id="Update" style="font-size: 9pt;" name="Update" class="btn btn-success">
-                                                             Update
-                                                         </button>
-                                                     </div>
-                                                     </div>
-
-                                                     <div class="form-group xs-2">
-                                                     <div class="col-auto">
-                                                         <button id="Delete" style="font-size: 9pt;" name="Delete" class="btn btn-danger">
-                                                             Delete
-                                                         </button>
-                                                     </div>
-                                                     </div>
-
-                                                     <input id="id" type="hidden" name="id" value="${hotel_id}"/>
-
-                                                 </form>
-                                             </div>
-
-
-                                         </c:forEach>
-                                         </div>
-
+                                    </c:forEach>
 
                                 </div>
                             </div>
