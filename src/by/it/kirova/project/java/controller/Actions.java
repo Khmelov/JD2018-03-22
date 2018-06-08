@@ -46,19 +46,17 @@ enum Actions {
             this.command = new CmdEditMyProperty();
         }
     },
-    EDITINFO {
-        {
-            this.command = new CmdEditInfo();
-        }
-    },
     SEARCH {
         {
             this.command = new CmdSearch();
         }
+    },
+    ADMIN {
+        {
+            this.command = new CmdAdmin();
+        }
     };
 
-    //todo убрать строку 72
-    String jsp = "/error.jsp";
     Cmd command;
 
 }

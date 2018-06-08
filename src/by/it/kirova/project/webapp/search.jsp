@@ -15,9 +15,11 @@
 <div class="row justify-content-left align-items-start">
 <div class="col-md-12">
                                     <c:forEach items="${searchResult}" var="res">
+                                    <hr />
                                             <form class="form-inline" method=POST >
                                             <div class="row justify-content-left align-items-start">
                                             <div class="col-md-12">
+
                                                 <div class="row justify-content-left align-items-start">
                                                     <div class="col-md-4">
                                                         <div class="form-group mb-2">
@@ -104,8 +106,10 @@
                                                     </div>
                                                     </div>
                                                     </div>
+
+
                                                 </div>
-                                                <hr />
+
                                              </div>
                                              </div>
 

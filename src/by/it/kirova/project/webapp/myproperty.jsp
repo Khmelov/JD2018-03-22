@@ -44,6 +44,7 @@
 </div>
 
 
+
           <!-- Text input-->
           <div class="row justify-content-left align-items-start">
           <div class="col-md-6">
@@ -155,7 +156,7 @@
           <div class="form-group">
 
             <div class="col-md-auto text-right">
-              <button id="addproperty" name="addproperty" class="btn btn-light">ADD PROPERTY</button>
+              <button id="addproperty" name="addproperty" class="btn btn-default">ADD PROPERTY</button>
             </div>
           </div>
 
