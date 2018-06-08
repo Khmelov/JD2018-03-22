@@ -41,7 +41,7 @@ public class CmdCreateAd extends CmdAbstract {
 
             if (ad.getId() > 0) {
                 req.setAttribute(Msg.MESSAGE, "Ad created.");
-                return Actions.MYADS.command;
+                return Actions.PROFILE.command;
             } else {
                 req.setAttribute(Msg.MESSAGE, "Can't create ad.");
                 return Actions.CREATEAD.command;
@@ -58,7 +58,7 @@ public class CmdCreateAd extends CmdAbstract {
 //        if (user!=null){
 //            if (req.getMethod().equalsIgnoreCase("post")){
 //                Ad ad=new Ad();
-//                ad.setTitle(req.getParameter("address"));
+//                ad.setTitle(req.getParameter("title"));
 //                ad.setDescription(req.getParameter("description"));
 //                ad.setPrice(Double.parseDouble(req.getParameter("price")));
 //                ad.setUsers_Id(user.getID());

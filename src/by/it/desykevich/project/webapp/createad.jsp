@@ -1,5 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
-<%@ page language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/head.htm" %>
 <body>
 <div class="container">
