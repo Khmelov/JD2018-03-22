@@ -18,7 +18,7 @@
 </c:choose>
 
     <div class="page-header">
-        <h1>Редоктирование ваших объявления</h1>
+        <h1>Редоктирование всех объявления</h1>
     </div>
 
     <div class="row">
@@ -32,9 +32,9 @@
 
     </div>
 
-    <c:forEach items="${listAdsUser}" var="ad">
+    <c:forEach items="${listAds}" var="ad">
         <div class="row">
-        <form class="form-inline ad-${listAdsUser}" action="do?command=Profile" method=POST>
+        <form class="form-inline ad-${listAds}" action="do?command=EditUsersAd" method=POST>
         <div class="form-group mb-1">
             <input id="price" class="form-control" name="price"
               value="${ad.price}" title=""/>
@@ -79,26 +79,6 @@
         </div>
     </c:forEach>
 
-    <br><br>
-    <form class="form-horizontal" method="post" action="do?command=Profile">
-    <fieldset>
-    <!-- Button -->
-    <div class="form-group">
-      <div class="col-md-4">
-        <button id="logout" name="logout" class="btn btn-primary">logout</button>
-      </div>
-    </div>
-    </fieldset>
-    </form>
-        <form class="form-horizontal" method="post" action="do?command=Profile">
-        <fieldset>
-        <div class="form-group">
-              <div class="col-md-4">
-                <button id="createad" name="createad" class="btn btn-primary">Создать объявления</button>
-              </div>
-            </div>
-        </fieldset>
-        </form>
 </div>
 </div>
 </body>
