@@ -12,6 +12,8 @@ public class CmdMyProperty extends Cmd {
     @Override
     public Cmd execute(HttpServletRequest req) throws Exception {
         User user = Util.getUserFromSession(req);
+        if (user == null)
+            return Actions.LOGIN.command;
         if (user != null) {
             if (req.getMethod().equalsIgnoreCase("post")) {
                 String hotel_name = req.getParameter("hotelname");
@@ -44,7 +46,6 @@ public class CmdMyProperty extends Cmd {
                     return Actions.EDITMYPROPERTY.command;
                 }
             }
-            //todo проверить update
 
         }
         return null;

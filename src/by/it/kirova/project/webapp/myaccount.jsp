@@ -48,7 +48,7 @@
              <div class="col-md-6 text-right">
             <div class="form-group">
             <div class="col-md-auto">
-            <button id="logout" name="logout"  class="btn btn-light">LOG OUT</button>
+            <button id="logout" name="logout"  class="btn btn-default">LOG OUT</button>
             <button id="deletemyaccount" name="deletemyaccount" class="btn btn-default">DELETE MY ACCOUNT</button>
             </div>
             </div>

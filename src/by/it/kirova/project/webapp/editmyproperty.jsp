@@ -39,8 +39,8 @@
 
                                     <c:forEach items="${hotels}" var="hotel">
 
-
-                                            <form class="form-inline" method=POST >
+                                            <hr />
+                                            <form class="form-inline hotel-${hotel.id}" method=POST >
                                             <div class="row justify-content-left align-items-start">
                                             <div class="col-md-12">
 
@@ -138,9 +138,8 @@
                                                 <div class="col-md-6 text-right">
                                                 <div class="form-group mb-2">
                                                   <div class="col-md-12">
-                                                    <button id="update" name="update" class="btn btn-light">UPDATE HOTEL</button>
-                                                    <button id="delete" name="delete" class="btn btn-light">DELETE HOTEL</button>
-                                                    <button id="viewrooms" name="viewrooms" class="btn btn-default">VIEW ROOMS</button>
+                                                    <button id="update" name="update" class="btn btn-default">UPDATE HOTEL</button>
+                                                    <button id="delete" name="delete" class="btn btn-default">DELETE HOTEL</button>
                                                     </div>
                                                     </div>
                                                     </div>
