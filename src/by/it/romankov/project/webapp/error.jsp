@@ -4,7 +4,7 @@
 <body>
 <div class="container">
 <%@ include file="include/menu.htm" %>
-<p>Добро пожаловать на сайт туристических обьявлений!</p>
+<p>Добро пожаловать на сайт нашего турагентства!</p>
 </div>
 </body>
 </html>

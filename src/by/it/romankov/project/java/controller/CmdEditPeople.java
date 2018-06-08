@@ -14,7 +14,7 @@ public class CmdEditPeople extends CmdAbstract {
             return Actions.LOGIN.command;
         System.out.println(people.toString());
         if (people.getRoles_id()!=1 && people.getRoles_id()!=3 ){
-            System.out.println(people.toString());
+
             return Actions.PROFILE.command;}
 
 
