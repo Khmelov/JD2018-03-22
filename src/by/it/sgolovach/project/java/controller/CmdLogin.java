@@ -34,7 +34,8 @@ public class CmdLogin extends CmdAbstract {
                     HttpSession session = req.getSession();
                     session.setAttribute("user",user);
                     session.setAttribute("userName",user.getLogin());
-                    session.setMaxInactiveInterval(30);
+                    session.setAttribute("userRole_id",user.getRoles_id());
+                    session.setMaxInactiveInterval(120);
                     return Action.PROFILE.comand;
                 }
             }
