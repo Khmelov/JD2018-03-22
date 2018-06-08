@@ -12,7 +12,7 @@ public class CmdCreateCategory extends CmdAbstract {
         if (!FormUtil.isPost(req)) {
             return null;
         }
-        Category category = new Category(0, FormUtil.getString(req,"Name",".+"));
+        Category category = new Category(0, FormUtil.getString(req,"name",".+"));
         DAO.getInstanse().categoryDAO.create(category);
         req.setAttribute(Msg.MESSAGE, "Category created");
         return null;

@@ -28,7 +28,7 @@ public class DAO {
     public static DAO getInstanse(){
         if (dao==null){
             synchronized (DAO.class){
-            if (dao==null)
+                if (dao==null)
             dao=new DAO();
         }}
         return dao;

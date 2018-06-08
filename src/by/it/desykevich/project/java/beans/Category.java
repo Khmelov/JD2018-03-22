@@ -10,7 +10,7 @@ public class Category implements Serializable {
 
     public Category(int id, String name) {
         this.id = id;
-        name = name;
+        this.name = name;
     }
 
     public Category() {
@@ -29,7 +29,7 @@ public class Category implements Serializable {
     }
 
     public void setName(String name) {
-        name = name;
+        this.name = name;
     }
 
     @Override

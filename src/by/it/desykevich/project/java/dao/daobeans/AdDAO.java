@@ -73,12 +73,12 @@ public class AdDAO extends AbstractDAO<Ad> {
         ResultSet rs = statement.executeQuery(sql);
         while (rs.next()) {
             Ad ad = new Ad(
-                    rs.getInt("ID"),
-                    rs.getString("Title"),
-                    rs.getString("Description"),
-                    rs.getInt("Price"),
-                    rs.getInt("users_ID"),
-                    rs.getInt("category_ID"));
+                    rs.getInt("id"),
+                    rs.getString("title"),
+                    rs.getString("description"),
+                    rs.getInt("price"),
+                    rs.getInt("users_id"),
+                    rs.getInt("category_id"));
             list.add(ad);
         }
         return list;

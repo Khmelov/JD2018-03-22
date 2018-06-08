@@ -4,9 +4,10 @@
 <body>
 <div class="container">
 <%@ include file="include/menu.htm" %>
-<p>Cmd ERROR: ${error}</p>
+    <p>ERROR: ${err}</p>
+    <p>ERROR: ${log}</p>
 <p>Cmd Message: ${message}</p>
-<br><br><br><br><br><br><br><br><br>
+
 </div>
 </body>
 </html>
