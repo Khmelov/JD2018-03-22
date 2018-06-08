@@ -5,11 +5,7 @@
          version="3.0"
          metadata-complete="true">
     <display-name>Servlet desykevich</display-name>
-    <!--
-    Для любого сервлета нужно определить два тега servlet и servlet-mapping.
-    Важно чтобы внутри каждого из этих тегов были теги servlet-name
-    и имя сервлета в них было одинаковым!!! Здесь это имя HelloWorld
-    -->
+
     <servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>by.it.desykevich.project.java.controller.FrontController</servlet-class>

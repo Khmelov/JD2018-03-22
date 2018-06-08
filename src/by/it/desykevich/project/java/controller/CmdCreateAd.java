@@ -13,8 +13,6 @@ import java.util.List;
 
 public class CmdCreateAd extends CmdAbstract {
 
-
-
     @Override
     public CmdAbstract execute(HttpServletRequest req) throws Exception {
         HttpSession session = req.getSession();
@@ -37,8 +35,10 @@ public class CmdCreateAd extends CmdAbstract {
                     user.getID(),
                     FormUtil.getInt(req,"category_id")
             );
+
             DAO dao = DAO.getInstanse();
             dao.adDAO.create(ad);
+
             if (ad.getId() > 0) {
                 req.setAttribute(Msg.MESSAGE, "Ad created.");
                 return Actions.MYADS.command;
@@ -46,9 +46,29 @@ public class CmdCreateAd extends CmdAbstract {
                 req.setAttribute(Msg.MESSAGE, "Can't create ad.");
                 return Actions.CREATEAD.command;
             }
-        } catch (ParseException e) {
+        }catch (ParseException e) {
             req.setAttribute(Msg.MESSAGE, "Check your inputs.");
             return Actions.CREATEAD.command;
         }
     }
+
+//    @Override
+//    public CmdAbstract execute(HttpServletRequest req) throws Exception {
+//        User user=Util.getUserFromSession(req);
+//        if (user!=null){
+//            if (req.getMethod().equalsIgnoreCase("post")){
+//                Ad ad=new Ad();
+//                ad.setTitle(req.getParameter("address"));
+//                ad.setDescription(req.getParameter("description"));
+//                ad.setPrice(Double.parseDouble(req.getParameter("price")));
+//                ad.setUsers_Id(user.getID());
+//                ad.setCategory_Id(Integer.parseInt(req.getParameter("category")));
+//                DAO.getInstanse().adDAO.create(ad);
+//            }
+//            else
+//                return null;
+//        }
+//        return Actions.PROFILE.command;
+//    }
+
 }

@@ -20,7 +20,7 @@ public class CmdEditUsers extends CmdAbstract {
             String nickname = FormUtil.getString(req, "nickname", Patterns.NICKNAME);
             String phonenumber = FormUtil.getString(req, "phonenumber", Patterns.PHONENUMBER);
             int roles_id = FormUtil.getInt(req, "roles_id");
-            User user = new User(id, login,password, email, nickname, phonenumber, roles_id);
+            User user = new User(id, login, password, email, nickname, phonenumber, roles_id);
             if (req.getParameter("Update") != null) {
                 DAO.getInstanse().userDAO.update(user);
             } else if (req.getParameter("Delete") != null) {
