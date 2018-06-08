@@ -55,7 +55,15 @@
                            value="${user.phonenumber}"/>
                 </div>
 
-
+                <div class=col-md-2>
+                    <select id="role" name="roles_id" class="form-control">
+                        <c:forEach items="${roles}" var="role">
+                            <option value="${role.id}" role=${role.id} ${role.id==user.roles_id?"selected":""}>
+                                    ${role.role}
+                            </option>
+                        </c:forEach>
+                    </select>
+                </div>
 
                 <div class=col-md-1>
                     <button id="Update" value="Update" name="Update" class="btn btn-success">
@@ -72,8 +80,7 @@
         </form>
         <br>
     </c:forEach>
-
-</div>
+</div class="container">
 </body>
 </html>
 

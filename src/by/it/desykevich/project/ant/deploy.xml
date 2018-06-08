@@ -11,8 +11,8 @@
     <!-- каждый jar нужно описать отдельно (!),
          компилятор считает, что это как бы отдельный каталог -->
     <path id="classpath">
-        <fileset dir="${local.lib.dir}" includes="jstl-1.2.jar" />
-        <fileset dir="${local.lib.dir}" includes="mysql-connector-java.jar" />
+        <!--<fileset dir="${local.lib.dir}" includes="jstl-1.2.jar" />-->
+        <fileset dir="${local.lib.dir}" includes="mysql-connector-java.jar"/>
         <fileset dir="${global.lib.dir}" includes="servlet-api.jar"/>
     </path>
 
@@ -95,7 +95,7 @@
     из ant -->
     <target name="08check-if-deployed" depends="07if-has-tomcat" if="has.tomcat">
         <condition property="is.webapp.olddeployed">
-            <http url="${tomcat.base.url}/${web.root}" />
+            <http url="${tomcat.base.url}/${web.root}"/>
         </condition>
 
         <path id="tomcat.classpath">

@@ -13,6 +13,8 @@ import java.util.List;
 
 public class CmdCreateAd extends CmdAbstract {
 
+
+
     @Override
     public CmdAbstract execute(HttpServletRequest req) throws Exception {
         HttpSession session = req.getSession();

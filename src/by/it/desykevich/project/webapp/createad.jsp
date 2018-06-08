@@ -21,11 +21,11 @@
 
         <!-- Select Basic -->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="category_ID">Category</label>
+            <label class="col-md-4 control-label" for="category_id">Category</label>
             <div class="col-md-4">
-                        <select id="name" name="category_ID" class="form-control">
+                        <select id="name" name="category_id" class="form-control">
                             <c:forEach items="${categories}" var="category">
-                                <option value="${category.ID}" role=${category.ID} ${category.ID==ad.category_ID?"selected":""}>
+                                <option value="${category.id}" role=${category.id} ${category.id==ad.category_id?"selected":""}>
                                         ${category.name}
                                 </option>
                             </c:forEach>

@@ -9,7 +9,7 @@ public class User implements Serializable {
     private String login, password, email, nickname, phonenumber;
     private int roles_id;
 
-    public User(int id, String login, String password , String email, String nickname, String phonenumber, int roles_id) {
+    public User(int id, String login,String password , String email, String nickname, String phonenumber, int roles_id) {
         this.id = id;
         this.login = login;
         this.password = password;
@@ -26,7 +26,7 @@ public class User implements Serializable {
         return id;
     }
 
-    public void setID(int ID) {
+    public void setID(int id) {
         this.id = id;
     }
 
@@ -45,6 +45,7 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+
     public String getEmail() {
         return email;
     }
@@ -73,7 +74,7 @@ public class User implements Serializable {
         return roles_id;
     }
 
-    public void setRoles_ID(int roles_id) {
+    public void setRoles_id(int roles_id) {
         this.roles_id = roles_id;
     }
 

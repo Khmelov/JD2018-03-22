@@ -19,11 +19,11 @@
            <form class="form-horizontal" action="do?command=EditCategory" method=post>
                <div class="row">
                    <div class=col-md-2>
-                       <input id="ID" class="form-control input-md" name="ID"
-                              value="${category.ID}"/>
+                       <input id="id" class="form-control input-md" name="id"
+                              value="${category.id}"/>
                    </div>
                    <div class=col-md-4>
-                       <input id="name" class="form-control input-md" name="Name"
+                       <input id="name" class="form-control input-md" name="name"
                               value="${category.name}"/>
                    </div>
                    <div class=col-md-1>

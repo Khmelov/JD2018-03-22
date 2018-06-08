@@ -11,6 +11,7 @@ import java.util.List;
 
 public class CmdMyAds extends CmdAbstract {
 
+
     @Override
     CmdAbstract execute(HttpServletRequest req) throws Exception {
         HttpSession session = req.getSession();
