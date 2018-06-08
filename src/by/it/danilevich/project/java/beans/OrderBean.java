@@ -117,7 +117,7 @@ public class OrderBean implements Serializable {
         this.status = status;
     }
 
-    public OrderBean(int id, int dateOrder, int clientId, int kindOfWorkId, int executorId, int adminId, int beginWork, int planEndWork, int endWork, int amount, double totalMoney, double totalTime, String status) {
+    public OrderBean(int id, long dateOrder, int clientId, int kindOfWorkId, int executorId, int adminId, int beginWork, int planEndWork, int endWork, int amount, double totalMoney, double totalTime, String status) {
         this.id = id;
         this.dateOrder = dateOrder;
         this.clientId = clientId;

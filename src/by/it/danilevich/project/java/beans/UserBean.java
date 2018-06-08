@@ -7,10 +7,13 @@ public class UserBean implements Serializable {
     private int id;
     private String name;
     private int roleId;
+
     private String address;
     private String telephone;
     private String login;
     private String password;
+
+    private String roleName;
 
     @Override
     public String toString() {

@@ -25,9 +25,9 @@
   <label class="col-md-4 control-label" for="category">Категория</label>
   <div class="col-md-4">
     <select id="category" name="category" class="form-control">
-        <option value="Electro">Electro</option>
-        <option value="WaterPipes">Water pipes</option>
-        <option value="Repairs">Repairs</option>
+        <c:forEach var="category" items="${listCategory}">
+            <option value = ${category}>${category}</option>
+        </c:forEach>
       </select>
   </div>
 </div>
@@ -36,9 +36,9 @@
   <label class="col-md-4 control-label" for="unit">Единица измерения</label>
   <div class="col-md-4">
     <select id="unit" name="unit" class="form-control">
-        <option value="thing">Thing</option>
-        <option value="m">metres</option>
-        <option value="m2">square metres</option>
+        <c:forEach var="unit" items="${listUnit}">
+            <option value = ${unit}>${unit}</option>
+        </c:forEach>
       </select>
   </div>
 </div>

@@ -3,12 +3,11 @@ package by.it.danilevich.project.java.controller;
 import by.it.danilevich.project.java.beans.RoleBean;
 import by.it.danilevich.project.java.beans.UserBean;
 import by.it.danilevich.project.java.dao.Dao;
-import by.it.danilevich.project.java.beans.UserBean;
+import by.it.danilevich.project.java.dao.connect.CN;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class CmdLogin extends Cmd {
@@ -17,28 +16,23 @@ public class CmdLogin extends Cmd {
         if (req.getMethod().equalsIgnoreCase("post")){
             String login=req.getParameter("login");
             String password=req.getParameter("password");
-            UserBean user=new UserBean(0,"",1,"", "", login,password);
+            UserBean user;
             Dao dao = Dao.getInstance();
             String where=String.format("WHERE login='%s' AND password='%s' LIMIT 0,1",login,password);
             List<UserBean> users = dao.userDao.getAll(where);
 
             if (users.size()>0){
                 user=users.get(0);
-                List<RoleBean> roleBeans = dao.roleDao.getAll("where `role_id`="+user.getRoleId());
+                List<RoleBean> roleBeans = dao.roleDao.getAll("where `id`="+user.getRoleId());
                 HttpSession session = req.getSession();
                 session.setAttribute("user",user);
+                List<String> listCategory = Util.getTxtDataForWork(CN.Name_File_TXT_Category);
+                List<String> listUnit = Util.getTxtDataForWork(CN.Name_File_TXT_Unit);
+                session.setAttribute("listCategory", listCategory);
+                session.setAttribute("listUnit", listUnit);
                 if (roleBeans.size()!=0) {
                     session.setAttribute("userRole", roleBeans.get(0).getName());
                 }
-                ArrayList<String> listCategory = new ArrayList<String>();
-                listCategory.add("Electro");
-                listCategory.add("Water pipes");
-                listCategory.add("Repairs");
-
-                ArrayList<String> listUnit = new ArrayList<String>();
-                listUnit.add("thing");
-                listUnit.add("m");
-                listUnit.add("m2");
                 return Actions.PROFILE.command;
             }
         }

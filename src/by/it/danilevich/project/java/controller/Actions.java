@@ -16,6 +16,16 @@ enum Actions {
             this.command = new CmdCreateWork();
         }
     },
+    EDITWORK {
+        {
+            this.command = new CmdEditWork();
+        }
+    },
+    EDITORDER {
+        {
+            this.command = new CmdEditOrder();
+        }
+    },
     LISTWORK {
         {
             this.command = new CmdListWork();

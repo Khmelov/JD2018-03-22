@@ -67,7 +67,7 @@ public class UserDao extends AbstractDao<UserBean> {
     @Override
     public List<UserBean> getAll(String where) throws SQLException {
         List<UserBean> users = new ArrayList<>();
-        String sql = String.format("Select * from "+"`"+CN.NAME_DB+"`.`user` "+ where);
+        String sql = String.format("Select * from "+"`"+CN.NAME_DB+"`.`user`" + where);
         try (Connection connection = ConnectionCreator.getConnection();
              Statement statement = connection.createStatement()
         ) {
