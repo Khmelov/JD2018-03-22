@@ -7,7 +7,7 @@
     <form class="form-horizontal" method="post" action"do?command=resetdb">
 
 <div class="page-header">
-        <h1>Все туры</h1>
+        <h1>Все туры нашего агентства</h1>
 
     </div>
 
@@ -34,7 +34,20 @@
         </div>
     </c:forEach>
 
+ <form class="form-horizontal" method="post" action="do?command=resetdb">
+        <fieldset>
 
+            <!-- Form Name -->
+            <legend>Сброс базы данных</legend>
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Сброс"></label>
+  <div class="col-md-4">
+    <button id="Сброс" name="Сброс" value="LogoutTrue" class="btn btn-primary">Сбросить</button>
+  </div>
+</div>
 
 
 </div>
