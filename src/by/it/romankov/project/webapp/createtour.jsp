@@ -12,57 +12,58 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Target</label>
+  <label class="col-md-4 control-label" for="Target">Target</label>
   <div class="col-md-4">
-  <input id="textinput" name="textinput" value="shopping" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Target" name="Target" value="shopping" type="text" placeholder="" class="form-control input-md" required="">
 
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="">Transport</label>
+  <label class="col-md-4 control-label" for="Transport">Transport</label>
   <div class="col-md-4">
-  <input id="" name="" value="bus" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Transport" name="Transport" value="bus" type="text" placeholder="" class="form-control input-md" required="">
 
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Country</label>
+  <label class="col-md-4 control-label" for="Country">Country</label>
   <div class="col-md-4">
-  <input id="textinput" name="textinput" value="Poland" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Country" name="Country" value="Poland" type="text" placeholder="" class="form-control input-md" required="">
 
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">City</label>
+  <label class="col-md-4 control-label" for="City">City</label>
   <div class="col-md-4">
-  <input id="textinput" name="textinput" value="Warsawa" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="City" name="City" value="Warsawa" type="text" placeholder="" class="form-control input-md" required="">
 
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Price</label>
+  <label class="col-md-4 control-label" for="Price">Price</label>
   <div class="col-md-2">
-  <input id="textinput" name="textinput" value="105" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Price" name="Price" value="105" type="text" placeholder="" class="form-control input-md" required="">
 
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Days</label>
+  <label class="col-md-4 control-label" for="Days">Days</label>
   <div class="col-md-2">
-  <input id="textinput" name="textinput" value="3" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="Days" name="Days" value="3" type="text" placeholder="" class="form-control input-md" required="">
 
   </div>
 </div>
+
 
 <!-- Button -->
 <div class="form-group">

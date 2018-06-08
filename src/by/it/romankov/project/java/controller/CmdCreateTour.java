@@ -14,12 +14,13 @@ public class CmdCreateTour extends CmdAbstract {
         if (people!=null){
             if (req.getMethod().equalsIgnoreCase("post")){
                 Tours tour = new Tours();
-               tour.setTarget(req.getParameter("target"));
-               tour.setTransport(req.getParameter("transport"));
-               tour.setCountry(req.getParameter("country"));
-                tour.setCity(req.getParameter("city"));
-                tour.setPrice(Integer.parseInt(req.getParameter("price")));
-                tour.setDays(Integer.parseInt(req.getParameter("days")));
+                tour.setTarget(req.getParameter("Target"));
+                tour.setTransport(req.getParameter("Transport"));
+                tour.setCountry(req.getParameter("Country"));
+                tour.setCity(req.getParameter("City"));
+                tour.setPrice(Integer.parseInt(req.getParameter("Price")));
+                tour.setDays(Integer.parseInt(req.getParameter("Days")));
+                tour.setPeople_id(people.getId());
                 DAO.getInstance().tour.create(tour);
             }
             else return null;
