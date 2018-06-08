@@ -5,9 +5,9 @@ import by.it.kirova.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class CmdSignup extends CmdAbstract {
+public class CmdSignup extends Cmd {
     @Override
-    public CmdAbstract execute(HttpServletRequest req) throws Exception {
+    public Cmd execute(HttpServletRequest req) throws Exception {
         if (req.getMethod().equalsIgnoreCase("post")) {
             String email = req.getParameter("email");
             String password = req.getParameter("password");
@@ -19,6 +19,7 @@ public class CmdSignup extends CmdAbstract {
             if (Parser.validator(email, "email") || Parser.validator(password, "password") ||
                     Parser.validator(first_name, "firstname") ||
                     Parser.validator(middle_name, "middlename") ||
+                    Parser.validator(last_name, "lastname") ||
                     Parser.validator(residence_country, "residencecountry") ||
                     Parser.validator(phone_number, "phonenumber")) {
                 return null;

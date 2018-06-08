@@ -10,7 +10,7 @@
  <form class="form-horizontal" method="post" command="do?command=editinfo">
            <fieldset>
               <!-- Form Name -->
-                      <legend>My account - Edit my property - Edit info</legend>
+
 
 <div class="row justify-content-left align-items-start">
  <div class="col-md-2">
@@ -37,6 +37,16 @@
 
           <div class="col-md-10">
           <form class="form-horizontal">
+
+ <div class="row justify-content-left align-items-start">
+          <div class="col-md-12">
+          <div class="form-group">
+            <div class="col-md-auto">
+             <legend>My account - Edit my property - Edit info</legend>
+            </div>
+            </div>
+            </div>
+          </div>
 
 
           <!-- Text input-->

@@ -2,8 +2,8 @@ package by.it.kirova.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-public abstract class CmdAbstract {
-    abstract CmdAbstract execute(HttpServletRequest req) throws Exception;
+public abstract class Cmd {
+    abstract Cmd execute(HttpServletRequest req) throws Exception;
 
     @Override
     public String toString() {

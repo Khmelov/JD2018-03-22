@@ -10,7 +10,7 @@
  <form class="form-horizontal" method="post" command="do?command=myproperty">
            <fieldset>
               <!-- Form Name -->
-                      <legend>My property - Add new property</legend>
+
 
 <div class="row justify-content-left align-items-start">
  <div class="col-md-2">
@@ -22,11 +22,6 @@
         <li class="nav-item">
         <a class="nav-link" style="font-size: 14pt; color: #949494;" href="do?command=EditMyProperty">Edit my property</a>
         </li>
-
-         <li class="nav-item">
-         <a class="nav-link" style="font-size: 14pt; color: #949494;" href="do?command=Reservations">Reservations</a>
-         </li>
-
     </ul>
 
     </div>
@@ -37,6 +32,16 @@
 
           <div class="col-md-10">
           <form class="form-horizontal">
+
+<div class="row justify-content-left align-items-start">
+ <div class="col-md-12">
+<div class="form-group">
+  <div class="col-md-auto">
+  <legend>My property - Add new property</legend>
+  </div>
+  </div>
+  </div>
+</div>
 
 
           <!-- Text input-->

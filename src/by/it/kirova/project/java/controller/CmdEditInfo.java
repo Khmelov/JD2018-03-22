@@ -3,10 +3,10 @@ package by.it.kirova.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class CmdEditInfo extends CmdAbstract{
+public class CmdEditInfo extends Cmd {
 
     @Override
-    public CmdAbstract execute(HttpServletRequest req) throws Exception {
+    public Cmd execute(HttpServletRequest req) throws Exception {
         return null;
     }
 

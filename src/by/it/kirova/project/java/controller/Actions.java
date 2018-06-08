@@ -14,12 +14,6 @@ enum Actions {
 
         }
     },
-    LOGOUT {
-        {
-            this.command = new CmdLogout();
-
-        }
-    },
     SIGNUP {
         {
             this.command = new CmdSignup();
@@ -57,18 +51,14 @@ enum Actions {
             this.command = new CmdEditInfo();
         }
     },
-    RESERVATIONS {
-        {
-            this.command = new CmdReservations();
-        }
-    },
     SEARCH {
         {
             this.command = new CmdSearch();
         }
     };
 
+    //todo убрать строку 72
     String jsp = "/error.jsp";
-    CmdAbstract command;
+    Cmd command;
 
 }
