@@ -7,14 +7,14 @@ public class Ad implements Serializable {
 
     private int id;
     private String title, description;
-    private int price;
+    private double price;
     private int users_id, category_id;
 
     public Ad(int id, String title, String description, int price, int users_id, int category_id) {
         this.id = id;
-        title = title;
-        description = description;
-        price = price;
+        this.title = title;
+        this.description = description;
+        this.price = price;
         this.users_id = users_id;
         this.category_id = category_id;
     }
@@ -35,7 +35,7 @@ public class Ad implements Serializable {
     }
 
     public void setTitle(String title) {
-        title = title;
+        this.title = title;
     }
 
     public String getDescription() {
@@ -43,15 +43,15 @@ public class Ad implements Serializable {
     }
 
     public void setDescription(String description) {
-        description = description;
+        this.description = description;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
-        price = price;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public int getUsers_Id() {
