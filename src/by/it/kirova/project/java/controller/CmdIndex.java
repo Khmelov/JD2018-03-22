@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class CmdIndex extends Cmd {
-    static ArrayList<String> searchResult = new ArrayList<>();
+    static ArrayList<ArrayList> searchResult = new ArrayList<>();
 
     @Override
     public Cmd execute(HttpServletRequest req) throws Exception {
@@ -39,27 +39,26 @@ public class CmdIndex extends Cmd {
                         "LEFT JOIN reservation ON room.room_id = reservation.room_room_id " +
                         "WHERE hotel.city LIKE '" + destination + "' AND room.people_amount >= " + peopleamount +
                         " AND (reservation.check_in_date >= " + checkout +
-                        " OR reservation.check_out_date <= " + checkin + " ) " +
+                        " OR reservation.check_out_date <= " + checkin + " OR" +
+                        " reservation.check_in_date is null OR reservation.check_out_date is null ) " +
                         " ORDER BY hotel.hotel_name");
                 try (Connection connection = ConnectionCreator.getConnection();
                      Statement statement = connection.createStatement()) {
-                    ResultSet resultSet = statement.executeQuery(sql);
-                    ResultSetMetaData metaData = resultSet.getMetaData();
-//                    metaData.
                     searchResult.clear();
+                    ResultSet resultSet = statement.executeQuery(sql);
+                    ArrayList<String> list = new ArrayList<>();
                     while (resultSet.next()) {
-                        String res =
-                                resultSet.getString("hotel.hotel_name") + "\t" +
-                                resultSet.getInt("hotel.star_rating") + "\t" +
-                                resultSet.getString("hotel.hotel_type") + "\t" +
-                                resultSet.getString("hotel.street") + "\t" +
-                                resultSet.getString("hotel.house_number") + "\t" +
-                                resultSet.getString("room.room_name") + "\t" +
-                                resultSet.getInt("room.people_amount") + "\t" +
-                                resultSet.getString("room.description") + "\t" +
-                                resultSet.getDouble("room.cost");
-                        searchResult.add(res);
-
+                        list.clear();
+                        list.add(resultSet.getString("hotel.hotel_name"));
+                        list.add(String.valueOf(resultSet.getInt("hotel.star_rating")));
+                        list.add(resultSet.getString("hotel.hotel_type"));
+                        list.add(resultSet.getString("hotel.street"));
+                        list.add(resultSet.getString("hotel.house_number"));
+                        list.add(resultSet.getString("room.room_name"));
+                        list.add(String.valueOf(resultSet.getInt("room.people_amount")));
+                        list.add(resultSet.getString("room.description"));
+                        list.add(String.valueOf(resultSet.getDouble("room.cost")));
+                        searchResult.add(list);
                     }
                 }
                 return Actions.SEARCH.command;

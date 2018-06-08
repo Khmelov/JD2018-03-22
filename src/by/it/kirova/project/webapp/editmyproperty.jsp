@@ -40,7 +40,7 @@
                                     <c:forEach items="${hotels}" var="hotel">
 
 
-                                            <form class="form-inline hotel-${hotel_id}" method=POST >
+                                            <form class="form-inline" method=POST >
                                             <div class="row justify-content-left align-items-start">
                                             <div class="col-md-12">
 
