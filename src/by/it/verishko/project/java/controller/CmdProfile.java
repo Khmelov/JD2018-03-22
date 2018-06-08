@@ -17,6 +17,13 @@ public class CmdProfile extends Cmd {
             return Actions.LOGIN.command;
         }
         if (req.getMethod().equalsIgnoreCase("post")) {
+            if (req.getParameter("UpdateProfile") != null){
+                user.setPassword(req.getParameter("password"));
+                user.setLogin(req.getParameter("login"));
+                DAO dao = DAO.getInstance();
+                dao.user.update(user);
+                return null;
+            }
             if (req.getParameter("logout") != null) {
                 req.getSession().invalidate();
                 return Actions.LOGIN.command;
@@ -32,7 +39,7 @@ public class CmdProfile extends Cmd {
         resp.addCookie(cookie1);
         DAO dao = DAO.getInstance();
         List<Product> listGoodsUser = dao.product.getAll("WHERE users_id=" + user.getId());
-        req.getSession().setAttribute("listGoodsUser", listGoodsUser);
+        req.getSession().setAttribute("goods", listGoodsUser);
         return null;
     }
 

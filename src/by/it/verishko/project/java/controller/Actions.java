@@ -1,6 +1,16 @@
 package by.it.verishko.project.java.controller;
 
 public enum Actions {
+    RESETDB {
+        {
+            this.command = new ResetDB();
+        }
+    },
+    EDITUSERS {
+        {
+            this.command = new CmdEditUsers();
+        }
+    },
     INDEX {
         {
             this.command = new CmdIndex();
@@ -19,11 +29,6 @@ public enum Actions {
     SIGNUP {
         {
             this.command = new CmdSignup();
-        }
-    },
-    LISTGOODS {
-        {
-            this.command = new CmdListGoods();
         }
     },
     CREATEPRODUCT {

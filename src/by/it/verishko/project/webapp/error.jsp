@@ -4,7 +4,8 @@
 <body>
 <div class="container">
 <%@ include file="include/menu.htm" %>
-<p>ERROR: ${message}</p>
+<p>ERROR: ${err}</p>
+<p>ERROR: ${log}</p>
 </div>
 </body>
 </html>
