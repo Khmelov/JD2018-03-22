@@ -2,13 +2,14 @@ package by.it.kirova.project.java.controller;
 
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 
 public class CmdSearch extends Cmd {
 
     @Override
     public Cmd execute(HttpServletRequest req) throws Exception {
-        String str = CmdIndex.searchResult.toString();
-        req.setAttribute("str", str);
+        ArrayList<ArrayList> searchResult = CmdIndex.searchResult;
+        req.setAttribute("searchResult", searchResult);
         return null;
 
     }
