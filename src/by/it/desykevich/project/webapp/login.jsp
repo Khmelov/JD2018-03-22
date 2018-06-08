@@ -1,10 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
-<%@ page language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/head.htm" %>
 <body>
 <div class="container">
 <%@ include file="include/menu.htm" %>
-<form class="form-horizontal" method="post" action="do?command=Login">
+
+<form class="form-horizontal" method="POST" action="do?command=Login">
 <fieldset>
 
 <!-- Form Name -->
@@ -12,9 +13,9 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="login">Login</label>
+  <label class="col-md-4 control-label" for="login">Логин</label>
   <div class="col-md-4">
-  <input id="login" name="login"  value ="TestLogintype" type="text" placeholder="" class="form-control input-md" required="">
+  <input id="login" name="login"  value="Test" type="text" placeholder="" class="form-control input-md" required="">
   <span class="help-block">Введите ваш login</span>
   </div>
 </div>
@@ -23,7 +24,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="password">Password</label>
   <div class="col-md-4">
-  <input id="password" name="password"  value="TestPassword"type="password" placeholder="" class="form-control input-md" required="">
+  <input id="password" name="password" value="Test" type="password" placeholder="" class="form-control input-md" required="">
   <span class="help-block">Введите ваш пароль(минимум 6 символов)</span>
   </div>
 </div>

@@ -27,10 +27,10 @@ public class CmdEditUsers extends CmdAbstract {
                 DAO.getInstanse().userDAO.delete(user);
             }
         }
-        List<User> users = DAO.getInstanse().userDAO.getAll("");
-        List<Role> roles = DAO.getInstanse().roleDAO.getAll("");
-        req.setAttribute("users", users);
-        req.setAttribute("roles", roles);
+//        List<User> users = DAO.getInstanse().userDAO.getAll("");
+//        List<Role> roles = DAO.getInstanse().roleDAO.getAll("");
+        req.setAttribute("users", DAO.getInstanse().userDAO.getAll(""));
+        req.setAttribute("roles", DAO.getInstanse().roleDAO.getAll(""));
         return null;
     }
 }

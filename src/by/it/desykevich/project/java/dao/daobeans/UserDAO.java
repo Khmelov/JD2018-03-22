@@ -46,7 +46,7 @@ public class UserDAO extends AbstractDAO<User> {
              Statement statement = connection.createStatement()
         ) {
             String set = String.format("UPDATE `users` SET login='%s', password='%s', email='%s', nickname='%s'," +
-                            "phonenumber='%s', roles_id='%d' WHERE id='%d';",
+                            "phonenumber='%s', roles_id='%d' WHERE ID='%d';",
                     user.getLogin(), user.getPassword(), user.getEmail(), user.getNickname(),
                     user.getPhoneNumber(), user.getRoles_id(), user.getID());
             int recCount = statement.executeUpdate(set);
@@ -59,7 +59,7 @@ public class UserDAO extends AbstractDAO<User> {
         try (Connection connection = ConnectionCreator.getConnection();
              Statement statement = connection.createStatement()
         ) {
-            String query = String.format("DELETE FROM users WHERE id=%d;", user.getID());
+            String query = String.format("DELETE FROM users WHERE ID=%d;", user.getID());
             int recCount = statement.executeUpdate(query);
             return recCount == 1;
         }
