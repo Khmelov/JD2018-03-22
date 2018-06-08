@@ -4,7 +4,10 @@
 <body>
 <div class="container">
     <%@ include file="include/menu.htm" %>
+    <div class="page-header">
+        <legend>Редактирование пользователей</legend>
 
+    </div>
     <div class="row">
         <div class=col-md-2>Имя</div>
         <div class=col-md-2>Пароль</div>
@@ -40,13 +43,13 @@
                 </div>
 
 
-                <div class="form-group mb-1">
+                <div class="form-group mb-2">
                     <button id="Update" name="Update" class="btn btn-success">
                         Обновить
                     </button>
                 </div>
 
-                <div class="form-group mb-1">
+                <div class="form-group mb-2">
                     <button id="Delete" name="Delete" class="btn btn-danger">
                         Удалить
                     </button>

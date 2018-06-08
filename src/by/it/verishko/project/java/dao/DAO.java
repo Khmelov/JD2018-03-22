@@ -95,4 +95,7 @@ public class DAO {
             e.printStackTrace();
         }
     }
+    public static void main(String[] args) {
+        DAO.getInstance().reset();
+    }
 }

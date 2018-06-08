@@ -11,6 +11,10 @@ import java.util.List;
 public class CmdLogin extends Cmd {
     @Override
     public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+//        User user = Util.getUserFromSession(req);
+//        if (user == null) {
+//            return Actions.LOGIN.command;
+//        }
         if (Util.isPost(req)) {
             String login = Util.getString(req.getParameter("login"), Pattern.LOGIN);
             String password = Util.getString(req.getParameter("password"), Pattern.PASSWORD);
@@ -24,11 +28,9 @@ public class CmdLogin extends Cmd {
                 session.setAttribute("user", user);
                 session.setAttribute("userName",user.getLogin());
                 session.setMaxInactiveInterval(30);
-//                return Actions.LISTGOODS.command;
                 return Actions.PROFILE.command;
             }
         }
         return null;
-//        return Actions.LOGIN.command;
     }
 }

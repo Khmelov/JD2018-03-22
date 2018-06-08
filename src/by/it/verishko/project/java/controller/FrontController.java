@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class FrontController extends HttpServlet {
     @Override
@@ -21,9 +22,10 @@ public class FrontController extends HttpServlet {
 
     private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ActionFactory actionFactory = new ActionFactory();
-        Cmd cmd = actionFactory.defineCmd(req);
-        String viewPage = Actions.ERROR.command.getJsp();
+//        Cmd cmd = actionFactory.defineCmd(req);
+        String viewPage;
         try {
+            Cmd cmd = actionFactory.defineCmd(req);
             Cmd next = cmd.execute(req, resp);
             if (next == null) {
                 viewPage = cmd.getJsp();
@@ -32,8 +34,10 @@ public class FrontController extends HttpServlet {
                 resp.sendRedirect("do?command=" + next.toString());
             }
         } catch (Exception e) {
-            e.printStackTrace();
-        }
+            req.setAttribute("err",e.getMessage());
+            String log = Arrays.toString(e.getStackTrace()).replaceAll(",","<br>");
+            req.setAttribute("log",log);
+            getServletContext().getRequestDispatcher(Actions.ERROR.command.getJsp()).forward(req, resp);        }
     }
 }
 //    private ActionFactory actionFactory;
