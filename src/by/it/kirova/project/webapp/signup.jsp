@@ -100,7 +100,7 @@
        <div class="form-group">
          <label class="col-md-4 control-label" for="singupbutton"></label>
          <div class="col-md-4">
-           <button id="singupbutton" name="singupbutton" class="btn btn-success">SIGN UP</button>
+           <button id="singupbutton" name="singupbutton" class="btn btn-primary">SIGN UP</button>
          </div>
        </div>
 

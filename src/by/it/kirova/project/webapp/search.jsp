@@ -102,7 +102,7 @@
                                                 <div class="col-md-12 text-right">
                                                 <div class="form-group mb-2">
                                                   <div class="col-md-12">
-                                                    <button id="booking" name="booking" class="btn btn-default">BOOKING</button>
+                                                    <button id="booking" name="booking" class="btn btn-white">BOOKING</button>
                                                     </div>
                                                     </div>
                                                     </div>

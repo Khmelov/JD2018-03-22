@@ -57,13 +57,13 @@
 
 
                     <div class="form-group mb-1">
-                        <button id="Update" name="Update" class="btn btn-success">
+                        <button id="Update" name="Update" class="btn btn-white">
                             Update
                         </button>
                     </div>
 
                     <div class="form-group mb-1">
-                        <button id="Delete" name="Delete" class="btn btn-danger">
+                        <button id="Delete" name="Delete" class="btn btn-primary">
                             Delete
                         </button>
                     </div>

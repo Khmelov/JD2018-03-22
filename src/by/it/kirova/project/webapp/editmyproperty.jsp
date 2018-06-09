@@ -141,8 +141,8 @@
                                                         <div class="col-md-6 text-right">
                                                             <div class="form-group mb-2">
                                                                 <div class="col-md-12">
-                                                                    <button id="update" name="update" class="btn btn-default">UPDATE HOTEL</button>
-                                                                    <button id="delete" name="delete" class="btn btn-default">DELETE HOTEL</button>
+                                                                    <button id="update" name="update" class="btn btn-white">UPDATE HOTEL</button>
+                                                                    <button id="delete" name="delete" class="btn btn-primary">DELETE HOTEL</button>
                                                                 </div>
                                                             </div>
                                                         </div>

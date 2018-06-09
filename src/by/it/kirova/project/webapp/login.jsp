@@ -36,7 +36,7 @@
        <div class="form-group">
          <label class="col-md-4 control-label" for="loginbutton"></label>
          <div class="col-md-4">
-           <button id="loginbutton" name="loginbutton" class="btn btn-success">SUBMIT</button>
+           <button id="loginbutton" name="loginbutton" class="btn btn-primary">SUBMIT</button>
          </div>
        </div>
 
