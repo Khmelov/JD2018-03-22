@@ -4,6 +4,7 @@ import by.it.kirova.project.java.beans.User;
 import by.it.kirova.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -14,6 +15,10 @@ public class CmdLogin extends Cmd {
             if (req.getParameter("loginbutton") != null) {
                 String email = req.getParameter("email");
                 String password = req.getParameter("password");
+                if (Parser.validator(email, "email") ||
+                    Parser.validator(password, "password")) {
+                    return null;
+                }
                 User user;
                 DAO dao = DAO.getInstanceDAO();
                 String where = String.format("WHERE email='%s' AND password='%s' LIMIT 0,1", email, password);

@@ -4,6 +4,7 @@ import by.it.kirova.project.java.beans.User;
 import by.it.kirova.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class CmdSignup extends Cmd {
     @Override
@@ -16,7 +17,8 @@ public class CmdSignup extends Cmd {
             String middle_name = req.getParameter("middlename");
             String residence_country = req.getParameter("residencecountry");
             String phone_number = req.getParameter("phonenumber");
-            if (Parser.validator(email, "email") || Parser.validator(password, "password") ||
+            if (Parser.validator(email, "email") ||
+                    Parser.validator(password, "password") ||
                     Parser.validator(first_name, "firstname") ||
                     Parser.validator(middle_name, "middlename") ||
                     Parser.validator(last_name, "lastname") ||

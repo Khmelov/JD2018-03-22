@@ -16,7 +16,7 @@
 <div class="col-md-12">
                                     <c:forEach items="${searchResult}" var="res">
                                     <hr />
-                                            <form class="form-inline" method=POST >
+                                            <form class="form-inline room-${room.room_id}" method=POST >
                                             <div class="row justify-content-left align-items-start">
                                             <div class="col-md-12">
 
@@ -91,7 +91,7 @@
                                                     </div>
                                                     <div class="col-md-4">
                                                         <div class="form-group mb-2">
-                                                            <label class="col-md-auto control-label" for="room.cost">Cost per night</label>
+                                                            <label class="col-md-auto control-label" for="room.cost">Total Cost</label>
                                                                 <div class="col-md-12">
                                                             <input id="room.cost" readonly name="room.cost" class="form-control input-md" value="${res[8]}" title="" />
                                                                 </div>
@@ -113,6 +113,7 @@
                                              </div>
                                              </div>
 
+                                            <input id="room_id" type="hidden" name="room_id" value="${res[9]}"/>
 
 
                                             </form>

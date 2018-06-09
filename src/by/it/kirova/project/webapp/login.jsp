@@ -28,7 +28,7 @@
          <label class="col-md-4 control-label" for="password">Password</label>
          <div class="col-md-4">
            <input id="password" value="testPassword" name="password" type="password" placeholder="password" class="form-control input-md" required="">
-           <span class="help-block">* a-zA-Z0-9 (min 5 symbols)</span>
+           <span class="help-block">* a-zA-Z0-9 (min 6 symbols)</span>
          </div>
        </div>
 

@@ -6,6 +6,7 @@ import by.it.kirova.project.java.beans.User;
 import by.it.kirova.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class CmdMyProperty extends Cmd {
 

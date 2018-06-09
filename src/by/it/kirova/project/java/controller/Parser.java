@@ -13,7 +13,7 @@ public class Parser {
                 reg = "([\\w\\.\\w]+)@(\\w+\\.)([a-z]{2,4})";
                 return reg(reg, parameter);
             case "password":
-                reg = "([\\w]{6,12})";
+                reg = "([\\w]{5,15})";
                 return reg(reg, parameter);
             case "firstname":
                 reg = "([A-Za-zА-Яа-яЁё]+)";

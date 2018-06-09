@@ -22,4 +22,11 @@ public class DateConverter {
         Date date = new Date(mil);
         return df.format(date);
     }
+
+    public static Long dateFormatToLong(Date date) throws ParseException {
+        date.setHours(0);
+        date.setMinutes(0);
+        date.setSeconds(0);
+        return date.getTime();
+    }
 }
