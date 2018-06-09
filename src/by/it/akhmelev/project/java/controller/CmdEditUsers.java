@@ -14,7 +14,7 @@ public class CmdEditUsers extends Cmd {
         User user = Util.getUserFromSession(req);
         if (user == null)
             return Actions.LOGIN.command;
-        if (user.getRoles_id() != 2)
+        if (user.getRoles_id() != 1)
             return Actions.PROFILE.command;
 
         DAO dao = DAO.getInstance();
