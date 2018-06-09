@@ -1,6 +1,7 @@
 package by.it.akhmelev.project.java.filters;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
 public class Utf8 implements Filter {

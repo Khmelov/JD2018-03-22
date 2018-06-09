@@ -9,8 +9,16 @@ import java.util.List;
 public class CmdIndex extends Cmd {
     @Override
     public Cmd execute(HttpServletRequest req) throws Exception {
-        List<Ad> ads = DAO.getInstance().ad.getAll("");
-        req.setAttribute("ads",ads);
+        DAO dao = DAO.getInstance();
+        int countAd = dao.ad.getAll("").size();
+        int stepAd = 10;
+        String startIndex = req.getParameter("startIndex");
+        if (startIndex == null) startIndex = "0";
+        req.setAttribute("countAd", countAd);
+        req.setAttribute("stepAd", stepAd);
+        String where = String.format(" LIMIT %s, %d", startIndex, stepAd);
+        List<Ad> ads = dao.ad.getAll(where);
+        req.setAttribute("ads", ads);
         return null;
     }
 }
