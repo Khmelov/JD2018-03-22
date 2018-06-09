@@ -1,9 +1,9 @@
 package by.it.akhmelev.project.java.controller;
 
 enum Actions {
-    LISTAD {
+    RESETDB {
         {
-            this.command = new CmdListAd();
+            this.command = new ResetDB();
         }
     },
     CREATEAD {
@@ -14,6 +14,11 @@ enum Actions {
     INDEX {
         {
             this.command = new CmdIndex();
+        }
+    },
+    EDITUSERS {
+        {
+            this.command = new CmdEditUsers();
         }
     },
     LOGIN {

@@ -8,6 +8,11 @@ import com.mysql.fabric.jdbc.FabricMySQLDriver;
 import java.sql.*;
 
 public class DAO {
+//    public static void main(String[] args) {
+//        DAO dao=DAO.getInstance();
+//        dao.reset();
+//
+//    }
 
     private static DAO dao;
 
@@ -61,9 +66,9 @@ public class DAO {
                     "ENGINE = InnoDB;");
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS `sgolovach`.`users` (\n" +
                     "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
-                    "  `login` VARCHAR(45) NOT NULL,\n" +
-                    "  `email` VARCHAR(45) NOT NULL,\n" +
-                    "  `password` VARCHAR(45) NOT NULL,\n" +
+                    "  `login` VARCHAR(100) NOT NULL,\n" +
+                    "  `email` VARCHAR(100) NOT NULL,\n" +
+                    "  `password` VARCHAR(200) NOT NULL,\n" +
                     "  `roles_id` INT NOT NULL,\n" +
                     "  PRIMARY KEY (`id`),\n" +
                     "  INDEX `fk_users_roles_idx` (`roles_id` ASC),\n" +
@@ -95,12 +100,12 @@ public class DAO {
             statement.executeUpdate("INSERT INTO `sgolovach`.`roles` (`id`, `role`) VALUES (DEFAULT, 'user')");
             statement.executeUpdate("INSERT INTO `sgolovach`.`roles` (`id`, `role`) VALUES (DEFAULT, 'guest')");
             statement.executeUpdate("INSERT INTO `sgolovach`.`roles` (`id`, `role`) VALUES (DEFAULT, 'director')");
-            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'administrator', 'adm@mail.ru', 'administrator', 1)");
-            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'user', 'user@mail.ru', 'user', 2)");
-            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'user2', 'user2@mail.ru', 'user2', 2)");
-            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'user3', 'user3@mail.ru', 'user3', 2)");
-            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'guest', 'guest3@mail.ru', 'user3', 3)");
-            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'director', 'director@mail.ru', 'user3', 4)");
+            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'SGolovach', 'adm@mail.ru', '79584cf9c4b7118dd5feb956c3c00e363e04183d6a2a66a99fc3b7064541c395', 1)");
+            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'user', 'user@mail.ru', 'ba0b45476aa7c884f6de17ceb824aab6e87a7a99ecb0abe71ae358427e4c0bc9', 2)");
+            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'user2', 'user2@mail.ru', '8eec2b0af0b9c4b762d0f84b864b83687f1735353ed77cd3d13a0642b864c645', 2)");
+            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'user3', 'user3@mail.ru', '7ec25e18682f140c75f7e06597ebe6c450d0a51274c934604c54a71ec44a197d', 2)");
+            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'guest', 'guest3@mail.ru', 'b8e52ddfce236be34bfe22b6c21d2a819b9af1138eaf9565fb4fc8c102bd14f7', 3)");
+            statement.executeUpdate("INSERT INTO `sgolovach`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'director', 'director@mail.ru', '526fe73571c209a61d9cf5fbb16110bc3c7592068a58ef9b166ffd38950674ec', 4)");
             statement.executeUpdate("INSERT INTO `sgolovach`.`ads` (`id`, `description`, `rooms`, `price`, `area`, `flat`, `flats`, `adress`, `users_id`) VALUES (DEFAULT, 'good flat', 3, 13699, 32, 1, 2, 'Minsk, Brikete 2', 3)");
             statement.executeUpdate("INSERT INTO `sgolovach`.`ads` (`id`, `description`, `rooms`, `price`, `area`, `flat`, `flats`, `adress`, `users_id`) VALUES (DEFAULT, 'buy flat', 8, 132000, 168, 25, 25, 'Moscow, Sgukova 1', 1)");
             statement.executeUpdate("INSERT INTO `sgolovach`.`ads` (`id`, `description`, `rooms`, `price`, `area`, `flat`, `flats`, `adress`, `users_id`) VALUES (DEFAULT, 'good flat', 2, 25000, 15, 1, 2, 'Gomel, Brikete 8', 2)");

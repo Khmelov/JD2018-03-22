@@ -11,9 +11,9 @@ enum Action {
             this.comand=new CmdLogin();
         }
     },
-    LOGOUT{
+    PROFILE{
         {
-            this.comand=new CmdLogout();
+            this.comand=new CmdProfile();
         }
     },
     SIGNUP{
@@ -39,6 +39,21 @@ enum Action {
     LISTAD{
         {
             this.comand=new CmdListad();
+        }
+    },
+    EDITUSERS{
+        {
+            this.comand=new CmdEditUsers();
+        }
+    },
+    EDITPROFILE{
+        {
+            this.comand=new CmdEditProfile();
+        }
+    },
+    EDITUSERSAD{
+        {
+            this.comand=new CmdEditUsersAd();
         }
     };
 
