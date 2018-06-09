@@ -50,11 +50,11 @@
     </filter-mapping>
 
 
-    <description>MySQL my_sql_kirova</description>
-    <resource-ref>
-        <description>my_sql_kirova</description>
-        <res-ref-name>jdbc/my_sql_kirova</res-ref-name>
-        <res-type>javax.sql.DataSource</res-type>
-        <res-auth>Container</res-auth>
-    </resource-ref>
+    <!--<description>MySQL my_sql_kirova</description>-->
+    <!--<resource-ref>-->
+        <!--<description>my_sql_kirova</description>-->
+        <!--<res-ref-name>jdbc/my_sql_kirova</res-ref-name>-->
+        <!--<res-type>javax.sql.DataSource</res-type>-->
+        <!--<res-auth>Container</res-auth>-->
+    <!--</resource-ref>-->
 </web-app>

@@ -20,7 +20,7 @@ public class FrontController extends HttpServlet {
         String viewPage;
         try {
             Cmd cmd = actionFactory.defineCmd(req);
-            Cmd next = cmd.execute(req);
+            Cmd next = cmd.execute(req, resp);
             if (next == null) {
                 viewPage = cmd.getJsp();
                 getServletContext().getRequestDispatcher(viewPage).forward(req, resp);
@@ -42,7 +42,7 @@ public class FrontController extends HttpServlet {
         String viewPage;
         try {
             Cmd cmd = actionFactory.defineCmd(req);
-            Cmd next = cmd.execute(req);
+            Cmd next = cmd.execute(req, resp);
             if (next == null) {
                 viewPage = cmd.getJsp();
                 getServletContext().getRequestDispatcher(viewPage).forward(req, resp);

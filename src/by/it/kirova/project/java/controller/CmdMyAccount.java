@@ -3,7 +3,9 @@ package by.it.kirova.project.java.controller;
 
 import by.it.kirova.project.java.beans.User;
 import by.it.kirova.project.java.dao.DAO;
+import org.apache.commons.codec.digest.DigestUtils;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,11 +13,16 @@ public class CmdMyAccount extends Cmd {
 
 
     @Override
-    public Cmd execute(HttpServletRequest req) throws Exception {
+    public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         User user = Util.getUserFromSession(req);
         if (user == null)
             return Actions.LOGIN.command;
         if (user != null) {
+            String e_mail = user.getEmail();
+            String pass = user.getPassword();
+            Cookie cookie = new Cookie(e_mail, pass);
+            cookie.setMaxAge(60);
+            resp.addCookie(cookie);
             req.setAttribute("email", user.getEmail());
             req.setAttribute("password", user.getPassword());
             req.setAttribute("firstname", user.getFirst_name());
@@ -25,6 +32,7 @@ public class CmdMyAccount extends Cmd {
             req.setAttribute("phonenumber", user.getPhone_number());
             if (req.getMethod().equalsIgnoreCase("post")) {
                 if (req.getParameter("saveinfo") != null) {
+                    String salt = "randomstring"; // генерация разной соли в классе SaltRandom
                     String email = req.getParameter("email");
                     String password = req.getParameter("password");
                     String first_name = req.getParameter("firstname");
@@ -40,8 +48,9 @@ public class CmdMyAccount extends Cmd {
                             Parser.validator(phone_number, "phonenumber")) {
                         return null;
                     }
+                    String hashpass = DigestUtils.sha256Hex(password + salt);
                     user.setEmail(email);
-                    user.setPassword(password);
+                    user.setPassword(hashpass);
                     user.setFirst_name(first_name);
                     user.setLast_name(last_name);
                     user.setMiddle_name(middle_name);

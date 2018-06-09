@@ -21,7 +21,7 @@ import java.util.Locale;
 public class CmdSearch extends Cmd {
 
     @Override
-    public Cmd execute(HttpServletRequest req) throws Exception {
+    public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         String destination = (String) req.getSession().getAttribute("destination");
         Long checkin = (Long) req.getSession().getAttribute("checkin");
         Long checkout = (Long) req.getSession().getAttribute("checkout");

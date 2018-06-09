@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CmdError extends Cmd {
 
     @Override
-    public Cmd execute(HttpServletRequest req) throws Exception {
+    public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         return null;
     }
 

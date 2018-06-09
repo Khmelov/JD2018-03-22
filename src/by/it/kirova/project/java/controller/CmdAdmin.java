@@ -3,6 +3,7 @@ package by.it.kirova.project.java.controller;
 
 import by.it.kirova.project.java.beans.User;
 import by.it.kirova.project.java.dao.DAO;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class CmdAdmin extends Cmd {
     @Override
-    public Cmd execute(HttpServletRequest req) throws Exception {
+    public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         User user = Util.getUserFromSession(req);
         if (user == null)
             return Actions.LOGIN.command;
@@ -19,6 +20,7 @@ public class CmdAdmin extends Cmd {
 
         DAO dao = DAO.getInstanceDAO();
         if (req.getMethod().equalsIgnoreCase("post")) {
+            String salt = "randomstring"; // генерация разной соли в классе SaltRandom
             int id = Integer.parseInt(req.getParameter("user_id"));
             String email = req.getParameter("email");
             String password = req.getParameter("password");
@@ -28,7 +30,8 @@ public class CmdAdmin extends Cmd {
             String residencecountry = req.getParameter("residence_country");
             String phonenumber = req.getParameter("phone_number");
             int roleid = Integer.parseInt(req.getParameter("role_id"));
-            User editUser = new User(id, password, email, firstname, lastname, middlename, residencecountry, phonenumber,
+            String hashpass = DigestUtils.sha256Hex(password + salt);
+            User editUser = new User(id, hashpass, email, firstname, lastname, middlename, residencecountry, phonenumber,
                     roleid);
             if (req.getParameter("Update") != null)
 

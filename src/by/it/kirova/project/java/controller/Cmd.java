@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public abstract class Cmd {
-    abstract Cmd execute(HttpServletRequest req) throws Exception;
+    abstract Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws Exception;
 
     @Override
     public String toString() {

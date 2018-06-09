@@ -12,7 +12,7 @@ import java.util.List;
 public class CmdEditMyProperty extends Cmd {
 
     @Override
-    public Cmd execute(HttpServletRequest req) throws Exception {
+    public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         User user = Util.getUserFromSession(req);
         if (user == null)
             return Actions.LOGIN.command;

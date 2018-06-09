@@ -16,7 +16,7 @@ public class CmdMyReservations extends Cmd {
 
 
     @Override
-    public Cmd execute(HttpServletRequest req) throws Exception {
+    public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         User user = Util.getUserFromSession(req);
         if (user != null) {
             ArrayList<ArrayList> reservations = new ArrayList<>();
