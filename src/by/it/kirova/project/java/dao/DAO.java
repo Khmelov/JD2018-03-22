@@ -164,9 +164,9 @@ public class DAO {
             statement.executeUpdate("INSERT INTO `kirova`.`room` (`room_id`, `room_name`, `room_fact_number`, `people_amount`, `description`, `cost`, `hotel_hotel_id`) VALUES (DEFAULT, 'Apartment with terrace', NULL, 2, 'Apartment in heart of Vienna with terrace, double bed and kitchen', 90, 2);");
             statement.executeUpdate("INSERT INTO `kirova`.`room` (`room_id`, `room_name`, `room_fact_number`, `people_amount`, `description`, `cost`, `hotel_hotel_id`) VALUES (DEFAULT, 'Two-Bedroom apartment', NULL, 4, 'Apartment in heart of Vienna with 2 double beds and kitchen', 150, 2);");
 
-            statement.executeUpdate("INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 61481855662587, 61492914887284, 61493174113533, 270, 3, 2);");
-            statement.executeUpdate("INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 61484793462731, 61493606288358, 61493692701377, 90, 2, 5);");
-            statement.executeUpdate("INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 61486867235416, 61493260856405, 61493347273586, 50, 1, 2);");
+            statement.executeUpdate("INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 1481855662587, 1492914887284, 1493174113533, 270, 3, 2);");
+            statement.executeUpdate("INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 1484793462731, 1493606288358, 1493692701377, 90, 2, 5);");
+            statement.executeUpdate("INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 1486867235416, 1493260856405, 1493347273586, 50, 1, 2);");
         } catch (SQLException e) {
             e.printStackTrace();
         }
