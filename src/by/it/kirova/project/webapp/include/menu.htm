@@ -7,21 +7,33 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
+            <c:choose>
+                <c:when test="${user==null}">
             <li class="nav-item">
                 <a class="nav-link" style="font-size: 14pt;" href="do?command=Login">Login</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" style="font-size: 14pt;" href="do?command=SignUp">Sign-up</a>
             </li>
+                </c:when>
+                <c:otherwise>
             <li class="nav-item">
                 <a class="nav-link" style="font-size: 14pt;" href="do?command=MyAccount">My account</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" style="font-size: 14pt;" href="do?command=MyProperty">My property</a>
             </li>
+                </c:otherwise>
+            </c:choose>
+            <c:choose>
+            <c:when test="${user!=null && user.role_role_id==1}">
             <li class="nav-item">
                 <a class="nav-link" style="font-size: 14pt;" href="do?command=Admin">Admin</a>
             </li>
+            </c:when>
+            </c:choose>
+
+
         </ul>
     </div>
 </nav>
