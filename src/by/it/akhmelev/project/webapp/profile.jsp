@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
+
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
 <%@ include file="include/head.htm" %>
@@ -68,6 +72,9 @@
             <div class="col-md-1">${ad.flats} </div>
         </div>
     </c:forEach>
+
+    <t:paginator  urlprefix="?command=Profile&startIndex=" count="${countAd}" step="${stepAd}"/>
+
 
     <form class="form-horizontal" method="post" action="do?command=Profile">
         <fieldset>
