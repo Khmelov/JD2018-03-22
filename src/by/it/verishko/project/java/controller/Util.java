@@ -5,7 +5,6 @@ import by.it.verishko.project.java.beans.User;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.net.HttpCookie;
 import java.text.ParseException;
 
 public class Util {
@@ -18,10 +17,10 @@ public class Util {
         return null;
     }
 
-//    static User getUserFromCookie (HttpServletRequest req){
+//    static boolean getUserFromCookie (HttpServletRequest req){
 //        Cookie[] cookie = req.getCookies();
-//        Object objC = cookie.equals("user");
-//        return (User) objC;
+//        boolean user = cookie.equals("user");
+//        return user;
 //    }
 
     static String getString(String value, String regxp) throws ParseException {
