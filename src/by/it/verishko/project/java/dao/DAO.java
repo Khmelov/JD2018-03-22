@@ -88,8 +88,8 @@ public class DAO {
             statement.executeUpdate("INSERT INTO `verishko`.`roles` (`id`, `role`) VALUES (DEFAULT, 'admin')");
             statement.executeUpdate("INSERT INTO `verishko`.`roles` (`id`, `role`) VALUES (DEFAULT, 'user')");
             statement.executeUpdate("INSERT INTO `verishko`.`roles` (`id`, `role`) VALUES (DEFAULT, 'guest')");
-            statement.executeUpdate("INSERT INTO `verishko`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'administrator', 'adm@mail.ru', 'administrator', 1)");
-            statement.executeUpdate("INSERT INTO `verishko`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'user', 'user@mail.ru', 'user', 2)");
+            statement.executeUpdate("INSERT INTO `verishko`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'valera', 'adm@mail.ru', '212dff73bce95e21871950e2168517c4ea2c4ca3c794f2ae2c03e506f5b07226', 1)");
+            statement.executeUpdate("INSERT INTO `verishko`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'TestLogin', 'user@mail.ru', '58f1c23947bbbe685d343f2fcaf6da16d9e5e1a86178907bda829f95682932d7', 2)");
             statement.executeUpdate("INSERT INTO `verishko`.`goods` (`id`, `name`, `description`, `price`, `users_id`) VALUES (DEFAULT, 'table', 'my description', 11, 2)");
         } catch (SQLException e) {
             e.printStackTrace();
