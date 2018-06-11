@@ -21,7 +21,8 @@
 
 
        </div>
-
+       <br>
+</br>
        <c:forEach items="${ListTours}" var="tour">
            <div class="row">
                <div class="col-md-2">${tour.target} </div>
