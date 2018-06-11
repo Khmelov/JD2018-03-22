@@ -15,8 +15,6 @@
       <label class="col-md-4 control-label" for="selectbasic">Choose Brand</label>
       <div class="col-md-4">
         <select id="selectbasic" name="selectbasic" class="form-control">
-          <option value="1">Option one</option>
-          <option value="2">Option two</option>
         </select>
       </div>
     </div>
@@ -26,8 +24,6 @@
       <label class="col-md-4 control-label" for="">Choose Model</label>
       <div class="col-md-4">
         <select id="" name="" class="form-control">
-          <option value="1">Option one</option>
-          <option value="2">Option two</option>
         </select>
       </div>
     </div>
@@ -37,8 +33,6 @@
       <label class="col-md-4 control-label" for="">Choose BodyCar</label>
       <div class="col-md-4">
         <select id="" name="" class="form-control">
-          <option value="1">Option one</option>
-          <option value="2">Option two</option>
         </select>
       </div>
     </div>
@@ -48,8 +42,6 @@
       <label class="col-md-4 control-label" for="">Choose Color</label>
       <div class="col-md-4">
         <select id="" name="" class="form-control">
-          <option value="1">Option one</option>
-          <option value="2">Option two</option>
         </select>
       </div>
     </div>
@@ -59,8 +51,6 @@
       <label class="col-md-4 control-label" for="">Choose YearRelease</label>
       <div class="col-md-4">
         <select id="" name="" class="form-control">
-          <option value="1">Option one</option>
-          <option value="2">Option two</option>
         </select>
       </div>
     </div>
