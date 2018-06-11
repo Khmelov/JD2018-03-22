@@ -17,9 +17,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for Car complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="Car">
  *   &lt;complexContent>
@@ -39,20 +39,18 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "Car", propOrder = {
-    "carID",
-    "serialNumber",
-    "brand",
-    "model",
-    "bodyCar",
-    "yearRelease",
-    "color",
-    "userID",
-    "createReport"
+        "carID",
+        "serialNumber",
+        "brand",
+        "model",
+        "bodyCar",
+        "yearRelease",
+        "color",
+        "userID",
+        "createReport"
 })
 public class Car {
 
@@ -77,11 +75,9 @@ public class Car {
 
     /**
      * Gets the value of the carID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getCarID() {
         return carID;
@@ -89,11 +85,9 @@ public class Car {
 
     /**
      * Sets the value of the carID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setCarID(BigInteger value) {
         this.carID = value;
@@ -101,11 +95,9 @@ public class Car {
 
     /**
      * Gets the value of the serialNumber property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getSerialNumber() {
         return serialNumber;
@@ -113,11 +105,9 @@ public class Car {
 
     /**
      * Sets the value of the serialNumber property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setSerialNumber(String value) {
         this.serialNumber = value;
@@ -125,11 +115,9 @@ public class Car {
 
     /**
      * Gets the value of the brand property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBrand() {
         return brand;
@@ -137,11 +125,9 @@ public class Car {
 
     /**
      * Sets the value of the brand property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBrand(String value) {
         this.brand = value;
@@ -149,11 +135,9 @@ public class Car {
 
     /**
      * Gets the value of the model property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getModel() {
         return model;
@@ -161,11 +145,9 @@ public class Car {
 
     /**
      * Sets the value of the model property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setModel(String value) {
         this.model = value;
@@ -173,11 +155,9 @@ public class Car {
 
     /**
      * Gets the value of the bodyCar property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getBodyCar() {
         return bodyCar;
@@ -185,11 +165,9 @@ public class Car {
 
     /**
      * Sets the value of the bodyCar property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setBodyCar(String value) {
         this.bodyCar = value;
@@ -197,11 +175,9 @@ public class Car {
 
     /**
      * Gets the value of the yearRelease property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getYearRelease() {
         return yearRelease;
@@ -209,11 +185,9 @@ public class Car {
 
     /**
      * Sets the value of the yearRelease property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setYearRelease(String value) {
         this.yearRelease = value;
@@ -221,11 +195,9 @@ public class Car {
 
     /**
      * Gets the value of the color property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getColor() {
         return color;
@@ -233,11 +205,9 @@ public class Car {
 
     /**
      * Sets the value of the color property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setColor(String value) {
         this.color = value;
@@ -245,11 +215,9 @@ public class Car {
 
     /**
      * Gets the value of the userID property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getUserID() {
         return userID;
@@ -257,11 +225,9 @@ public class Car {
 
     /**
      * Sets the value of the userID property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setUserID(BigInteger value) {
         this.userID = value;
@@ -269,11 +235,9 @@ public class Car {
 
     /**
      * Gets the value of the createReport property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CreateReport }
-     *     
+     *
+     * @return possible object is
+     * {@link CreateReport }
      */
     public CreateReport getCreateReport() {
         return createReport;
@@ -281,11 +245,9 @@ public class Car {
 
     /**
      * Sets the value of the createReport property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CreateReport }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link CreateReport }
      */
     public void setCreateReport(CreateReport value) {
         this.createReport = value;

@@ -1,6 +1,6 @@
 package by.it.uskoryaev.jd03_02;
 
-public class User {
+class User {
 
     private int id;
     private String nickName;
@@ -15,16 +15,16 @@ public class User {
     public User() {
     }
 
-    public User(int id, String nickName,String email, String password, String firstName,String lastName,String middleName,int phoneNumber,int baseFace_id) {
-    this.id = id;
-    this.nickName = nickName;
-    this.email = email;
-    this.password = password;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.middleName = middleName;
-    this.phoneNumber = phoneNumber;
-    this.baseFace_id = baseFace_id;
+    public User(int id, String nickName, String email, String password, String firstName, String lastName, String middleName, int phoneNumber, int baseFace_id) {
+        this.id = id;
+        this.nickName = nickName;
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.phoneNumber = phoneNumber;
+        this.baseFace_id = baseFace_id;
     }
 
     public int getId() {

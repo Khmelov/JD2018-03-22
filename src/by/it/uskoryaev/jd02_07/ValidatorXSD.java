@@ -13,15 +13,15 @@ import java.io.IOException;
 
 public class ValidatorXSD {
     public static void main(String[] args) {
-        String language= XMLConstants.W3C_XML_SCHEMA_NS_URI;
-        String filename="src/by/it/uskoryaev/jd02_07/BaseFace+XSD.xml";
-        String schemaName="src/by/it/uskoryaev/jd02_07/BaseFace.xsd";
-        SchemaFactory schemaFactory=SchemaFactory.newInstance(language);
-        File schemaLocation=new File(schemaName);
+        String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
+        String filename = "src/by/it/uskoryaev/jd02_07/BaseFace+XSD.xml";
+        String schemaName = "src/by/it/uskoryaev/jd02_07/BaseFace.xsd";
+        SchemaFactory schemaFactory = SchemaFactory.newInstance(language);
+        File schemaLocation = new File(schemaName);
         try {
-            Schema schema=schemaFactory.newSchema(schemaLocation);
-            Validator validator=schema.newValidator();
-            Source source=new StreamSource(filename);
+            Schema schema = schemaFactory.newSchema(schemaLocation);
+            Validator validator = schema.newValidator();
+            Source source = new StreamSource(filename);
             validator.validate(source);
             System.out.println("Well");
         } catch (SAXException | IOException e) {

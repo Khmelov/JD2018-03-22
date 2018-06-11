@@ -11,27 +11,26 @@ import java.io.IOException;
 public class FrontController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        process(req,resp);
+        process(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        process(req,resp);
+        process(req, resp);
     }
 
-    private void process(HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException{
-    ActionFactory actionFactory = new ActionFactory();
-    IActionCmd cmd = actionFactory.defineCmd(req);
-    String viewPage;
-    try {
-        viewPage = cmd.execute(req);
-    }catch (Exception e){
-        viewPage = Action.ERROR.jsp;
-    }
+    private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ActionFactory actionFactory = new ActionFactory();
+        IActionCmd cmd = actionFactory.defineCmd(req);
+        String viewPage;
+        try {
+            viewPage = cmd.execute(req);
+        } catch (Exception e) {
+            viewPage = Action.ERROR.jsp;
+        }
         ServletContext servletContext = getServletContext();
-        RequestDispatcher requestDispatcher =  servletContext.getRequestDispatcher(viewPage);
-        requestDispatcher.forward(req,resp);
-
+        RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(viewPage);
+        requestDispatcher.forward(req, resp);
 
 
     }

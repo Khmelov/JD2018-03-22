@@ -10,24 +10,24 @@ import java.io.InputStream;
 
 public class StAXRunner {
     private static String xml = "src/by/it/uskoryaev/jd02_07/BaseFace+XSD.xml";
-    private static String tab="";
-    private static StringBuilder text=new StringBuilder();
+    private static String tab = "";
+    private static StringBuilder text = new StringBuilder();
 
     public static void main(String[] args)
             throws FileNotFoundException, XMLStreamException {
         XMLInputFactory factory = XMLInputFactory.newInstance();
-        InputStream stream=new FileInputStream(xml);
+        InputStream stream = new FileInputStream(xml);
         XMLStreamReader parser = factory.createXMLStreamReader(stream);
-        while (parser.hasNext()){
-            int type=parser.next();
-            switch (type){
+        while (parser.hasNext()) {
+            int type = parser.next();
+            switch (type) {
                 case XMLStreamConstants.START_ELEMENT:
                     System.out.print(tab + "<" + parser.getLocalName());
                     int attCount = parser.getAttributeCount();
                     for (int i = 0; i < attCount; i++) {
                         String name = parser.getAttributeLocalName(i);
                         String value = parser.getAttributeValue(i);
-                        System.out.print(" " + name + "=\"" + value+"\"");
+                        System.out.print(" " + name + "=\"" + value + "\"");
                     }
                     System.out.println(">");
                     tab = tab + '\t';
@@ -42,7 +42,7 @@ public class StAXRunner {
                     String content = text.toString().trim();
                     text.setLength(0);
                     if (!content.isEmpty())
-                        System.out.println(tab+content);
+                        System.out.println(tab + content);
                     tab = tab.substring(1);
                     System.out.println(tab + "</" + parser.getLocalName() + ">");
                     break;

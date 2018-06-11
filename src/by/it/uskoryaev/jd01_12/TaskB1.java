@@ -8,7 +8,7 @@ public class TaskB1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String text = scanner.nextLine();
-        List <String> list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
 
         list.add(text);
     }

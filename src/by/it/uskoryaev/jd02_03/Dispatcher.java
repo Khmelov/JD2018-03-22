@@ -10,12 +10,20 @@ public class Dispatcher {
     private static final AtomicInteger factCount = new AtomicInteger(0);
 
 
-    static boolean planComplete(){return factCount.get() >= planCount;}
-    static Buyer addNewBuyer(){
+    static boolean planComplete() {
+        return factCount.get() >= planCount;
+    }
+
+    static Buyer addNewBuyer() {
         return new Buyer(numberBuyer.addAndGet(1));
     }
-    static void finalBuyer(){factCount.addAndGet(1);
+
+    static void finalBuyer() {
+        factCount.addAndGet(1);
     }
-    static boolean allBuyersInShop(){return numberBuyer.get() >= planCount;}
+
+    static boolean allBuyersInShop() {
+        return numberBuyer.get() >= planCount;
+    }
 
 }

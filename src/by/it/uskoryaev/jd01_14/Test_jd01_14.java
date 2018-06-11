@@ -64,7 +64,7 @@ public class Test_jd01_14 {
     @Test(timeout = 1500)
     public void testTaskC() throws Exception {
         Test_jd01_14 run = run("");
-        showDir(dir(Test_jd01_14.class)+"..",run);
+        showDir(dir(Test_jd01_14.class) + "..", run);
         Scanner scanner = new Scanner(new File(dir(Test_jd01_14.class) + "resultTaskC.txt"));
         //проверка соответствия вывода и содержимого файла отчета resultTaskC.txt
         scanner.nextLine(); //пропуск dir:..
@@ -83,7 +83,7 @@ public class Test_jd01_14 {
             File[] paths = p.listFiles();
             if (paths != null)
                 for (File iterator : paths) {
-                    showDir(iterator.getAbsolutePath(),run);
+                    showDir(iterator.getAbsolutePath(), run);
                 }
         }
     }

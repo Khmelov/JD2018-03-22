@@ -2,13 +2,14 @@ package by.it.uskoryaev.jd02_09;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import javax.xml.bind.*;
 import java.io.*;
 
 
 public class TaskB {
-    private  static String xmlSource = System.getProperty("user.dir") + "/src/by/it/uskoryaev/jd02_07/BaseFace+XSD.xml";
-    private  static String xmlTarget = System.getProperty("user.dir") + "/src/by/it/uskoryaev/jd02_09/BaseFace+XSD.xml";
+    private static String xmlSource = System.getProperty("user.dir") + "/src/by/it/uskoryaev/jd02_07/BaseFace+XSD.xml";
+    private static String xmlTarget = System.getProperty("user.dir") + "/src/by/it/uskoryaev/jd02_09/BaseFace+XSD.xml";
 
     private static Unmarshaller unmarshaller;
     private static Marshaller marshaller;
@@ -26,7 +27,7 @@ public class TaskB {
 
         BaseFace readXml = readXml();
         String json = getJson(readXml);
-        BaseFace baseFace= readJson(json);
+        BaseFace baseFace = readJson(json);
         saveXml(baseFace);
     }
 
@@ -41,7 +42,7 @@ public class TaskB {
         return baseFace;
     }
 
-    private static String getJson( BaseFace baseFace) {
+    private static String getJson(BaseFace baseFace) {
         String json = gson.toJson(baseFace);
         System.out.println(json);
         return json;

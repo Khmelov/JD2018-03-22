@@ -1,6 +1,6 @@
 package by.it.uskoryaev.jd02_03;
 
-public class Buyer extends Thread implements IBuyer,Comparable<Buyer> {
+public class Buyer extends Thread implements IBuyer, Comparable<Buyer> {
     private String name;
 
     @Override
@@ -41,14 +41,14 @@ public class Buyer extends Thread implements IBuyer,Comparable<Buyer> {
     public void goQueue() {
         System.out.println(this + "встал в очередь");
         QueueBuyer.addBuyer(this);
-            while (QueueBuyer.buyerInQueue(this))
-                synchronized (this){
+        while (QueueBuyer.buyerInQueue(this))
+            synchronized (this) {
                 try {
                     wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-        }
+            }
     }
 
     @Override

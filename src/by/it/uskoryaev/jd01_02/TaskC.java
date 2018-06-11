@@ -6,7 +6,7 @@ public class TaskC {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int [] [] mas = new int[n][n];
+        int[][] mas = new int[n][n];
 
         step1(n);
         step2(mas);
@@ -14,10 +14,11 @@ public class TaskC {
 
 
     }
-    private static int[ ][ ] step1(int n) {
+
+    private static int[][] step1(int n) {
         boolean max = false;
         boolean min = false;
-        int [][] mas = new int[n][n];
+        int[][] mas = new int[n][n];
         do {
             for (int i = 0; i < mas.length; i++) {
                 for (int j = 0; j < mas.length; j++) {
@@ -36,12 +37,12 @@ public class TaskC {
         return mas;
     }
 
-    private static int step2(int[][] mas){
+    private static int step2(int[][] mas) {
         return 0;
     }
 
-   private static int[ ][ ] step3(int[ ][ ] mas){
-return null;
+    private static int[][] step3(int[][] mas) {
+        return null;
     }
 
 }

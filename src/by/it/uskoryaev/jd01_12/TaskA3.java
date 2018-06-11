@@ -10,12 +10,12 @@ public class TaskA3 {
         String str;
         int positive = 0;
         List<Integer> list = new ArrayList<>();
-        while (!(str = scanner.next()).equals("end")){
+        while (!(str = scanner.next()).equals("end")) {
             Integer element = Integer.valueOf(str);
             if (element > 0)
-                list.add(positive++,element);
-            else if (element == 0 )
-                list.add(positive,0);
+                list.add(positive++, element);
+            else if (element == 0)
+                list.add(positive, 0);
             else
                 list.add(element);
         }

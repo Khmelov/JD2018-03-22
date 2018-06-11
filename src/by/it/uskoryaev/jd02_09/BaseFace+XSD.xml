@@ -22,7 +22,7 @@
                 <CreateReport>
                     <Report>
                         <ReportID>1</ReportID>
-                        <BrandAndModel>Mercedes S-class </BrandAndModel>
+                        <BrandAndModel>Mercedes S-class</BrandAndModel>
                         <DataOrder>11.04.2018</DataOrder>
                         <Commission>2</Commission>
                         <Cost>120000</Cost>

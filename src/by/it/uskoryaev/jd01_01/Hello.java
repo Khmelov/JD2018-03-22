@@ -6,7 +6,8 @@ class Hello {
     void setSlogan(String slogan) {
         this.slogan = slogan;
     }
-    void printSlogan(){
+
+    void printSlogan() {
         System.out.println(slogan);
     }
 }

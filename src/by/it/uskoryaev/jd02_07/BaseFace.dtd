@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!ELEMENT BaseFace (User)+>
-<!ELEMENT User (UserID,NickName,Email,Password,FirstName,LastName,MiddleName,PhoneNumber,ChooseCar)>
-<!ELEMENT UserID (#PCDATA)>
-<!ELEMENT NickName (#PCDATA)>
-<!ELEMENT Email (#PCDATA)>
-<!ELEMENT Password (#PCDATA)>
-<!ELEMENT FirstName (#PCDATA)>
-<!ELEMENT LastName (#PCDATA)>
-<!ELEMENT MiddleName (#PCDATA)>
-<!ELEMENT PhoneNumber (#PCDATA)>
-<!ELEMENT ChooseCar (Car)+>
+        <!ELEMENT BaseFace (User)+>
+        <!ELEMENT User (UserID,NickName,Email,Password,FirstName,LastName,MiddleName,PhoneNumber,ChooseCar)>
+        <!ELEMENT UserID (#PCDATA)>
+        <!ELEMENT NickName (#PCDATA)>
+        <!ELEMENT Email (#PCDATA)>
+        <!ELEMENT Password (#PCDATA)>
+        <!ELEMENT FirstName (#PCDATA)>
+        <!ELEMENT LastName (#PCDATA)>
+        <!ELEMENT MiddleName (#PCDATA)>
+        <!ELEMENT PhoneNumber (#PCDATA)>
+        <!ELEMENT ChooseCar (Car)+>
 
         <!ELEMENT Car (CarID,SerialNumber,Brand,Model,BodyCar,YearRelease,Color,CreateReport)>
         <!ELEMENT CarID (#PCDATA)>
@@ -21,14 +21,14 @@
         <!ELEMENT Color (#PCDATA)>
         <!ELEMENT CreateReport (Report)+>
 
-                <!ELEMENT Report (ReportID,BrandAndModel,DataOrder,Commission,Cost,TotalCost)>
-                <!ELEMENT ReportID (#PCDATA)>
-                <!ELEMENT BrandAndModel (#PCDATA)>
-                <!ELEMENT DataOrder (#PCDATA)>
-                <!ELEMENT Commission (#PCDATA)>
-                <!ATTLIST Commission summa PCDATA>
-                <!ELEMENT Cost (#PCDATA)>
-                <!ATTLIST Cost summa PCDATA>
-                <!ELEMENT TotalCost  (#PCDATA)>
-                <!ATTLIST TotalCost summa PCDATA>
+        <!ELEMENT Report (ReportID,BrandAndModel,DataOrder,Commission,Cost,TotalCost)>
+        <!ELEMENT ReportID (#PCDATA)>
+        <!ELEMENT BrandAndModel (#PCDATA)>
+        <!ELEMENT DataOrder (#PCDATA)>
+        <!ELEMENT Commission (#PCDATA)>
+        <!ATTLIST Commission summa PCDATA>
+        <!ELEMENT Cost (#PCDATA)>
+        <!ATTLIST Cost summa PCDATA>
+        <!ELEMENT TotalCost  (#PCDATA)>
+        <!ATTLIST TotalCost summa PCDATA>
 

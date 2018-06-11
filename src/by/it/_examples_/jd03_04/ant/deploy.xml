@@ -11,7 +11,7 @@
     <!-- описываем classpath для копилятора -->
     <!-- каждый jar нужно описать отдельно (!),
          компилятор считает, что это как бы отдельный каталог -->
-    <path id="classpath">
+    <path user_id="classpath">
         <fileset dir="${local.lib.dir}" includes="mysql-connector-java.jar" />
         <fileset dir="${global.lib.dir}" includes="servlet-api.jar"/>
     </path>
@@ -98,7 +98,7 @@
             <http url="${tomcat.base.url}/${web.root}" />
         </condition>
 
-        <path id="tomcat.classpath">
+        <path user_id="tomcat.classpath">
             <fileset dir="${global.lib.dir}">
                 <include name="khmelov_tomcat_lib.jar"/>
             </fileset>
