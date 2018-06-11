@@ -11,7 +11,7 @@ class Dumb {
     }
 
     int getId() { // 1
-        System.out.println("getUser_id() класса Dumb ");
+        System.out.println("getId() класса Dumb ");
         return id;
     }
 }
