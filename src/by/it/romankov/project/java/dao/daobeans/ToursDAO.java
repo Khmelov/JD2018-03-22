@@ -41,8 +41,8 @@ public class ToursDAO extends AbstactDAO<Tours> {
     public boolean update(Tours tour) throws SQLException {
         String sql = String.format(Locale.US, "UPDATE `tours` SET " +
                         "`target`='%s',`transport`='%s'," +
-                        "`country`='%s',`city`='%s',`days`=%d," +
-                        "`price`=%d,`people_id`=%d " +
+                        "`country`='%s',`city`='%s',`price`=%d,`days`=%d," +
+                        "`people_id`=%d " +
                         "WHERE `id`=%d",
                 tour.getTarget(),tour.getTransport(),tour.getCountry(),
                 tour.getCity(),tour.getDays(),tour.getPrice(),tour.getPeople_id(),tour.getId());

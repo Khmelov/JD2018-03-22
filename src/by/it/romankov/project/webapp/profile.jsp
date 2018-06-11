@@ -74,14 +74,14 @@
         <fieldset>
 
             <!-- Form Name -->
-            <legend>Logout</legend>
+            <legend>Выход</legend>
 
 
 <!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="logout"></label>
+  <label class="col-md-4 control-label" for="Выход"></label>
   <div class="col-md-4">
-    <button id="logout" name="logout" value="LogoutTrue" class="btn btn-primary">Button</button>
+    <button id="Выход" name="Выход" value="LogoutTrue" class="btn btn-primary">Выйти</button>
   </div>
 </div>
 
