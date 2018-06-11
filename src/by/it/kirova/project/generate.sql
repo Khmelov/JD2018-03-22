@@ -32,7 +32,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `kirova`.`user` (
   `user_id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(70) NOT NULL,
-  `password` VARCHAR(30) NOT NULL,
+  `password` VARCHAR(200) NOT NULL,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
   `middle_name` VARCHAR(45) NULL,
@@ -100,10 +100,10 @@ ENGINE = InnoDB;
 -- Table `kirova`.`reservation`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `kirova`.`reservation` (
-  `reservation_id` INT NOT NULL AUTO_INCREMENT,
-  `reservation_date` INT NOT NULL,
-  `check_in_date` INT NOT NULL,
-  `check_out_date` INT NOT NULL,
+  `reservation_id` LONG NOT NULL AUTO_INCREMENT,
+  `reservation_date` LONG NOT NULL,
+  `check_in_date` LONG NOT NULL,
+  `check_out_date` LONG NOT NULL,
   `total_cost` DECIMAL NOT NULL,
   `room_room_id` INT NOT NULL,
   `user_user_id` INT NOT NULL,
@@ -145,12 +145,12 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `kirova`;
-INSERT INTO `kirova`.`user` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`, `role_role_id`) VALUES (DEFAULT, 'abc@gmail.com', 'abc123', 'John', 'Smith', NULL, 'UK', '+447874564567', 1);
-INSERT INTO `kirova`.`user` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`, `role_role_id`) VALUES (DEFAULT, 'def@gmail.com', 'def123', 'Jacob', 'Irwin', NULL, 'Poland', '+485291111111', 2);
-INSERT INTO `kirova`.`user` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`, `role_role_id`) VALUES (DEFAULT, 'hij@gmail.com', 'hij123', 'Aleksandr', 'Aleksandrov', 'Aleksandrovich', 'Belarus', '+375291111111', 3);
-INSERT INTO `kirova`.`user` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`, `role_role_id`) VALUES (DEFAULT, 'klm@gmail.com', 'klm123', 'John', 'Smith', NULL, 'Austria', '+437874589567', 3);
-INSERT INTO `kirova`.`user` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`, `role_role_id`) VALUES (DEFAULT, 'rst@gmail.com', 'rst123', 'Petr', 'Petrov', 'Petrovich', 'Belarus', '+375292222222', 2);
-INSERT INTO `kirova`.`user` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`, `role_role_id`) VALUES (DEFAULT, 'nop@gmail.com', 'nop123', 'Ivan', 'Ivanov', 'Ivanovich', 'Russia', '+749597556983', 2);
+INSERT INTO `kirova`.`user` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`, `role_role_id`) VALUES (DEFAULT, 'abc@gmail.com', 'abc123', 'John', 'Smith', NULL, 'UK', '+44787 4564567', 1);
+INSERT INTO `kirova`.`user` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`, `role_role_id`) VALUES (DEFAULT, 'def@gmail.com', 'def123', 'Jacob', 'Irwin', NULL, 'Poland', '+48529 1111111', 2);
+INSERT INTO `kirova`.`user` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`, `role_role_id`) VALUES (DEFAULT, 'hij@gmail.com', 'hij123', 'Aleksandr', 'Aleksandrov', 'Aleksandrovich', 'Belarus', '+37529 1111111', 3);
+INSERT INTO `kirova`.`user` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`, `role_role_id`) VALUES (DEFAULT, 'klm@gmail.com', 'klm123', 'John', 'Smith', NULL, 'Austria', '+43787 4589567', 3);
+INSERT INTO `kirova`.`user` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`, `role_role_id`) VALUES (DEFAULT, 'rst@gmail.com', 'rst123', 'Petr', 'Petrov', 'Petrovich', 'Belarus', '+37529 2222222', 2);
+INSERT INTO `kirova`.`user` (`user_id`, `email`, `password`, `first_name`, `last_name`, `middle_name`, `residence_country`, `phone_number`, `role_role_id`) VALUES (DEFAULT, 'nop@gmail.com', 'nop123', 'Ivan', 'Ivanov', 'Ivanovich', 'Russia', '+74959 7556983', 2);
 
 COMMIT;
 
@@ -160,9 +160,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `kirova`;
-INSERT INTO `kirova`.`hotel` (`hotel_id`, `hotel_name`, `hotel_type`, `star_rating`, `country`, `city`, `street`, `house_number`, `contact_email`, `contact_phone_number`, `user_user_id`) VALUES (DEFAULT, 'Resort Spa', 'Hotel', 5, 'Russia', 'Moscow', 'Horkogo', '82', 'spa@gmail.com', '+7395975339983', 3);
-INSERT INTO `kirova`.`hotel` (`hotel_id`, `hotel_name`, `hotel_type`, `star_rating`, `country`, `city`, `street`, `house_number`, `contact_email`, `contact_phone_number`, `user_user_id`) VALUES (DEFAULT, 'Resort Appartment', 'Appartment', NULL, 'Austria', 'Vienna', 'Bahgasse', '4', 'weinapart@gmail.com', '+4395975339983', 4);
-INSERT INTO `kirova`.`hotel` (`hotel_id`, `hotel_name`, `hotel_type`, `star_rating`, `country`, `city`, `street`, `house_number`, `contact_email`, `contact_phone_number`, `user_user_id`) VALUES (DEFAULT, 'Spa Appartment', 'Appartment', NULL, 'Austria', 'Vienna', 'Johann-Hoffmann Platz', '16', 'weinapart@gmail.com', '+4395975339983', 4);
+INSERT INTO `kirova`.`hotel` (`hotel_id`, `hotel_name`, `hotel_type`, `star_rating`, `country`, `city`, `street`, `house_number`, `contact_email`, `contact_phone_number`, `user_user_id`) VALUES (DEFAULT, 'Resort Spa', 'Hotel', 5, 'Russia', 'Moscow', 'Horkogo', '82', 'spa@gmail.com', '+739597 5339983', 3);
+INSERT INTO `kirova`.`hotel` (`hotel_id`, `hotel_name`, `hotel_type`, `star_rating`, `country`, `city`, `street`, `house_number`, `contact_email`, `contact_phone_number`, `user_user_id`) VALUES (DEFAULT, 'Resort Appartment', 'Appartment', NULL, 'Austria', 'Vienna', 'Bahgasse', '4', 'weinapart@gmail.com', '+439597 5339983', 4);
+INSERT INTO `kirova`.`hotel` (`hotel_id`, `hotel_name`, `hotel_type`, `star_rating`, `country`, `city`, `street`, `house_number`, `contact_email`, `contact_phone_number`, `user_user_id`) VALUES (DEFAULT, 'Spa Appartment', 'Appartment', NULL, 'Austria', 'Vienna', 'Johann-Hoffmann Platz', '16', 'weinapart@gmail.com', '+439597 5339983', 4);
 
 COMMIT;
 
@@ -185,9 +185,9 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `kirova`;
-INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 61481855662587, 61492914887284, 61493174113533, 270, 3, 2);
-INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 61484793462731, 61493606288358, 61493692701377, 90, 2, 5);
-INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 61486867235416, 61493260856405, 61493347273586, 50, 1, 2);
+INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 1481855662587, 1492914887284, 1493174113533, 270, 3, 2);
+INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 1484793462731, 1493606288358, 1493692701377, 90, 2, 5);
+INSERT INTO `kirova`.`reservation` (`reservation_id`, `reservation_date`, `check_in_date`, `check_out_date`, `total_cost`, `room_room_id`, `user_user_id`) VALUES (DEFAULT, 1486867235416, 1493260856405, 1493347273586, 50, 1, 2);
 
 COMMIT;
 

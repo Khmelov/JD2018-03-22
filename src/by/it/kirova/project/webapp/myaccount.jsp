@@ -48,8 +48,8 @@
              <div class="col-md-6 text-right">
             <div class="form-group">
             <div class="col-md-auto">
-            <button id="logout" name="logout"  class="btn btn-default">LOG OUT</button>
-            <button id="deletemyaccount" name="deletemyaccount" class="btn btn-default">DELETE MY ACCOUNT</button>
+            <button id="logout" name="logout"  class="btn btn-white">LOG OUT</button>
+            <button id="deletemyaccount" name="deletemyaccount" class="btn btn-primary">DELETE MY ACCOUNT</button>
             </div>
             </div>
             </div>
@@ -144,8 +144,8 @@
 
             <!-- Button (Double) -->
                      <div class="form-group">
-                       <div class="col-md-auto">
-                         <button id="saveinfo" name="saveinfo" class="btn btn-success">SAVE INFO</button>
+                       <div class="col-md-auto text-right">
+                         <button id="saveinfo" name="saveinfo" class="btn btn-primary">SAVE INFO</button>
                        </div>
                      </div>
                    </div>

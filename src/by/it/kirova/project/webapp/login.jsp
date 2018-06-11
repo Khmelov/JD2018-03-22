@@ -28,7 +28,7 @@
          <label class="col-md-4 control-label" for="password">Password</label>
          <div class="col-md-4">
            <input id="password" value="testPassword" name="password" type="password" placeholder="password" class="form-control input-md" required="">
-           <span class="help-block">* a-zA-Z0-9 (min 5 symbols)</span>
+           <span class="help-block">* a-zA-Z0-9 (min 6 symbols)</span>
          </div>
        </div>
 
@@ -36,7 +36,7 @@
        <div class="form-group">
          <label class="col-md-4 control-label" for="loginbutton"></label>
          <div class="col-md-4">
-           <button id="loginbutton" name="loginbutton" class="btn btn-success">SUBMIT</button>
+           <button id="loginbutton" name="loginbutton" class="btn btn-primary">SUBMIT</button>
          </div>
        </div>
 

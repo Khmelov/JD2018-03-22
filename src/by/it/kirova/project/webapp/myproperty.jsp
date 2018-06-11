@@ -156,7 +156,7 @@
           <div class="form-group">
 
             <div class="col-md-auto text-right">
-              <button id="addproperty" name="addproperty" class="btn btn-default">ADD PROPERTY</button>
+              <button id="addproperty" name="addproperty" class="btn btn-primary">ADD PROPERTY</button>
             </div>
           </div>
 

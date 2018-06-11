@@ -11,7 +11,7 @@
 
         <c:forEach items="${users}" var="user">
             <div class="row">
-                <form class="form-inline user-${user.user_id}" action="do?command=EditUsers" method=POST>
+                <form class="form-inline user-${user.user_id}" action="do?command=Admin" method=POST>
 
                      <div class="form-group mb-2">
                         <input id="email" class="form-control input-md" name="email"
@@ -48,7 +48,7 @@
                     <div class="form-group mb-2">
                         <select id="role_id" name="role_id" class="form-control" title="">
                             <c:forEach items="${roles}" var="role">
-                                <option value="${role.role_id}" role=${role_id} ${role.role_id==user.role_role_id?"selected":""}>
+                                <option value="${role.role_id}" role=${role.role_id} ${role.role_id==user.role_role_id?"selected":""}>
                                         ${role.role_name}
                                 </option>
                             </c:forEach>
@@ -57,13 +57,13 @@
 
 
                     <div class="form-group mb-1">
-                        <button id="Update" name="Update" class="btn btn-success">
+                        <button id="Update" name="Update" class="btn btn-white">
                             Update
                         </button>
                     </div>
 
                     <div class="form-group mb-1">
-                        <button id="Delete" name="Delete" class="btn btn-danger">
+                        <button id="Delete" name="Delete" class="btn btn-primary">
                             Delete
                         </button>
                     </div>

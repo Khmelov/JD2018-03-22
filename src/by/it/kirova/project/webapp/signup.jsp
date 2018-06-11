@@ -41,7 +41,7 @@
                   <div class="form-group">
                     <label class="col-md-auto control-label" for="firstname">First name</label>
                     <div class="col-md-auto">
-                    <input id="firstname" value="testName" name="firstname" type="text" placeholder="first name" class="form-control input-md" required="">
+                    <input id="firstname" value="Марк" name="firstname" type="text" placeholder="first name" class="form-control input-md" required="">
 
                     </div>
                     </div>
@@ -52,7 +52,7 @@
                   <div class="form-group">
                     <label class="col-md-auto control-label" for="lastname">Last name</label>
                     <div class="col-md-auto">
-                    <input id="lastname" value="testLastName" name="lastname" type="text" placeholder="last name" class="form-control input-md" required="">
+                    <input id="lastname" value="Альтшулер" name="lastname" type="text" placeholder="last name" class="form-control input-md" required="">
 
                     </div>
                     </div>
@@ -65,7 +65,7 @@
                   <div class="form-group">
                     <label class="col-md-auto control-label" for="middlename">Middle name</label>
                     <div class="col-md-auto">
-                    <input id="middlename" value="" name="middlename" type="text" placeholder="middle name" class="form-control input-md">
+                    <input id="middlename" value="Иванович" name="middlename" type="text" placeholder="middle name" class="form-control input-md">
 
                     </div>
                     </div>
@@ -77,7 +77,7 @@
                   <div class="form-group">
                     <label class="col-md-auto control-label" for="residencecountry">Residence country</label>
                     <div class="col-md-auto">
-                    <input id="residencecountry" value="testCountry" name="residencecountry" type="text" placeholder="residence country" class="form-control input-md" required="">
+                    <input id="residencecountry" value="Россия" name="residencecountry" type="text" placeholder="residence country" class="form-control input-md" required="">
 
                     </div>
                     </div>
@@ -90,7 +90,7 @@
                   <div class="form-group">
                   <label class="col-md-auto control-label" for="phonenumber">Phone number</label>
                   <div class="col-md-auto">
-                  <input id="phonenumber" value="+37529 1111111" name="phonenumber" type="text" placeholder="phone number" class="form-control input-md" required="">
+                  <input id="phonenumber" value="+725829 1111111" name="phonenumber" type="text" placeholder="phone number" class="form-control input-md" required="">
                   </div>
                   </div>
                   </div>
@@ -100,7 +100,7 @@
        <div class="form-group">
          <label class="col-md-4 control-label" for="singupbutton"></label>
          <div class="col-md-4">
-           <button id="singupbutton" name="singupbutton" class="btn btn-success">SIGN UP</button>
+           <button id="singupbutton" name="singupbutton" class="btn btn-primary">SIGN UP</button>
          </div>
        </div>
 

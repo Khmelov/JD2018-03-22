@@ -4,6 +4,7 @@ import by.it.kirova.project.java.beans.User;
 import by.it.kirova.project.java.dao.connect.ConnectionCreator;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -15,7 +16,7 @@ public class CmdMyReservations extends Cmd {
 
 
     @Override
-    public Cmd execute(HttpServletRequest req) throws Exception {
+    public Cmd execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         User user = Util.getUserFromSession(req);
         if (user != null) {
             ArrayList<ArrayList> reservations = new ArrayList<>();
