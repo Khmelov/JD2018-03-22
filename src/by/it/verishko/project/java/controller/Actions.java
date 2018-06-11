@@ -11,6 +11,11 @@ public enum Actions {
             this.command = new CmdEditUsers();
         }
     },
+    EDITPRODUCT {
+        {
+            this.command = new CmdEditProduct();
+        }
+    },
     INDEX {
         {
             this.command = new CmdIndex();
