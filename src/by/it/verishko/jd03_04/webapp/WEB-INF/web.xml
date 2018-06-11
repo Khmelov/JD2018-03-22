@@ -15,7 +15,6 @@
     </servlet-mapping>
 
 
-    <display-name>Servlet CacheControl</display-name>
     <filter>
         <filter-name>CacheControlFilter</filter-name>
         <filter-class>by.it.verishko.jd03_04.java.CacheControl</filter-class>

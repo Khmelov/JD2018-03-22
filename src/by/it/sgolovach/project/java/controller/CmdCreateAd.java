@@ -28,7 +28,7 @@ public class CmdCreateAd extends CmdAbstract {
 //                return Action.PAGELOG.comand;
             }else return null;
         }
-        return Action.LOGIN.comand;
+        return Action.PROFILE.comand;
     }
 
 }

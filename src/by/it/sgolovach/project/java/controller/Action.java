@@ -40,6 +40,21 @@ enum Action {
         {
             this.comand=new CmdListad();
         }
+    },
+    EDITUSERS{
+        {
+            this.comand=new CmdEditUsers();
+        }
+    },
+    EDITPROFILE{
+        {
+            this.comand=new CmdEditProfile();
+        }
+    },
+    EDITUSERSAD{
+        {
+            this.comand=new CmdEditUsersAd();
+        }
     };
 
 

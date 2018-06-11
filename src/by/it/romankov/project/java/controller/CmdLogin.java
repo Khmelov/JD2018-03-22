@@ -1,10 +1,13 @@
 package by.it.romankov.project.java.controller;
 
 
+import by.it.romankov.project.java.beans.People;
 import by.it.romankov.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
+import java.util.List;
 
 public class CmdLogin extends CmdAbstract {
     @Override
@@ -14,12 +17,19 @@ public class CmdLogin extends CmdAbstract {
             String password = req.getParameter("password");
             DAO dao = DAO.getInstance();
             String where=String.format("WHERE login='%s' AND password='%s'",login,password);
-            if (dao.people.getAll(where).size()>0){
-                return Actions.INDEX.command;
+            List <People> peoples = dao.people.getAll(where);
+               if (dao.people.getAll(where).size()>0){
+                People people = peoples.get(0);
+                req.getSession().setAttribute("people", people);
+
+                return Actions.CREATETOUR.command;
         }
         }
         return null;
     }
+
+
+
     public static void main(String[] args) throws SQLException {
         DAO dao = DAO.getInstance();
         String where=String.format("WHERE login='%s' AND password='%s'","testlogin","testPassword");
