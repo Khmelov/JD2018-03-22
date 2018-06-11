@@ -4,6 +4,7 @@
 <body>
 <div class="container">
     <%@ include file="include/menu.htm" %>
+    <%@ include file="include/menuWork.htm" %>
 <p style = "color:#800000">Пользователь: ${user.name} Права:${userRole}</p>
 <form class="form-horizontal" method="post" action="do?command=creatework">
 <fieldset>

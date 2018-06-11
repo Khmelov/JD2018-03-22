@@ -32,6 +32,6 @@ public class CmdEditWork extends Cmd {
             //do somthing
         }
         req.setAttribute("listWork", dao.kindOfWorkDao.getAll(""));
-        return Actions.LISTWORK.command;
+        return Actions.LISTEDITWORK.command;
     }
 }

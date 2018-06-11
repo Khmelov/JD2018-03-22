@@ -4,6 +4,7 @@
 <body>
 <div class="container">
     <%@ include file="include/menu.htm" %>
+    <%@ include file="include/menuUser.htm" %>
     <p style = "color:#800000">Пользователь: ${user.name} Права:${userRole}</p>
     <div class="row">
       <h2>Список пользователей</h2>
@@ -24,7 +25,7 @@
             <tr>
               <td>${user.id}</td>
               <td>${user.name}</td>
-              <td> ROL</td>
+              <td> ${user.roleName}</td>
               <td>${user.address}</td>
               <td>${user.telephone}</td>
               <td>${user.login}</td>

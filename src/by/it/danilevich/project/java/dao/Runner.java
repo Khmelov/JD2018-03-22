@@ -27,7 +27,7 @@ public class Runner {
         String nameRole = "guest2";
         UserBean userBean = new UserBean(-1,"Guest",1,"Poland Warsaw","09-789-78","guest","111");
         KindOfWorkBean kindOfWorkBean = new KindOfWorkBean(-1,"Change bath",12.5,3.5,"Water pipes","thing") ;
-        OrderBean orderBean =  new OrderBean(-1,3200,1,5,4,6,3200,3200,3200,1,8,5,"ready");
+        OrderBean orderBean =  new OrderBean(-1,3200,1,5,4,6,1,8,5,"ready");
 
         //in role unique name, check it
         RoleBean roleBean;

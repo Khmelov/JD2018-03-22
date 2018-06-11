@@ -21,29 +21,9 @@ public class Util {
         return null;
     }
 
-
-
     public static long getCurrentDate() {
         Date date = new Date();
         return date.getTime();
 
-    }
-
-
-    public static List<String> getTxtDataForWork(String fileName) throws IOException {
-        FileReader f = new FileReader(getPath(fileName));
-        BufferedReader buf = new BufferedReader(f);
-        String line;
-        List<String> list= new ArrayList<>();
-        while ((line = buf.readLine())!=null){
-            list.add(line);
-        }
-        return list;
-
-    }
-    private static String getPath(String clName){
-
-        String path=CN.DIRECTORY_TXT_DATA;
-        return path+File.separator+clName;
     }
 }

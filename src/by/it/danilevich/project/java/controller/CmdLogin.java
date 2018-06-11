@@ -1,5 +1,7 @@
 package by.it.danilevich.project.java.controller;
 
+import by.it.danilevich.project.java.beans.KindOfWorkBean;
+import by.it.danilevich.project.java.beans.OrderBean;
 import by.it.danilevich.project.java.beans.RoleBean;
 import by.it.danilevich.project.java.beans.UserBean;
 import by.it.danilevich.project.java.dao.Dao;
@@ -24,12 +26,12 @@ public class CmdLogin extends Cmd {
             if (users.size()>0){
                 user=users.get(0);
                 List<RoleBean> roleBeans = dao.roleDao.getAll("where `id`="+user.getRoleId());
+                List<KindOfWorkBean> listWork = dao.kindOfWorkDao.getAll("");
                 HttpSession session = req.getSession();
                 session.setAttribute("user",user);
-                List<String> listCategory = Util.getTxtDataForWork(CN.Name_File_TXT_Category);
-                List<String> listUnit = Util.getTxtDataForWork(CN.Name_File_TXT_Unit);
-                session.setAttribute("listCategory", listCategory);
-                session.setAttribute("listUnit", listUnit);
+                session.setAttribute("listCategory", CN.listCategory);
+                session.setAttribute("listUnit", CN.listUnit);
+                session.setAttribute("listWork", listWork);
                 if (roleBeans.size()!=0) {
                     session.setAttribute("userRole", roleBeans.get(0).getName());
                 }

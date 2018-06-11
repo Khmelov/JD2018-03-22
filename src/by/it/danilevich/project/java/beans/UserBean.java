@@ -1,6 +1,10 @@
 package by.it.danilevich.project.java.beans;
 
+import by.it.danilevich.project.java.dao.Dao;
+
 import java.io.Serializable;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.Objects;
 
 public class UserBean implements Serializable {
@@ -12,8 +16,6 @@ public class UserBean implements Serializable {
     private String telephone;
     private String login;
     private String password;
-
-    private String roleName;
 
     @Override
     public String toString() {
@@ -106,5 +108,24 @@ public class UserBean implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+    public String getRoleName() {
+
+        List<RoleBean> roleBeans= null;
+        String nameRole="";
+        try {
+            roleBeans = Dao.getInstance().roleDao.getAll("where `id`="+this.roleId);
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+       if (roleBeans.size()!=0) {
+           nameRole = roleBeans.get(0).getName();
+       }
+       return nameRole;
     }
 }

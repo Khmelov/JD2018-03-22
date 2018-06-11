@@ -60,17 +60,13 @@ public class OrderDao extends AbstractDao<OrderBean> {
                         "`kind_of_work_id`=%d," +
                         "`executor_id`=%d," +
                         "`admin_id`=%d,"+
-                        "`begin_work`=%d,"+
-                        "`plan_end_work`=%d,"+
-                        "`end_work`=%d,"+
                         "`amount`=%d,"+
                         "`total_money`=%.2f,"+
                         "`total_time`=%.2f,"+
                         "`status`=\'%s\' "+
                         "WHERE `id`=%d",
                 orderBean.getDateOrder(), orderBean.getClientId(),orderBean.getKindOfWorkId(),
-                orderBean.getExecutorId(),orderBean.getAdminId(),orderBean.getBeginWork(),
-                orderBean.getPlanEndWork(),orderBean.getEndWork(),orderBean.getAmount(),
+                orderBean.getExecutorId(),orderBean.getAdminId(),orderBean.getAmount(),
                 orderBean.getTotalMoney(),orderBean.getTotalTime(),orderBean.getStatus(),orderBean.getId());
         return (executeUpdate(sql, false)==1);
     }
@@ -97,9 +93,6 @@ public class OrderDao extends AbstractDao<OrderBean> {
                         orderBean.setKindOfWorkId(rs.getInt("kind_of_work_id"));
                         orderBean.setExecutorId(rs.getInt("executor_id"));
                         orderBean.setAdminId(rs.getInt("admin_id"));
-                        orderBean.setBeginWork(rs.getLong("begin_work"));
-                        orderBean.setPlanEndWork(rs.getLong("plan_end_work"));
-                        orderBean.setEndWork(rs.getLong("end_work"));
                         orderBean.setAmount(rs.getInt("amount"));
                         orderBean.setTotalMoney(rs.getDouble("total_money"));
                         orderBean.setTotalTime(rs.getDouble("total_time"));

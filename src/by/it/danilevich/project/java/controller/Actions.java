@@ -6,6 +6,11 @@ enum Actions {
             this.command = new CmdListOrder();
         }
     },
+    LISTEDITORDER {
+        {
+            this.command = new CmdListEditOrder();
+        }
+    },
     CREATEORDER {
         {
             this.command = new CmdCreateOrder();
@@ -16,14 +21,35 @@ enum Actions {
             this.command = new CmdCreateWork();
         }
     },
+    CREATEUSER{
+        {
+            this.command = new CmdCreateUser();
+        }
+    },
     EDITWORK {
         {
             this.command = new CmdEditWork();
         }
     },
+    INITBASE {
+        {
+            this.command = new CmdInitBase();
+        }
+    },
+
     EDITORDER {
         {
             this.command = new CmdEditOrder();
+        }
+    },
+    LISTEDITUSER {
+        {
+            this.command = new CmdListEditUser();
+        }
+    },
+    EDITUSER {
+        {
+            this.command = new CmdEditUser();
         }
     },
     LISTWORK {
@@ -57,6 +83,12 @@ enum Actions {
             this.command = new CmdSignup();
         }
     },
+    LISTEDITWORK {
+        {
+            this.command = new CmdListEditWork();
+        }
+    },
+
     ERROR {
         {
             this.command = new CmdError();

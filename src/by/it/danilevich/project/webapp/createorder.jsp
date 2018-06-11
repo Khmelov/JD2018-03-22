@@ -4,8 +4,14 @@
 <body>
 <div class="container">
     <%@ include file="include/menu.htm" %>
-<form class="form-horizontal" method="post" action="do?command=createorder">
+<form class="form-horizontal" method="post" name = "formOrder" action="do?command=createorder">
 <fieldset>
+    <script type="text/javascript">
+           function OnSelectionChange (s) {
+            var selectedOption = s.options[s.selectedIndex];
+            document.getElementById('totalmoney').value = "${work.price}";
+        }
+    </script>
 
 <!-- Form Name -->
 <legend>Заявка на оказание услуг ЖКХ</legend>
@@ -14,8 +20,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="selectkindofworks">Услуга</label>
   <div class="col-md-4">
-    <select id="selectkindofworks" name="selectkindofworks" class="form-control">
-        <c:forEach var="work" items="${kindOfWorks}">
+    <select id="selectkindofworks" name="selectkindofworks" class="form-control" onchange="OnSelectionChange (this)">
+        <c:forEach var="work" items="${listWork}">
             <option value = ${work.id}>${work.name}</option>
         </c:forEach>
     </select>
@@ -33,9 +39,9 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="totalmoney">Стоимость</label>
+  <label class="col-md-4 control-label" for="address" >Адрес</label>
   <div class="col-md-4">
-  <input id="totalmoney" name="totalmoney" type="text" placeholder="0" class="form-control input-md" disabled="disabled" >
+  <input id="address" name="address" type="text" value = "${user.address}" placeholder="0" class="form-control input-md" type="disabled">
 
   </div>
 </div>
