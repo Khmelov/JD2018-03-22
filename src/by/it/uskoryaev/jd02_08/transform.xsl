@@ -7,7 +7,7 @@
                     <table border="1">
                         <tr>
                             <td>
-                                nickName
+                                nick_Name
                             </td>
                             <td>
                                 email
@@ -30,7 +30,7 @@
         </tr>
     </xsl:template>
 
-    <xsl:template match="/BaseFace/User/nickName">
+    <xsl:template match="/BaseFace/User/nick_Name">
         <td>
             <xsl:apply-templates/>
         </td>

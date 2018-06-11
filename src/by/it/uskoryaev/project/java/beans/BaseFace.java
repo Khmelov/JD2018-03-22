@@ -2,14 +2,14 @@ package by.it.uskoryaev.project.java.beans;
 
 public class BaseFace {
     private int id;
-    private String baseFace;
+    private String base_Face;
 
     public BaseFace() {
     }
 
-    public BaseFace(int id, String baseFace) {
+    public BaseFace(int id, String base_Face) {
         this.id = id;
-        this.baseFace = baseFace;
+        this.base_Face = base_Face;
     }
 
     public int getId() {
@@ -20,16 +20,16 @@ public class BaseFace {
         this.id = id;
     }
 
-    public String getBaseFace() {
-        return baseFace;
+    public String getBase_Face() {
+        return base_Face;
     }
 
-    public void setBaseFace(String baseFace) {
-        this.baseFace = baseFace;
+    public void setBase_Face(String base_Face) {
+        this.base_Face = base_Face;
     }
 
     @Override
     public String toString() {
-        return "\nBaseFace{" + "id=" + id + ",base_face=" + baseFace + '\'' + '}';
+        return "\nBaseFace{" + "id=" + id + ",base_face=" + base_Face + '\'' + '}';
     }
 }

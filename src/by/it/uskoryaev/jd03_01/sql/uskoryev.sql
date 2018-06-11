@@ -21,9 +21,9 @@ USE `uskoryaev` ;
 DROP TABLE IF EXISTS `uskoryaev`.`base_face` ;
 
 CREATE TABLE IF NOT EXISTS `uskoryaev`.`base_face` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT NULL AUTO_INCREMENT,
   `base_face` VARCHAR(45) NULL,
-  PRIMARY KEY (`id`))
+  PRIMARY KEY (`user_id`))
 ENGINE = InnoDB;
 
 
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `uskoryaev`.`user` (
   INDEX `fk_user_base_face1_idx` (`base_face_id` ASC),
   CONSTRAINT `fk_user_base_face1`
     FOREIGN KEY (`base_face_id`)
-    REFERENCES `uskoryaev`.`base_face` (`id`)
+    REFERENCES `uskoryaev`.`base_face` (`user_id`)
     ON DELETE RESTRICT
     ON UPDATE RESTRICT)
 ENGINE = InnoDB;
@@ -58,7 +58,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `uskoryaev`.`car` ;
 
 CREATE TABLE IF NOT EXISTS `uskoryaev`.`car` (
-  `id_car` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT NULL AUTO_INCREMENT,
   `serial_number` VARCHAR(45) NULL,
   `brand` VARCHAR(45) NULL,
   `model` VARCHAR(45) NULL,
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `uskoryaev`.`car` (
   `year_release` VARCHAR(45) NULL,
   `color` VARCHAR(45) NULL,
   `user_user_id` INT NOT NULL,
-  PRIMARY KEY (`id_car`),
+  PRIMARY KEY (`user_id`),
   INDEX `fk_car_user_idx` (`user_user_id` ASC),
   CONSTRAINT `fk_car_user`
     FOREIGN KEY (`user_user_id`)
@@ -85,9 +85,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `uskoryaev`;
-INSERT INTO `uskoryaev`.`base_face` (`id`, `base_face`) VALUES (DEFAULT, 'admin');
-INSERT INTO `uskoryaev`.`base_face` (`id`, `base_face`) VALUES (DEFAULT, 'user');
-INSERT INTO `uskoryaev`.`base_face` (`id`, `base_face`) VALUES (DEFAULT, 'guest');
+INSERT INTO `uskoryaev`.`base_face` (`user_id`, `base_face`) VALUES (DEFAULT, 'admin');
+INSERT INTO `uskoryaev`.`base_face` (`user_id`, `base_face`) VALUES (DEFAULT, 'user');
+INSERT INTO `uskoryaev`.`base_face` (`user_id`, `base_face`) VALUES (DEFAULT, 'guest');
 
 COMMIT;
 
@@ -108,7 +108,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `uskoryaev`;
-INSERT INTO `uskoryaev`.`car` (`id_car`, `serial_number`, `brand`, `model`, `body_car`, `year_release`, `color`, `user_user_id`) VALUES (DEFAULT, '34hjbch54c', 'mercdes', 'S-class', 'coupe', '2017', 'black', 2);
+INSERT INTO `uskoryaev`.`car` (`user_id`, `serial_number`, `brand`, `model`, `body_car`, `year_release`, `color`, `user_user_id`) VALUES (DEFAULT, '34hjbch54c', 'mercdes', 'S-class', 'coupe', '2017', 'black', 2);
 
 COMMIT;
 

@@ -12,7 +12,7 @@ package by.it.uskoryaev.jd03_02;//package by.it.uskoryaev.jd03_02;
 //        String sql = String.format(Locale.US, "INSERT INTO " +
 //                        "`users`(`nickName`, `email`, `password`,`firstName`,`lastName`,`middleName`,`phoneNumber`,`baseFace_id`) " +
 //                        "VALUES ('%s','%s','%s','%s','%s','%s','%d','%d')",
-//                user.getNickName(), user.getEmail(), user.getPassword(), user.getFirstName(),user.getLastName(),user.getMiddleName(),user.getPhoneNumber(),user.getBaseFace_id());
+//                user.getNick_Name(), user.getEmail(), user.getPassword(), user.getFirst_Name(),user.getLast_Name(),user.getMiddle_Name(),user.getPhone_Number(),user.getBaseFace_id());
 //        try (Connection connection = ConnectionCreator.getConnection();
 //             Statement statement = connection.createStatement()
 //        ) {
@@ -21,7 +21,7 @@ package by.it.uskoryaev.jd03_02;//package by.it.uskoryaev.jd03_02;
 //                ResultSet generatedKeys = statement.getGeneratedKeys();
 //                if (generatedKeys.next()) {
 //                    int id = generatedKeys.getInt(1);
-//                    user.setId(id);
+//                    user.setUser_id(id);
 //                }
 //            }
 //            return result;
@@ -33,7 +33,7 @@ package by.it.uskoryaev.jd03_02;//package by.it.uskoryaev.jd03_02;
 //        String sql = String.format(Locale.US, "UPDATE " +
 //                "`users` SET `login`='%s',`email`='%s'," +
 //                "`password`='%s',`roles_id`=%d " +
-//                "WHERE `id`=%d", user.getLogin(), user.getEmail(), user.getPassword(), user.getRoles_id(), user.getId());
+//                "WHERE `id`=%d", user.getLogin(), user.getEmail(), user.getPassword(), user.getRoles_id(), user.getUser_id());
 //        try (Connection connection = ConnectionCreator.getConnection();
 //             Statement statement = connection.createStatement()
 //        ) {
@@ -42,7 +42,7 @@ package by.it.uskoryaev.jd03_02;//package by.it.uskoryaev.jd03_02;
 //    }
 //
 //   static boolean delete(User user) throws SQLException {
-//        String sql = String.format(Locale.US, "DELETE FROM `users` WHERE `id`=%d", user.getId());
+//        String sql = String.format(Locale.US, "DELETE FROM `users` WHERE `id`=%d", user.getUser_id());
 //        try (Connection connection = ConnectionCreator.getConnection();
 //             Statement statement = connection.createStatement()
 //        ) {

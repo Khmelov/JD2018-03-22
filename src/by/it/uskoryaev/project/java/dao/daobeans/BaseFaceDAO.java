@@ -15,7 +15,7 @@ public class BaseFaceDAO extends AbstractDAO<BaseFace> {
 
     @Override
     public boolean create(BaseFace baseFace) throws SQLException {
-        String sql = String.format(Locale.US, "INSERT INTO 'base_face'(base_face) VALUE ('%s')", baseFace.getBaseFace());
+        String sql = String.format(Locale.US, "INSERT INTO 'base_face'(base_face) VALUE ('%s')", baseFace.getBase_Face());
         int id = executeUpdate(sql, true);
         if (id > 0) {
             baseFace.setId(id);
@@ -26,7 +26,7 @@ public class BaseFaceDAO extends AbstractDAO<BaseFace> {
 
     @Override
     public boolean update(BaseFace baseFace) throws SQLException {
-        String sql = String.format(Locale.US, "UPDATE 'base_face' SET 'base_face'='%s'" + "WHERE'id'=%d", baseFace.getBaseFace(), baseFace.getId());
+        String sql = String.format(Locale.US, "UPDATE 'base_face' SET 'base_face'='%s'" + "WHERE'id'=%d", baseFace.getBase_Face(), baseFace.getId());
         return executeUpdate(sql, false) == 1;
     }
 

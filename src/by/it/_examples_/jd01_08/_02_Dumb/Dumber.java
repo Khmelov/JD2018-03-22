@@ -9,7 +9,7 @@ class Dumber extends Dumb {
         }
         @Override
         int getId() { // 2
-            System.out.println("getId() класса Dumber ");
+            System.out.println("getUser_id() класса Dumber ");
             return id;
         }
     }

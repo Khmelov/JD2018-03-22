@@ -21,10 +21,10 @@ Time: Sat May 05 08:58:15 2018 Aaea?onu (ceia) elapsed time: 25659 seconds (0d 7
 
 ---------------  T H R E A D  ---------------
 
-Current thread (0x0000019bce96a000):  VMThread "VM Thread" [stack: 0x0000002288300000,0x0000002288400000] [id=8764]
+Current thread (0x0000019bce96a000):  VMThread "VM Thread" [stack: 0x0000002288300000,0x0000002288400000] [user_id=8764]
 
 Stack: [0x0000002288300000,0x0000002288400000]
-[error occurred during error reporting (printing stack bounds), id 0xe0000000]
+[error occurred during error reporting (printing stack bounds), user_id 0xe0000000]
 
 Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
 V  [jvm.dll+0x5a0369]
@@ -61,40 +61,40 @@ _to_delete_list=0x0000019bcf670130, length=20, elements={
 }
 
 Java Threads: ( => current thread )
-  0x0000019bce976000 JavaThread "Reference Handler" daemon [_thread_blocked, id=5552, stack(0x0000002288400000,0x0000002288500000)]
-  0x0000019bce977800 JavaThread "Finalizer" daemon [_thread_blocked, id=12348, stack(0x0000002288500000,0x0000002288600000)]
-  0x0000019bce98f800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2088, stack(0x0000002288600000,0x0000002288700000)]
-  0x0000019bce990000 JavaThread "Attach Listener" daemon [_thread_blocked, id=2172, stack(0x0000002288700000,0x0000002288800000)]
-  0x0000019bce994000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=3048, stack(0x0000002288800000,0x0000002288900000)]
-  0x0000019bce994800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=7160, stack(0x0000002288900000,0x0000002288a00000)]
-  0x0000019bcf350000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=11276, stack(0x0000002288a00000,0x0000002288b00000)]
-  0x0000019bcf354800 JavaThread "Sweeper thread" daemon [_thread_blocked, id=5196, stack(0x0000002288b00000,0x0000002288c00000)]
-  0x0000019bcf543800 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, id=6108, stack(0x0000002288c00000,0x0000002288d00000)] _threads_hazard_ptr=0x0000019bcf4f9aa0
-  0x0000019bcf539000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=2804, stack(0x0000002288d00000,0x0000002288e00000)]
-  0x0000019bcf667800 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=4460, stack(0x0000002288e00000,0x0000002288f00000)]
-  0x0000019bcf5ef000 JavaThread "Common-Cleaner" daemon [_thread_blocked, id=12528, stack(0x0000002288f00000,0x0000002289000000)]
-  0x0000019bcf81f800 JavaThread "Service Thread" daemon [_thread_blocked, id=3560, stack(0x0000002289000000,0x0000002289100000)]
-  0x0000019bcf656800 JavaThread "Thread-0" [_thread_blocked, id=4196, stack(0x0000002289200000,0x0000002289300000)]
-  0x0000019bcf31c000 JavaThread "Thread-5" [_thread_blocked, id=8088, stack(0x0000002289700000,0x0000002289800000)]
-  0x0000019bcf31c800 JavaThread "Thread-6" [_thread_blocked, id=7572, stack(0x0000002289800000,0x0000002289900000)]
-  0x0000019bcf522800 JavaThread "Thread-8" [_thread_blocked, id=10660, stack(0x0000002289a00000,0x0000002289b00000)]
-  0x0000019bcf31f800 JavaThread "Thread-10" [_thread_blocked, id=5392, stack(0x0000002289e00000,0x0000002289f00000)]
-  0x0000019bab5ef000 JavaThread "DestroyJavaVM" [_thread_blocked, id=3128, stack(0x0000002287700000,0x0000002287800000)]
+  0x0000019bce976000 JavaThread "Reference Handler" daemon [_thread_blocked, user_id=5552, stack(0x0000002288400000,0x0000002288500000)]
+  0x0000019bce977800 JavaThread "Finalizer" daemon [_thread_blocked, user_id=12348, stack(0x0000002288500000,0x0000002288600000)]
+  0x0000019bce98f800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, user_id=2088, stack(0x0000002288600000,0x0000002288700000)]
+  0x0000019bce990000 JavaThread "Attach Listener" daemon [_thread_blocked, user_id=2172, stack(0x0000002288700000,0x0000002288800000)]
+  0x0000019bce994000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, user_id=3048, stack(0x0000002288800000,0x0000002288900000)]
+  0x0000019bce994800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, user_id=7160, stack(0x0000002288900000,0x0000002288a00000)]
+  0x0000019bcf350000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, user_id=11276, stack(0x0000002288a00000,0x0000002288b00000)]
+  0x0000019bcf354800 JavaThread "Sweeper thread" daemon [_thread_blocked, user_id=5196, stack(0x0000002288b00000,0x0000002288c00000)]
+  0x0000019bcf543800 JavaThread "JDWP Transport Listener: dt_socket" daemon [_thread_blocked, user_id=6108, stack(0x0000002288c00000,0x0000002288d00000)] _threads_hazard_ptr=0x0000019bcf4f9aa0
+  0x0000019bcf539000 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, user_id=2804, stack(0x0000002288d00000,0x0000002288e00000)]
+  0x0000019bcf667800 JavaThread "JDWP Command Reader" daemon [_thread_in_native, user_id=4460, stack(0x0000002288e00000,0x0000002288f00000)]
+  0x0000019bcf5ef000 JavaThread "Common-Cleaner" daemon [_thread_blocked, user_id=12528, stack(0x0000002288f00000,0x0000002289000000)]
+  0x0000019bcf81f800 JavaThread "Service Thread" daemon [_thread_blocked, user_id=3560, stack(0x0000002289000000,0x0000002289100000)]
+  0x0000019bcf656800 JavaThread "Thread-0" [_thread_blocked, user_id=4196, stack(0x0000002289200000,0x0000002289300000)]
+  0x0000019bcf31c000 JavaThread "Thread-5" [_thread_blocked, user_id=8088, stack(0x0000002289700000,0x0000002289800000)]
+  0x0000019bcf31c800 JavaThread "Thread-6" [_thread_blocked, user_id=7572, stack(0x0000002289800000,0x0000002289900000)]
+  0x0000019bcf522800 JavaThread "Thread-8" [_thread_blocked, user_id=10660, stack(0x0000002289a00000,0x0000002289b00000)]
+  0x0000019bcf31f800 JavaThread "Thread-10" [_thread_blocked, user_id=5392, stack(0x0000002289e00000,0x0000002289f00000)]
+  0x0000019bab5ef000 JavaThread "DestroyJavaVM" [_thread_blocked, user_id=3128, stack(0x0000002287700000,0x0000002287800000)]
 
 Other Threads:
-=>0x0000019bce96a000 VMThread "VM Thread" [stack: 0x0000002288300000,0x0000002288400000] [id=8764]
-  0x0000019bcf669800 WatcherThread [stack: 0x0000002289100000,0x0000002289200000] [id=5780]
-  0x0000019bab608800 GCTaskThread "GC Thread#0" [stack: 0x0000002287800000,0x0000002287900000] [id=9284]
-  0x0000019bab60a000 GCTaskThread "GC Thread#1" [stack: 0x0000002287900000,0x0000002287a00000] [id=10760]
-  0x0000019bab60b800 GCTaskThread "GC Thread#2" [stack: 0x0000002287a00000,0x0000002287b00000] [id=5280]
-  0x0000019bab60e800 GCTaskThread "GC Thread#3" [stack: 0x0000002287b00000,0x0000002287c00000] [id=10812]
-  0x0000019bab682800 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000002287c00000,0x0000002287d00000] [id=11344]
-  0x0000019bab685800 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000002287d00000,0x0000002287e00000] [id=4912]
-  0x0000019bab6ce000 ConcurrentGCThread "G1 Refine#0" [stack: 0x0000002287e00000,0x0000002287f00000] [id=12920]
-  0x0000019bce7e8800 ConcurrentGCThread "G1 Refine#1" [stack: 0x0000002287f00000,0x0000002288000000] [id=5944]
-  0x0000019bce7e9000 ConcurrentGCThread "G1 Refine#2" [stack: 0x0000002288000000,0x0000002288100000] [id=8904]
-  0x0000019bce7fb800 ConcurrentGCThread "G1 Refine#3" [stack: 0x0000002288100000,0x0000002288200000] [id=3020]
-  0x0000019bce800800 ConcurrentGCThread "G1 Young RemSet Sampling" [stack: 0x0000002288200000,0x0000002288300000] [id=7776]
+=>0x0000019bce96a000 VMThread "VM Thread" [stack: 0x0000002288300000,0x0000002288400000] [user_id=8764]
+  0x0000019bcf669800 WatcherThread [stack: 0x0000002289100000,0x0000002289200000] [user_id=5780]
+  0x0000019bab608800 GCTaskThread "GC Thread#0" [stack: 0x0000002287800000,0x0000002287900000] [user_id=9284]
+  0x0000019bab60a000 GCTaskThread "GC Thread#1" [stack: 0x0000002287900000,0x0000002287a00000] [user_id=10760]
+  0x0000019bab60b800 GCTaskThread "GC Thread#2" [stack: 0x0000002287a00000,0x0000002287b00000] [user_id=5280]
+  0x0000019bab60e800 GCTaskThread "GC Thread#3" [stack: 0x0000002287b00000,0x0000002287c00000] [user_id=10812]
+  0x0000019bab682800 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000002287c00000,0x0000002287d00000] [user_id=11344]
+  0x0000019bab685800 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000002287d00000,0x0000002287e00000] [user_id=4912]
+  0x0000019bab6ce000 ConcurrentGCThread "G1 Refine#0" [stack: 0x0000002287e00000,0x0000002287f00000] [user_id=12920]
+  0x0000019bce7e8800 ConcurrentGCThread "G1 Refine#1" [stack: 0x0000002287f00000,0x0000002288000000] [user_id=5944]
+  0x0000019bce7e9000 ConcurrentGCThread "G1 Refine#2" [stack: 0x0000002288000000,0x0000002288100000] [user_id=8904]
+  0x0000019bce7fb800 ConcurrentGCThread "G1 Refine#3" [stack: 0x0000002288100000,0x0000002288200000] [user_id=3020]
+  0x0000019bce800800 ConcurrentGCThread "G1 Young RemSet Sampling" [stack: 0x0000002288200000,0x0000002288300000] [user_id=7776]
 
 Threads with active compile tasks:
 

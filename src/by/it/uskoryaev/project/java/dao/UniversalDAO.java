@@ -2,6 +2,7 @@ package by.it.uskoryaev.project.java.dao;
 
 
 import by.it.uskoryaev.project.java.dao.connect.ConnectionCreator;
+import by.it.uskoryaev.project.java.dao.daobeans.InterfaceDAO;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

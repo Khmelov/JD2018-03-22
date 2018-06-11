@@ -33,8 +33,13 @@ public enum Action {
         }
     }, DELETE {
         {
-            this.command = new CmdDelete();
+            this.command = new CmdEditUsers();
         }
+    },PROFILE{
+        {
+            this.command = new CmdProfile();
+        }
+
     };
 AbstractCmd command;
 }

@@ -1,43 +1,43 @@
 package by.it.uskoryaev.project.java.beans;
 
 public class Car {
-    private int id;
-    private String serialNumber;
+    private int id_car;
+    private String serial_Number;
     private String brand;
     private String model;
-    private String bodyCar;
-    private String yearRelease;
+    private String body_Car;
+    private String year_Release;
     private String color;
-    private int userId;
+    private int user_user_Id;
 
     public Car() {
     }
 
-    public Car(int id, String serialNumber, String brand, String model, String bodyCar, String yearRelease, String color, int userId) {
-        this.id = id;
-        this.serialNumber = serialNumber;
+    public Car(int id_car, String serial_Number, String brand, String model, String body_Car, String year_Release, String color, int user_user_Id) {
+        this.id_car = id_car;
+        this.serial_Number = serial_Number;
         this.brand = brand;
         this.model = model;
-        this.bodyCar = bodyCar;
-        this.yearRelease = yearRelease;
+        this.body_Car = body_Car;
+        this.year_Release = year_Release;
         this.color = color;
-        this.userId = userId;
+        this.user_user_Id = user_user_Id;
     }
 
-    public int getId() {
-        return id;
+    public int getId_car() {
+        return id_car;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_car(int id_car) {
+        this.id_car = id_car;
     }
 
-    public String getSerialNumber() {
-        return serialNumber;
+    public String getSerial_Number() {
+        return serial_Number;
     }
 
-    public void setSerialNumber(String serialNumber) {
-        this.serialNumber = serialNumber;
+    public void setSerial_Number(String serial_Number) {
+        this.serial_Number = serial_Number;
     }
 
     public String getBrand() {
@@ -56,20 +56,20 @@ public class Car {
         this.model = model;
     }
 
-    public String getBodyCar() {
-        return bodyCar;
+    public String getBody_Car() {
+        return body_Car;
     }
 
-    public void setBodyCar(String bodyCar) {
-        this.bodyCar = bodyCar;
+    public void setBody_Car(String body_Car) {
+        this.body_Car = body_Car;
     }
 
-    public String getYearRelease() {
-        return yearRelease;
+    public String getYear_Release() {
+        return year_Release;
     }
 
-    public void setYearRelease(String yearRelease) {
-        this.yearRelease = yearRelease;
+    public void setYear_Release(String year_Release) {
+        this.year_Release = year_Release;
     }
 
     public String getColor() {
@@ -80,24 +80,24 @@ public class Car {
         this.color = color;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getUser_user_Id() {
+        return user_user_Id;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser_user_Id(int user_user_Id) {
+        this.user_user_Id = user_user_Id;
     }
 
     @Override
     public String toString() {
-        return "\nCar{" + "id=" + id
-                + ",serial_number=" + serialNumber + '\''
+        return "\nCar{" + "id_car=" + id_car
+                + ",serial_number=" + serial_Number + '\''
                 + ",brand=" + brand + '\''
                 + ",model=" + model + '\''
-                + ",body_car=" + bodyCar + '\''
-                + ",year_release=" + yearRelease + '\''
+                + ",body_car=" + body_Car + '\''
+                + ",year_release=" + year_Release + '\''
                 + ",color=" + color + '\''
-                + ",user_id=" + userId + '\''
+                + ",user_id=" + user_user_Id + '\''
                 + '}';
     }
 }

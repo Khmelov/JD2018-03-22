@@ -1,4 +1,4 @@
-package by.it.uskoryaev.project.java.dao;
+package by.it.uskoryaev.project.java.dao.daobeans;
 
 import java.sql.SQLException;
 import java.util.List;

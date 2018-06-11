@@ -1,6 +1,5 @@
 package by.it.uskoryaev.project.java.dao.daobeans;
 
-import by.it.uskoryaev.project.java.dao.InterfaceDAO;
 import by.it.uskoryaev.project.java.dao.connect.ConnectionCreator;
 
 import java.sql.Connection;
