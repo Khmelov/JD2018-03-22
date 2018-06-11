@@ -4,30 +4,33 @@
 <body>
 <div class="container">
     <%@ include file="include/menu.htm" %>
-<form class="form-horizontal" method="post" action="do?command=createorder">
+<form class="form-horizontal" method="post" name = "formOrder" action="do?command=createorder">
 <fieldset>
+    <script type="text/javascript">
+           function OnSelectionChange (s) {
+            var selectedOption = s.options[s.selectedIndex];
+            document.getElementById('totalmoney').value = "${work.price}";
+        }
+    </script>
 
 <!-- Form Name -->
-<legend>Housing and communal services</legend>
-<p>User:<br> ${user}</p>
+<legend>Заявка на оказание услуг ЖКХ</legend>
+<p style = "color:#800000">Пользователь: ${user.name} Права:${userRole}</p>
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectkindofworks">Kind of work</label>
+  <label class="col-md-4 control-label" for="selectkindofworks">Услуга</label>
   <div class="col-md-4">
-    <select id="selectkindofworks" name="selectkindofworks" class="form-control">
-        <option value="1">Change pipes in bath</option>
-        <option value="2">painting walls</option>
-        <option value="3">Change lamp</option>
-        <option value="4">Change pipes in kitchen</option>
-        <option value="5">painting roof</option>
-        <option value="7">Change bath</option>
-     </select>
+    <select id="selectkindofworks" name="selectkindofworks" class="form-control" onchange="OnSelectionChange (this)">
+        <c:forEach var="work" items="${listWork}">
+            <option value = ${work.id}>${work.name}</option>
+        </c:forEach>
+    </select>
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="amount">Amount</label>
+  <label class="col-md-4 control-label" for="amount">Количество</label>
   <div class="col-md-4">
   <input id="amount" name="amount" type="text" placeholder="1" class="form-control input-md">
 
@@ -36,9 +39,9 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="totalmoney">Price</label>
+  <label class="col-md-4 control-label" for="address" >Адрес</label>
   <div class="col-md-4">
-  <input id="totalmoney" name="totalmoney" type="text" placeholder="0" class="form-control input-md" disabled="disabled" >
+  <input id="address" name="address" type="text" value = "${user.address}" placeholder="0" class="form-control input-md" type="disabled">
 
   </div>
 </div>
@@ -46,8 +49,8 @@
 <!-- Button (Double) -->
 <div class="form-group">
   <div class="col-md-8">
-    <button id="button1id" name="button1id" class="btn btn-success">Add order</button>
-    <button id="button2id" name="button2id" class="btn btn-danger">Cancel</button>
+    <button id="button1id" name="button1id" class="btn btn-success">Оставить заказ</button>
+    <button id="button2id" name="button2id" class="btn btn-danger">Отмена</button>
   </div>
 </div>
 

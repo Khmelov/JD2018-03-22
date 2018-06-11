@@ -4,8 +4,8 @@
 <body>
 <div class="container">
     <%@ include file="include/menu.htm" %>
-    <p>ERROR: ${message}</p>
-</div>
+    <p>ERROR: ${err}</p>
+    </div>
 </body>
 </html>
 

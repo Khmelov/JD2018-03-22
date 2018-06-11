@@ -1,10 +1,13 @@
 package by.it.danilevich.project.java.controller;
 
+import by.it.danilevich.project.java.dao.connect.CN;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class FrontController extends HttpServlet {
 
@@ -29,7 +32,11 @@ public class FrontController extends HttpServlet {
                 resp.sendRedirect("do?command="+next.toString());
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            req.setAttribute("err",e.getMessage());
+            String log = Arrays.toString(e.getStackTrace()).replaceAll(",","<br>");
+            req.setAttribute("log",log);
+            getServletContext().getRequestDispatcher(Actions.ERROR.command.getJsp()).forward(req, resp);
+
         }
     }
 
@@ -47,7 +54,10 @@ public class FrontController extends HttpServlet {
                 resp.sendRedirect("do?command="+next.toString());
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            req.setAttribute("err",e.getMessage());
+            String log = Arrays.toString(e.getStackTrace()).replaceAll(",","<br>");
+            req.setAttribute("log",log);
+            getServletContext().getRequestDispatcher(Actions.ERROR.command.getJsp()).forward(req, resp);
         }
     }
 

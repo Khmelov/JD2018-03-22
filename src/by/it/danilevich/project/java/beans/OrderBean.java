@@ -1,6 +1,13 @@
 package by.it.danilevich.project.java.beans;
 
+import by.it.danilevich.project.java.dao.Dao;
+import javafx.scene.input.DataFormat;
+
 import java.io.Serializable;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class OrderBean implements Serializable {
@@ -10,9 +17,6 @@ public class OrderBean implements Serializable {
     private int kindOfWorkId;
     private int executorId;
     private int adminId;
-    private long beginWork;
-    private long planEndWork;
-    private long endWork;
     private int amount;
     private double totalMoney;
     private double totalTime;
@@ -61,29 +65,6 @@ public class OrderBean implements Serializable {
         this.adminId = adminId;
     }
 
-    public long getBeginWork() {
-        return beginWork;
-    }
-
-    public void setBeginWork(long beginWork) {
-        this.beginWork = beginWork;
-    }
-
-    public long getPlanEndWork() {
-        return planEndWork;
-    }
-
-    public void setPlanEndWork(long planEndWork) {
-        this.planEndWork = planEndWork;
-    }
-
-    public long getEndWork() {
-        return endWork;
-    }
-
-    public void setEndWork(long endWork) {
-        this.endWork = endWork;
-    }
 
     public int getAmount() {
         return amount;
@@ -117,16 +98,13 @@ public class OrderBean implements Serializable {
         this.status = status;
     }
 
-    public OrderBean(int id, int dateOrder, int clientId, int kindOfWorkId, int executorId, int adminId, int beginWork, int planEndWork, int endWork, int amount, double totalMoney, double totalTime, String status) {
+    public OrderBean(int id, long dateOrder, int clientId, int kindOfWorkId, int executorId, int adminId,  int amount, double totalMoney, double totalTime, String status) {
         this.id = id;
         this.dateOrder = dateOrder;
         this.clientId = clientId;
         this.kindOfWorkId = kindOfWorkId;
         this.executorId = executorId;
         this.adminId = adminId;
-        this.beginWork = beginWork;
-        this.planEndWork = planEndWork;
-        this.endWork = endWork;
         this.amount = amount;
         this.totalMoney = totalMoney;
         this.totalTime = totalTime;
@@ -163,5 +141,101 @@ public class OrderBean implements Serializable {
                 ", clientId=" + clientId +
                 ", kindOfWorkId=" + kindOfWorkId +
                 '}';
+    }
+
+
+    public String getNameExecutor() {
+
+        List<UserBean> userBeans= null;
+        String nameExecutor="";
+        try {
+            userBeans = Dao.getInstance().userDao.getAll("where `id`="+this.executorId);
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if (userBeans.size()!=0) {
+            nameExecutor = userBeans.get(0).getName();
+        }
+        return nameExecutor;
+    }
+    public String getNameClient() {
+
+        List<UserBean> userBeans= null;
+        String nameClient="";
+        try {
+            userBeans = Dao.getInstance().userDao.getAll("where `id`="+this.clientId);
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if (userBeans.size()!=0) {
+            nameClient = userBeans.get(0).getName();
+        }
+        return nameClient;
+    }
+    public String getAddress() {
+
+        List<UserBean> userBeans= null;
+        String address="";
+        try {
+            userBeans = Dao.getInstance().userDao.getAll("where `id`="+this.clientId);
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if (userBeans.size()!=0) {
+            address = userBeans.get(0).getAddress();
+        }
+        return address;
+    }
+    public String getNameWork() {
+
+        List<KindOfWorkBean> kindOfWorkBeans= null;
+        String nameWork="";
+        try {
+            kindOfWorkBeans = Dao.getInstance().kindOfWorkDao.getAll("where `id`="+this.kindOfWorkId);
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if (kindOfWorkBeans.size()!=0) {
+            nameWork = kindOfWorkBeans.get(0).getName();
+        }
+        return nameWork;
+    }
+
+    public String getUnitWork() {
+
+        List<KindOfWorkBean> kindOfWorkBeans= null;
+        String nameWork="";
+        try {
+            kindOfWorkBeans = Dao.getInstance().kindOfWorkDao.getAll("where `id`="+this.kindOfWorkId);
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if (kindOfWorkBeans.size()!=0) {
+            nameWork = kindOfWorkBeans.get(0).getUnit();
+        }
+        return nameWork;
+    }
+
+    public String getDateString(){
+        Long mil = this.dateOrder;
+        Date date = new Date(mil);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+
+        return dateFormat.format(date);
     }
 }

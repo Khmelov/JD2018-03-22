@@ -6,10 +6,7 @@
     <%@ include file="include/menu.htm" %>
     <%@ include file="include/menuOrder.htm" %>
     <p style = "color:#800000">Пользователь: ${user.name} Права:${userRole}</p>
-        <h2>Список заказов всех пользователей</h2>
-
-    <%@ include file="listordershort.jsp" %>
-</div>
+    <%@ include file="listeditorderFull.jsp" %>
 </div>
 </body>
 </html>
