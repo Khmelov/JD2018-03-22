@@ -8,7 +8,7 @@
         <fieldset>
 
             <!-- Form Name -->
-            <legend>Login</legend>
+            <legend>Вход</legend>
 
             <!-- Text input-->
             <div class="form-group">
@@ -35,7 +35,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="signupbutton"></label>
                 <div class="col-md-4">
-                    <button id="signupbutton" name="Login" class="btn btn-success">Submit</button>
+                    <button id="signupbutton" name="Login" class="btn btn-success">Войти</button>
                 </div>
             </div>
 
