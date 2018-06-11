@@ -6,6 +6,6 @@ public class CmdLogout implements ActionCmd {
 
     @Override
     public String execute(HttpServletRequest reg) throws Exception {
-        return null;
+        return Actions.LOGOUT.jsp;
     }
 }

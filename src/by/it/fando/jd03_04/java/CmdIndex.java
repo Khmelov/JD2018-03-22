@@ -6,6 +6,6 @@ public class CmdIndex implements ActionCmd {
 
     @Override
     public String execute(HttpServletRequest reg) throws Exception {
-        return null;
+        return Actions.INDEX.jsp;
     }
 }

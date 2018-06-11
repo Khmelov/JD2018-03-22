@@ -6,6 +6,6 @@ public class CmdSignup implements ActionCmd {
 
     @Override
     public String execute(HttpServletRequest reg) throws Exception {
-        return null;
+        return Actions.SIGNUP.jsp;
     }
 }

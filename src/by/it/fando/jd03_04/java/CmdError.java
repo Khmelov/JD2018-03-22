@@ -6,6 +6,6 @@ public class CmdError implements ActionCmd {
 
     @Override
     public String execute(HttpServletRequest reg) throws Exception {
-        return null;
+        return Actions.ERROR.jsp;
     }
 }
