@@ -96,7 +96,7 @@ public class DAO {
             statement.executeUpdate("INSERT INTO `akhmelev`.`roles` (`id`, `role`) VALUES (DEFAULT, 'admin')");
             statement.executeUpdate("INSERT INTO `akhmelev`.`roles` (`id`, `role`) VALUES (DEFAULT, 'user')");
             statement.executeUpdate("INSERT INTO `akhmelev`.`roles` (`id`, `role`) VALUES (DEFAULT, 'guest')");
-            statement.executeUpdate("INSERT INTO `akhmelev`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'adminitrator', 'adm@mail.ru', 'administrator', 1)");
+            statement.executeUpdate("INSERT INTO `akhmelev`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'admin', 'adm@mail.ru', 'admin', 1)");
             statement.executeUpdate("INSERT INTO `akhmelev`.`users` (`id`, `login`, `email`, `password`, `roles_id`) VALUES (DEFAULT, 'user', 'user@mail.ru', 'user', 2)");
             statement.executeUpdate("INSERT INTO `akhmelev`.`ads` (`id`, `description`, `rooms`, `price`, `area`, `flat`, `flats`, `address`, `users_id`) VALUES (DEFAULT, 'good flat', 1, 111111, 111, 1, 1, 'minsk 1', 2)");
 

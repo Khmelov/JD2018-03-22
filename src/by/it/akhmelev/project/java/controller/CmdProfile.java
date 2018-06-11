@@ -26,7 +26,14 @@ public class CmdProfile extends Cmd {
             }
             else {
                 DAO dao = DAO.getInstance();
-                List<Ad> listAdsUser = dao.ad.getAll("WHERE users_id=" + user.getId());
+                int countAd = dao.ad.getAll("").size();
+                int stepAd = 5;
+                String startIndex = req.getParameter("startIndex");
+                if (startIndex == null) startIndex = "0";
+                req.setAttribute("countAd", countAd);
+                req.setAttribute("stepAd", stepAd);
+                String where = String.format("WHERE users_id=%d LIMIT %s, %d", user.getId(), startIndex, stepAd);
+                List<Ad> listAdsUser = dao.ad.getAll(where );
                 req.getSession().setAttribute("ads",listAdsUser);
             }
             return null;
