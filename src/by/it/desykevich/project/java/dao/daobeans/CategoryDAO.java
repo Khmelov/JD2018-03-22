@@ -36,7 +36,7 @@ public class CategoryDAO extends AbstractDAO<Category>{
         try (Connection connection = ConnectionCreator.getConnection();
              Statement statement = connection.createStatement()
         ) {
-            String set = String.format("UPDATE `category` SET Name='%s' WHERE category.ID='%d';",
+            String set = String.format("UPDATE `category` SET Name='%s' WHERE category.id='%d';",
                     category.getName(),category.getId());
             int recCount = statement.executeUpdate(set);
             return recCount == 1;
@@ -45,7 +45,7 @@ public class CategoryDAO extends AbstractDAO<Category>{
 
     @Override
     public Category read(int ID) throws SQLException {
-        List<Category> list = getAll(" where ID=" + ID);
+        List<Category> list = getAll(" where id=" + ID);
         return list.size() > 0 ? list.get(0) : null;
     }
 
@@ -54,7 +54,7 @@ public class CategoryDAO extends AbstractDAO<Category>{
         try (Connection connection = ConnectionCreator.getConnection();
              Statement statement = connection.createStatement()
         ){
-            String query = String.format("DELETE FROM category WHERE ID=%d;", category.getId());
+            String query = String.format("DELETE FROM category WHERE id=%d;", category.getId());
             int recCount = statement.executeUpdate(query);
             return recCount == 1;
         }
