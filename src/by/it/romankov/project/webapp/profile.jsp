@@ -65,7 +65,7 @@
             <div class="col-md-2">${tour.city} </div>
             <div class="col-md-2">${tour.price} </div>
             <div class="col-md-2">${tour.days} </div>
-           >
+
         </div>
     </c:forEach>
 
