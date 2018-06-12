@@ -5,6 +5,7 @@ import by.it.romankov.project.java.beans.Tours;
 import by.it.romankov.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Enumeration;
 import java.util.List;
 
 public class ResetDB extends CmdAbstract {
@@ -20,6 +21,11 @@ public class ResetDB extends CmdAbstract {
         req.setAttribute("listTours", listTours);
 
         if (req.getMethod().equalsIgnoreCase("post")) {
+            if (req.getParameter("ok") != null) {
+                dao.reset();
+                req.setAttribute("listTours", dao.tour.getAll(""));
+                return null;
+            }
             String target = req.getParameter("target");
             String transport = req.getParameter("transport");
             String country = req.getParameter("country");
@@ -40,15 +46,16 @@ public class ResetDB extends CmdAbstract {
                 dao.tour.delete(edittour);
                 req.setAttribute("listTours", dao.tour.getAll(""));
             }
+
+
         }
-            if (req.getParameter("Сброс") != null) {
-                dao.reset();
-                return Actions.RESETDB.command;
-            }
 
-
-return null;
+        return null;
     }
 
+    public static void main(String[] args) {
+        DAO.getInstance().reset();
+    }
 
 }
+
