@@ -17,8 +17,8 @@ public class AdDAO extends AbstractDAO<Ad> {
         try (Connection connection = ConnectionCreator.getConnection();
              Statement statement = connection.createStatement()
         ) {
-            String insert = String.format("INSERT INTO `ads` (`Title`,  `Description`, `Price`, `users_ID`, `category_ID`) " +
-                            "VALUES ('%s',  '%s', '%d', '%d', '%d');",
+            String insert = String.format("INSERT INTO `ads` (`title`,  `description`, `price`, `users_id`, `category_id`) " +
+                            "VALUES ('%s', '%s', '%s', '%d', '%d');",
                     ad.getTitle(), ad.getDescription(),
                     ad.getPrice(), ad.getUsers_Id(), ad.getCategory_Id());
             int recCount = statement.executeUpdate(insert, Statement.RETURN_GENERATED_KEYS);
@@ -49,7 +49,7 @@ public class AdDAO extends AbstractDAO<Ad> {
 
     @Override
     public Ad read(int ID) throws SQLException {
-        List<Ad> list = getAll(" where ID=" + ID);
+        List<Ad> list = getAll(" where id=" + ID);
         return list.size() > 0 ? list.get(0) : null;
     }
 
@@ -58,7 +58,7 @@ public class AdDAO extends AbstractDAO<Ad> {
         try (Connection connection = ConnectionCreator.getConnection();
              Statement statement = connection.createStatement()
         ) {
-            String query = String.format("DELETE FROM ads WHERE ID=%d;", ad.getId());
+            String query = String.format("DELETE FROM ads WHERE id=%d;", ad.getId());
             int recCount = statement.executeUpdate(query);
             return recCount == 1;
         }

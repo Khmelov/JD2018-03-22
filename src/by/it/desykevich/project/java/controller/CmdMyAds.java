@@ -21,13 +21,20 @@ public class CmdMyAds extends CmdAbstract {
             user = (User) o;
         } else
             return Actions.LOGIN.command;
-        if (FormUtil.isPost(req)) {
-            int id = FormUtil.getInt(req, "ID");
-            String title = FormUtil.getString(req, "Title", ".+");
-            String smalldesc = FormUtil.getString(req, "SmallDesc", ".+");
-            String description = FormUtil.getString(req, "Description", ".+");
-            int price = FormUtil.getInt(req, "Price");
-            int category = FormUtil.getInt(req, "category_ID");
+
+        if (req.getMethod().equalsIgnoreCase("post")) {
+            int id = Integer.parseInt(req.getParameter("id"));
+            String title = req.getParameter("title");
+            String description = req.getParameter("description");
+            int price = Integer.parseInt(req.getParameter("price"));
+            int category = Integer.parseInt(req.getParameter("category_id"));
+//        if (FormUtil.isPost(req)) {
+//            int id = FormUtil.getInt(req, "id");
+//            String title = FormUtil.getString(req, "title", ".+");
+//            String description = FormUtil.getString(req, "description", ".+");
+//            int price = FormUtil.getInt(req, "price");
+//            int category = FormUtil.getInt(req, "category_id");
+
             Ad ad = new Ad(id, title,  description, price, user.getID(), category);
             if (req.getParameter("Update") != null) {
                 DAO.getInstanse().adDAO.update(ad);
@@ -35,13 +42,13 @@ public class CmdMyAds extends CmdAbstract {
                 DAO.getInstanse().adDAO.delete(ad);
             }
         }
-        List<Ad> ads = DAO.getInstanse().adDAO.getAll("where users_ID='" + user.getID() + "'");
+        List<Ad> ads = DAO.getInstanse().adDAO.getAll("where users_id='" + user.getID() + "'");
         req.setAttribute("adsSize", ads.size());
         String strStart = req.getParameter("ads");
         int startAd = 0;
         if (strStart != null)
             startAd = Integer.parseInt(strStart);
-        String where = String.format(" where users_ID='%d' LIMIT %d, 3", user.getID(), startAd);
+        String where = String.format(" where users_id='%d' LIMIT %d, 3", user.getID(), startAd);
         ads = DAO.getInstanse().adDAO.getAll(where);
         req.setAttribute("ads", ads);
         List<Category> categories = DAO.getInstanse().categoryDAO.getAll("");

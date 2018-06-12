@@ -22,7 +22,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="password">Password</label>
+  <label class="col-md-4 control-label" for="password">Пароль</label>
   <div class="col-md-4">
   <input id="password" name="password" value="Test" type="password" placeholder="" class="form-control input-md" required="">
   <span class="help-block">Введите ваш пароль(минимум 6 символов)</span>

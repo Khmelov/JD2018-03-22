@@ -7,11 +7,11 @@ public class Ad implements Serializable {
 
     private int id;
     private String title, description;
-    private double price;
+    private int price;
     private int users_id;
     private int category_id;
 
-    public Ad(int id, String title, String description, double price, int users_id, int category_id) {
+    public Ad(int id, String title, String description, int price, int users_id, int category_id) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -47,11 +47,11 @@ public class Ad implements Serializable {
         this.description = description;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

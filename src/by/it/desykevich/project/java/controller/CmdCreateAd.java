@@ -41,7 +41,7 @@ public class CmdCreateAd extends CmdAbstract {
 
             if (ad.getId() > 0) {
                 req.setAttribute(Msg.MESSAGE, "Ad created.");
-                return Actions.PROFILE.command;
+                return null;
             } else {
                 req.setAttribute(Msg.MESSAGE, "Can't create ad.");
                 return Actions.CREATEAD.command;

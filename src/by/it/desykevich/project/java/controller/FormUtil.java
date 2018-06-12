@@ -18,6 +18,11 @@ public class FormUtil {
         return Integer.parseInt(value);
     }
 
+    static double getDouble(HttpServletRequest req, String field) throws ParseException {
+        String value=req.getParameter(field);
+        return Double.parseDouble(value);
+    }
+
     static boolean isPost(HttpServletRequest reg){return reg.getMethod().toUpperCase().equals("POST");
     }
 }
