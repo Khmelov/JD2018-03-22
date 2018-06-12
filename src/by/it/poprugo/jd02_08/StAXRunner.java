@@ -47,7 +47,8 @@ public class StAXRunner {
                     parser.getTextCharacters();
                     break;
 
-                case XMLStreamConstants.START_DOCUMENT:
+                //case XMLStreamConstants.END_DOCUMENT:
+                case XMLStreamConstants.END_ELEMENT:
                     //System.out.println("END");
                     /* скопировали из endElement из SaxHendler и подшаманили для своих целей
                      */
@@ -57,7 +58,6 @@ public class StAXRunner {
                         System.out.println(tab + content);
                     tab = tab.substring(1);
                     System.out.println(tab + "</" + parser.getLocalName() + ">");
-
                     break;
             }
         }

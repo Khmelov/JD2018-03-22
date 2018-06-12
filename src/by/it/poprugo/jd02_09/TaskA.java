@@ -12,7 +12,7 @@ public class TaskA {
         Unmarshaller unmarshaller = jaxbContent.createUnmarshaller();
         //сначала было String xmlPath = System.getProperty("user.dir") + "/src/by/it/poprugo/jd02_07/Person+XSD.xml";
         String xmlSource = System.getProperty("user.dir") + "/src/by/it/poprugo/jd02_07/Person+XSD.xml";
-        String xmlTarget = System.getProperty("user.dir") + "/src/by/it/poprugo/jd02_07/Person+XSD.xml";
+        String xmlTarget = System.getProperty("user.dir") + "/src/by/it/poprugo/jd02_09/Person+XSD.xml";
         Persons persons = (Persons) unmarshaller.unmarshal(new File(xmlSource));//было File(xmlPath)
         //System.out.println(persons);
         Marshaller marshaller = jaxbContent.createMarshaller();
