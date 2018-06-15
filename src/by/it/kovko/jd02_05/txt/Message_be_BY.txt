@@ -1,3 +1,0 @@
-msg.welcome=Белорусский
-msg.name=Белорусский
-msg.question=Белорусский

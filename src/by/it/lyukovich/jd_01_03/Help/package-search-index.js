@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"by.it.lyukovich.jd_01_03"}]

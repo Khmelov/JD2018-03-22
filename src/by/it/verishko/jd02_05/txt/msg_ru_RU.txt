@@ -1,3 +1,0 @@
-msg.welcome=Привет!
-msg.myname=Михаил
-msg.howdoyoudo=Как дела?

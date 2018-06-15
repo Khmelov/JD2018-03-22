@@ -1,1 +1,0 @@
-INSERT INTO `romankov`.`roles` (`id`, `role`) VALUES (DEFAULT, 'test');

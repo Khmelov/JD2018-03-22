@@ -1,8 +1,0 @@
-msg.Hello=Привет, %s!
-msg.Bye=Пока, %s!
-msg.PickedLang=Вы выбрали русский язык!
-msg.WhatName=Как вас зовут?
-msg.PickLang=Что бы выбрать язык, напишите в консоли pick (lang) (country). К примеру: pick en GB или pick en.
-msg.curDate=Дата:
-msg.curLang=Язык:
-msg.curCountry=Страна:

@@ -1,1 +1,0 @@
-"C:\Program Files\Java\jdk-9.0.4\bin\xjc.exe" D:\workspace\pvt\java\verishko\JD2018-03-22\src\by\it\verishko\jd02_07\Store\Store.xsd -d D:\workspace\pvt\java\verishko\JD2018-03-22\src

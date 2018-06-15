@@ -1,3 +1,0 @@
-msg.welcome = Hello!
-msg.name = Uskoryaev Alexey
-msg.howdoyoudo = How do you do?

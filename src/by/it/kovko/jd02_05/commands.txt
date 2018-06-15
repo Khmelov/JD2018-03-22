@@ -1,3 +1,0 @@
-native2ascii.exe -encoding utf-8 Message_en_US.txt  ..\Message_en_US.properties
-native2ascii.exe -encoding utf-8 Message_ru_RU.txt  ..\Message_ru_RU.properties
-native2ascii.exe -encoding utf-8 Message_be_BY.txt  ..\Message_be_BY.properties

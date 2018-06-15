@@ -1,3 +1,0 @@
-msg.welcome = Привет!
-msg.name = Ускоряев Алексей
-msg.howdoyoudo = Как дела?

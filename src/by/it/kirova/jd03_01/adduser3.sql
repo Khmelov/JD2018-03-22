@@ -1,1 +1,0 @@
-INSERT INTO kirova.users (user_id, email, password, first_name, last_name, middle_name, residence_country, phone_number) VALUES (default, 'hij@gmail.com', 'hij123', 'Aleksandr', 'Aleksandrov', 'Aleksandrovich', 'Belarus', '+375291111111');

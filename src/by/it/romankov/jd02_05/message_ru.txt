@@ -1,4 +1,0 @@
-
-       msg.welcome=Привет!
-    msg.myname= Никита романьков
-    msg.goedoyuodo= как дела
